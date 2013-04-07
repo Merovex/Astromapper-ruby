@@ -8,11 +8,13 @@ require "thor/group"
 require "yaml"
 
 module Astromapper
+  require 'astromapper/extensions/integer'
+
+  autoload :Builder,     "astromapper/builder"
   autoload :Cli,        "astromapper/cli"
   # autoload :Dependency, "astromapper/dependency"
   autoload :Exporter,   "astromapper/exporter"
   autoload :Generator,  "astromapper/generator"
-  autoload :Builder,     "astromapper/builder"
   # autoload :Stats,      "astromapper/stats"
   # autoload :Stream,     "astromapper/stream"
   # autoload :TOC,        "astromapper/toc"
@@ -29,6 +31,16 @@ module Astromapper
     erb = ERB.new(content).result
 
     YAML.load(erb)#.with_indifferent_access
+  end
+  def self.names(root_dir = nil)
+    root_dir ||= Pathname.new(Dir.pwd)
+    path = root_dir.join("templates/names.yml")
+
+    raise "Invalid Bookmaker directory; couldn't found #{path} file." unless File.file?(path)
+    content = File.read(path)
+    erb = ERB.new(content).result
+
+    @names = YAML.load(erb)#.with_indifferent_access
   end
   def self.logger
      @logger ||= Logger.new(File.open("/tmp/astromapper.log", "a"))

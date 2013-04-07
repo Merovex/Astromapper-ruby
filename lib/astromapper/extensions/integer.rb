@@ -2,6 +2,9 @@ class Integer
   def dn(n)
        (1..self).inject(0) { |a, e| a + rand(n) + 1 }
   end
+  def d3
+    dn(3)
+  end
   def d6
     dn(6)
   end

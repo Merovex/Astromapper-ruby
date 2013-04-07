@@ -2,7 +2,10 @@ require 'open3'
 
 module Astromapper
   module Builder
+    autoload :Orbit, "astromapper/builder/orbit"
     autoload :Sector, "astromapper/builder/sector"
+    autoload :Star, "astromapper/builder/star"
+    autoload :Volume, "astromapper/builder/volume"
 
     class Base
       attr_accessor :root_dir
@@ -16,6 +19,13 @@ module Astromapper
 
       def config
         Astromapper.config(root_dir)
+      end
+      def toss(a=2,b=2)
+        (a.d6 - b).whole
+        # (@@dice.roll(a) - b).whole
+      end
+      def names
+        Astromapper.names
       end
 
       def spawn_command(cmd)
