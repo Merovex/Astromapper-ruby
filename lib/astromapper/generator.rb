@@ -12,24 +12,11 @@ module Astromapper
       template "config.erb", "_astromapper.yml"
     end
     def copy_templates
-      # copy_file "latex.erb",  "templates/pdf/layout.erb"
-      # copy_file "dp-logo.png",  "images/dp-logo.png"
-      
-      # copy_file "html.erb",   "templates/html/layout.erb"
-      # copy_file "user.css",   "templates/html/user.css"
-      # copy_file "layout.css", "templates/html/layout.css"
-      # copy_file "syntax.css", "templates/html/syntax.css"
-      
-      # copy_file "cover.html", "templates/epub/cover.html"
-      # copy_file "epub.erb",   "templates/epub/page.erb"
-      # copy_file "epub.css",   "templates/epub/user.css"
-      # copy_file "cover.jpg",  "images/cover.jpg"
-    end
-    def copy_sample_text
-      # copy_file "sample.tex"   , "text/01_First-Chapter/01-Welcome.tex"
+      copy_file "names.yml", "templates/names.yml"
     end
     def create_directories
-      # empty_directory "output"
+      empty_directory "templates"
+      empty_directory "output"
       # empty_directory "images"
     end
     private

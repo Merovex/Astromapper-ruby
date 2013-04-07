@@ -27,8 +27,9 @@ module Astromapper
 
     desc "build", "Generate a map of {sector / domain}"
     map %{-b --build} => :build
-    def build
-      say "Building #{config.inspect}"
+    def build(type)
+      say "Building #{type.inspect}"
+      Astromapper::Exporter.run(root_dir, options)
     end
     # desc "sector", "Creates Random Sector Map"
     # def sector
@@ -44,6 +45,9 @@ module Astromapper
     private
       def config
         YAML.load_file(config_path).with_indifferent_access
+      end
+      def root_dir
+        @root ||= Pathname.new(Dir.pwd)
       end
   end
 end
