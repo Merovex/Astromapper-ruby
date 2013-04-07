@@ -1,0 +1,60 @@
+# The map's title.
+title: "<%= @title %>"
+
+# The map's language.
+language: "en"
+
+# Density: How many stars in your sector
+#     Here's some examples:
+# 
+# density: "rift"
+# density: "sparse"
+density: "scattered"
+# density: "dense"
+
+# Sector Randomness?
+#
+pregenerated: false
+
+# Genre
+genre: normal
+
+giant_on: !ruby/range 0..9
+tech_cap: 11
+named: true
+
+# Your map copyright info.
+# Here's some examples:
+#
+#   Copyright <%= @year %> by <%= @name %>.
+#   Copyright <%= @year %> by <%= @name %>. This work is licensed under MIT License.
+#   This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
+#   This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
+#   This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+#
+copyright: "Copyright (C) <%= @year %> <%= @name %>."
+
+# Who's publishing this map.
+publisher: "<%= @name %>"
+
+# When this map was published.
+published_at: "<%= Date.today %>"
+
+# Some unique identification. Works great with your domain
+# like `http://yourmap.example.com`.
+uid: "<%= @uid %>"
+
+# This map authors.
+authors:
+  - "<%= @name %>"
+
+# The base URL from your source code.
+base_url: http://example.com
+
+# 
+fonts:
+  serif: "Garamond"
+  sans:  "Tahoma"
+  mono:  "Courier"
+
+  
