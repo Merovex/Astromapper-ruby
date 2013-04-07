@@ -13,12 +13,6 @@ Mongoose rules are used when generating the World characteristics. Classic Trave
 * World: primary inhabited planet.
 * Orbit: A slot around primary star, may include companion stars, planets, belts or nothing.
 
-
-SVG Output
-----------
-
-Traveller Astromapper converts the ASCII output as described above to create an SVG file describing the key aspects of a volume. This includes the Star type, Starport, Name and the presence of bases (Navy, Scout, etc.) and Gas Giants.
-
 Installation
 ============
 
@@ -75,6 +69,11 @@ To generate a (mostly) random Traveller sector in the ASCII format, execute the 
 ```
 astromapper generate
 ```
+
+SVG Output
+----------
+
+Traveller Astromapper converts the ASCII output as described above to create an SVG file describing the key aspects of a volume. This includes the Star type, Starport, Name and the presence of bases (Navy, Scout, etc.) and Gas Giants.
 
 To convert that ASCII into an SVG image, execut the following:
 
