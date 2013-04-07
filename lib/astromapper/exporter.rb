@@ -20,9 +20,10 @@ module Astromapper
     def export!
       helper = root_dir.join("config/helper.rb")
       load(helper) if helper.exist?
-      exported = [0]
+      exported = []
 
       exported << Builder::Sector.build(root_dir)
+
       # export_pdf  = [nil, "pdf"].include?(options[:only])
       # export_html = [nil, "html", "mobi", "epub"].include?(options[:only])
       # export_epub = [nil, "mobi", "epub"].include?(options[:only])

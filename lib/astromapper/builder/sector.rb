@@ -1,11 +1,17 @@
 module Astromapper
   module Builder
     class Sector < Base
-    	def build(root_dir)
-    		puts "-- Creating Sector"
+    	def self.build(root_dir)
+    		puts "-- Creating Sector #{root_dir}"
+    		# locals = config.merge({})
     		# puts config().inspect
-    		# puts config
+    		# puts Base.config.inspect
+    		# puts showme
+    		puts config.inspect
     	end
+    	def config
+        Astromapper.config(root_dir)
+      end
     end
   end
 end
