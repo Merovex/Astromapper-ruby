@@ -11,7 +11,7 @@ Mongoose rules are used when generating the World characteristics. Classic Trave
 * Tract:  8x10 hex grid (Traveller Subsector)
 * Volume: 1-hex
 * World: primary inhabited planet.
-* Orbit: A
+* Orbit: A slot around primary star, may include companion stars, planets, belts or nothing.
 
 ASCII Output
 ------------
@@ -46,34 +46,31 @@ Traveller Astromapper converts the ASCII output as described above to create an 
 Installation
 ============
 
-This software relies upon Ruby 1.9.2+. To convert from SVG to JPG, PNG, GIF you will need to install Imagemagick with -rsvg flag.
+This software relies upon Ruby 1.9.2+. To convert from SVG to JPG, PNG, GIF you will need to install Imagemagick with -rsvg flag (later feature).
 
-Operating Instructions
+How to Use Traveller Astromapper
 ======================
 
-Traveller Astromapper is a command-line tool using the rake command. Use 'rake -T' to see options.
+To create a new Traveller Astromapper project, execute the following on the command line:
 
-Configuration
-=============
-
-```yaml
-genre: normal
-pregen: false
-density: 'scattered'
-giant_on: !ruby/range 0..9
-tech_cap: 11
-svg_theme: lite
+```
+astromapper new yots_sector
 ```
 
-* **density** Can be [dense, standard, scattered, sparse, rift]. Determines the likelihood of a volume having a habitable star system. (Non-habitable star systems are ignored.) Default is standard.
-* **tech_cap** sets a maximum technology level for those wishing to limit tech.
-* **genre** Can be [normal, firm, opera], which primarily affects the World. Described in _Mongoose Traveller_ (MgT) p. 173. Default is **normal**.
-* **svg_theme** Can be [lite, dark] and determines the color scheme for the SVG output.
+The command creates the following directory structure:
+
+```
+yots_sector
+├── _astromapper.yml
+├── output
+├── templates
+    ├── names.yml
+```
 
 Copyright
 =========
 
-Copyright 2012, Benjamin C. Wilson. All Rights Reserved.
+Copyright 2013, Benjamin C. Wilson. All Rights Reserved.
 
 You may not use this work for commercial purposes. You may not alter, transform or build upon this work. Any of the above conditions can be waived if you get permission from the copyright holder. Where the work or any of its elements is in the public domain under applicable law, that status is in no way affected by the license. For any reuse or distribution, you must make clear to others the license terms of this work. In no way are any of the following rights affected by the license:
 

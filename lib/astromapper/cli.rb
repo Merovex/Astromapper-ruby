@@ -16,8 +16,8 @@ module Astromapper
       super
     end
 
-    desc "create", "Create Astromapper Directory"
-    map %w(-c --create) => :create
+    desc "new", "Create Astromapper Directory"
+    map %w(-n new -c) => :create
     def create(path)
       say "Voices of billions cry out in terror at the creation of '#{path}'"
       generator = Generator.new

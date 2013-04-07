@@ -120,8 +120,7 @@ module Astromapper
 <svg width="#{@width}px" height="#{@height}px" version="1.1" xmlns="http://www.w3.org/2000/svg" blackground-color='#{@color[:white]}'>
   <desc>Subsector Map Grid</desc>
   <rect #{@style[:rect]} width='#{@width}' height='#{@height}' />
-    EOS
-
+      EOS
     end
     def center_of(locx)
       column = locx[0..1].to_i
