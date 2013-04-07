@@ -1,5 +1,5 @@
 module Astromapper
-  module Parser
+  module Builder
     autoload :SECTOR  , "bookmaker/parser/sector"
 
     class Base
