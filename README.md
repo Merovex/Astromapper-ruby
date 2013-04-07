@@ -13,30 +13,6 @@ Mongoose rules are used when generating the World characteristics. Classic Trave
 * World: primary inhabited planet.
 * Orbit: A slot around primary star, may include companion stars, planets, belts or nothing.
 
-ASCII Output
-------------
-
-The block below shows Traveller Astromapper's ASCII output. The top row is the key system aspects: Volume ID, World UWP, Temperature, Presence of Bases & Gas Giants, Trade Codes, Stars, Primary Star's Orbits, Name. The rows that follow elaborate the primary star's orbits. Rows with two dashes are the Primary's orbits, orbit type, UWP, and orbit distance (usable for travel and year length). Other rows with the '/' are that orbit's satellites. When the UWP is dots, that orbit is empty.
-
-```
-1201 E949556-5 T ..G.. ..	Lt,NI          	        	F0IV/DB           R..WGG..S       	Secundus
-  --  1.    R // X600000-0 //  0.4 au
-                            /    7 rad. X420000
-                            /    9 rad. X620000
-  --  2.    . // .......-. //  0.7 au
-  --  3.    . // .......-. //  1.4 au
-  --  4. *  W // E949556-5 //  2.8 au
-  --  5.    G // Large GG  //  5.6 au
-  --  6.    G // Large GG  // 11.2 au
-                            /    1 rad. XR00000
-                            /    6 rad. X402000
-                            /    7 rad. X405000
-                            /    9 rad. X100000
-                            /   10 rad. X302000
-  --  7.    . // .......-. // 22.4 au
-  --  8.    . // .......-. // 44.8 au
-  --  9. -  S // DB        // 89.6 au
-```
 
 SVG Output
 ----------
@@ -65,8 +41,45 @@ The command creates the following directory structure:
 yots_sector
 ├── _astromapper.yml
 ├── output
-├── templates
-    ├── names.yml
+└── templates
+    └── names.yml
+```
+
+ASCII Output
+------------
+
+The block below shows Traveller Astromapper's ASCII output. The top row is the key system aspects: Volume ID, World UWP, Temperature, Presence of Bases & Gas Giants, Trade Codes, Stars, Primary Star's Orbits, Name. The rows that follow elaborate the primary star's orbits. Rows with two dashes are the Primary's orbits, orbit type, UWP, and orbit distance (usable for travel and year length). Other rows with the '/' are that orbit's satellites. When the UWP is dots, that orbit is empty.
+
+```
+1201 E949556-5 T ..G.. .. Lt,NI                     F0IV/DB           R..WGG..S         Secundus
+  --  1.    R // X600000-0 //  0.4 au
+                            /    7 rad. X420000
+                            /    9 rad. X620000
+  --  2.    . // .......-. //  0.7 au
+  --  3.    . // .......-. //  1.4 au
+  --  4. *  W // E949556-5 //  2.8 au
+  --  5.    G // Large GG  //  5.6 au
+  --  6.    G // Large GG  // 11.2 au
+                            /    1 rad. XR00000
+                            /    6 rad. X402000
+                            /    7 rad. X405000
+                            /    9 rad. X100000
+                            /   10 rad. X302000
+  --  7.    . // .......-. // 22.4 au
+  --  8.    . // .......-. // 44.8 au
+  --  9. -  S // DB        // 89.6 au
+```
+
+To generate a (mostly) random Traveller sector in the ASCII format, execute the following on the command line:
+
+```
+astromapper generate
+```
+
+To convert that ASCII into an SVG image, execut the following:
+
+```
+astrographer svg
 ```
 
 Copyright
