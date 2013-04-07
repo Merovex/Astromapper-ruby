@@ -1,4 +1,4 @@
-module Atromapper
+module Astromapper
   class Generator < Thor::Group
     include Thor::Actions
     def self.source_root

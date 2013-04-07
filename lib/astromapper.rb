@@ -11,7 +11,7 @@ module Astromapper
   autoload :Cli,        "astromapper/cli"
   # autoload :Dependency, "astromapper/dependency"
   # autoload :Exporter,   "astromapper/exporter"
-  # autoload :Generator,  "astromapper/generator"
+  autoload :Generator,  "astromapper/generator"
   # autoload :Markdown,   "astromapper/adapters/markdown"
   # autoload :Parser,     "astromapper/parser"
   # autoload :Stats,      "astromapper/stats"
