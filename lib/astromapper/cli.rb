@@ -26,19 +26,19 @@ module Astromapper
     end
 
     desc "build", "Generate a map of {sector / domain}"
-    map %{-b --build} => :build
-    def build(type)
+    map %w{-b --build generate} => :build
+    def build(type='sector')
       say "Building #{type.inspect}"
       Astromapper::Exporter.run(root_dir, options)
     end
 
     desc "svg", "Convert ASCII output to SVG"
-    map %{-s --svg} => :svg
+    map %w{-s --svg} => :svg
     def svg
       source = "output/#{config['name'].to_permalink}.sector"
       say "Converting #{source} to SVG"
       s = Svg.new(source)
-      s.print
+      s.convert
     end
     
     desc "version", "Prints the Astromapper's version information"
