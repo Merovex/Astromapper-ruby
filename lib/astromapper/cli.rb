@@ -24,6 +24,12 @@ module Astromapper
       generator.destination_root = path.squish.gsub(' ','-')
       generator.invoke_all
     end
+
+    desc "build", "Generate a map of {sector / domain}"
+    map %{-b --build} => :build
+    def build
+      say "Building #{config.inspect}"
+    end
     # desc "sector", "Creates Random Sector Map"
     # def sector
     #   say "Creating Sector Map"
