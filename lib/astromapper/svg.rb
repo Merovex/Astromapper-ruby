@@ -16,8 +16,8 @@ module Astromapper
       @mark    = 13
       @zones   = []
       @volumes = []
-      @name = sectorname.capitalize
-      puts "Height: #{@height}; Width: #{@width}"
+      @name = config['name']
+      # puts "Height: #{@height}; Width: #{@width}"
       
       base03  = config['colors']['base03']  ||  '#002b36'
       base02  = config['colors']['base02']  ||  '#073642'

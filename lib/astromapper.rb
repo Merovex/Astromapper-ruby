@@ -35,6 +35,9 @@ module Astromapper
 
     YAML.load(erb)#.with_indifferent_access
   end
+  def self.output_file(ext="txt")
+    "output/#{config['name'].to_permalink}.#{ext}"
+  end
   def self.names(root_dir = nil)
     root_dir ||= Pathname.new(Dir.pwd)
     path = root_dir.join("templates/names.yml")

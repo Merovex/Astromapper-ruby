@@ -8,6 +8,9 @@ class Integer
   def d6
     dn(6)
   end
+  def d100
+    dn(100)
+  end
   def hexd
     return 'F' if self > 15
     self.whole.to_s(16).upcase
