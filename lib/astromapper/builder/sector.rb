@@ -1,5 +1,5 @@
 module Astromapper
-  module Parser
+  module Builder
     class Sector < Base
     end
   end

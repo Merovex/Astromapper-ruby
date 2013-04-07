@@ -1,6 +1,6 @@
 module Astromapper
   module Builder
-    autoload :SECTOR  , "bookmaker/parser/sector"
+    autoload :SECTOR  , "bookmaker/builder/sector"
 
     class Base
       # The e-book directory.
@@ -32,8 +32,6 @@ module Astromapper
         Astromapper.config(root_dir)
       end
 
-
-      end
       def spawn_command(cmd)
         begin
           stdout_and_stderr, status = Open3.capture2e(*cmd)
