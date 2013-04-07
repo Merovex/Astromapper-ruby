@@ -27,7 +27,8 @@ module Astromapper
   		end
   		def to_file
 		    # filename = @name.downcase + '.sector'
-		    filename = 'output/sector.txt'
+		    # filename = 'output/sector.sector'
+		    filename = "output/#{config['name'].to_permalink}.sector"
 		    File.open(filename,'w').write(@volumes.map{|v| v.to_ascii}.join("\n"))
 		  end
     end

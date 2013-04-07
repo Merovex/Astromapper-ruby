@@ -31,10 +31,15 @@ module Astromapper
       say "Building #{type.inspect}"
       Astromapper::Exporter.run(root_dir, options)
     end
-    # desc "sector", "Creates Random Sector Map"
-    # def sector
-    #   say "Creating Sector Map"
-    # end
+
+    desc "svg", "Convert ASCII output to SVG"
+    map %{-s --svg} => :svg
+    def svg
+      source = "output/#{config['name'].to_permalink}.sector"
+      say "Converting #{source} to SVG"
+      s = Svg.new(source)
+      s.print
+    end
     
     desc "version", "Prints the Astromapper's version information"
     map %w(-v --version) => :version
@@ -44,7 +49,8 @@ module Astromapper
     
     private
       def config
-        YAML.load_file(config_path).with_indifferent_access
+        # YAML.load_file(config_path).with_indifferent_access
+        Astromapper.config
       end
       def root_dir
         @root ||= Pathname.new(Dir.pwd)

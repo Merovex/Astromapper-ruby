@@ -8,7 +8,9 @@ require "thor/group"
 require "yaml"
 
 module Astromapper
+  require 'astromapper/extensions/float'
   require 'astromapper/extensions/integer'
+  require 'astromapper/extensions/string'
 
   autoload :Builder,     "astromapper/builder"
   autoload :Cli,        "astromapper/cli"
@@ -18,6 +20,7 @@ module Astromapper
   # autoload :Stats,      "astromapper/stats"
   # autoload :Stream,     "astromapper/stream"
   # autoload :TOC,        "astromapper/toc"
+  autoload :Svg,        "astromapper/svg"
   autoload :Version,    "astromapper/version"
 
 	Encoding.default_internal = "utf-8"
