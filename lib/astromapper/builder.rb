@@ -6,16 +6,16 @@ module Astromapper
 
     class Base
       attr_accessor :root_dir
+
+      def self.constitute(root_dir)
+        new(root_dir).constitute
+      end
       def initialize(root_dir)
         @root_dir = Pathname.new(root_dir)
       end
 
       def config
         Astromapper.config(root_dir)
-      end
-
-      def self.build(root_dir)
-        new(root_dir).build
       end
 
       def spawn_command(cmd)

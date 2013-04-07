@@ -20,6 +20,16 @@ module Astromapper
 
 	Encoding.default_internal = "utf-8"
 	Encoding.default_external = "utf-8"
+  def self.config(root_dir = nil)
+    root_dir ||= Pathname.new(Dir.pwd)
+    path = root_dir.join("_astromapper.yml")
+
+    raise "Invalid Bookmaker directory; couldn't found #{path} file." unless File.file?(path)
+    content = File.read(path)
+    erb = ERB.new(content).result
+
+    YAML.load(erb)#.with_indifferent_access
+  end
   def self.logger
      @logger ||= Logger.new(File.open("/tmp/astromapper.log", "a"))
   end
