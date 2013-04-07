@@ -22,7 +22,9 @@ module Astromapper
       load(helper) if helper.exist?
       exported = []
 
-      exported << Builder::Sector.constitute(root_dir)
+      sector = Builder::Sector.constitute(root_dir)
+
+      sector.to_file
 
       # export_pdf  = [nil, "pdf"].include?(options[:only])
       # export_html = [nil, "html", "mobi", "epub"].include?(options[:only])
@@ -40,7 +42,7 @@ module Astromapper
 
       if exported.all?
         color = :green
-        message = options[:auto] ? "exported!" : "** e-book has been exported"
+        message = options[:auto] ? "exported!" : "** Map has been exported"
 
         # Notifier.notify(
         #   # :image   => Astromapper::ROOT.join("templates/ebook.png"),
