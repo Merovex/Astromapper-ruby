@@ -46,7 +46,9 @@ Traveller Astromapper converts the ASCII output as described above to create an 
 Installation
 ============
 
-This software relies upon Ruby 1.9.2+. To convert from SVG to JPG, PNG, GIF you will need to install Imagemagick with -rsvg flag (later feature).
+This software relies upon Ruby 1.9.2+.
+
+To convert from SVG to JPG, PNG, GIF you will need to install Imagemagick with -rsvg flag (later feature).
 
 How to Use Traveller Astromapper
 ======================
@@ -70,7 +72,7 @@ yots_sector
 Copyright
 =========
 
-Copyright 2013, Benjamin C. Wilson. All Rights Reserved.
+Copyright 2012--13, Benjamin C. Wilson. All Rights Reserved.
 
 You may not use this work for commercial purposes. You may not alter, transform or build upon this work. Any of the above conditions can be waived if you get permission from the copyright holder. Where the work or any of its elements is in the public domain under applicable law, that status is in no way affected by the license. For any reuse or distribution, you must make clear to others the license terms of this work. In no way are any of the following rights affected by the license:
 
@@ -103,6 +105,8 @@ Version 0.1 (1 March 2012)
 * Generate Sector Map
 * Convert to SVG
 
-
+Version 1.0 (7 April 2013)
+--------------------------
+* Re-implemented as Ruby Gem
 
 * A News sections might also be include to lists project updates for users.
