@@ -2,21 +2,19 @@ require 'open3'
 
 module Astromapper
   module Builder
-    autoload :Sector  , "astromapper/builder/sector"
+    autoload :Sector, "astromapper/builder/sector"
 
     class Base
       attr_accessor :root_dir
       def initialize(root_dir)
         @root_dir = Pathname.new(root_dir)
       end
+
       def config
         Astromapper.config(root_dir)
       end
-      def showme
-        puts 'test'
-      end
 
-      def build(root_dir)
+      def self.build(root_dir)
         new(root_dir).build
       end
 
