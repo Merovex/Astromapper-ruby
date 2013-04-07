@@ -1,6 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
 require 'astromapper/version'
 
 Gem::Specification.new do |s|
@@ -23,5 +24,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec", "~> 2.6"
   s.add_development_dependency "cucumber"
   s.add_development_dependency "aruba"
+  s.add_dependency "activesupport"
   s.add_dependency "thor"
 end
