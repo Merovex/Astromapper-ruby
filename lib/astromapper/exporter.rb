@@ -39,11 +39,11 @@ module Astromapper
         color = :green
         message = options[:auto] ? "exported!" : "** e-book has been exported"
 
-        Notifier.notify(
-          # :image   => Astromapper::ROOT.join("templates/ebook.png"),
-          :title   => "Astromapper",
-          :message => "Your \"#{config[:title]}\" map has been exported!"
-        )
+        # Notifier.notify(
+        #   # :image   => Astromapper::ROOT.join("templates/ebook.png"),
+        #   :title   => "Astromapper",
+        #   :message => "Your \"#{config[:title]}\" map has been exported!"
+        # )
       else
         color = :red
         message = options[:auto] ? "could not be exported!" : "** e-book couldn't be exported"
