@@ -31,8 +31,23 @@ module Astromapper
       say "Searching database on #{volume_id}"
       source = Astromapper.output_file('sector')
       if File.exists?(source)
-        a = Astromapper::About.new(source, volume_id)
-        a.ascii
+        # volume = Astromapper::Astro::Volume.new(source, volume_id)
+        # puts volume.inspect
+        @volumes = {}
+        volume = []
+        id = nil
+        File.open(source,'r').readlines.each do |line|
+          if /^\d{4}/.match(line)
+            @volumes[id.to_s] = volume unless volume.nil? or id.nil?
+            volume = []
+            id = line[0..3]
+          end
+          volume << line #unless volume.nil?
+        end
+        @volume = Astromapper::Astro::Volume.new(@volumes[volume_id])
+
+        puts @volume.summary
+        say @volume.ascii
       else
         say "Hey! You need to generate the sector first (try: astromapper build)."
       end

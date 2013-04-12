@@ -15,6 +15,7 @@ module Astromapper
 
   autoload :Version,     "astromapper/version"
   autoload :About,       "astromapper/about"
+  autoload :Astro,       "astromapper/astro"
   autoload :Builder,     "astromapper/builder"
   autoload :Cli,         "astromapper/cli"
   # autoload :Dependency, "astromapper/dependency"
