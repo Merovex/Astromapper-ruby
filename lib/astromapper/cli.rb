@@ -31,8 +31,8 @@ module Astromapper
       say "Searching database on #{volume_id}"
       source = Astromapper.output_file('sector')
       if File.exists?(source)
-        a = Astromapper::About.new(source)
-        puts a.tell(volume_id)
+        a = Astromapper::About.new(source, volume_id)
+        a.ascii
       else
         say "Hey! You need to generate the sector first (try: astromapper build)."
       end
