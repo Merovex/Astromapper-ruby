@@ -25,6 +25,19 @@ module Astromapper
       generator.invoke_all
     end
 
+    desc "about", "Provide information on a sector"
+    map %w{-a} => :about
+    def about(volume_id)
+      say "Searching database on #{volume_id}"
+      source = Astromapper.output_file('sector')
+      if File.exists?(source)
+        a = Astromapper::About.new(source)
+        puts a.tell(volume_id)
+      else
+        say "Hey! You need to generate the sector first (try: astromapper build)."
+      end
+    end
+
     desc "build", "Generate a map of {sector / domain}"
     map %w{-b --build generate} => :build
     def build(type='sector')

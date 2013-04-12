@@ -1,7 +1,7 @@
 Traveller Astromapper
 ==========================
 
-The **Traveller Astromapper** creates random Traveller star maps intended for YOTS.
+The **Traveller Astromapper** creates random Traveller star maps intended for YOTU (Your Own Traveller Universe).
 
 The maps are generated using an inspired amalgam of [Mongoose](http://www.mongoosepublishing.com/rpgs/traveller/core-rulebooks-accessories.html) and [Classic Traveller](http://www.farfuture.net/) rules, with some [Gurps Space](http://www.sjgames.com/gurps/books/space/) 4e and 3e.
 
@@ -26,13 +26,13 @@ How to Use Traveller Astromapper
 To create a new Traveller Astromapper project, execute the following on the command line:
 
 ```
-astromapper new yots_sector
+astromapper new yotu_sector
 ```
 
 The command creates the following directory structure:
 
 ```
-yots_sector
+yotu_sector
 ├── _astromapper.yml
 ├── output
 └── templates

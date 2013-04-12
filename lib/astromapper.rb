@@ -12,16 +12,18 @@ module Astromapper
   require 'astromapper/extensions/integer'
   require 'astromapper/extensions/string'
 
+
+  autoload :Version,     "astromapper/version"
+  autoload :About,       "astromapper/about"
   autoload :Builder,     "astromapper/builder"
-  autoload :Cli,        "astromapper/cli"
+  autoload :Cli,         "astromapper/cli"
   # autoload :Dependency, "astromapper/dependency"
-  autoload :Exporter,   "astromapper/exporter"
-  autoload :Generator,  "astromapper/generator"
+  autoload :Exporter,    "astromapper/exporter"
+  autoload :Generator,   "astromapper/generator"
   # autoload :Stats,      "astromapper/stats"
   # autoload :Stream,     "astromapper/stream"
   # autoload :TOC,        "astromapper/toc"
-  autoload :Svg,        "astromapper/svg"
-  autoload :Version,    "astromapper/version"
+  autoload :Svg,         "astromapper/svg"
 
 	Encoding.default_internal = "utf-8"
 	Encoding.default_external = "utf-8"
@@ -33,7 +35,7 @@ module Astromapper
     content = File.read(path)
     erb = ERB.new(content).result
 
-    YAML.load(erb)#.with_indifferent_access
+    YAML.load(erb).with_indifferent_access
   end
   def self.output_file(ext="txt")
     "output/#{config['name'].to_permalink}.#{ext}"
@@ -46,7 +48,7 @@ module Astromapper
     content = File.read(path)
     erb = ERB.new(content).result
 
-    @names = YAML.load(erb)#.with_indifferent_access
+    @names = YAML.load(erb).with_indifferent_access
   end
   def self.logger
      @logger ||= Logger.new(File.open("/tmp/astromapper.log", "a"))
