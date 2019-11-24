@@ -30,52 +30,59 @@ module Astromapper
     def from_file
       File.open(@source_filename,'r').readlines.each { |line| @volumes << line if /^\d{4}/.match(line) }
     end
-    def calc_route(x,m,y,n)
+    def calc_route(keys,x,x1,y,y1)
       route = nil
-      x1 = (x + m)
-      y1 = (y + n)
-      return nil if y1 > 40
-      return nil if x1 > 32
+      c = "%02d%02d" % [x1, y1]
+      k = "%02d%02d" % [x, y]
+      # puts "#{k}:#{c} (#{x}, #{y}) (#{x1}, #{y1})"
       # Calcuate Route Distance
-      d = Math.sqrt((x - x1)**2 + (y - y1)**2).floor # Distance
-      return nil if d == 0
+      d = Math.sqrt((x - x1)**2 + (y - y1)**2).round(0)
+      return route if d == 0
 
       # Calculate Route Slope to avoid slope collisions
       s = ((x1 - x) == 0) ? 0 :  ((y1 - y) / (x1 - x))
-      return nil if (@slopes[k].include?(s))
-      @slopes[k] << s
+      # return route if (@slopes[k].include?(s))
 
-      c = "%02d%02d" % [x1, y1]
       if (keys.include?(c) and !@routes.include?("#{k}#{c}"))
         a = center_of(k)
         b = center_of(c)
+        @slopes[k] << s
         @routes << "#{c}#{k}" # reverse look-up.
         route = "<!-- #{k} > #{c} --><line class='line#{d}' x1='#{a[0]}' y1='#{a[1]}' x2='#{b[0]}' y2='#{b[1]}' />"
       end
       return route
     end
     def build_routes
-      routes = []
+      routes = ["<g class='routes'>"]
       keys = @volumes.map do |v|
         v[0..3]
-      end
-      paths = {
-        "0"  => (-4..4).to_a, "1"  => (-4..3).to_a, "2"  => (-3..3).to_a,
-        "3"  => (-3..2).to_a, "4"  => (-2..2).to_a, "-1" => (-3..4).to_a,
-        "-2" => (-3..3).to_a, "-3" => (-2..3).to_a,
-        "-4" => (-2..2).to_a,
-      }
+      end.sort
       @slopes = {}
+      paths = {
+        "0"  => (-4..4).to_a,
+        "1"  => (-3..3).to_a,
+        "2"  => (-3..3).to_a,
+        "3"  => (-2..2).to_a,
+        "4"  => (-2..2).to_a,
+      }
       keys.each do |k|
         x = k[0..1].to_i
         y = k[2..3].to_i
         @slopes[k] = []
-        [1,-1,2,-2,3,-3,4,-4].to_a.each do |n| # Ys
-          [1,-1,2,-2,3,-3,4,-4].to_a.each do |m|
-            routes << calc_route(x,m,y,n)
+        paths.keys.each do |pk|
+          [pk.to_i, pk.to_i * -1].each do |m|
+            paths[pk].each do |n|
+              x1 = (x + m)
+              y1 = (y + n)
+              c = "%02d%02d" % [x1, y1]
+              k = "%02d%02d" % [x, y]
+              puts "#{k}:#{c} (#{x}, #{y}) (#{x1}, #{y1}) / (#{pk}:#{paths[pk].inspect}):(#{m}:#{n})"
+              routes << calc_route(keys,x,x1,y,y1)
+            end
           end
         end
       end
+      routes << "</g>"
       routes.compact.join("\n")
     end
     def convert
@@ -128,27 +135,25 @@ module Astromapper
     }
     line {
       opacity: 0.5;
+      stroke-linecap: round;
     }
     line.line1 {
       stroke: #666;
       stroke-width:4;
     }
     line.line2 {
-      stroke: #66C;
+      stroke: #69C;
       stroke-width:3;
     }
     line.line3 {
-      stroke: #C60;
+      stroke: #C96;
       stroke-width:2;
-      xstroke-dasharray: 5, 5, 1, 5;
-      display:none;
+      stroke-dasharray: 5, 5, 1, 5;
     }
     line.line4 {
-      stroke: #C00;
+      stroke: #C66;
       stroke-width:1;
       stroke-dasharray: 2,6;
-      stroke-linecap: round;
-      display:none;
     }
     polyline {
       fill: none;
@@ -177,6 +182,7 @@ module Astromapper
       stroke: #B90;
       stroke-width: 3;
       stroke-dasharray: 3,6;
+      stroke-linecap: round;
     }
   </style>
   <rect width='#{@width}' height='#{@height}' />
