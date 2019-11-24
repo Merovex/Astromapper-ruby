@@ -2,9 +2,9 @@ require 'open3'
 
 module Astromapper
   module Builder
-    autoload :Orbit, "astromapper/builder/orbit"
+    autoload :Orbit,  "astromapper/builder/orbit"
     autoload :Sector, "astromapper/builder/sector"
-    autoload :Star, "astromapper/builder/star"
+    autoload :Star,   "astromapper/builder/star"
     autoload :Volume, "astromapper/builder/volume"
 
     class Base

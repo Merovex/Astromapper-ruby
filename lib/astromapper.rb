@@ -36,7 +36,7 @@ module Astromapper
     content = File.read(path)
     erb = ERB.new(content).result
 
-    YAML.load(erb).with_indifferent_access
+    YAML.load(erb).to_hash.with_indifferent_access
   end
   def self.output_file(ext="txt")
     "output/#{config['name'].to_permalink}.#{ext}"
@@ -49,7 +49,7 @@ module Astromapper
     content = File.read(path)
     erb = ERB.new(content).result
 
-    @names = YAML.load(erb).with_indifferent_access
+    @names = YAML.load(erb)
   end
   def self.logger
      @logger ||= Logger.new(File.open("/tmp/astromapper.log", "a"))
