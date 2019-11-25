@@ -30,22 +30,24 @@ module Astromapper
     def from_file
       File.open(@source_filename,'r').readlines.each { |line| @volumes << line if /^\d{4}/.match(line) }
     end
-    def calc_route(keys,x,x1,y,y1)
+    def calc_route(keys,coords)
       route = nil
-      c = "%02d%02d" % [x1, y1]
-      k = "%02d%02d" % [x, y]
-      # puts "#{k}:#{c} (#{x}, #{y}) (#{x1}, #{y1})"
+      x,y,x1,y1 = coords
+      c = "%02d%02d" % [x1, y1] # Destination
+      k = "%02d%02d" % [x, y]   # Source
+
       # Calcuate Route Distance
       d = Math.sqrt((x - x1)**2 + (y - y1)**2).round(0)
       return route if d == 0
 
       # Calculate Route Slope to avoid slope collisions
+      @slopes[k] = [] if @slopes[k].nil?
       s = ((x1 - x) == 0) ? 0 :  ((y1 - y) / (x1 - x))
-      # return route if (@slopes[k].include?(s))
 
-      if (keys.include?(c) and !@routes.include?("#{k}#{c}"))
+      if (keys.include?(c) and !@routes.include?("#{k}#{c}") and !@slopes[k].include?(s))
         a = center_of(k)
         b = center_of(c)
+
         @slopes[k] << s
         @routes << "#{c}#{k}" # reverse look-up.
         route = "<!-- #{k} > #{c} --><line class='line#{d}' x1='#{a[0]}' y1='#{a[1]}' x2='#{b[0]}' y2='#{b[1]}' />"
@@ -54,34 +56,8 @@ module Astromapper
     end
     def build_routes
       routes = ["<g class='routes'>"]
-      keys = @volumes.map do |v|
-        v[0..3]
-      end.sort
-      @slopes = {}
-      paths = {
-        "0"  => (-4..4).to_a,
-        "1"  => (-3..3).to_a,
-        "2"  => (-3..3).to_a,
-        "3"  => (-2..2).to_a,
-        "4"  => (-2..2).to_a,
-      }
-      keys.each do |k|
-        x = k[0..1].to_i
-        y = k[2..3].to_i
-        @slopes[k] = []
-        paths.keys.each do |pk|
-          [pk.to_i, pk.to_i * -1].each do |m|
-            paths[pk].each do |n|
-              x1 = (x + m)
-              y1 = (y + n)
-              c = "%02d%02d" % [x1, y1]
-              k = "%02d%02d" % [x, y]
-              puts "#{k}:#{c} (#{x}, #{y}) (#{x1}, #{y1}) / (#{pk}:#{paths[pk].inspect}):(#{m}:#{n})"
-              routes << calc_route(keys,x,x1,y,y1)
-            end
-          end
-        end
-      end
+      keys = @volumes.map { |v| v[0..3] }.sort
+      keys.each_hex { |hex| routes << calc_route(keys, hex) }
       routes << "</g>"
       routes.compact.join("\n")
     end

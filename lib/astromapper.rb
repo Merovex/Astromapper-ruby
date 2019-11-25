@@ -11,6 +11,7 @@ module Astromapper
   require 'astromapper/extensions/float'
   require 'astromapper/extensions/integer'
   require 'astromapper/extensions/string'
+  require 'astromapper/extensions/array'
 
 
   autoload :Version,     "astromapper/version"
