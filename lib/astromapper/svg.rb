@@ -1,3 +1,6 @@
+require 'Geometry'
+require 'awesome_print'
+
 module Astromapper
   class Svg
     def config
@@ -16,11 +19,11 @@ module Astromapper
       @mark    = 13
       @zones   = []
       @volumes = []
-      # @routes  = {}
-      @routes = []
-      @slopes = {}
-      @name = config['name']
-
+      @routes  = Hash.new
+      @lines   = Hash.new
+      @slopes  = Hash.new
+      @lines.default  = []
+      @name    = config['name']
       @hex = {
         :side_h => (@side * (@factor / 2)).tweak,
         :side_w => (@side / 2).tweak,
@@ -30,36 +33,38 @@ module Astromapper
     def from_file
       File.open(@source_filename,'r').readlines.each { |line| @volumes << line if /^\d{4}/.match(line) }
     end
-    def calc_route(keys,coords)
-      route = nil
-      x,y,x1,y1 = coords
-      c = "%02d%02d" % [x1, y1] # Destination
-      k = "%02d%02d" % [x, y]   # Source
+    def calc_route(keys, source, target)
+      shex = source.to_hex
+      thex = target.to_hex
+      [shex,thex].each { |k| @routes[k] = [] if @routes[k].nil? }
+      [shex,thex].each { |k| @slopes[k] = [] if @slopes[k].nil? }
 
-      # Calcuate Route Distance
-      d = Math.sqrt((x - x1)**2 + (y - y1)**2).round(0)
-      return route if d == 0
+      src = center_of(source).map(&:to_i)
+      dst = center_of(target).map(&:to_i)
+      m = src.slope(dst)
+      d = source.distance(target)
 
-      # Calculate Route Slope to avoid slope collisions
-      @slopes[k] = [] if @slopes[k].nil?
-      s = ((x1 - x) == 0) ? 0 :  ((y1 - y) / (x1 - x))
+      # Return meaningless route to self
+      return nil if d == 0
 
-      if (keys.include?(c) and !@routes.include?("#{k}#{c}") and !@slopes[k].include?(s))
-        a = center_of(k)
-        b = center_of(c)
+      # Avoid duplicate route from Target to Source
+      return nil if @routes[shex].include?(thex)
+      @routes[thex] << shex
 
-        @slopes[k] << s
-        @routes << "#{c}#{k}" # reverse look-up.
-        route = "<!-- #{k} > #{c} --><line class='line#{d}' x1='#{a[0]}' y1='#{a[1]}' x2='#{b[0]}' y2='#{b[1]}' />"
-      end
-      return route
+      # Avoid overlapping routes.
+      return nil if @slopes[shex].include?(m)
+      @slopes[shex] << m
+
+      return "<!-- #{shex}:#{thex} --><line class='line#{d}' x1='#{src[0]}' y1='#{src[1]}' x2='#{dst[0]}' y2='#{dst[1]}' />"
     end
     def build_routes
       routes = ["<g class='routes'>"]
       keys = @volumes.map { |v| v[0..3] }.sort
-      keys.each_hex { |hex| routes << calc_route(keys, hex) }
-      routes << "</g>"
-      routes.compact.join("\n")
+      keys.each_hex { |coordinates|
+        routes << calc_route(keys, *coordinates) if keys.include?(coordinates.last.to_hex)
+      }
+      routes << "\n</g>"
+      return routes.compact.uniq.join("\n")
     end
     def convert
       from_file
@@ -75,98 +80,14 @@ module Astromapper
       svg << footer
       File.open(@svg_filename,'w').write(svg.flatten.join("\n"))
     end
-    def footer
-      return "</svg>"
-    end
-    def header
-      return<<-EOS
-<?xml version="1.0" standalone="no"?>
-  <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
-    "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="#{@width}px" height="#{@height}px" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <desc>Subsector Map Grid</desc>
-  <style>
-    svg {
-      fill: #FFF;
-    }
-    text {
-      text-anchor: middle;
-      fill: #567;
-      font: 8px sans-serif;
-    }
-    text.tract {
-      text-anchor: left;
-      fill: #eed;
-      font: 120px sans-serif;
-    }
-    text.namestamp {
-      font-size: 13px;
-    }
-    text.symbol {
-      font-size: 14px;
-      fill: #222;
-    }
-    g.volumes text {
-      fill: #DDD;
-    }
-    line {
-      opacity: 0.5;
-      stroke-linecap: round;
-    }
-    line.line1 {
-      stroke: #666;
-      stroke-width:4;
-    }
-    line.line2 {
-      stroke: #69C;
-      stroke-width:3;
-    }
-    line.line3 {
-      stroke: #C96;
-      stroke-width:2;
-      stroke-dasharray: 5, 5, 1, 5;
-    }
-    line.line4 {
-      stroke: #C66;
-      stroke-width:1;
-      stroke-dasharray: 2,6;
-    }
-    polyline {
-      fill: none;
-      stroke: #DDD;
-      stroke-width: 1;
-    }
-    g.gas-giant {
-      stroke: #034;
-    }
-    g.gas-giant circle {
-      fill:   #034;
-      stroke: #034;
-      stroke-width:1;
-    }
-    g.gas-giant ellipse {
-      stroke: #034;
-      stroke-width: 1;
-    }
-    circle {
-      fill: #222;
-      stroke: #fff;
-      stroke-width: 1;
-    }
-    .zone {
-      fill: none;
-      stroke: #B90;
-      stroke-width: 3;
-      stroke-dasharray: 3,6;
-      stroke-linecap: round;
-    }
-  </style>
-  <rect width='#{@width}' height='#{@height}' />
-      EOS
-    end
     def center_of(locx)
-      column = locx[0..1].to_i
-      row    = locx[2..3].to_i
+      if locx.is_a? String
+        column = locx[0..1].to_i
+        row    = locx[2..3].to_i
+      else
+        column = locx.first
+        row    = locx.last
+      end
       x      = @side + ((column - 1) * @side * 1.5) # 40 + ((COL - 1) * 60 )
       y      = (row - 1) * @side * @factor + (@side * @factor / (1 + (column % 2)))
       return [x.tweak,y.tweak]
@@ -192,7 +113,7 @@ module Astromapper
       # TAB 1 - Trade Codes
       # TAB 2 - Factions
       # TAB 3 - Name
-      #1101 A505223-B  ..G.. »·IC,Lo,Va       »N,O,N   »·G0V  »Omivarium
+      # 1101 A505223-B  ..G.. »·IC,Lo,Va       »N,O,N   »·G0V  »Omivarium
       details, trades, factions, star, name = volume.split(/\t/)
 
       locx, uwp, temp, nsg, zone = details.split(/\s+/)
@@ -200,7 +121,7 @@ module Astromapper
       spaceport = uwp[0]
       size      = uwp[1]
       c         = center_of(locx) # get Location's x,y Coordinates
-      curve = @side / 2
+      curve     = @side / 2
 
       output =  "<!-- Volume: #{volume.strip.gsub(/\t/,' // ')} -->\n"
       output +=  (size == '0') ? draw_belt(c) : draw_planet(c,uwp)
@@ -250,22 +171,29 @@ module Astromapper
       "    <polyline class='frame' points='#{z},#{z} #{w},#{z} #{w},#{h} #{z},#{h} #{z},#{z}' />"
     end
     def tract_marks
-      height = (@height / 4).floor
-      width  = (@width / 4).ceil
-      # width -= 2
-
-      output = ''
-      letters = ('A'..'P').to_a
+      output = "<g class='tract'>\n"
+      letters = [
+        ('A'..'D').to_a, "",
+        ('E'..'H').to_a, "",
+        ('J'..'M').to_a, "",
+        ('N'..'Q').to_a
+      ].flatten
+      hs = @hex[:side_h] / 4
+      height = (@height/4) - hs
+      # width = ((@width - @hex[:side_w])/4).ceil - ()
+      width = ((@width - (@hex[:side_w] / 2)) / 4).ceil
+      y = 0;
       5.times do |r|
-        h1 = ((height.floor * r) - (8*r)).to_i; h2 = (h1 + height - 8).to_i
-        w2 = 0
-        4.times do |c|
-          w1 = w2.to_i; w2 += (width - [-4,4,5,-4][c]).to_i
-          output += "    <text class='tract' x='#{w1 + 70}' y='#{h1 + 110}'>#{letters.shift}</text>\n"
-          output += "    <polyline class='tract' points='#{w1},#{h1} #{w2},#{h1} #{w2},#{h2} #{w1},#{h2} #{w1},#{h1}' />\n"
-          # raise output
+        x = 0
+        5.times do |c|
+          output << "<rect x='#{x}' y='#{y}' width='#{width}' height='#{height}' />"
+          output << "<text x='#{x+70}' y='#{y+110}'>#{letters.shift}</text>"
+          output << "\n"
+          x += width
         end
+        y += height
       end
+      output << "</g>\n"
       output += namestamp
       return output
     end
@@ -275,37 +203,38 @@ module Astromapper
         (@columns+1).times do |c|
           x = @side + ((c-1) * @side * 1.5)
           y = (c % 2 == 1) ? (r-1) * @side * @factor + (0.2 * @side) : (r-1) * @side * @factor + @hex[:side_h]+ (0.2 * @side)
-          output += "<text x='#{x.to_i}' y='#{y.to_i}'>%02d%02d</text>\n" % [c,r]
+          output += "<text x='#{x.to_i}' y='#{y.to_i}'>#{[c,r].to_hex}</text>\n"
         end
       end
       output += "</g>"
     end
-    def polygon(x, y, sx, sy, sides=4)
-      polygon = star_coords(sx, sy, sides).map { |c| "#{(x + c[0]).to_i},#{(y.tweak+c[1]).to_i}" }
-      "    <polygon points='#{polygon.join(' ')}' />\n"
-    end
+    # def polygon(x, y, sx, sy, sides=4)
+    #   polygon = star_coords(sx, sy, sides).map { |c| "#{(x + c[0]).to_i},#{(y.tweak+c[1]).to_i}" }
+    #   "  <polygon points='#{polygon.join(' ')}' />\n"
+    # end
     def gas_giant(c)
       x = (c[0]+(@side/1.8)).tweak; y = (c[1]+(@side/3)).tweak;
       return<<-GIANT
       <g class='gas-giant'><!-- Has Gas Giant -->
         <ellipse cx='#{x.to_i}' cy='#{y.to_i}' rx='#{(@side/(@mark * 0.5)).to_i}' ry='#{(@side/@mark * 0.3).tweak}' />
-        <circle cx='#{x.to_i}' cy='#{y.to_i}' r='#{(@side/(@mark * 1.2)).to_i}' />
+        <circle  cx='#{x.to_i}' cy='#{y.to_i}' r='#{(@side/(@mark * 1.2)).to_i}' />
       </g>
       GIANT
     end
+    def symbol(n,s,x,y)
+      return "    <!-- #{n} --><text class='symbol #{n}' x='#{x.to_i}' y='#{y.to_i}'>#{s}</text>\n"
+    end
     def pirates(c);
-        return "<!-- Pirates --><text class='symbol' x='#{(c[0]-(@side/3.1)).to_i}' y='#{(c[1]+(@side/7)).to_i}'>\u2620</text>\n"
+      return symbol('P', "\u2620", c[0]-(@side/3.1), c[1]+(@side/7)  )
     end
     def consulate(c);
-        return "<!-- Consulate --><text class='symbol' x='#{(c[0]-(@side/1.5)).to_i}' y='#{(c[1]+(@side/7)).to_i}'>\u2691</text>\n"
+      return symbol("C", "\u2691", c[0]-(@side/1.5), c[1]+(@side/7)  )
     end
     def scout_base(c);
-        return "<!-- Scout Base --><text class='symbol' x='#{(c[0]-(@side/1.8)).to_i}' y='#{(c[1]+(@side/2.4)).to_i}'>\u269C</text>\n"
-      '<!-- SB -->' + polygon(c[0]-(@side/1.8),c[1]+(@side/3.7), @side/(@mark/2), @side/@mark, 3);
+      return symbol("S", "\u269C", c[0]-(@side/1.8), c[1]+(@side/2.4))
     end
     def navy_base(c);
-      return "<!-- Navy Base --><text class='symbol' x='#{c[0]-(@side/1.8)}' y='#{c[1]-(@side/6)}'>\u2693</text>\n"
-      '<!-- NB -->' +polygon(c[0]-(@side/1.8), c[1]-(@side/3.7), @side/(@mark/2), @side/@mark, 5);
+      return symbol("N", "\u2693", c[0]-(@side/1.8), c[1]-(@side/6)  )
     end
     def hex_grid; (@rows * 3 + 2).times.map { |j| hex_row((j/2).floor, (j % 2 != 0)) };
     end
@@ -339,6 +268,224 @@ module Astromapper
       y = (top) ? y - @hex[:side_h] : y + @hex[:side_h]
       points << "#{x.to_i},#{y.to_i}"
       "    <polyline points='#{points.join(' ')}' />"
+    end
+    def footer
+      return "</svg>"
+    end
+    def header
+      return<<-EOS
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg class='dark' width="#{@width}px" height="#{@height}px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <desc>#{@name} Subsector Map Grid</desc>
+  <style>
+  text {
+    text-anchor: middle;
+    font: 8px sans-serif;
+  }
+  .tract text {
+    text-anchor: left;
+    font: 120px sans-serif;
+  }
+  text.namestamp {
+    text-anchor: left;
+    font-size: 36px;
+  }
+  text.symbol {
+    font-size: 14px;
+  }
+  text.symbol.N {
+    font-size: 9px;
+  }
+  g.volumes text {
+    opacity: 0.5;
+  }
+  line {
+    opacity: 0.3;
+    stroke-linecap: round;
+  }
+  line.line1 {
+    stroke-width:4;
+  }
+  line.line2 {
+    stroke-width:3;
+  }
+  line.line3 {
+    stroke-width:2;
+    stroke-dasharray: 5, 5, 1, 5;
+    opacity: 0.6;
+  }
+  line.line4 {
+    stroke-width:1.5;
+    stroke-dasharray: 2,6;
+  }
+  polyline {
+    fill: none;
+    stroke-width: 1;
+  }
+  g.gas-giant circle {
+    stroke-width: 2;
+  }
+  g.gas-giant ellipse {
+    stroke-width: 1;
+  }
+  circle {
+    stroke-width: 1;
+  }
+  .zone {
+    fill: none;
+    stroke-width: 3;
+    stroke-dasharray: 3,6;
+    stroke-linecap: round;
+  }
+  @media (prefers-color-scheme: light) {
+      svg {
+        fill: #FFF;
+      }
+       text {
+        fill: #567;
+      }
+       .tract text {
+        fill: #eed;
+      }
+       text.symbol {
+        fill: #222;
+      }
+       g.volumes text {
+        fill: #333;
+      }
+       line.line1 {
+        stroke: #6C6;
+      }
+       line.line2 {
+        stroke: #66C;
+      }
+       line.line3 {
+        stroke: #F90;
+      }
+       line.line4 {
+        stroke: #609;
+      }
+       polyline {
+        stroke: #CCC;
+      }
+       g.gas-giant circle {
+        stroke: #333;
+        fill:   #333;
+      }
+       g.gas-giant ellipse {
+        stroke: #333;
+      }
+       circle {
+        fill: #222;
+        stroke: #fff;
+      }
+       .zone {
+        stroke: #B90;
+      }
+
+    }
+    @media (print) {
+        svg {
+          fill: #FFF;
+        }
+         text {
+          fill: #567;
+        }
+         .tract text {
+          fill: #eed;
+        }
+         text.symbol {
+          fill: #222;
+        }
+         g.volumes text {
+          fill: #333;
+        }
+         line.line1 {
+          stroke: #6C6;
+        }
+         line.line2 {
+          stroke: #66C;
+        }
+         line.line3 {
+          stroke: #F90;
+        }
+         line.line4 {
+          stroke: #609;
+        }
+         rect, polyline {
+          stroke: #CCC;
+        }
+         g.gas-giant circle {
+          stroke: #333;
+          fill:   #333;
+        }
+         g.gas-giant ellipse {
+          stroke: #333;
+        }
+         circle {
+          fill: #222;
+          stroke: #fff;
+        }
+         .zone {
+          stroke: #B90;
+        }
+
+      }
+    <!-- DARK THEME -->
+    @media (prefers-color-scheme: dark) {
+      svg {
+        fill: #202326;
+      }
+      text {
+        fill: #999;
+      }
+      .tract text {
+        fill: #FFF;
+        opacity: 0.1;
+      }
+      text.symbol {
+        fill: #CCC;
+      }
+      g.volumes text {
+        fill: #CCC;
+      }
+      line.line1 {
+        stroke: #9F9;
+      }
+      line.line2 {
+        stroke: #F99;
+        opacity: 0.5;
+      }
+      line.line3 {
+        stroke: #F90;
+      }
+      line.line4 {
+        stroke: #C6F;
+        opacity: 0.6;
+      }
+      rect, polyline {
+        stroke: #434649;
+      }
+      g.gas-giant circle {
+        stroke: #CCC;
+        fill:   #CCC;
+      }
+      g.gas-giant ellipse {
+        stroke: #CCC;
+      }
+      circle {
+        fill: #999;
+        stroke: none;
+      }
+      .zone {
+        stroke: #FC3;
+      }
+    }
+  </style>
+  <rect width='#{@width}' height='#{@height}' />
+      EOS
     end
   end
 end

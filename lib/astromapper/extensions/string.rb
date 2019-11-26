@@ -8,4 +8,6 @@ class String
     str.downcase!
     str
   end
+  def to_coords
+  end
 end
