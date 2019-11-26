@@ -341,45 +341,46 @@ module Astromapper
   }
   @media (prefers-color-scheme: light) {
       svg {
-        fill: #FFF;
+        fill: #FAFAFA;
       }
        text {
-        fill: #567;
+        fill: #383A42;
       }
        .tract text {
-        fill: #eed;
+        fill: #ABB2BF;
       }
        text.symbol {
-        fill: #222;
+        fill: #121417;
       }
        g.volumes text {
-        fill: #333;
+        fill: #383A42;
       }
        line.line1 {
-        stroke: #6C6;
+        stroke: #50A14F;
       }
        line.line2 {
-        stroke: #66C;
+        stroke: #4078F2;
       }
        line.line3 {
-        stroke: #F90;
+        stroke: #986801;
       }
        line.line4 {
-        stroke: #609;
+         opacity: 0.6;
+        stroke: #A626A4;
       }
-       polyline {
-        stroke: #CCC;
+      rect, polyline {
+        stroke: #ABB2BF;
       }
        g.gas-giant circle {
-        stroke: #333;
-        fill:   #333;
+        stroke: #383A42;
+        fill:   #383A42;
       }
        g.gas-giant ellipse {
-        stroke: #333;
+        stroke: #383A42;
       }
        circle {
-        fill: #222;
-        stroke: #fff;
+        fill: #121417;
+        stroke: #FAFAFA;
       }
        .zone {
         stroke: #B90;
@@ -391,31 +392,31 @@ module Astromapper
           fill: #FFF;
         }
          text {
-          fill: #567;
+          fill: #383A42;
         }
          .tract text {
-          fill: #eed;
+          fill: #ABB2BF;
         }
          text.symbol {
-          fill: #222;
+          fill: #121417;
         }
          g.volumes text {
-          fill: #333;
+          fill: #383A42;
         }
          line.line1 {
-          stroke: #6C6;
+          stroke: #98C379;
         }
          line.line2 {
-          stroke: #66C;
+          stroke: #61AFEF;
         }
          line.line3 {
           stroke: #F90;
         }
          line.line4 {
-          stroke: #609;
+          stroke: #E06C75;
         }
          rect, polyline {
-          stroke: #CCC;
+          stroke: #ABB2BF;
         }
          g.gas-giant circle {
           stroke: #333;
@@ -425,7 +426,7 @@ module Astromapper
           stroke: #333;
         }
          circle {
-          fill: #222;
+          fill: #121417;
           stroke: #fff;
         }
          .zone {
@@ -436,20 +437,20 @@ module Astromapper
     <!-- DARK THEME -->
     @media (prefers-color-scheme: dark) {
       svg {
-        fill: #202326;
+        fill: #121417;
       }
       text {
-        fill: #999;
+        fill: #ABB2BF;
       }
       .tract text {
         fill: #FFF;
         opacity: 0.1;
       }
       text.symbol {
-        fill: #CCC;
+        fill: #ABB2BF;
       }
       g.volumes text {
-        fill: #CCC;
+        fill: #ABB2BF;
       }
       line.line1 {
         stroke: #9F9;
@@ -469,11 +470,11 @@ module Astromapper
         stroke: #434649;
       }
       g.gas-giant circle {
-        stroke: #CCC;
-        fill:   #CCC;
+        stroke: #ABB2BF;
+        fill:   #ABB2BF;
       }
       g.gas-giant ellipse {
-        stroke: #CCC;
+        stroke: #ABB2BF;
       }
       circle {
         fill: #999;
