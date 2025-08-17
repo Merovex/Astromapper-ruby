@@ -1,6 +1,6 @@
-# Astromapper TUI - Go Version
+# Astromapper CLI - Go Version
 
-A Terminal User Interface (TUI) application for generating Traveller RPG star maps, reimplemented in Go from the original Ruby gem.
+A command-line application for generating Traveller RPG star maps, reimplemented in Go from the original Ruby gem.
 
 ## Features
 
@@ -22,45 +22,58 @@ A Terminal User Interface (TUI) application for generating Traveller RPG star ma
   - SVG vector graphics for sector maps
   - Files saved to `output/` directory with timestamp
 - **Traveller RPG Rules**: Implements world generation according to Mongoose Traveller rules
-- **Interactive TUI**: Built with Bubble Tea for a smooth terminal experience
+- **Random Seed Generation**: Automatically generates 16-character alphanumeric seeds if not provided
 - **2000+ Planet Names**: Includes a database of sci-fi planet names from the original Ruby version
 
 ## Installation
 
 ```bash
 # Ensure you have Go 1.21+ installed
-go build -o astromapper-tui
+go build -o astromapper
 ```
 
 ## Usage
 
-Run the application:
+### Basic Usage
 ```bash
-./astromapper-tui
+# Generate a standard density sector with random seed
+./astromapper
+
+# Generate with specific seed
+./astromapper --seed MYSEED123
+
+# Generate sparse sector
+./astromapper --density sparse
+
+# Generate single star system
+./astromapper --type volume
 ```
 
-### Navigation
+### Command-line Options
 
-**Main Menu:**
-- ↑/↓ or j/k: Navigate menu options
-- Enter: Select option
-- q: Quit
+- `--type <type>` - Generation type: 'sector' or 'volume' (default: sector)
+- `--density <density>` - Density for sector generation (default: standard)
+  - Options: extra-galactic, rift, sparse, scattered, standard, dense, cluster, core
+- `--seed <string>` - Seed string for generation
+  - If not provided, generates a random 16-character alphanumeric seed
+- `--list-densities` - List available density options with descriptions
+- `--help` - Show help message
 
-**Density Selection (Sector only):**
-- ↑/↓ or j/k: Navigate density options
-- Enter: Select density
-- Esc: Go back to menu
+### Examples
 
-**Seed Input:**
-- Type any string as seed (consistent results with same seed)
-- Enter: Generate with current seed
-- Esc: Go back to previous screen
+```bash
+# Generate sparse frontier sector
+./astromapper --density sparse --seed FRONTIER
 
-**Viewing Results:**
-- ↑/↓: Scroll line by line
-- PgUp/PgDn: Scroll page by page
-- r: Regenerate with same seed
-- q/Esc: Go back to menu
+# Generate dense core sector with random seed
+./astromapper --density core
+
+# Generate single star system
+./astromapper --type volume --seed ALPHA7
+
+# List all density options
+./astromapper --list-densities
+```
 
 ## Output Format
 
@@ -93,7 +106,7 @@ Location UWP         Temp Bases TC          Factions     Stars         Orbits   
 The seed system converts any input string into a deterministic random number generator seed using FNV-1a hashing. This ensures:
 - Same seed always produces the same map
 - Any length string can be used as seed
-- Empty seed defaults to "default"
+- If no seed is provided, a random 16-character alphanumeric seed is generated (e.g., "E7POGGAO3Z23GPFL")
 
 ## Project Structure
 
@@ -122,9 +135,10 @@ The SVG files include responsive CSS that adapts to light/dark mode preferences.
 
 ## Differences from Ruby Version
 
-- **Interactive TUI**: The Go version provides an interactive terminal interface instead of CLI commands
+- **CLI Interface**: Simple command-line interface with flags instead of Thor-based commands
+- **Automatic Seed Generation**: Generates random 16-character seeds when not provided
 - **Automatic File Writing**: Files are written automatically on generation (Ruby required separate commands)
-- **Simplified Configuration**: No YAML configuration files; parameters are set in code
+- **Simplified Configuration**: No YAML configuration files; parameters are set via command-line flags
 - **Embedded Data**: Planet names are embedded in the binary rather than loaded from external files
 - **Single Binary**: Compiles to a single executable with no runtime dependencies
 

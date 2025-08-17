@@ -2,6 +2,33 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Key Learnings from Development
+
+### Porting Code Between Languages
+- When porting from one language to another (Ruby to Go), don't just translate syntax - understand the domain logic first
+- Array/slice bounds are a common source of bugs when porting - always verify index calculations against array sizes
+- Different languages have different conventions (Ruby's 40x32 vs standard Traveller's 32x40) - verify against domain standards
+
+### User Experience Design
+- Start with the simplest interface that solves the problem (CLI vs TUI)
+- Seed systems should balance reproducibility with ease of use (readable formats like XXXXX-XXXXX)
+- When accepting user input, handle multiple formats gracefully (raw strings vs formatted codes)
+
+### Random Generation Systems
+- Use cryptographically secure random for seed generation
+- Convert arbitrary strings to fixed-format codes for consistency
+- Character sets matter - avoid ambiguous characters (I/1, O/0) in user-facing codes
+
+### File Organization
+- Separate concerns clearly: models, builders, formatters (SVG/ASCII), utilities (RNG)
+- Embed static data (planet names) rather than requiring external files for portability
+- Generate both human-readable (ASCII) and visual (SVG) outputs
+
+### Testing Approach
+- Test edge cases early (empty hexes, array bounds, format conversions)
+- Verify output matches domain expectations (hex coordinates, subsector layouts)
+- Use consistent test seeds to verify reproducibility
+
 ## Project Overview
 Astromapper is a Ruby gem that generates random Traveller RPG star maps. It creates ASCII and SVG outputs of star systems with detailed orbital mechanics and world characteristics based on Traveller RPG rules.
 
