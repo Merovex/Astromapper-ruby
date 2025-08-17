@@ -19,3 +19,4 @@ Puzzle
 .DS_Store
 test/*
 test.rb
+output/
