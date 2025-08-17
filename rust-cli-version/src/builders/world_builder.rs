@@ -1,0 +1,128 @@
+use crate::models::World;
+use crate::models::world::{Temperature, Base};
+use crate::models::trade_codes::TradeCode;
+use crate::rng;
+use crate::error::Result;
+use super::tables::*;
+
+pub struct WorldBuilder {
+    row: usize,
+    col: usize,
+}
+
+impl WorldBuilder {
+    pub fn new(row: usize, col: usize) -> Self {
+        WorldBuilder { row, col }
+    }
+    
+    pub fn build(self) -> Result<World> {
+        let mut world = World::new(self.row, self.col);
+        
+        // Generate starport
+        let starport_roll = rng::roll_2d6()? as usize;
+        world.starport = STARPORT_TABLE[starport_roll.min(12)];
+        
+        // Generate size
+        let size_roll = rng::roll_2d6()? as usize;
+        world.size = SIZE_TABLE[size_roll.min(12)];
+        
+        // Generate atmosphere based on size
+        let atm_table = atmosphere_table(world.size);
+        let atm_roll = rng::roll_2d6()? as usize;
+        world.atmosphere = atm_table[atm_roll.min(atm_table.len() - 1)];
+        
+        // Generate hydrographics based on atmosphere
+        let hydro_table = hydrographics_table(world.atmosphere);
+        let hydro_roll = rng::roll_2d6()? as usize;
+        world.hydrographics = hydro_table[hydro_roll.min(hydro_table.len() - 1)];
+        
+        // Generate population
+        world.population = (rng::roll_2d6()? as u8).saturating_sub(2).min(12);
+        
+        // Generate government based on population
+        if world.population == 0 {
+            world.government = 0;
+        } else {
+            world.government = (rng::roll_2d6()? as u8)
+                .saturating_sub(7)
+                .saturating_add(world.population)
+                .min(15);
+        }
+        
+        // Generate law level based on government
+        if world.population == 0 {
+            world.law_level = 0;
+        } else {
+            world.law_level = (rng::roll_2d6()? as u8)
+                .saturating_sub(7)
+                .saturating_add(world.government)
+                .min(15);
+        }
+        
+        // Generate tech level
+        let mut tech_dm = 0i32;
+        match world.starport {
+            'A' => tech_dm += 6,
+            'B' => tech_dm += 4,
+            'C' => tech_dm += 2,
+            'X' => tech_dm -= 4,
+            _ => {}
+        }
+        
+        if world.size <= 1 { tech_dm += 2; }
+        else if world.size <= 4 { tech_dm += 1; }
+        
+        if world.atmosphere <= 3 || world.atmosphere >= 10 { tech_dm += 1; }
+        
+        if world.hydrographics == 9 { tech_dm += 1; }
+        else if world.hydrographics == 10 { tech_dm += 2; }
+        
+        if world.population >= 1 && world.population <= 5 { tech_dm += 1; }
+        else if world.population == 9 { tech_dm += 2; }
+        else if world.population == 10 { tech_dm += 4; }
+        
+        if world.government == 0 || world.government == 5 { tech_dm += 1; }
+        else if world.government == 13 { tech_dm -= 2; }
+        
+        world.tech_level = ((rng::d6()? as i32) + tech_dm).max(0).min(15) as u8;
+        
+        // Set temperature (simplified for now)
+        world.temperature = match rng::roll_2d6()? {
+            2..=3 => Temperature::Frozen,
+            4..=5 => Temperature::Cold,
+            6..=8 => Temperature::Temperate,
+            9..=10 => Temperature::Hot,
+            _ => Temperature::Roasting,
+        };
+        
+        // Generate bases
+        if world.starport == 'A' || world.starport == 'B' {
+            if rng::roll_2d6()? >= 8 {
+                world.bases.push(Base::Naval);
+            }
+        }
+        
+        if world.starport != 'E' && world.starport != 'X' {
+            if world.starport == 'A' && rng::roll_2d6()? >= 10 {
+                world.bases.push(Base::Scout);
+            } else if world.starport == 'B' && rng::roll_2d6()? >= 9 {
+                world.bases.push(Base::Scout);
+            } else if world.starport == 'C' && rng::roll_2d6()? >= 8 {
+                world.bases.push(Base::Scout);
+            } else if world.starport == 'D' && rng::roll_2d6()? >= 7 {
+                world.bases.push(Base::Scout);
+            }
+        }
+        
+        // Calculate trade codes
+        world.trade_codes = TradeCode::calculate(&world);
+        
+        // Update UWP
+        world.update_uwp();
+        
+        // Assign a name (will be replaced with actual name assignment)
+        world.name = format!("World-{}", world.coords());
+        
+        Ok(world)
+    }
+}
