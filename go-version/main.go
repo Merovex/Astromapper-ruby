@@ -7,6 +7,7 @@ import (
 	"astromapper/pkg/svg"
 	"astromapper/pkg/writer"
 	"crypto/rand"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"hash/fnv"
@@ -152,8 +153,16 @@ func main() {
 		svgGen := svg.NewSVGGenerator(*name)
 		svgContent := svgGen.GenerateSector(sector)
 		
+		// Generate JSON content
+		jsonData, err := json.MarshalIndent(sector, "", "  ")
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Error generating JSON: %v\n", err)
+			os.Exit(1)
+		}
+		jsonContent := string(jsonData)
+		
 		// Write files
-		asciiPath, svgPath, err := fileWriter.WriteFiles(seedStr, asciiContent, svgContent, "sector")
+		asciiPath, svgPath, jsonPath, err := fileWriter.WriteFiles(seedStr, asciiContent, svgContent, jsonContent, "sector")
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Error writing files: %v\n", err)
 			os.Exit(1)
@@ -161,6 +170,7 @@ func main() {
 		
 		fmt.Printf("ASCII saved to: %s\n", asciiPath)
 		fmt.Printf("SVG saved to:   %s\n", svgPath)
+		fmt.Printf("JSON saved to:  %s\n", jsonPath)
 		
 		// Count systems
 		systemCount := 0
@@ -182,14 +192,23 @@ func main() {
 		// Generate ASCII content
 		asciiContent := volume.ToASCII()
 		
-		// Write ASCII file (no SVG for single volume)
-		asciiPath, _, err := fileWriter.WriteFiles(seedStr, asciiContent, "", "volume")
+		// Generate JSON content
+		jsonData, err := json.MarshalIndent(volume, "", "  ")
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Error generating JSON: %v\n", err)
+			os.Exit(1)
+		}
+		jsonContent := string(jsonData)
+		
+		// Write files (no SVG for single volume)
+		asciiPath, _, jsonPath, err := fileWriter.WriteFiles(seedStr, asciiContent, "", jsonContent, "volume")
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Error writing files: %v\n", err)
 			os.Exit(1)
 		}
 		
 		fmt.Printf("ASCII saved to: %s\n", asciiPath)
+		fmt.Printf("JSON saved to:  %s\n", jsonPath)
 		
 		if !volume.IsEmpty() {
 			fmt.Printf("Generated system: %s\n", volume.Name)
@@ -226,4 +245,5 @@ func showHelp() {
 	fmt.Println("  Files are saved to the 'output' directory:")
 	fmt.Println("  - ASCII text file with system data")
 	fmt.Println("  - SVG vector graphic (sector only)")
+	fmt.Println("  - JSON data file")
 }

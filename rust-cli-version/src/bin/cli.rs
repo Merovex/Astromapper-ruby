@@ -1,6 +1,6 @@
 use clap::Parser;
 use astromapper_core::{generate_sector, generate_volume, generate_crawford_seed, string_to_crawford};
-use astromapper_core::formatters::{AsciiFormatter, SvgGenerator};
+use astromapper_core::formatters::{AsciiFormatter, SvgGenerator, JsonFormatter};
 use std::fs;
 use chrono::Local;
 
@@ -94,17 +94,23 @@ fn main() -> anyhow::Result<()> {
             // Generate SVG
             let svg_content = SvgGenerator::generate_sector(&sector);
             
+            // Generate JSON
+            let json_content = JsonFormatter::format_sector(&sector)?;
+            
             // Create filenames with timestamp
             let timestamp = Local::now().format("%Y%m%d-%H%M%S");
             let ascii_path = format!("output/sector_{}_{}.txt", crawford_code, timestamp);
             let svg_path = format!("output/sector_{}_{}.svg", crawford_code, timestamp);
+            let json_path = format!("output/sector_{}_{}.json", crawford_code, timestamp);
             
             // Write files
             fs::write(&ascii_path, ascii_content)?;
             fs::write(&svg_path, svg_content)?;
+            fs::write(&json_path, json_content)?;
             
             println!("ASCII saved to: {}", ascii_path);
             println!("SVG saved to:   {}", svg_path);
+            println!("JSON saved to:  {}", json_path);
             println!("Generated {} star systems in sector", sector.system_count());
         }
         "volume" => {
@@ -115,14 +121,20 @@ fn main() -> anyhow::Result<()> {
             // Generate ASCII
             let ascii_content = AsciiFormatter::format_volume(&volume);
             
-            // Create filename with timestamp
+            // Generate JSON
+            let json_content = JsonFormatter::format_volume(&volume)?;
+            
+            // Create filenames with timestamp
             let timestamp = Local::now().format("%Y%m%d-%H%M%S");
             let ascii_path = format!("output/volume_{}_{}.txt", crawford_code, timestamp);
+            let json_path = format!("output/volume_{}_{}.json", crawford_code, timestamp);
             
-            // Write file
+            // Write files
             fs::write(&ascii_path, ascii_content)?;
+            fs::write(&json_path, json_content)?;
             
             println!("ASCII saved to: {}", ascii_path);
+            println!("JSON saved to:  {}", json_path);
             
             if !volume.is_empty() {
                 if let Some(world) = &volume.world {

@@ -16,6 +16,9 @@ pub enum AstromapperError {
     
     #[error("Format error: {0}")]
     FormatError(String),
+    
+    #[error("JSON serialization error: {0}")]
+    JsonError(#[from] serde_json::Error),
 }
 
 pub type Result<T> = std::result::Result<T, AstromapperError>;
