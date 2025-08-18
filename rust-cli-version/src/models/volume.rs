@@ -69,15 +69,39 @@ impl Volume {
                 String::new()
             };
             
+            // Generate orbits crib string (showing orbit types)
+            let orbits_crib = if let Some(star) = &self.star {
+                star.orbits.iter()
+                    .map(|o| match o {
+                        crate::models::OrbitContent::Empty(_) => ".",
+                        crate::models::OrbitContent::World(_) => "W",
+                        crate::models::OrbitContent::GasGiant(_) => "G",
+                        crate::models::OrbitContent::Belt(_) => "B",
+                        crate::models::OrbitContent::Hostile(_) => "H",
+                        crate::models::OrbitContent::Rockball(_) => "R",
+                    })
+                    .collect::<Vec<_>>()
+                    .join("")
+            } else {
+                String::new()
+            };
+            
+            // Generate factions string
+            let factions = if world.factions.is_empty() {
+                ".".to_string()
+            } else {
+                world.factions.join(" ")
+            };
+            
             // Format with proper spacing/alignment
             let coords_padded = format!("{:<8}", self.coords());
             let uwp_padded = format!("{:<9}", world.uwp);  
             let temp_padded = format!("{:<4}", world.temperature.to_code());
             let bases_padded = format!("{:<5}", world.bases_string());
             let trade_codes_padded = format!("{:<11}", world.trade_codes_string());
-            let factions_padded = format!("{:<12}", ".");
+            let factions_padded = format!("{:<12}", factions);
             let stars_padded = format!("{:<13}", stars_str);
-            let orbits_crib_padded = format!("{:<13}", ".");
+            let orbits_crib_padded = format!("{:<13}", orbits_crib);
             
             format!(
                 "{} {} {} {} {} {} {} {} {}{}",
