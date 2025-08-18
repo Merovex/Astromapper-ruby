@@ -127,6 +127,9 @@ impl WorldBuilder {
         // Calculate trade codes
         world.trade_codes = TradeCode::calculate(&world);
         
+        // Generate factions
+        world.factions = Self::generate_factions(world.population, world.law_level)?;
+        
         // Update UWP
         world.update_uwp();
         
@@ -139,5 +142,36 @@ impl WorldBuilder {
         }
         
         Ok(world)
+    }
+    
+    fn generate_factions(population: u8, law_level: u8) -> Result<Vec<String>> {
+        if population == 0 {
+            return Ok(vec![]);
+        }
+        
+        let mut num_factions = rng::roll_range(3)? + 1; // 1-3, but minimum 3
+        if num_factions < 3 {
+            num_factions = 3;
+        }
+        
+        // Adjust based on law level
+        if law_level == 0 || law_level == 7 {
+            num_factions += 1;
+        }
+        if law_level > 9 {
+            num_factions = num_factions.saturating_sub(1);
+        }
+        
+        // Faction types: O=Other, F=Faction, M=Military, N=Noble, S=Syndicate, P=Pirate
+        let faction_types = vec!["O", "O", "O", "O", "F", "F", "M", "M", "N", "N", "S", "S", "P"];
+        let mut factions = Vec::new();
+        
+        for _ in 0..num_factions {
+            let roll = rng::roll_2d6()? as usize;
+            let faction = faction_types[roll.min(faction_types.len() - 1)].to_string();
+            factions.push(faction);
+        }
+        
+        Ok(factions)
     }
 }
