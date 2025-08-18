@@ -29,6 +29,30 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Verify output matches domain expectations (hex coordinates, subsector layouts)
 - Use consistent test seeds to verify reproducibility
 
+### Cross-Implementation Consistency
+- When maintaining multiple implementations (Go, Rust, Ruby), ensure feature parity across all versions
+- Use one implementation as reference when fixing bugs or adding features to others
+- Test with identical seeds to verify consistent output across implementations
+- Document shared algorithms and formulas to ensure consistent behavior
+
+### Output Formatting and Alignment
+- Text alignment issues compound - fix systematically by defining exact column widths upfront
+- Always verify output visually, not just programmatically - alignment issues are immediately obvious to users
+- When porting formatting code, preserve exact spacing and padding specifications
+- Create test outputs with maximum-width values to catch overflow issues early
+
+### Feature Discovery Through Comparison
+- Comparing implementations reveals missing features (orbits, factions, etc.)
+- Use working implementation as specification for missing features
+- Check both data generation AND display/serialization when comparing outputs
+- Features may exist in models but not be displayed - check entire pipeline
+
+### Incremental Development Strategy
+- Implement core functionality first (basic generation), then enhance (add orbits, factions)
+- Keep implementations in sync - when adding a feature to one, add to all
+- Test each incremental addition before moving to the next feature
+- Use consistent random seeds to verify changes don't break existing functionality
+
 ## Project Overview
 Astromapper is a Ruby gem that generates random Traveller RPG star maps. It creates ASCII and SVG outputs of star systems with detailed orbital mechanics and world characteristics based on Traveller RPG rules.
 
