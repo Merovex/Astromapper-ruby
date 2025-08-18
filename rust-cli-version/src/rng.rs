@@ -53,6 +53,19 @@ pub fn roll_3d6() -> Result<u32> {
     roll(3, 6)
 }
 
+// Convenience functions that panic on error (for use in builders)
+pub fn roll_1d6() -> u32 {
+    d6().unwrap_or(3)
+}
+
+pub fn roll_1d10() -> u32 {
+    roll(1, 10).unwrap_or(5)
+}
+
+pub fn roll_d100() -> u32 {
+    roll(1, 100).unwrap_or(50)
+}
+
 /// Get a random float between 0.0 and 1.0
 pub fn roll_float() -> Result<f64> {
     RNG.with(|r| {

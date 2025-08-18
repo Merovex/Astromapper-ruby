@@ -51,8 +51,8 @@ impl Sector {
         // Header
         output.push_str(&format!("# Sector: {}\n", self.name));
         output.push_str("# 32 columns x 40 rows\n");
-        output.push_str("Location UWP         Temp Bases TC          Factions     Stars         Orbits        Name\n");
-        output.push_str("-------- ----------- ---- ----- ----------- ------------ ------------- ------------- ----\n");
+        output.push_str("Location UWP       Temp Bases TC          Factions     Stars         Orbits        Name\n");
+        output.push_str("-------- --------- ---- ----- ----------- ------------ ------------- ------------- ----\n");
         
         // Process by subsector (4x4 grid of 8x10 subsectors)
         for subsector_row in 0..4 {
