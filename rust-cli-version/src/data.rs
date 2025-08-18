@@ -1,11 +1,10 @@
-// Planet names will be added here
+// Embed the names file at compile time
+const NAMES_DATA: &str = include_str!("../names.txt");
+
 pub fn get_planet_names() -> Vec<String> {
-    vec![
-        "Andoria", "Betazed", "Cardassia", "Deneb", "Earth",
-        "Ferenginar", "Galifrey", "Haven", "Izar", "Janus",
-        "Krypton", "Luna", "Mars", "Naboo", "Orion",
-        "Pandora", "Qo'noS", "Risa", "Solaria", "Terminus",
-        "Ultima", "Vulcan", "Westeros", "Xandar", "Yavin",
-        "Zephyr",
-    ].iter().map(|s| s.to_string()).collect()
+    NAMES_DATA
+        .lines()
+        .map(|s| s.trim().to_string())
+        .filter(|s| !s.is_empty())
+        .collect()
 }

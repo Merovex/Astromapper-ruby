@@ -8,11 +8,21 @@ use super::tables::*;
 pub struct WorldBuilder {
     row: usize,
     col: usize,
+    names: Vec<String>,
 }
 
 impl WorldBuilder {
     pub fn new(row: usize, col: usize) -> Self {
-        WorldBuilder { row, col }
+        WorldBuilder { 
+            row, 
+            col,
+            names: Vec::new(),
+        }
+    }
+    
+    pub fn with_names(mut self, names: Vec<String>) -> Self {
+        self.names = names;
+        self
     }
     
     pub fn build(self) -> Result<World> {
@@ -120,8 +130,13 @@ impl WorldBuilder {
         // Update UWP
         world.update_uwp();
         
-        // Assign a name (will be replaced with actual name assignment)
-        world.name = format!("World-{}", world.coords());
+        // Assign a name from the list if available
+        if !self.names.is_empty() {
+            let idx = rng::roll_range(self.names.len())?;
+            world.name = self.names[idx].clone();
+        } else {
+            world.name = format!("World-{}", world.coords());
+        }
         
         Ok(world)
     }

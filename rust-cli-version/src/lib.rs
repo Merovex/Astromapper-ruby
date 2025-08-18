@@ -1,7 +1,7 @@
 pub mod rng;
 pub mod models;
 pub mod builders;
-pub mod output;
+pub mod formatters;
 pub mod data;
 pub mod error;
 

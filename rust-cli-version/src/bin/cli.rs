@@ -1,8 +1,7 @@
 use clap::Parser;
 use astromapper_core::{generate_sector, generate_volume, generate_crawford_seed, string_to_crawford};
-use astromapper_core::output::{AsciiFormatter, SvgGenerator};
+use astromapper_core::formatters::{AsciiFormatter, SvgGenerator};
 use std::fs;
-use std::path::Path;
 use chrono::Local;
 
 #[derive(Parser, Debug)]
