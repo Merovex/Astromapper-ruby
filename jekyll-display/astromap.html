@@ -1,0 +1,136 @@
+---
+layout: tool
+title: Teradoma Astromap
+description: "A tool to explore Terradoma, the setting for the Postal Marines series. I use this to plan the story and
+keep track of the setting. It helps me measure superluminal travel distances."
+---
+
+<script type="module" src="/assets/controllers/astromap_controller.js"></script>
+<!-- To use a custom JSON file, add data-astromap-data-url-value="/path/to/your/file.json" -->
+<article class='w-prose h-full' data-controller='astromap' data-astromap-data-url-value="/assets/astromaps/sector_ORBITS-TEST_20250818-090851.json">
+  <div class='text-center space-y-2'>
+    <label for='coordinate' class=' text-xl'>Coordinate:</label>
+    <div class='w-28 mx-auto'>
+      <input name='coordinate' id='coordinate' value='0812' type='number' data-astromap-target='coordinates'
+        data-action='keyup->astromap#showVolumeDetails' class='form-input'>
+    </div>
+  </div>
+  <aside class='my-8'>
+    <h3 class='h2'>Contents</h3>
+    <ul class='flex space-x-4' aria-label='page navigation'>
+      <li class='underline text-center'><a href='#description-section'>Description</a></li>
+      <li class='underline text-center'><a href='#orbits-section'>Orbits</a></li>
+      <li class='underline text-center'><a href='#routes-section'>Jumpable Routes</a></li>
+      <li class='underline text-center'><a href='#map-section'>Map</a></li>
+    </ul>
+  </aside>
+  <section id='metadata-section' class='my-8'>
+    <h3 class='text-4xl font-semibold my-4'><span data-astromap-target='name'>Name</span>
+      <span class='block md:inline-block'>(<span data-astromap-target='location'>0000</span>: <span
+          data-astromap-target='uwp'>X777777-7</span>)</span>
+    </h3>
+    <h3 class='h2'>Summary</h3>
+    <div class='flex striped'><span class='flex-1 px-2 font-bold'>Star:</span>
+      <span data-astromap-target='star' class='flex-1 font-code text-xl'></span>
+    </div>
+    <div class='flex striped'>
+      <span class='flex-1 px-2 font-bold'>Mainworld Temperature:</span>
+      <span data-astromap-target='temp' class='flex-1 font-code text-xl'></span>
+    </div>
+    <div class='flex striped'><span class='flex-1 px-2 font-bold'>Bases:</span>
+      <span data-astromap-target='bases' class='flex-1 font-code text-xl'></span>
+    </div>
+    <div class='flex striped'><span class='flex-1 px-2 font-bold'>Factions:</span>
+      <span data-astromap-target='factions' class='flex-1 font-code text-xl'></span>
+    </div>
+    <div class='flex striped'>
+      <span class='flex-1 px-2 font-bold'>Trade Codes:</span>
+      <span data-astromap-target='trade_codes' class='flex-1 font-code text-xl'></span>
+    </div>
+    <div class='flex'><span class='flex-1 px-2 font-bold'>Travel Code:</span>
+      <span data-astromap-target='travel_code' class='flex-1 font-code text-xl'></span>
+    </div>
+  </section>
+  <section id='description-section' class='my-8'>
+    <h3 class='h2'>Description</h3>
+    <p data-astromap-target='description' class='prosed'>No description yet.</p>
+  </section>
+  <section id='orbits-section' class='my-8 prosed'>
+    <h3 class='h2'>Orbits</h3>
+    <a href='#coordinate'>back to top</a>
+    <table class='w-full table-auto'>
+      <thead class='dark:text-white'>
+        <tr>
+          <th class='text-center dark:text-white'>#</th>
+          <th class='text-center dark:text-white'>Type</th>
+          <th class='text-center dark:text-white'>Distance</th>
+          <th class='text-center dark:text-white'>UWP</th>
+        </tr>
+      </thead>
+      <tbody data-astromap-target='orbits' class='text-medium'>
+
+      </tbody>
+    </table>
+  </section>
+  <section id='routes-section' class='prosed'>
+    <h3 class='h2'>Volumes within Jump-3 Range</h3>
+    <a href='#coordinate'>back to top</a>
+    <table class='w-full table-auto'>
+      <thead>
+        <tr class='text-base text-center'>
+          <th class='dark:text-white'>Coord</th>
+          <th class='dark:text-white'>UWP</th>
+          <th class='dark:text-white'>Distance</th>
+          <th class='dark:text-white'>Name</th>
+        </tr>
+      </thead>
+      <tbody data-astromap-target='routableVolumes'>
+        <tr>
+          <td colspan='4' class='text-center'>No routes yet.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section id='map-section' class='my-8'>
+    <h3 class='h3 m'>Terradoma Map</h3>
+    <a href='#coordinate'>back to top</a>
+    <div class='prosed'>
+      <p>This is the comprehensive map of known humanity in Terradoma. You can pan and zoom. The volume report above
+        relies on the coordinates of this map.</p>
+    </div>
+    <div class='w-full border-2 border-brand dark:border-brand-light' style='height: 800px; overflow: hidden;'>
+      <embed id="map" src="/assets/sector_ORBITS-TEST_20250818-090851.svg" type="image/svg+xml" width="100%" height="100%" />
+    </div>
+  </section>
+</article>
+<script src="/assets/svg-pan-zoom.js"></script>
+<script>
+  // Wait for the SVG to load before initializing pan-zoom
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      var embed = document.getElementById('map');
+      var svgDoc = embed.getSVGDocument();
+      
+      if (svgDoc) {
+        svgPanZoom(embed, {
+          zoomEnabled: true,
+          controlIconsEnabled: false,
+          fit: false,
+          center: false,
+          minZoom: 1,
+          maxZoom: 1.6,
+        });
+      } else {
+        // Fallback: try direct selector
+        svgPanZoom('#map', {
+          zoomEnabled: true,
+          controlIconsEnabled: false,
+          fit: false,
+          center: false,
+          minZoom: 1,
+          maxZoom: 1.6,
+        });
+      }
+    }, 500); // Small delay to ensure SVG is fully loaded
+  });
+</script>

@@ -3,11 +3,12 @@ package models
 import "fmt"
 
 type Moon struct {
-	Planet *BaseOrbit `json:"-"`
-	Orbit  int        `json:"orbit"`
-	Size   int        `json:"size"`
-	Atmo   int        `json:"atmosphere"`
-	Hydro  int        `json:"hydrographics"`
+	Planet        *BaseOrbit `json:"-"`
+	Orbit         int        `json:"orbit"`
+	OrbitalRadius int        `json:"orbital_radius"` // Distance in planetary radii
+	Size          int        `json:"size"`
+	Atmo          int        `json:"atmosphere"`
+	Hydro         int        `json:"hydrographics"`
 }
 
 func (m *Moon) ToASCII() string {

@@ -1,6 +1,7 @@
 package models
 
 import (
+	"encoding/json"
 	"fmt"
 	"strings"
 )
@@ -87,4 +88,35 @@ func (s *Sector) ToASCII() string {
 	}
 	
 	return output.String()
+}
+
+// MarshalJSON custom marshaler to output volumes as a hash with zero-padded coordinate keys
+func (s *Sector) MarshalJSON() ([]byte, error) {
+	// Create a custom structure with volumes as a map
+	type SectorJSON struct {
+		Name    string             `json:"name"`
+		Volumes map[string]*Volume `json:"volumes"`
+		Width   int                `json:"width"`
+		Height  int                `json:"height"`
+	}
+	
+	// Convert the 2D array to a map with zero-padded coordinate keys
+	volumesMap := make(map[string]*Volume)
+	for row := 0; row < s.Height; row++ {
+		for col := 0; col < s.Width; col++ {
+			if vol := s.Volumes[row][col]; vol != nil && !vol.IsEmpty() {
+				// Create zero-padded key: XXYY where XX is column+1, YY is row+1
+				// Using 1-based coordinates to match Traveller convention
+				key := fmt.Sprintf("%02d%02d", col+1, row+1)
+				volumesMap[key] = vol
+			}
+		}
+	}
+	
+	return json.Marshal(&SectorJSON{
+		Name:    s.Name,
+		Volumes: volumesMap,
+		Width:   s.Width,
+		Height:  s.Height,
+	})
 }

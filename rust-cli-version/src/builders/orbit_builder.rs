@@ -209,14 +209,44 @@ impl OrbitBuilder {
     }
     
     fn generate_moons() -> Vec<Moon> {
+        // Orbit tables from Ruby code
+        let close_orbits = vec![1u8, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+        let ring_orbits = vec![1u8, 1, 1, 2, 2, 3];
+        let far_orbits: Vec<u8> = close_orbits.iter().map(|&x| (x as u16 * 5).min(255) as u8).collect();
+        let extreme_orbits: Vec<u8> = close_orbits.iter().map(|&x| (x as u16 * 25).min(255) as u8).collect();
+        
         let num_moons = rng::roll_1d6();
         let mut moons = Vec::new();
         
         for orbit in 0..num_moons {
-            let size = rng::roll_1d6().min(3); // Max size 3 for moons
+            let size = (rng::roll_1d6() as i8 - 3).max(0) as u8;
+            
+            // Calculate orbital radius based on dice rolls (Ruby logic)
+            let orbit_roll = rng::roll_2d6().unwrap_or(7) + orbit;
+            let orbital_radius = if size < 1 {
+                // Ring/small moon - use ring orbits table
+                let idx = ((rng::roll_1d6() - 1) as usize).min(ring_orbits.len() - 1);
+                ring_orbits[idx]
+            } else if orbit_roll == 12 {
+                // Extreme orbit (for gas giant moons)
+                let idx = (rng::roll_2d6().unwrap_or(7) as usize).min(extreme_orbits.len() - 1);
+                extreme_orbits[idx]
+            } else if orbit_roll < 8 {
+                // Close orbit
+                let idx = (rng::roll_2d6().unwrap_or(7) as usize).min(close_orbits.len() - 1);
+                close_orbits[idx]
+            } else {
+                // Far orbit
+                let idx = (rng::roll_2d6().unwrap_or(7) as usize).min(far_orbits.len() - 1);
+                far_orbits[idx]
+            };
+            
             moons.push(Moon {
                 orbit: orbit as u8,
-                size: size as u8,
+                orbital_radius,
+                size,
+                atmosphere: 0,
+                hydrographics: 0,
             });
         }
         

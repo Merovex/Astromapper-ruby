@@ -1,12 +1,44 @@
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize, Serialize, Serializer};
+use serde::ser::SerializeStruct;
+use std::collections::BTreeMap;
 use crate::models::Volume;
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Deserialize)]
 pub struct Sector {
     pub name: String,
     pub width: usize,
     pub height: usize,
     pub volumes: Vec<Vec<Option<Volume>>>,
+}
+
+impl Serialize for Sector {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        // Convert 2D array to BTreeMap with zero-padded coordinate keys
+        let mut volumes_map = BTreeMap::new();
+        for row in 0..self.height {
+            for col in 0..self.width {
+                if let Some(ref volume) = self.volumes[row][col] {
+                    if !volume.is_empty() {
+                        // Create zero-padded key: XXYY where XX is column+1, YY is row+1
+                        // Using 1-based coordinates to match Traveller convention
+                        let key = format!("{:02}{:02}", col + 1, row + 1);
+                        volumes_map.insert(key, volume);
+                    }
+                }
+            }
+        }
+        
+        // Serialize as a struct with volumes as a map
+        let mut state = serializer.serialize_struct("Sector", 4)?;
+        state.serialize_field("name", &self.name)?;
+        state.serialize_field("volumes", &volumes_map)?;
+        state.serialize_field("width", &self.width)?;
+        state.serialize_field("height", &self.height)?;
+        state.end()
+    }
 }
 
 impl Sector {

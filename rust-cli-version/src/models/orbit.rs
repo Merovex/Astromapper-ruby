@@ -171,5 +171,8 @@ impl Orbit for Rockball {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Moon {
     pub orbit: u8,
+    pub orbital_radius: u8,  // Distance in planetary radii
     pub size: u8,
+    pub atmosphere: u8,
+    pub hydrographics: u8,
 }

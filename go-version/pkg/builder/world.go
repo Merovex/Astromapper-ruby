@@ -369,17 +369,64 @@ func generateTravelCode(gov, law int) string {
 }
 
 func generateMoons(num int, planet *models.BaseOrbit, r *rng.RNG) []models.Moon {
+	// Orbit tables from Ruby code
+	closeOrbits := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+	ringOrbits := []int{1, 1, 1, 2, 2, 3}
+	farOrbits := make([]int, len(closeOrbits))
+	extremeOrbits := make([]int, len(closeOrbits))
+	for i := range closeOrbits {
+		farOrbits[i] = closeOrbits[i] * 5
+		extremeOrbits[i] = closeOrbits[i] * 25
+	}
+	
 	moons := make([]models.Moon, num)
 	for i := 0; i < num; i++ {
-		moons[i] = models.Moon{
-			Planet: planet,
-			Orbit:  i,
-			Size:   r.D6() - 3,
-			Atmo:   0,
-			Hydro:  0,
+		size := r.D6() - 3
+		if size < 0 {
+			size = 0
 		}
-		if moons[i].Size < 0 {
-			moons[i].Size = 0
+		
+		// Calculate orbital radius based on dice rolls (Ruby logic)
+		orbitRoll := r.TwoD6() + i
+		var orbitalRadius int
+		
+		if size < 1 {
+			// Ring/small moon - use ring orbits table
+			idx := r.D6() - 1
+			if idx >= len(ringOrbits) {
+				idx = len(ringOrbits) - 1
+			}
+			orbitalRadius = ringOrbits[idx]
+		} else if orbitRoll == 12 && planet.Kid == models.OrbitGasGiant {
+			// Extreme orbit for gas giant moon
+			idx := r.TwoD6()
+			if idx >= len(extremeOrbits) {
+				idx = len(extremeOrbits) - 1
+			}
+			orbitalRadius = extremeOrbits[idx]
+		} else if orbitRoll < 8 {
+			// Close orbit
+			idx := r.TwoD6()
+			if idx >= len(closeOrbits) {
+				idx = len(closeOrbits) - 1
+			}
+			orbitalRadius = closeOrbits[idx]
+		} else {
+			// Far orbit
+			idx := r.TwoD6()
+			if idx >= len(farOrbits) {
+				idx = len(farOrbits) - 1
+			}
+			orbitalRadius = farOrbits[idx]
+		}
+		
+		moons[i] = models.Moon{
+			Planet:        planet,
+			Orbit:         i,
+			OrbitalRadius: orbitalRadius,
+			Size:          size,
+			Atmo:          0,
+			Hydro:         0,
 		}
 	}
 	return moons
