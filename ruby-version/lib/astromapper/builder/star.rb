@@ -124,7 +124,11 @@ module Astromapper
             @orbits << Orbit.new(self,i).populate unless orbit_to_au(i) > outer_limit
             @world = @orbits.last if @orbits.last.is_a?(World)
           end
-          @world.gas_giant = (@orbits.map{|o| o.kid}.include?('G')) ? 'G' : '.' unless @world.nil?
+          unless @world.nil?
+            @world.gas_giant = (@orbits.map{|o| o.kid}.include?('G')) ? 'G' : '.'
+            @world.build_extensions(@orbits.count { |o| o.kid == 'G' },
+                                    @orbits.count { |o| o.kid == 'B' })
+          end
           prune!
         end
         def prune! # Ensure last orbits are not empty.

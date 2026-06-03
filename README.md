@@ -1,6 +1,6 @@
 # Astromapper
 
-A multi-language implementation of a Traveller RPG star map generator that creates random sectors, star systems, and worlds following Classic Traveller and Mongoose Traveller rules. Generate detailed astronomical data including orbits, moons, factions, and trade codes for your science fiction RPG campaigns.
+A multi-language implementation of a Traveller RPG star map generator that creates random sectors, star systems, and worlds following Traveller5 and Classic Traveller rules. Generate detailed astronomical data including orbits, moons, factions, and trade codes for your science fiction RPG campaigns.
 
 ## Features
 
@@ -302,8 +302,8 @@ When contributing, please:
 
 ## License
 
-See individual implementation directories for license information.
+The software is released under the **MIT License**. Game rules (Traveller, GURPS) are used under their respective fair-use policies. See [LICENSE.md](LICENSE.md) for the full text, including the Far Future Enterprises Traveller Fair Use Policy and the Steve Jackson Games / GURPS notice.
 
 ## Acknowledgments
 
-Based on Classic Traveller and Mongoose Traveller RPG rules for world and system generation.
+Based on Traveller5 (FFE) and Classic Traveller RPG rules for world and system generation, with GURPS Space 4e for stellar/orbital physics.

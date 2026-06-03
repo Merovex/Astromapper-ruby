@@ -3,9 +3,9 @@ Traveller Astromapper
 
 The **Traveller Astromapper** creates random Traveller star maps intended for YOTU (Your Own Traveller Universe).
 
-The maps are generated using an inspired amalgam of [Mongoose](http://www.mongoosepublishing.com/rpgs/traveller/core-rulebooks-accessories.html) and [Classic Traveller](http://www.farfuture.net/) rules, with some [Gurps Space](http://www.sjgames.com/gurps/books/space/) 4e and 3e.
+The maps are generated using an inspired amalgam of [Traveller5](http://www.farfuture.net/) and [Classic Traveller](http://www.farfuture.net/) rules, with some [Gurps Space](http://www.sjgames.com/gurps/books/space/) 4e and 3e.
 
-Mongoose rules are used when generating the World characteristics. Classic Traveller is used when fleshing out star system details such as stars, non-world orbits, presence of companion stars. Gurps is used to flesh out star characteristics and the impact of a companion star on the primary's orbits.
+Traveller5 WorldGen (the StSAHPGL-T tables) is used when generating the World characteristics (the UWP). Classic Traveller is used when fleshing out star system details such as stars, non-world orbits, presence of companion stars. Gurps is used to flesh out star characteristics and the impact of a companion star on the primary's orbits.
 
 * Sector: 40x32 hex grid
 * Tract:  8x10 hex grid (Traveller Subsector)
@@ -81,25 +81,13 @@ To convert that ASCII into an SVG image, execut the following:
 astrographer svg
 ```
 
-Copyright
-=========
-
-Copyright 2012--13, Benjamin C. Wilson. All Rights Reserved.
-
-You may not use this work for commercial purposes. You may not alter, transform or build upon this work. Any of the above conditions can be waived if you get permission from the copyright holder. Where the work or any of its elements is in the public domain under applicable law, that status is in no way affected by the license. For any reuse or distribution, you must make clear to others the license terms of this work. In no way are any of the following rights affected by the license:
-
-* Your fair dealing or fair use rights, or other applicable copyright exceptions and limitations;
-* The author's moral rights;
-* Rights other persons may have either in the work itself or in how the work is used, such as publicity or privacy rights.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-Product names, logos, brands, and other trademarks featured or referred to in  software are the property of their respective trademark holders. Usage of those marks does not convey sponsorship or endorsement of this generator.
-
-Credits
+License
 =======
 
-SVG Output uses some algorithms from [phreeow.net Perl mapping software](http://www.phreeow.net/wiki/tiki-index.php?page=Subsector+mapping+and+generating+software) with drawing hexes in the Classic Traveller way.
+The Astromapper software is released under the **MIT License**. The game rules it
+implements (Traveller, GURPS) are used under their respective fair-use policies. See
+[LICENSE.md](../LICENSE.md) for the full text — MIT license, the Far Future Enterprises
+Traveller Fair Use Policy, the Steve Jackson Games / GURPS notice, and credits.
 
 Known bugs
 ===========

@@ -22,7 +22,7 @@ module Astromapper
 
       def to_ascii
         w = @star.world
-        sumy = "%s %s %s %s %s\t%-15s\t%-8s\t%s\t%s" % [location, w.uwp, w.temp, w.bases, w.travel_code, w.trade_codes.join(','), w.factions.join(','), @star.crib, @name]
+        sumy = "%s %s %s %s %s\t%-15s\t%-8s\t%s\t%-15s\t%s\t%s" % [location, w.uwp, w.temp, w.bases, w.travel_code, w.trade_codes.join(','), w.factions.join(','), @star.crib, @name, w.extensions, w.native]
         sumy += @star.orbits_to_ascii
         return sumy
       end

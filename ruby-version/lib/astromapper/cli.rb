@@ -60,6 +60,8 @@ module Astromapper
       factions = (header[2] || '').strip
       crib     = (header[3] || '').strip
       name     = (header[4] || '').strip
+      extn     = (header[5] || '').strip
+      native   = (header[6] || '').strip
 
       say "#{name} (#{loc})", :green
       puts "  UWP .......... #{uwp}"
@@ -68,6 +70,8 @@ module Astromapper
       puts "  Travel Code .. #{travel}"
       puts "  Trade Codes .. #{trade}"    unless trade.empty?
       puts "  Factions ..... #{factions}" unless factions.empty?
+      puts "  Extensions ... #{extn}"     unless extn.empty?
+      puts "  Native life .. #{native}"   unless native.empty?
       puts "  Stars/Orbits . #{crib}"
       puts
       say block.join('')

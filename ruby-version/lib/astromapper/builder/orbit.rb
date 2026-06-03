@@ -174,24 +174,21 @@ module Astromapper
         super
         @kid       = 'R'
         
-        # Size, Climate & Biosphere. MgT 170--71.
-        @size      = toss(2,1)
-        @atmo      = toss()
-                                # 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F 
-        temp_dice  = toss(2,0) + [0, 0,-2,-2,-1,-1, 0, 0, 1, 1, 2, 6, 6, 2,-1, 2][@atmo]
-        
-        @temp      = %w{F F F C C T T T T T H H R R R R R }[temp_dice]
-        
-        # Hydrographics. MgT p. 172
-        @h20 = case 
-          when (@size < 2 or !biozone?) then 0
-          when ([0,1,10,11,12].include?(@atmo)) then (toss(2,11) + @size).max(10)
-          else @h20  = (toss(2,7) + @size).max(10)
-        end
-        @h20 -= 2 if @temp == 'H'
-        @h20 -= 6 if @temp == 'R'
-        @h20 = @h20.whole
-        
+        # Size / Atmosphere / Hydrographics — Traveller 5 WorldGen (StSAHPGL-T).
+        # Size = 2D-2 (0 = planetoid belt); a roll of 10 rerolls 1D+9 toward F.
+        @size = toss()
+        @size = 9 + 1.d6 if @size == 10
+        # Atmosphere = Flux + Size, clamp 0-F; a sizeless world has none.
+        @atmo = @size.zero? ? 0 : (flux + @size).whole.max(15)
+        # Hydrographics = Flux + Atmosphere, max A; dry when tiny or thin/dense.
+        @h20  = flux + @atmo
+        @h20 -= 4 if (@atmo < 2 or @atmo > 9)
+        @h20  = 0 if @size < 2
+        @h20  = @h20.whole.max(10)
+
+        # Climate — Traveller 5, from the world's position in the Habitable Zone.
+        @temp = climate
+
         # Adjust Atmosphere and Hydrographics when not Normal. MgT p. 180.
         if (%w{opera firm}.include?(config['genre'].downcase))
           @atmo = case
@@ -202,7 +199,20 @@ module Astromapper
           end
           @h20 -= 6 if (((3..4).include?(@size) and @atmo == 'A' ) or @atmo < 2)
           @h20 -= 4 if ([2,3,11,12].include?(@atmo))
+          @h20  = @h20.whole
         end
+      end
+
+      # Traveller 5 climate, from the Habitable Zone Variance (a Flux roll, page 432):
+      # HZ−1 = Hot, HZ = Temperate, HZ+1 = Cold; orbits 0–1 are tidally locked = Twilight.
+      #   T Temperate · H Hot · C Cold · Tz Twilight · Lk Locked
+      def climate
+        return 'Tz' if @orbit_number <= 1
+        #            Flux: -6 -5 -4 -3 -2 -1  0 +1 +2 +3 +4 +5 +6
+        variance = [-2,-1,-1,-1, 0, 0, 0, 0, 0, 1, 1, 1, 2][flux + 6]
+        return 'H' if variance <= -1
+        return 'C' if variance >=  1
+        'T'
       end
     end # End Terrestrial
 
@@ -218,26 +228,26 @@ module Astromapper
     #
 
    class World<Terrestrial
-      attr_accessor :factions, :temp, :gas_giant
+      attr_accessor :factions, :temp, :gas_giant, :ix, :ex, :cx, :ru, :native
       def initialize(star,orbit_number)
         super
         
         @port_roll = toss(2,0)
         
         @kid = 'W'
+        # Population = 2D-2; a roll of 10 rerolls 9+1D toward F. T5 WorldGen.
         @popx = toss()
+        @popx = 9 + 1.d6 if @popx == 10
         if ('firm' == config['genre'].downcase)
           @popx -= 1 if (@size < 3 or @size > 9)
           @popx += [-1, -1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, -1, -1, -1, -1][@atmo]
           @port_roll = (@port_roll - 7 + @popx.whole).whole
         end
-        @popx = @popx.whole
-        
-        # Government & Law. MgT p. 173. T5 UWP ceilings: government tops out at F (15),
-        # law at J (18) in extended hex. (Caps also stop high population overflowing the
-        # indexed DM tables below.)
-        @govm = (toss(2,7) + @popx).whole.max(15)
-        @law  = (toss(2,7) + @govm).whole.max(18)
+        @popx = @popx.whole.max(15) # population ceiling is F
+
+        # Government = Flux + Pop (ceiling F); Law = Flux + Gov (ceiling J). T5 WorldGen.
+        @govm = (flux + @popx).whole.max(15)
+        @law  = (flux + @govm).whole.max(18)
 
         # Identify Factions. MgT p. 173
         fax_r = 1.d3.max(3)
@@ -246,13 +256,14 @@ module Astromapper
         rolls = [toss(2,0),toss(2,0),toss(2,0),toss(2,0),toss(2,0)]
         @factions = (@popx == 0) ? [] : fax_r.times.map { |r| %w{O O O O F F M M N N S S P}[rolls.shift] }
         
-        # Set Technology die modifier based on World attributes. MgT p. 170
-        tek_dm = { 'A' => 6, 'B' => 4, 'C' => 2, 'D' => 0, 'E' => 0, 'X' => -4}[port]
-        tek_dm += [2,2,1,1,1,0,0,0,0,0,0,0,0,0,0,0][@size]
-        tek_dm += [1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1][@atmo]
-        tek_dm += [1,0,0,0,0,0,0,0,0,1,2][@h20]
-        tek_dm += [0,1,1,1,1,1,0,0,0,1,2,3,4][@popx]
-        tek_dm += [1,0,0,0,0,1,0,2,0,0,0,0,0,-2,-2,0][@govm]
+        # Technology die modifiers — Traveller 5 (TL = 1D + mods).
+        tek_dm  = { 'A' => 6, 'B' => 4, 'C' => 2, 'D' => 0, 'E' => 0, 'F' => 1, 'X' => -4}[port] || 0
+        #            0 1 2 3 4 5 6 7 8 9 A  B  C  D  E  F
+        tek_dm += [2,2,1,1,1,0,0,0,0,0,0,0,0,0,0,0][@size]  # Siz 0,1=+2; 2,3,4=+1
+        tek_dm += [1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1][@atmo]  # Atm 0-3=+1; A-F=+1
+        tek_dm += [0,0,0,0,0,0,0,0,0,1,2][@h20]             # Hyd 9=+1; A=+2
+        tek_dm += [0,1,1,1,1,1,0,0,0,2,4,4,4,4,4,4][@popx]  # Pop 1-5=+1; 9=+2; A+=+4
+        tek_dm += [1,0,0,0,0,1,0,0,0,0,0,0,0,-2,0,0][@govm] # Gov 0,5=+1; D=-2
         tek_limit = environmental_tek_limits[@atmo]
         @tek = (toss(1,0) + tek_dm).min( tek_limit ) # MgT p. 179 Environmental Limits
         
@@ -263,59 +274,157 @@ module Astromapper
         @tek  = @tek.max(15) # keep tech a single UWP digit (0-F); see env-limit note
         @law  = @govm = @tek = 0 if @popx == 0
         
-        # Fix temperature (Me)
-        @temp = 'F' if (trade_codes.include?('IC') or trade_codes.include?('Va'))
-        @temp = 'T' if ((trade_codes.include?('Ag') or trade_codes.include?('Ga') or trade_codes.include?('Ri') or trade_codes.include?('Wa')) and @temp != 'T')
-
-        base = {      
-          "Navy"      => { 'A' => 8,  'B' => 8,  'C' => 20, 'D' => 20, 'E' => 20, 'X' => 20 }[port],
-          "Scout"     => { 'A' => 10, 'B' => 8,  'C' =>  8, 'D' =>  7, 'E' => 20, 'X' => 20 }[port],
-          "Consolate" => { 'A' => 6,  'B' => 8,  'C' => 10, 'D' => 20, 'E' => 20, 'X' => 20 }[port],
-          "Pirate"    => { 'A' => 20, 'B' => 12, 'C' => 10, 'D' => 12, 'E' => 20, 'X' => 20 }[port]
+        # Bases — Traveller 5 (page 432). Each rolls 2D against a starport threshold.
+        # Naval/Scout are exact; Depot/Way Station are "Possible" (full Chart F-B), so the
+        # thresholds below are a conservative approximation.
+        naval = (port == 'A' && 2.d6 <= 6) || (port == 'B' && 2.d6 <= 5)
+        scout = (port == 'A' && 2.d6 <= 4) || (port == 'B' && 2.d6 <= 5) ||
+                (port == 'C' && 2.d6 <= 6) || (port == 'D' && 2.d6 <= 7)
+        depot = %w{A B}.include?(port)   && 2.d6 <= 3   # approximate
+        way   = %w{A B C}.include?(port) && 2.d6 <= 4   # approximate
+        @base = {
+          'Naval' => naval ? 'N' : '.',
+          'Scout' => scout ? 'S' : '.',
+          'Depot' => depot ? 'D' : '.',
+          'Way'   => way   ? 'W' : '.',
         }
-
-        @base = {}
-        base.keys.each  {|key| @base[key] = (2.d6 > base[key] - 1) ? key[0] : '.'}
       end
       def travel_code
-        @code = (@atmo > 9 or [0,7,10].include?(@govm) or [0,9,10,11,12,13].include?(@law)) ? 'AZ' : '..'
+        # Travel zones. T5 leaves these to the referee; this auto-assigns a default:
+        # Red for the most oppressive/controlled worlds, Amber for caution.
+        return 'RZ' if (@law >= 15 or @govm >= 15)
+        return 'AZ' if (@atmo > 9 or [0,7,10].include?(@govm) or @law == 0 or (9..14).include?(@law))
+        '..'
+      end
+
+      # Traveller 5 Extensions (Ix / Ex / Cx). Computed after the system is built,
+      # since Resources depends on the system's gas-giant and planetoid-belt counts.
+      def build_extensions(gas_giants = 0, belts = 0)
+        tc = trade_codes
+
+        # Importance Extension (Ix) — T5 WorldGen page 435.
+        @ix  = 0
+        @ix += 1 if %w{A B}.include?(port)
+        @ix -= 1 if %w{D E X}.include?(port)
+        @ix += 1 if @tek >= 10                                   # TL A or more
+        @ix -= 1 if @tek <= 8                                    # TL 8 or less
+        @ix += (tc & %w{Ag Hi In Ri}).size                      # per Ag Hi In Ri
+        @ix -= 1 if @popx <= 6                                   # Pop 6 or less
+        @ix += 1 if @base['Naval'] == 'N' && @base['Scout'] == 'S'  # Naval AND Scout
+        @ix += 1 if @base['Way'] == 'W'                         # Way Station
+
+        # Economic Extension (Ex) — Resources, Labor, Infrastructure, Efficiency; RU.
+        res = 2.d6
+        res += gas_giants + belts if @tek >= 8                  # GG + Belts only at TL 8+
+        lab = (@popx - 1).whole                                 # Labor = Pop - 1 (min 0)
+        inf = if (tc & %w{Ba Di Lo}).any? then 0
+              elsif tc.include?('Ni')      then 1.d6
+              else (2.d6 + @ix).whole end                       # min 0
+        eff = flux                                              # Efficiency = Flux (may be negative)
+        nz  = ->(v) { v.zero? ? 1 : v }                         # 0 -> 1 for RU only
+        @ru = nz.(res) * nz.(lab) * nz.(inf) * nz.(eff)
+        @ex = { res: res, lab: lab, inf: inf, eff: eff }
+
+        # Cultural Extension (Cx) — Homogeneity, Acceptance, Strangeness, Symbols.
+        # T5: "For all values, less than 1 = 1."
+        min1 = ->(v) { v < 1 ? 1 : v }
+        @cx  = {
+          homo: min1.(@popx + flux),
+          acc:  min1.(@popx + @ix),
+          str:  min1.(5 + flux),
+          sym:  min1.(@tek + flux),
+        }
+
+        @native = native_status
+        self
+      end
+
+      # Native Intelligent Life / Native Status — T5 WorldGen page 436 (NIL).
+      # Default is a HUMAN-ONLY universe: every population is a human settlement, so worlds
+      # are simply Settled (established) or a Colony (frontier). Set `sophonts: varied` in
+      # the config to allow native alien sophonts (Native = evolved here; Exotic = non-human
+      # transplants on a world that couldn't grow native intelligent life).
+      def native_status
+        if config['sophonts'].to_s.downcase == 'varied'
+          if @popx >= 7
+            return 'Exotic' if @atmo <= 1
+            return 'Native'
+          end
+          return 'Colony' if (1..6).include?(@popx)
+          return ''
+        end
+        # Human-only (default)
+        return 'Settled' if @popx >= 7
+        return 'Colony'  if (1..6).include?(@popx)
+        ''
+      end
+
+      # Formatted extensions for the system line: { +n } (RLI±E) [HASS]
+      def extensions
+        return '' if @ix.nil?
+        ix = "{ %+d }" % @ix
+        ex = "(%s%s%s%+d)" % [@ex[:res].hexd, @ex[:lab].hexd, @ex[:inf].hexd, @ex[:eff]]
+        cx = "[%s%s%s%s]" % [@cx[:homo].hexd, @cx[:acc].hexd, @cx[:str].hexd, @cx[:sym].hexd]
+        "%s %s %s" % [ix, ex, cx]
       end
       def gravity
         @gravity = [0,0.05,0.15,0.25,0.35,0.45,0.7,0.9,1.0,1.25,1.4][@size] if @gravity.nil?
         @gravity
       end
       def bases
-        return [@base['Navy'],@base['Scout'],@gas_giant,@base['Consolate'],@base['Pirate']].join('')
+        return [@base['Naval'],@base['Scout'],@gas_giant,@base['Depot'],@base['Way']].join('')
       end
       def port
-        %w{X X X E E D D C C B B A A A A A A A A A}[@port_roll.whole]
+        %w{X X X E E D D C C B B A A A A A A A A A}[@port_roll.whole.max(19)]
       end
       def environmental_tek_limits
-        [8,8,5,5,3,0,0,3,0,8,9,10,5,8]
+        #0 1 2 3 4 5 6 7 8 9 A  B C D E F
+        [8,8,5,5,3,0,0,3,0,8,9,10,5,8,8,8]
       end
       def empty?
         (uwp.include?('X000000'))
       end
+      # Trade Classifications — Traveller 5 WorldGen TCS table (page 434).
+      # Political and Special TCs are referee-assigned (not generated). Lk/Tz/Ho/Co
+      # are climate descriptors, included here as the T5 page lists them.
       def trade_codes
+        a, h, s, p, g, l = @atmo, @h20, @size, @popx, @govm, @law
         code = []
-        code << 'Ag' if ((4..9) === @atmo and (4..8) === @h20 and  (5..7) === @popx)
-        code << 'As' if (@size == 0 and @atmo == 0 and @h20 ==0)
-        code << 'Ba' if (@popx == 0 and @govm == 0 and @law == 0)
-        code << 'De' if (@atmo > 1 and @h20 == 0)
-        code << 'Fl' if (@atmo > 9 and @h20 > 0)
-        code << 'Ga' if (@size > 4 and (4..9) === @atmo and (4..8) === @h20)
-        code << 'Hi' if (@popx > 8)
+        # Planetary
+        code << 'As' if (s == 0 and a == 0 and h == 0)
+        code << 'De' if ((2..9).include?(a) and h == 0)
+        code << 'Fl' if ([10,11,12].include?(a) and (1..10).include?(h))
+        code << 'Ga' if ([6,7,8].include?(s) and [5,6,8].include?(a) and [5,6,7].include?(h))
+        code << 'He' if ([3,4,5,9,10,11,12].include?(s) and [2,4,7,9,10,11,12].include?(a) and [0,1,2].include?(h))
+        code << 'Ic' if ([0,1].include?(a) and (1..10).include?(h))
+        code << 'Oc' if ([10,11,12].include?(s) and h == 10)
+        code << 'Va' if (a == 0)
+        code << 'Wa' if ([5,6,7,8,9].include?(s) and h == 10)
+        # Population
+        code << 'Ba' if (p == 0 and g == 0 and l == 0 and %w{E X}.include?(port))
+        code << 'Lo' if ((1..3).include?(p))
+        code << 'Ni' if ((4..6).include?(p))
+        code << 'Ph' if (p == 8)
+        code << 'Hi' if (p >= 9)
+        # Economic
+        code << 'Pa' if ((4..9).include?(a) and (4..8).include?(h) and [4,8].include?(p))
+        code << 'Ag' if ((4..9).include?(a) and (4..8).include?(h) and (5..7).include?(p))
+        code << 'Na' if ((0..3).include?(a) and (0..3).include?(h) and p >= 6)
+        code << 'Pi' if ([0,1,2,4,7,9].include?(a) and [7,8].include?(p))
+        code << 'In' if ([0,1,2,4,7,9].include?(a) and p >= 9)
+        code << 'Po' if ((2..5).include?(a) and (0..3).include?(h))
+        code << 'Pr' if ([6,8].include?(a) and [5,9].include?(p))
+        code << 'Ri' if ([6,8].include?(a) and (6..8).include?(p))
+        # Technology (not on the T5 TCS page; conventional)
         code << 'Ht' if (@tek > 12)
-        code << 'IC' if (@atmo < 2 and @h20 > 0)
-        code << 'In' if ([0,1,2,4,7,9].include?(@atmo) and @popx > 8)
-        code << 'Lo' if ((1..3) === @popx)
         code << 'Lt' if (@tek < 6)
-        code << 'Na' if ((0..3) === @atmo and (0..3) === @h20 and @popx > 5)
-        code << 'NI' if ((4..6) === @popx)
-        code << 'Po' if ((2..5) === @atmo and (0..3) === @h20)
-        code << 'Ri' if ([6,8].include?(@atmo) and (6..8) === @popx)
-        code << 'Va' if (@atmo == 0)
-        code << 'Wa' if (@h20 == 10)
+        # Climate descriptors (HZ-derived)
+        code << 'Tz' if @temp == 'Tz'
+        code << 'Lk' if @temp == 'Lk'
+        code << 'Ho' if @temp == 'H'
+        code << 'Co' if @temp == 'C'
+        code << 'Tr' if (@temp == 'H' and [6,7,8,9].include?(s) and (4..9).include?(a) and (3..7).include?(h))
+        code << 'Tu' if (@temp == 'C' and [6,7,8,9].include?(s) and (4..9).include?(a) and (3..7).include?(h))
         code
       end
     end # End World (Mainworld)

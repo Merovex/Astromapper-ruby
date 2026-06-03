@@ -24,6 +24,11 @@ module Astromapper
         (a.d6 - b).whole
         # (@@dice.roll(a) - b).whole
       end
+      # T5 "Flux": 1D - 1D, a symmetric -5..+5 (triangular, mean 0). Unlike toss,
+      # it is NOT clamped to >= 0 — negative flux is the whole point.
+      def flux
+        1.d6 - 1.d6
+      end
       def names
         Astromapper.names
       end

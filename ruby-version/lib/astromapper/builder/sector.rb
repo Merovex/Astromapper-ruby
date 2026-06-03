@@ -27,7 +27,36 @@ module Astromapper
   		end
   		def to_file
   			file = Astromapper.output_file('sector')
-		    File.open(file,'w').write(@volumes.map{|v| v.to_ascii}.join("\n"))
+		    File.open(file,'w').write(key + @volumes.map{|v| v.to_ascii}.join("\n"))
+		  end
+		  # Legend prepended to the sector file. Lines start with '#', so the SVG/about
+		  # parsers (which match /^\d{4}/) skip them.
+		  def key
+		    <<~KEY
+		      # Astromapper Sector: #{config['name']}
+		      #
+		      # System line fields (left to right):
+		      #   Loc  UWP  Tmp  Bases  TZ  Trade  Factions  Stars  Orbits  Name  Ix  Ex  Cx
+		      #
+		      #   Loc       Hex location (column+row, e.g. 0601)
+		      #   UWP       Universal World Profile: Starport Size Atmo Hydro Pop Gov Law-Tech (eHex)
+		      #   Tmp       Climate (by Habitable Zone): T Temperate, H Hot, C Cold, Tz Twilight, Lk Locked
+		      #   Bases     Naval Scout GasGiant Depot WayStation   (. = none)
+		      #   TZ        Travel Zone: AZ Amber, RZ Red, .. none
+		      #   Trade     Trade classification codes
+		      #   Factions  Faction government types: O F M N S P
+		      #   Stars     Star classifications, primary/companions (e.g. M6V, G2V/DB)
+		      #   Orbits    W World  G GasGiant  B Belt  R Rock  H Hostile  S Companion  . empty
+		      #   Name      Mainworld name
+		      #   Ix {+-n}  Importance Extension
+		      #   Ex (RLI+-E)  Economic: Resources Labor Infrastructure Efficiency
+		      #   Cx [HASS] Cultural: Homogeneity Acceptance Strangeness Symbols
+		      #   Native    Population: Settled, Colony (human); or Native, Exotic (sophonts: varied)
+		      #
+		      # Orbit lines ( -- ): orbit no., * = biozone, type, UWP, distance (AU).
+		      # Moon lines  (  / ): orbital radii, moon UWP.
+		      #
+		    KEY
 		  end
     end
   end

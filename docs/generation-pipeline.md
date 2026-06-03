@@ -9,8 +9,9 @@ Astromapper is a deliberate **hybrid**:
 | Concern | Source system |
 |---|---|
 | Stellar **type / size** selection | **Traveller** (2d6 tables; companions derived from the primary) |
-| Stellar / orbital **physics** (separation, snow line, limits, spacing) | **GURPS Space 4e** (pp. 104–107) |
-| **World** generation (UWP, trade, factions, tech) | **Mongoose Traveller** (MgT pp. 170–180) |
+| Stellar / orbital **physics** (separation, snow line, limits, spacing) | **GURPS Space 4e** (pp. 104–107) — *not modified* |
+| **World** UWP (Size/Atmo/Hydro/Pop/Gov/Law/Tech) | **Traveller 5** WorldGen (StSAHPGL-T) |
+| Trade codes, bases, factions, climate | MgT-era / house rules layered on top |
 
 The seam is intentional: GURPS gives believable orbital geometry; Traveller gives the
 familiar UWP world. The notes at the end flag where the two don't quite line up.
@@ -93,21 +94,20 @@ These ivars are the world's Universal World Profile (`Port Size Atmo Hydro Pop G
 Digits use **Traveller extended hex** (eHex): `0-9, A-H, J-N, P-Z` — `I` and `O` are
 skipped so they can't be mistaken for `1` and `0`. So `15→F, 16→G, 17→H, 18→J`.
 
-| Variable | UWP digit | T5 ceiling | Currently generated |
+| Variable | UWP digit | T5 ceiling | Generated range |
 |---|---|---|---|
-| `port` | Starport | A (best) | A |
-| `@size` | Size | F | 0–B \* |
-| `@atmo` | Atmosphere | F | 0–A \* |
+| `port` | Starport | A (best) | X–A |
+| `@size` | Size | F | 0–F |
+| `@atmo` | Atmosphere | F | 0–F |
 | `@h20` | Hydrographics (water) | A | 0–A |
-| `@popx` | Population | F | 0–B \* |
+| `@popx` | Population | F | 0–F |
 | `@govm` | Government | F | 0–F |
 | `@law` | Law level | **J** (18) | 0–J |
 | `@tek` | Tech level | F | 0–F |
 
-\* Size/Atmo/Pop are *capped* at the T5 ceiling but don't reach it: they're rolled as
-flat 2d6 (`size = 2d6−1`, `atmo = 2d6−2`, `pop = 2d6−2`) rather than T5's
-`Size + Flux` chains, so they top out around A–B. Reaching the full 0–F range would
-require reworking those rolls (see note below).
+Size/Atmo/Pop now reach the full 0–F range via the T5 formulas (`Size` rerolls `1D+9`
+on a 10; `Atmo = Flux + Size`; `Pop` rerolls `9+1D` on a 10). Size `0` = a planetoid-belt
+mainworld.
 
 > A stray `@hydro` (vs `@h20`) is a separate, mostly-unused variable — see Integration
 > note #4.
@@ -349,48 +349,88 @@ Gas Giants roll **Large/Small** (`1d6 < 4 ? L : S`) and a moon count; the mainwo
 
 ## 7. The World — Traveller UWP
 
-> 🎲 **Likely rule set:** **Mongoose Traveller** (1e) · *High (cited)* — MgT pp.170–180; the temperature band (F/C/T/H/R) and factions (O/F/M/N/S/P) are distinctly Mongoose, not GURPS or T5.
+> 🎲 **Likely rule set:** **Traveller 5 WorldGen** (the StSAHPGL-T tables) for the UWP
+> digits. *Starport*, *bases*, *factions*, the *climate band*, and the genre realism pass
+> are MgT-era / house additions layered on top. · *High*
 
 **Files:** `Terrestrial` then `World` in `builder/orbit.rb`
 
-### 7a. Terrestrial base (size, atmosphere, temperature, water)
+> **Flux** = `1D − 1D`, a symmetric −5…+5 (via the `flux` helper). T5 uses it throughout.
+> (It was previously `(2D−7).whole`, whose `.whole` clamped negatives to 0 — a half-flux
+> that skewed atmosphere/hydro/gov/law upward. Fixed.)
 
-| Attribute | Roll / rule | Range | Cite |
-|---|---|---|---|
-| **Size** | `2d6 − 1` | 1–11 | MgT 170 |
-| **Atmosphere** | `2d6 − 2` | 0–10 | MgT 170 |
-| **Temperature** | `2d6 + mod[atmo]` → `F/C/T/H/R` (Frozen…Roasting) | — | MgT 171 |
-| **Hydrographics** | size<2 or outside biozone → 0; thin/exotic atmo → `(2d6−11+size)`; else `(2d6−7+size)`, capped 10; −2 if Hot, −6 if Roasting | 0–10 | MgT 172 |
+### 7a. Terrestrial base — T5 Size / Atmosphere / Hydrographics
 
-If `genre` is **opera** or **firm**, a realism pass (MgT 180) strips atmosphere/water
-from worlds too small to hold them (size < 3 → vacuum, etc.).
+| Attribute | T5 rule | Range |
+|---|---|---|
+| **Size** | `2D − 2`; on a 10, reroll `1D + 9`. `0` = planetoid belt | 0–F |
+| **Atmosphere** | `Flux + Size`, clamp 0–F; Size 0 → 0 | 0–F |
+| **Hydrographics** | `Flux + Atmosphere`; −4 DM if Atm <2 or >9; 0 if Size <2; max A | 0–A |
+| **Climate** | T5 **HZ Variance** (`Flux` roll, page 432): −1→Hot, 0→Temperate, +1→Cold; orbit 0–1 = Twilight (`Tz`) | T/H/C/Tz/Lk |
 
-### 7b. World social profile
+If `genre` is **opera** or **firm**, a realism pass (MgT 180) further strips
+atmosphere/water from worlds too small to hold them. *(Twilight is common — ~49% — because
+M-dwarf biozones sit at orbit 0–1, so most red-dwarf worlds are tidally locked. Of the rest,
+~67% are Temperate since the Flux variance centers on 0.)*
 
-| Attribute | Roll / rule | Range | Cite |
-|---|---|---|---|
-| **Starport** | `port_roll = 2d6` → `X X X E E D D C C B B A…` | X–A | MgT |
-| **Population** | `2d6 − 2` (+firm atmo/size adjustments) | 0–10(11) | MgT |
-| **Government** | `(2d6 − 7 + pop).whole` | 0–15 | MgT 173 |
-| **Law** | `(2d6 − 7 + gov).whole` | 0–15 | MgT 173 |
-| **Factions** | `1d3` (min 3) ±1 by law; types `O/F/M/N/S/P` | 0–4 groups | MgT 173 |
-| **Tech** | `1d6 + Σ tek_dm`, capped by env. limit, pop, and `tech_cap` | 0–F | MgT 170, 179 |
+> **Native intelligent life** (`World#native_status`, page 436 NIL) — controlled by the
+> `sophonts` config flag. Default **`human`**: pop ≥7 → **Settled**, pop 1–6 → **Colony**,
+> else none (a human-only universe). **`varied`** allows alien sophonts: high-pop
+> breathable/exotic → **Native**, high-pop vacuum → **Exotic** (transplants), low-pop →
+> **Colony**. Shown as a trailing field and in `about`.
 
-`tek_dm` sums modifiers from **starport, size, atmosphere, hydrographics, population,
-government** (each an indexed table, MgT 170). The environmental atmosphere limit then
-caps it (MgT 179). If population is 0, gov/law/tech are zeroed (a barren world).
+### 7b. World social profile — T5 Pop / Gov / Law
+
+| Attribute | T5 rule | Range |
+|---|---|---|
+| **Starport** | `2D` → `X X X E E D D C C B B A…` (Classic/MgT orientation, **not** T5's) | X–A |
+| **Population** | `2D − 2`; on a 10, reroll `9 + 1D` (+firm adjustments) | 0–F |
+| **Government** | `Flux + Pop`, max F, Pop 0 → 0 | 0–F |
+| **Law** | `Flux + Gov`, max **J** (18, eHex), Pop 0 → 0 | 0–J |
+| **Factions** | `1d3` (min 3) ±1 by law; types `O/F/M/N/S/P` | 0–4 groups |
+| **Tech** | `1d6 + Σ tek_dm` (exact **T5** mods), then limits; capped at F | 0–F |
+
+`tek_dm` uses the T5 modifier list: starport A+6/B+4/C+2/X−4, Size 0–1 +2 / 2–4 +1,
+Atmo 0–3 or A–F +1, Hydro 9 +1 / A +2, Pop 1–5 +1 / 9 +2 / A +4, Gov 0,5 +1 / D −2.
+If population is 0, gov/law/tech are zeroed (a barren world).
 
 ### 7c. Derived labels
 
-- **Trade codes** — `Ag, As, Ba, De, Fl, Ga, Hi, Ht, IC, In, Lo, Lt, Na, NI, Po, Ri, Va, Wa`
-  computed from size/atmo/hydro/pop thresholds.
-- **Bases** — Navy / Scout / Consulate / Pirate, each rolled against a starport-keyed
-  target; rendered together with the gas-giant flag (e.g. `NSGC.`).
-- **Temperature fix-ups** — Ice/Vacuum force Frozen; Agricultural/Garden/Rich/Water force
-  Temperate.
+- **Trade codes** — full **T5 TCS table (page 434)**: Planetary (`As De Fl Ga He Ic Oc Va
+  Wa`), Population (`Ba Lo Ni Ph Hi`), Economic (`Pa Ag Na Pi In Po Pr Ri`), plus `Ht/Lt`
+  and the climate descriptors `Ho Co Tz Lk Tr Tu`. T5 *Political/Special* codes are
+  referee-assigned and **not generated** (per the page's own note).
+- **Bases** — **T5** (page 432): Naval (`A`≤6 / `B`≤5), Scout (`A`≤4 / `B`≤5 / `C`≤6 /
+  `D`≤7), plus Depot / Way Station (approx, full Chart F-B). Rendered with the gas-giant
+  flag, e.g. `NSG.W`.
+- **Travel zones** — `RZ` (Red) for law ≥ F or gov = F; `AZ` (Amber) for caution (atmo
+  A+, gov 0/7/A, law 0 or 9–E); else none. *(T5 defers zones to the referee; this is an
+  auto-default.)*
 
-The final **UWP** is `Port Size Atmo Hydro Pop Gov Law – Tech` (hex digits), e.g.
-`B564879-9`.
+### 7d. Extensions — T5 `Ix Ex Cx` (checklist E)
+
+Computed in `World#build_extensions` after the system is built (Resources needs the
+system's gas-giant and belt counts), rendered as a trailing field on the system line:
+`{ +2 } (A77+3) [B85B]`.
+
+| Extension | Component | T5 formula (page 435) |
+|---|---|---|
+| **Importance** `{±n}` | — | `+1` port A/B; `−1` port D–X; `+1` TL≥A; `−1` TL≤8; `+1` per `Ag/Hi/In/Ri`; `−1` if Pop≤6; `+1` if Naval **and** Scout base; `+1` if Way Station |
+| **Economic** `(RLI±E)` | Resources | `2D`, plus `GasGiants + Belts` only if TL≥8 |
+| | Labor | `Pop − 1` (min 0) |
+| | Infrastructure | `2D + Ix` (`0` if Ba/Di/Lo; `1D` if Ni) |
+| | Efficiency | `Flux` (= `1D−1D`; may be negative) |
+| | *(Resource Units)* | `RU = R × L × I × Eff` (0 → 1), stored as `@ru` |
+| **Cultural** `[HASS]` | Homogeneity | `Pop + Flux` |
+| | Acceptance | `Pop + Ix` |
+| | Strangeness | `5 + Flux` |
+| | Symbols | `TL + Flux` |
+
+Cultural values clamp to a minimum of 1 ("less than 1 = 1"). Source: T5 WorldGen page 435.
+All digits render in eHex.
+
+The final **UWP** is `Port Size Atmo Hydro Pop Gov Law – Tech` (eHex digits), e.g.
+`C59A9DE-9`, or `C000254-E` for a planetoid-belt mainworld (Size 0).
 
 ---
 
@@ -419,7 +459,7 @@ and reduced atmosphere/hydrographics by zone. Moons render under their planet as
 | Radius / snow line / outer limit | √luminosity, 40·mass | **GURPS Space 4e** pp.104–107 |
 | Orbit spacing | Bode `inner + k·2^o` | Bode's law |
 | Orbit contents | zone + d6/2d6 tables | custom |
-| **World UWP** | size/atmo/hydro/pop/gov/law/tech | **Mongoose Traveller** pp.170–180 |
+| **World UWP** | Size/Atmo/Hydro/Pop/Gov/Law/Tech, Flux = 1D−1D | **Traveller 5** WorldGen |
 
 ---
 
