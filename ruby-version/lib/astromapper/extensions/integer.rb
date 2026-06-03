@@ -11,9 +11,12 @@ class Integer
   def d100
     dn(100)
   end
+  # Traveller extended hex (T5): 0-9, A-H, J-N, P-Z — omits I and O to avoid
+  # confusion with 1 and 0. So 15->F, 16->G, 17->H, 18->J, ...
+  EHEX = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ".freeze
   def hexd
-    return 'F' if self > 15
-    self.whole.to_s(16).upcase
+    n = self.whole
+    n < EHEX.length ? EHEX[n] : EHEX[-1]
   end
   def whole
     return 0 if self < 0

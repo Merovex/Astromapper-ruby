@@ -16,14 +16,21 @@ pub fn init_rng(seed: &str) {
     });
 }
 
-/// Convert a string to a deterministic u64 seed
+/// FNV-1a 64-bit hash over raw bytes. Unlike `DefaultHasher` (SipHash), this is
+/// guaranteed stable across Rust versions and platforms, so a given seed always
+/// maps to the same map. Identical to the Go and Ruby ports' derivation.
+pub fn fnv1a64(bytes: &[u8]) -> u64 {
+    let mut hash: u64 = 0xcbf2_9ce4_8422_2325;
+    for &b in bytes {
+        hash ^= b as u64;
+        hash = hash.wrapping_mul(0x0000_0100_0000_01b3);
+    }
+    hash
+}
+
+/// Convert a string to a deterministic u64 seed.
 fn string_to_seed(s: &str) -> u64 {
-    use std::collections::hash_map::DefaultHasher;
-    use std::hash::{Hash, Hasher};
-    
-    let mut hasher = DefaultHasher::new();
-    s.hash(&mut hasher);
-    hasher.finish()
+    fnv1a64(s.as_bytes())
 }
 
 /// Roll dice with the thread-local RNG

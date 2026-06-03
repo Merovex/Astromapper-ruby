@@ -9,15 +9,24 @@ language: "en"
 # 
 # density: "rift"
 # density: "sparse"
+# density: "dunbar"     # ~150 systems, one Dunbar's Number per sector
 density: "scattered"
 # density: "dense"
 
-# Sector Randomness?
-#
-pregenerated: false
+# Seed for reproducible generation.
+#   Leave blank for a fresh random map each build (the seed used is printed,
+#   so you can paste it back here to reproduce that map). Accepts a Crawford
+#   code (XXXXX-XXXXX) or any string. Overridable with `build --seed CODE`.
+seed:
 
 # Genre
 genre: normal
+
+# Guarantee a habitable mainworld in every system's biozone.
+#   true  (default) - every generated system has a World
+#   false           - the biozone may roll up a gas giant instead,
+#                     leaving some systems without a mainworld
+always_inhabited: true
 
 giant_on: !ruby/range 0..9
 tech_cap: 11

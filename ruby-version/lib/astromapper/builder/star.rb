@@ -5,6 +5,7 @@ module Astromapper
         # @@stars   = {}
         STAR_CHART = {
           #type => 0)example,        1)temp, 2)lux,    3)mass, 4)radius
+          'O9' => ['Zeta Ophiuchi',    33000, 55000,     18.0,  7.00],
           'B0' => ['Becrux',           30000, 16000,     16.0,  5.70],
           'B2' => ['Spica',            22000,  8300,     10.5,  5.10],
           'B5' => ['Achernar',         15000,   750,      5.40, 3.70],
@@ -28,7 +29,7 @@ module Astromapper
           'M6' => ['Wolf 359',          3000,     0.0002, 0.10, 0.12]
         }
         INNER_LIMIT = {
-          'O' => [  16, 13, 10 ],
+          'O' => [  16, 13, 10, 8, 6, 1, 0],
           'B' => [   10, 6.3, 5.0, 4.0, 3.8, 0.6, 0],
           'A' => [    4,   1, 0.4,   0,   0,   0, 0],
           'F' => [    4,   1, 0.3, 0.1,   0,   0, 0],
@@ -38,7 +39,7 @@ module Astromapper
           'D' => [  0 ],
         }
         BIOZONE = {
-          'O' => [  [790,1190], [630,950], [500,750] ],
+          'O' => [  [790,1190], [630,950], [500,750], [350,525], [235,350], [150,225], [100,150] ],
           'B' => [  [500,700], [320,480], [250,375], [200,300], [180,270], [30,45]   ],
           'A' => [  [200,300],   [50,75],   [20,30], [5.0,7.5], [4.0,6.0], [3.1,4.7] ],
           'F' => [  [200,300],   [50,75],   [13,19], [2.5,3.7], [2.0,3.0], [1.6,2.4], [0.5,0.8] ],
@@ -57,7 +58,7 @@ module Astromapper
           'M' => [0,2,4,6]
         }
         MASS = {
-          'O' => [70, 60, 0, 0, 50, 0 ],
+          'O' => [90, 60, 40, 25, 20, 16, 16],
           'B' => [50, 40, 35, 30, 20, 10],
           'A' => [30, 16, 10, 6, 4, 3],
           'F' => [15, 13, 8, 2.5, 2.2, 1.9],
@@ -68,22 +69,32 @@ module Astromapper
         }
         COMPANION_SEPARATION = [[0.05]*2, [0.5]*3, [2.0]*2, [10.0]*3, [50.0] * 10].flatten
         BODE_RATIO           = [[0.3] * 4, [0.35] * 3, [0.4] * 4].flatten
-        def initialize(volume, primary=nil,ternary=0)
+        def initialize(volume, primary=nil,ternary=0, star_dm: 0)
           @volume     = volume
           @primary    = primary
           @orbits     = []
           @companions = []
           @world      = nil
-              
+
           @type_dm = 0
           @size_dm = 0
           @has_gg  = false
-          
+
           if primary.nil?
             @orbit   = 0
-            @type_dm = (toss(2,0) + @volume.star_dm ).max(12)
+            natural  = toss(2,0)  # raw 2d6 — decides Hot vs main sequence, BEFORE genre bias
+            if natural >= 11
+              # Hot stars (A/B/O). Rolled on a natural 11-12 only, so this stays rare and is
+              # NOT inflated by the genre habitability bias (hot stars are not habitable).
+              @type_dm = natural  # kept so companions still derive off the primary
+              @star_type = %w{A A A A A A A A A A B B O}[toss(2,0)]
+            else
+              # Main sequence. Genre bias pushes toward F/G/K but is capped at F (index 10),
+              # so it can never spill into the Hot band above.
+              @type_dm = (natural + star_dm).max(10)
+              @star_type = %w{B B A M M M M M K G F}[@type_dm]
+            end
             @size_dm = (toss(2,0) + 0 ).max(12)
-            @star_type = %w{B B A M M M M M K G F F F}[@type_dm] 
             @star_size = %w{0 1 2 3 4 5 5 5 5 5 5 6 500}[@size_dm].to_i
           else
             separation = (toss(2,0) * COMPANION_SEPARATION[toss(3) + (4 * ternary) - 2]).round(2) # Gurps Space 4e p.105

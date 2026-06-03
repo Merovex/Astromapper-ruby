@@ -3,7 +3,7 @@ module Astromapper
 
     # Class Orbit
     class Orbit < Astromapper::Builder::Base
-      attr_accessor :id, :kid, :au, :port, :orbit_number, :xsize
+      attr_accessor :id, :kid, :au, :port, :orbit_number, :xsize, :size
       def initialize(star,orbit_number,companion=nil)
         @orbit_number = orbit_number.round
         @au = star.orbit_to_au(orbit_number)
@@ -47,7 +47,10 @@ module Astromapper
         end
       end
       def populate_biozone
-        return World.new(@star, @orbit_number)
+        # When 'always_inhabited' is enabled (the default), the biozone orbit is
+        # guaranteed to be a habitable World so every system has a mainworld.
+        # Disable it to let the biozone occasionally roll up a gas giant instead.
+        return World.new(@star, @orbit_number) if config['always_inhabited'] != false
         roll = toss(2,0)
         return (roll < 12) ? World.new(@star, @orbit_number) : GasGiant.new(@star, @orbit_number)
       end
@@ -118,8 +121,11 @@ module Astromapper
     class Planet<Orbit
       def initialize(star,orbit_number)
         super
-        @moons = make_moons(toss(1,3))
+        # Establish a size before spawning moons; Moon sizing reads @planet.size,
+        # which would otherwise be nil during construction. Subclasses that set a
+        # more specific @size (e.g. Terrestrial) do so after calling super.
         @size = toss if @size.nil? or @size == 0
+        @moons = make_moons(toss(1,3))
       end
       def make_moons(c)
         moons = {}
@@ -145,7 +151,6 @@ module Astromapper
       def initialize(star,orbit_number)
         super
         @atmo = [10,11,12,13,14].sample
-        @hydro = toss(2,4)
         @kid = 'H'
       end
     end
@@ -188,7 +193,7 @@ module Astromapper
         @h20 = @h20.whole
         
         # Adjust Atmosphere and Hydrographics when not Normal. MgT p. 180.
-        if (%{opera firm}.include?(config['genre'].downcase))
+        if (%w{opera firm}.include?(config['genre'].downcase))
           @atmo = case
             when (@size < 3 or (@size < 4 and @atmo < 3)) then 0
             when ([3,4].include?(@size) and (3..5).include?(@atmo)) then 1
@@ -228,9 +233,11 @@ module Astromapper
         end
         @popx = @popx.whole
         
-        # Government & Law. MgT p. 173
-        @govm = (toss(2,7) + @popx).whole
-        @law  = (toss(2,7) + @govm).whole
+        # Government & Law. MgT p. 173. T5 UWP ceilings: government tops out at F (15),
+        # law at J (18) in extended hex. (Caps also stop high population overflowing the
+        # indexed DM tables below.)
+        @govm = (toss(2,7) + @popx).whole.max(15)
+        @law  = (toss(2,7) + @govm).whole.max(18)
 
         # Identify Factions. MgT p. 173
         fax_r = 1.d3.max(3)
@@ -253,6 +260,7 @@ module Astromapper
         @tek  = @tek.max(config['tech_cap']) unless config['tech_cap'].nil?
         @tek  = @tek.min(tek_limit)
         @tek  = @tek.min(@popx)
+        @tek  = @tek.max(15) # keep tech a single UWP digit (0-F); see env-limit note
         @law  = @govm = @tek = 0 if @popx == 0
         
         # Fix temperature (Me)
@@ -295,7 +303,7 @@ module Astromapper
         code << 'Ba' if (@popx == 0 and @govm == 0 and @law == 0)
         code << 'De' if (@atmo > 1 and @h20 == 0)
         code << 'Fl' if (@atmo > 9 and @h20 > 0)
-        code << 'Ga' if (@size > 4 and (4..9) === @atmo and (4..8) === @hydro)
+        code << 'Ga' if (@size > 4 and (4..9) === @atmo and (4..8) === @h20)
         code << 'Hi' if (@popx > 8)
         code << 'Ht' if (@tek > 12)
         code << 'IC' if (@atmo < 2 and @h20 > 0)
@@ -307,7 +315,7 @@ module Astromapper
         code << 'Po' if ((2..5) === @atmo and (0..3) === @h20)
         code << 'Ri' if ([6,8].include?(@atmo) and (6..8) === @popx)
         code << 'Va' if (@atmo == 0)
-        code << 'Wa' if (@hydro == 10)
+        code << 'Wa' if (@h20 == 10)
         code
       end
     end # End World (Mainworld)
@@ -325,8 +333,8 @@ module Astromapper
         @tek  = 0
         @govm = 0
         @size = case
-          when @planet.xsize = 'L' then toss(2,4)
-          when @planet.xsize = 'S' then toss(2,6)
+          when @planet.xsize == 'L' then toss(2,4)
+          when @planet.xsize == 'S' then toss(2,6)
           else @planet.size - toss(1,0)
         end
         orbit = toss(2,i)

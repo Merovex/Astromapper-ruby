@@ -28,41 +28,73 @@ module Astromapper
     desc "about", "Provide information on a sector"
     map %w{-a} => :about
     def about(volume_id)
+      require_project!
       say "Searching database on #{volume_id}"
       source = Astromapper.output_file('sector')
-      if File.exists?(source)
-        # volume = Astromapper::Astro::Volume.new(source, volume_id)
-        # puts volume.inspect
-        @volumes = {}
-        volume = []
-        id = nil
-        File.open(source,'r').readlines.each do |line|
-          if /^\d{4}/.match(line)
-            @volumes[id.to_s] = volume unless volume.nil? or id.nil?
-            volume = []
-            id = line[0..3]
-          end
-          volume << line #unless volume.nil?
-        end
-        @volume = Astromapper::Astro::Volume.new(@volumes[volume_id])
-
-        puts @volume.summary
-        say @volume.ascii
-      else
+      unless File.exist?(source)
         say "Hey! You need to generate the sector first (try: astromapper build)."
+        return
       end
+
+      # Group the sector file into volumes keyed by their 4-digit location.
+      volumes = {}
+      id = nil
+      File.readlines(source).each do |line|
+        if /^\d{4}/.match(line)
+          id = line[0..3]
+          volumes[id] = []
+        end
+        volumes[id] << line unless id.nil?
+      end
+
+      block = volumes[volume_id]
+      if block.nil?
+        say "No volume #{volume_id} found in #{source}.", :red
+        return
+      end
+
+      # The header line is tab-delimited; its first field is space-delimited.
+      header = block.first.chomp.split("\t")
+      loc, uwp, temp, bases, travel = header[0].split(' ')
+      trade    = (header[1] || '').strip
+      factions = (header[2] || '').strip
+      crib     = (header[3] || '').strip
+      name     = (header[4] || '').strip
+
+      say "#{name} (#{loc})", :green
+      puts "  UWP .......... #{uwp}"
+      puts "  Temperature .. #{temp}"
+      puts "  Bases ........ #{bases}"
+      puts "  Travel Code .. #{travel}"
+      puts "  Trade Codes .. #{trade}"    unless trade.empty?
+      puts "  Factions ..... #{factions}" unless factions.empty?
+      puts "  Stars/Orbits . #{crib}"
+      puts
+      say block.join('')
     end
 
     desc "build", "Generate a map of {sector / domain}"
     map %w{-b --build generate} => :build
+    method_option :seed, type: :string, aliases: "-S",
+      desc: "Seed (XXXXX-XXXXX or any string) for reproducible generation"
     def build(type='sector')
+      require_project!
+      code, int = Astromapper::Seed.resolve(options[:seed] || config['seed'])
+      srand(int)
+      say "Seed: #{code}", :yellow
       say "Building #{type}: #{config['name'].inspect}"
       Astromapper::Exporter.run(root_dir, options)
     end
 
     desc "svg", "Convert ASCII output to SVG"
     map %w{-s --svg} => :svg
+    method_option :seed, type: :string, aliases: "-S",
+      desc: "Seed for reproducible belt jitter (defaults to the project seed)"
     def svg
+      require_project!
+      # Keep the cosmetic belt jitter reproducible when a seed is configured.
+      seed = options[:seed] || config['seed']
+      srand(Astromapper::Seed.resolve(seed).last) unless seed.nil? || seed.to_s.strip.empty?
       source = Astromapper.output_file('sector')
       say "Converting #{source} to SVG"
       s = Svg.new(source)
@@ -83,6 +115,12 @@ module Astromapper
       end
       def root_dir
         @root ||= Pathname.new(Dir.pwd)
+      end
+      # Abort cleanly (no stack trace) when run outside an Astromapper project.
+      def require_project!
+        return if File.file?(root_dir.join("_astromapper.yml"))
+        raise Thor::Error, "No Astromapper project here (missing _astromapper.yml).\n" \
+          "Run `astromapper new <name>` to create one, then `cd` into it and try again."
       end
   end
 end

@@ -17,11 +17,12 @@ module Astromapper
 			    when config['density'] == 'extra_galactic' 	then (1.d100 <= 1)
 		      when config['density'] == 'rift'      			then (1.d100 <= 3)
 		      when config['density'] == 'sparse'    			then (1.d100 <= 17)
+		      when config['density'] == 'dunbar'    			then (1.d100 <= 23) # ~150 systems (Dunbar's Number)
 		      when config['density'] == 'scattered' 			then (1.d100 <= 33)
 		      when config['density'] == 'dense'     			then (1.d100 <= 66)
 		      when config['density'] == 'cluster'   			then (1.d100 <= 83)
 		      when config['density'] == 'core'						then (1.d100 <= 91)
-		      else (d100 <= 50) # Standard
+		      else (1.d100 <= 50) # Standard
 		    end
   		end
   		def to_file

@@ -64,13 +64,11 @@ pub fn string_to_crawford(input: &str) -> String {
     }
     
     const CHARSET: &[u8] = b"ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-    
-    use std::collections::hash_map::DefaultHasher;
-    use std::hash::{Hash, Hasher};
-    let mut hasher = DefaultHasher::new();
-    input.hash(&mut hasher);
-    let hash = hasher.finish();
-    
+
+    // FNV-1a over raw bytes: stable across Rust versions and identical to the
+    // Go and Ruby ports, so the same input yields the same Crawford code.
+    let hash = crate::rng::fnv1a64(input.as_bytes());
+
     let mut result = String::with_capacity(11);
     
     for i in 0..10 {

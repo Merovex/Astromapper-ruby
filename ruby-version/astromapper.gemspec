@@ -19,12 +19,9 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_development_dependency "bundler", "~> 2.3.3"
-  s.add_development_dependency "rake", "~> 0"
-  s.add_development_dependency "rspec", "~> 2.6"
-  s.add_development_dependency "cucumber" ,"~> 0"
-  s.add_development_dependency "aruba", "~> 0"
-  s.add_dependency 'geometry', '~> 6.5'
+  s.add_development_dependency "bundler", "~> 2.3"
+  s.add_development_dependency "rake", "~> 13.0"
+  s.add_development_dependency "minitest", "~> 5.0"
   s.add_dependency "activesupport"
   s.add_dependency "thor", "~> 0"
 end

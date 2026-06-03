@@ -96,8 +96,8 @@ bundle install
 ## Architecture and Code Structure
 
 ### Module Organization
-- **Astromapper::Astro**: Domain models (Star, World, Volume, Orbit) representing astronomical objects and their properties
-- **Astromapper::Builder**: Generation logic for creating sectors and volumes with Traveller RPG rules
+- **Astromapper::Builder**: ALL domain models AND generation logic (Sector, Volume, Star, Orbit and its subclasses World/GasGiant/Belt/Rockball/Hostile/Moon). This is the heart of the system. (Note: a former empty `Astromapper::Astro` stub namespace was deleted — models live only under Builder.)
+- **Astromapper::Seed**: Crawford-code (XXXXX-XXXXX) seed handling with FNV-1a derivation.
 - **Astromapper::Extensions**: Ruby core class extensions for dice rolling and utility methods
 - **Astromapper::CLI**: Thor-based command-line interface handling user commands
 
@@ -121,3 +121,24 @@ Projects use `_astromapper.yml` files generated from ERB templates. Configuratio
 - Sector maps are 40x32 hex grids
 - UWP (Universal World Profile) codes encode world characteristics
 - ASCII output uses specific formatting for readability
+
+## Reproducibility & Seeding
+- Ruby uses the global PRNG (`Kernel#rand`, `Array#sample`, `Random.rand` all share it). The CLI calls `srand(int)` once before generation, so a seed makes the WHOLE pipeline deterministic (dice, names, spectral types, SVG belt jitter).
+- Seeds are human-readable Crawford codes `XXXXX-XXXXX` (charset omits I/O/0/1). Any string folds into a code via FNV-1a; the code folds into the srand integer via FNV-1a. `Astromapper::Seed` implements this.
+- Provide a seed via `build --seed CODE` (alias `-S`) or the `seed:` field in `_astromapper.yml`. Blank = random, but the chosen code is printed so it can be replayed.
+- **Decision: per-language reproducibility only, NOT cross-language byte parity.** Each of Ruby/Go/Rust is internally reproducible, and all three now derive the same Crawford code + seed integer from a given input (FNV-1a everywhere). But they use different RNG algorithms (Ruby MT19937, Go math/rand, Rust ChaCha8), so the same seed yields DIFFERENT maps across languages. True cross-language identical maps would require one shared RNG + identical draw order — deliberately not pursued.
+
+## Genre semantics (realism dial), not system size
+- `genre` (normal | opera | firm) controls world REALISM, not the number/size of systems (that's `density` and per-star dice).
+- `normal`: gonzo worlds, no star bias. `opera`: atmosphere/hydro realism pass + moderate F/G/K star bias. `firm`: also strips population from marginal worlds + strong F/G/K bias.
+- The F/G/K star bias is the realized "B-practical" fix for the old dead `Volume#star_dm`: a genre-driven `+DM` (normal 0 / opera +2 / firm +4) on the primary star-TYPE roll (`Volume::STAR_BIAS`), so settled space trends toward warm, long-lived (habitable) stars. Verified gradient: ~32% / ~58% / ~86% F/G/K.
+
+## Testing
+- `rake test` (or `ruby -Itest test/golden_master_test.rb`). Minitest; no external deps.
+- Golden-master test: a fixed seed regenerates a sector and byte-compares it to `test/fixtures/sector_normal_<seed>.txt`. After an INTENTIONAL generation change, regenerate with `UPDATE_GOLDEN=1 rake test`.
+- Also asserts: same-seed determinism, different-seed divergence, and the genre F/G/K gradient.
+
+## Known dependency-rot fixes (modern Ruby)
+- `YAML.unsafe_load` (not `load`) is required for the config's `!ruby/range` under Psych 4+.
+- `String#to_permalink` uses `unicode_normalize(:nfkd)` (ActiveSupport's `Multibyte::Chars#normalize` was removed in AS 8.1).
+- `bin/astromapper` prepends `lib/` to `$LOAD_PATH` so it runs from a source checkout without `gem install`.

@@ -1,6 +1,3 @@
-require 'Geometry'
-require 'awesome_print'
-
 module Astromapper
   class Svg
     def config
