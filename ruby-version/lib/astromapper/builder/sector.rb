@@ -34,6 +34,7 @@ module Astromapper
 		  def key
 		    <<~KEY
 		      # Astromapper Sector: #{config['name']}
+		      # Allegiance: #{config['allegiance'] || 'Im'}
 		      #
 		      # System line fields (left to right):
 		      #   Loc  UWP  Tmp  Bases  TZ  Trade  Factions  Stars  Orbits  Name  Ix  Ex  Cx
@@ -51,6 +52,7 @@ module Astromapper
 		      #   Ix {+-n}  Importance Extension
 		      #   Ex (RLI+-E)  Economic: Resources Labor Infrastructure Efficiency
 		      #   Cx [HASS] Cultural: Homogeneity Acceptance Strangeness Symbols
+		      #   RU:n      Resource Units (R x L x I x E) - total economic output
 		      #   Native    Population: Settled, Colony (human); or Native, Exotic (sophonts: varied)
 		      #
 		      # Orbit lines ( -- ): orbit no., * = biozone, type, UWP, distance (AU).

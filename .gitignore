@@ -16,10 +16,7 @@ test/version_tmp
 tmp
 Puzzle
 .DS_Store
-test/*
-test.rb
 output/
 astromapper-tui
 go-version/astromapper
 testicles
-test

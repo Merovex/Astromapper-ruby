@@ -83,9 +83,13 @@ module Astromapper
       desc: "Seed (XXXXX-XXXXX or any string) for reproducible generation"
     def build(type='sector')
       require_project!
-      code, int = Astromapper::Seed.resolve(options[:seed] || config['seed'])
+      configured = options[:seed] || config['seed']
+      code, int  = Astromapper::Seed.resolve(configured)
       srand(int)
       say "Seed: #{code}", :yellow
+      # If no seed was set (config blank and no --seed), persist the one we just rolled so
+      # the map is reproducible. Clear `seed:` in _astromapper.yml to regenerate a new map.
+      save_seed(code) if (configured.nil? || configured.to_s.strip.empty?)
       say "Building #{type}: #{config['name'].inspect}"
       Astromapper::Exporter.run(root_dir, options)
     end
@@ -125,6 +129,18 @@ module Astromapper
         return if File.file?(root_dir.join("_astromapper.yml"))
         raise Thor::Error, "No Astromapper project here (missing _astromapper.yml).\n" \
           "Run `astromapper new <name>` to create one, then `cd` into it and try again."
+      end
+      # Write the rolled seed back into _astromapper.yml so the map can be reproduced.
+      def save_seed(code)
+        path    = root_dir.join("_astromapper.yml")
+        content = File.read(path)
+        if content =~ /^seed:.*$/
+          content = content.sub(/^seed:.*$/, "seed: #{code}")
+        else
+          content = content.rstrip + "\nseed: #{code}\n"
+        end
+        File.write(path, content)
+        say "Saved seed #{code} to _astromapper.yml (clear it to regenerate)", :green
       end
   end
 end

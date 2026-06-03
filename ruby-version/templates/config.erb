@@ -14,9 +14,9 @@ density: "scattered"
 # density: "dense"
 
 # Seed for reproducible generation.
-#   Leave blank for a fresh random map each build (the seed used is printed,
-#   so you can paste it back here to reproduce that map). Accepts a Crawford
-#   code (XXXXX-XXXXX) or any string. Overridable with `build --seed CODE`.
+#   Leave blank and `build` will roll a seed and SAVE it here, so every later build
+#   reproduces the same map. Clear it (back to blank) to regenerate a new map.
+#   Accepts a Crawford code (XXXXX-XXXXX) or any string; override with `build --seed CODE`.
 seed:
 
 # Genre
@@ -32,6 +32,10 @@ always_inhabited: true
 #   human  (default) - human-only universe; worlds are Settled or Colony
 #   varied           - allow native alien sophonts (Native / Exotic populations)
 sophonts: human
+
+# Allegiance: the polity this sector belongs to (T5 leaves this to the referee).
+#   A short code applied sector-wide, e.g. Im (Imperial), Na (Non-Aligned).
+allegiance: Im
 
 giant_on: !ruby/range 0..9
 tech_cap: 11

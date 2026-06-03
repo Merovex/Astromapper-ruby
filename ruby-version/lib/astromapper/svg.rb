@@ -132,8 +132,8 @@ module Astromapper
       output += navy_base(c)  if nsg.include?('N')
       output += scout_base(c) if nsg.include?('S')
       output += gas_giant(c)  if nsg.include?('G')
-      output += consulate(c)  if nsg.include?('C')
-      output += pirates(c)    if nsg.include?('P')
+      output += depot(c)       if nsg.include?('D')
+      output += way_station(c) if nsg.include?('W')
       output += stars(c,star)
       output
 
@@ -221,11 +221,11 @@ module Astromapper
     def symbol(n,s,x,y)
       return "    <!-- #{n} --><text class='symbol #{n}' x='#{x.to_i}' y='#{y.to_i}'>#{s}</text>\n"
     end
-    def pirates(c);
-      return symbol('P', "\u2620", c[0]-(@side/3.1), c[1]+(@side/7)  )
+    def way_station(c);
+      return symbol('W', "\u2690", c[0]-(@side/3.1), c[1]+(@side/7)  )
     end
-    def consulate(c);
-      return symbol("C", "\u2691", c[0]-(@side/1.5), c[1]+(@side/7)  )
+    def depot(c);
+      return symbol("D", "\u2691", c[0]-(@side/1.5), c[1]+(@side/7)  )
     end
     def scout_base(c);
       return symbol("S", "\u269C", c[0]-(@side/1.8), c[1]+(@side/2.4))

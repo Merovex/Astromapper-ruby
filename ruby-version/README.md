@@ -16,7 +16,12 @@ Traveller5 WorldGen (the StSAHPGL-T tables) is used when generating the World ch
 Installation
 ============
 
-This software relies upon Ruby 1.9.2+.
+This software runs on modern Ruby (tested on **Ruby 3.x**). From a source checkout:
+
+```
+bundle install         # installs activesupport, thor, minitest
+bin/astromapper version
+```
 
 To convert from SVG to JPG, PNG, GIF you will need to install Imagemagick with -rsvg flag (later feature).
 
@@ -38,6 +43,24 @@ yotu_sector
 └── templates
     └── names.yml
 ```
+
+Configuration
+-------------
+
+Edit `_astromapper.yml` to control generation:
+
+* **density** — systems per sector: `rift`, `sparse`, `dunbar` (~150, one Dunbar's Number), `scattered` (default), `dense`, `cluster`, `core`.
+* **genre** — the realism⟷romance stellar slider:
+  * `firm` — the galaxy *as it really is* (M-dwarf-dominated, ~23% F/G/K, sparse).
+  * `normal` — classic-Traveller midpoint (~48% F/G/K).
+  * `opera` — space opera, Sun-like and habitable (~82% F/G/K).
+* **sophonts** — `human` (default; worlds are Settled/Colony) or `varied` (native alien sophonts).
+* **seed** — a Crawford code (`XXXXX-XXXXX`) or any string for reproducible maps. Leave blank for random (the seed used is printed). Override with `astromapper build --seed CODE`.
+* **always_inhabited** — `true` (default) guarantees a mainworld per system.
+
+Worlds follow **Traveller 5** WorldGen (UWP, the Ix/Ex/Cx extensions, climate, trade codes); star systems use Classic Traveller + GURPS Space orbital mechanics. See `docs/generation-pipeline.md` for the full algorithm.
+
+Commands: `astromapper new <name>`, `build [--seed CODE]`, `svg`, `about <hex>`, `version`.
 
 ASCII Output
 ------------
@@ -89,24 +112,20 @@ implements (Traveller, GURPS) are used under their respective fair-use policies.
 [LICENSE.md](../LICENSE.md) for the full text — MIT license, the Far Future Enterprises
 Traveller Fair Use Policy, the Steve Jackson Games / GURPS notice, and credits.
 
-Known bugs
-===========
-* If the dice pool is too small, the generated output will repeat.
-
-Troubleshooting
-===============
-
 Changelog
 =========
 
-Version 0.1 (1 March 2012) 
---------------------------
-* Initially written
-* Generate Sector Map
-* Convert to SVG
+Version 2.0 (2026)
+------------------
+* **Traveller 5 WorldGen**: full StSAHPGL-T UWP (with Flux, eHex, reroll-on-10), the Ix/Ex/Cx Extensions + Resource Units, HZ-based climate, the complete T5 trade-classification table, T5 bases, and native intelligent life.
+* **Genre stellar slider** (`firm`/`normal`/`opera`) spanning the real galaxy → space opera, plus a `dunbar` density and a `sophonts` (human-only) flag.
+* **Reproducible seeds** (`--seed`, Crawford codes) so a seed always yields the same map.
+* Runs on modern Ruby (3.x); golden-master + property test suite; many correctness fixes.
 
 Version 1.0 (7 April 2013)
 --------------------------
 * Re-implemented as Ruby Gem
 
-* A News sections might also be include to lists project updates for users.
+Version 0.1 (1 March 2012)
+--------------------------
+* Initially written; generate sector map; convert to SVG

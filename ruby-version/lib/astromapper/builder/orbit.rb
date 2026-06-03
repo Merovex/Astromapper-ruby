@@ -151,7 +151,8 @@ module Astromapper
       def initialize(star,orbit_number)
         super
         @atmo = [10,11,12,13,14].sample
-        @kid = 'H'
+        @h20  = (toss(2,4)).max(10)   # exotic-atmosphere worlds can have (acid) seas; 0-A
+        @kid  = 'H'
       end
     end
 
@@ -247,6 +248,10 @@ module Astromapper
         # Short-lived, high-UV stars (F and hotter) can't host large native populations —
         # only frontier colonies. Cap their worlds at colony size (6).
         @popx = @popx.max(6) if %w{O B A F}.include?(@star.type)
+        # A naturally-habitable (non-colony) world needs a comfortable gravity band: enough
+        # to hold a shielding atmosphere/magnetosphere (~0.4 g, above Mars), but not so much
+        # it crushes its inhabitants (~1.5 g). Outside that, only domed/hardy colonies live.
+        @popx = @popx.max(6) unless (0.4..1.5).cover?(gravity)
 
         # Government = Flux + Pop (ceiling F); Law = Flux + Gov (ceiling J). T5 WorldGen.
         @govm = (flux + @popx).whole.max(15)
@@ -267,15 +272,11 @@ module Astromapper
         tek_dm += [0,0,0,0,0,0,0,0,0,1,2][@h20]             # Hyd 9=+1; A=+2
         tek_dm += [0,1,1,1,1,1,0,0,0,2,4,4,4,4,4,4][@popx]  # Pop 1-5=+1; 9=+2; A+=+4
         tek_dm += [1,0,0,0,0,1,0,0,0,0,0,0,0,-2,0,0][@govm] # Gov 0,5=+1; D=-2
-        tek_limit = environmental_tek_limits[@atmo]
-        @tek = (toss(1,0) + tek_dm).min( tek_limit ) # MgT p. 179 Environmental Limits
-        
-        # For those who want to limit technology
-        @tek  = @tek.max(config['tech_cap']) unless config['tech_cap'].nil?
-        @tek  = @tek.min(tek_limit)
-        @tek  = @tek.min(@popx)
-        @tek  = @tek.max(15) # keep tech a single UWP digit (0-F); see env-limit note
-        @law  = @govm = @tek = 0 if @popx == 0
+        @tek = (toss(1,0) + tek_dm).whole   # T5: TL = 1D + mods (floored at 0)
+        # Optional cap for those who want to limit technology, then a single UWP digit (0-F).
+        @tek = @tek.max(config['tech_cap']) unless config['tech_cap'].nil?
+        @tek = @tek.max(15)
+        @law = @govm = @tek = 0 if @popx == 0
         
         # Bases — Traveller 5 (page 432). Each rolls 2D against a starport threshold.
         # Naval/Scout are exact; Depot/Way Station are "Possible" (full Chart F-B), so the
@@ -368,10 +369,12 @@ module Astromapper
         ix = "{ %+d }" % @ix
         ex = "(%s%s%s%+d)" % [@ex[:res].hexd, @ex[:lab].hexd, @ex[:inf].hexd, @ex[:eff]]
         cx = "[%s%s%s%s]" % [@cx[:homo].hexd, @cx[:acc].hexd, @cx[:str].hexd, @cx[:sym].hexd]
-        "%s %s %s" % [ix, ex, cx]
+        "%s %s %s RU:%d" % [ix, ex, cx, @ru]
       end
+      # Surface gravity (g) by Size. Extended to cover T5 sizes B-F (super-terrestrials).
       def gravity
-        @gravity = [0,0.05,0.15,0.25,0.35,0.45,0.7,0.9,1.0,1.25,1.4][@size] if @gravity.nil?
+        #              0   1    2    3    4    5   6   7   8   9    A   B   C   D   E   F
+        @gravity ||= [0,0.05,0.15,0.25,0.35,0.45,0.7,0.9,1.0,1.25,1.4,1.6,1.9,2.2,2.5,2.8][@size]
         @gravity
       end
       def bases
@@ -380,10 +383,6 @@ module Astromapper
       def port
         # Traveller 5 orientation (page 432): low roll = best. 2-4 A, 5-6 B, 7-8 C, 9 D, 10-11 E, 12 X.
         %w{A A A A A B B C C D E E X}[@port_roll.whole.max(12)]
-      end
-      def environmental_tek_limits
-        #0 1 2 3 4 5 6 7 8 9 A  B C D E F
-        [8,8,5,5,3,0,0,3,0,8,9,10,5,8,8,8]
       end
       def empty?
         (uwp.include?('X000000'))

@@ -112,7 +112,11 @@ module Astromapper
             separation = (toss(2,0) * COMPANION_SEPARATION[toss(3) + (4 * ternary) - 2]).round(2) # Gurps Space 4e p.105
 
             @orbit = au_to_orbit(separation) - 1
-            @star_type = %w{X B A F F G G K K M M M M}[(toss(2,0) + primary.type_dm).max(12)]
+            # Companion spectral type FEEDS OFF the primary: the same class or cooler,
+            # by Primary + (1D-1) steps down the O B A F G K M sequence (T5 page 436).
+            seq  = %w{O B A F G K M}
+            pidx = seq.index(primary.type) || (seq.size - 1)
+            @star_type = seq[(pidx + (1.d6 - 1)).max(seq.size - 1)]
             @star_size = %w{0 1 2 3 4 500 500 5 5 6 500 500 500 500}[(toss(2,0) + primary.size_dm).max(12)].to_i
           end
           @spectral = @star_type + SPECTRAL[@star_type].sample.to_s
@@ -181,7 +185,6 @@ module Astromapper
         def to_s; kid; end
         def kid; 'C'; end
         def radius; (155000 * Math.sqrt(luminosity)) ** 2; end # Gurps Space 4e p. 104
-        def snow_line; 4.85 * Math.sqrt(luminosity);       end # Gurps Space 4e p. 106
         def outer_limit; 40 * mass; end # Gurps Space 4e p. 107
         def orbits_to_ascii
           return '' if @orbits.empty?

@@ -117,10 +117,23 @@ Projects use `_astromapper.yml` files generated from ERB templates. Configuratio
 - Monkey patching of Integer/String classes for dice notation and utilities
 
 ## Important Conventions
-- The gem follows Traveller RPG rules (Mongoose, Classic, and GURPS Space variants)
+- **Worlds use Traveller 5 WorldGen** (see below); star systems use Classic Traveller + GURPS Space 4e orbital mechanics. GURPS-defined orbital math is intentionally NOT changed.
 - Sector maps are 40x32 hex grids
-- UWP (Universal World Profile) codes encode world characteristics
-- ASCII output uses specific formatting for readability
+- UWP (Universal World Profile) codes encode world characteristics, rendered in **extended hex (eHex)**: `0-9 A-H J-N P-Z` (skips I/O)
+- ASCII output uses specific formatting for readability; the sector file opens with a `#`-commented legend (parsers skip lines not matching `/^\d{4}/`)
+
+## Traveller 5 WorldGen
+- The UWP is rolled per T5 (`builder/orbit.rb`): Size `2D-2` (reroll 10→1D+9), Atmo `Flux+Size`, Hydro `Flux+Atm`, Pop `2D-2` (reroll 10→9+1D), Gov `Flux+Pop` (max F), Law `Flux+Gov` (max **J**), Tech `1D+T5 mods`. **Flux = `1D-1D`** (symmetric −5..+5; the `flux` helper on `Builder::Base`, NOT the old clamped `toss(2,7)`).
+- **Extensions** Ix/Ex/Cx + Resource Units (`World#build_extensions`, T5 page 435), shown as `{ +n } (RLI±E) [HASS] RU:n`. **Climate** is HZ-Variance-based (`World#climate`). **Trade codes** = full T5 TCS table (page 434); Political/Special are referee-deferred. **Starport** uses T5 orientation (low roll = best). **Native life** (`World#native_status`, page 436) gated by the `sophonts` flag.
+- Pages photographed from the T5 book drove these; provenance is documented per-section in `docs/generation-pipeline.md`.
+
+## Genre = the realism⟷romance stellar slider
+- `genre` selects the **stellar model** (`Star#initialize`), tuned so the three options span the real galaxy to space opera:
+  - **firm** — realistic main-sequence census (M-heavy array `M M F M M M M M K K G M`, hot only on nat 12). Matches the real solar neighbourhood: ~76% M, ~23% F/G/K.
+  - **normal** — 50/50 blend of the T5 table and the realistic base (~48% F/G/K).
+  - **opera** — the T5 spectral table (`Flux→type`, then ½ M→K). Sun-like, G-dominant (~82% F/G/K).
+- `STAR_BIAS` (in `Volume`) is now all-zero — the genre split is model-based, not a die modifier. Genre ALSO drives world/pop realism passes (opera/firm) and the `firm` pop-strip.
+- Worlds around **F-and-hotter stars are capped to colony size** (pop ≤ 6): short-lived/UV-harsh stars host colonies, not native homeworlds.
 
 ## Reproducibility & Seeding
 - Ruby uses the global PRNG (`Kernel#rand`, `Array#sample`, `Random.rand` all share it). The CLI calls `srand(int)` once before generation, so a seed makes the WHOLE pipeline deterministic (dice, names, spectral types, SVG belt jitter).
@@ -128,15 +141,10 @@ Projects use `_astromapper.yml` files generated from ERB templates. Configuratio
 - Provide a seed via `build --seed CODE` (alias `-S`) or the `seed:` field in `_astromapper.yml`. Blank = random, but the chosen code is printed so it can be replayed.
 - **Decision: per-language reproducibility only, NOT cross-language byte parity.** Each of Ruby/Go/Rust is internally reproducible, and all three now derive the same Crawford code + seed integer from a given input (FNV-1a everywhere). But they use different RNG algorithms (Ruby MT19937, Go math/rand, Rust ChaCha8), so the same seed yields DIFFERENT maps across languages. True cross-language identical maps would require one shared RNG + identical draw order — deliberately not pursued.
 
-## Genre semantics (realism dial), not system size
-- `genre` (normal | opera | firm) controls world REALISM, not the number/size of systems (that's `density` and per-star dice).
-- `normal`: gonzo worlds, no star bias. `opera`: atmosphere/hydro realism pass + moderate F/G/K star bias. `firm`: also strips population from marginal worlds + strong F/G/K bias.
-- The F/G/K star bias is the realized "B-practical" fix for the old dead `Volume#star_dm`: a genre-driven `+DM` (normal 0 / opera +2 / firm +4) on the primary star-TYPE roll (`Volume::STAR_BIAS`), so settled space trends toward warm, long-lived (habitable) stars. Verified gradient: ~32% / ~58% / ~86% F/G/K.
-
 ## Testing
-- `rake test` (or `ruby -Itest test/golden_master_test.rb`). Minitest; no external deps.
+- `rake test` (or `ruby -Itest test/golden_master_test.rb`). Minitest; no external deps. (The `test/` dir was previously hidden by an over-broad `.gitignore` `test` pattern — now fixed.)
 - Golden-master test: a fixed seed regenerates a sector and byte-compares it to `test/fixtures/sector_normal_<seed>.txt`. After an INTENTIONAL generation change, regenerate with `UPDATE_GOLDEN=1 rake test`.
-- Also asserts: same-seed determinism, different-seed divergence, and the genre F/G/K gradient.
+- Also asserts: same-seed determinism, different-seed divergence, and the genre stellar model (opera > normal, opera > firm, firm M-heavy).
 
 ## Known dependency-rot fixes (modern Ruby)
 - `YAML.unsafe_load` (not `load`) is required for the config's `!ruby/range` under Psych 4+.
