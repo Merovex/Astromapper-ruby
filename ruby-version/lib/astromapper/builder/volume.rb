@@ -8,7 +8,10 @@ module Astromapper
       # settled space trends toward scientifically-plausible habitable stars.
       # normal: gonzo, no skew; opera: moderate; firm: strong (and firm also
       # strips population from marginal worlds, compounding the effect).
-      STAR_BIAS = { 'normal' => 0, 'opera' => 2, 'firm' => 4 }.freeze
+      # Genre stellar model: opera uses the T5 spectral table (Star#initialize), so its
+      # bias is ignored. normal and firm use the M-heavy base; firm is the *realistic*
+      # M-dwarf galaxy (bias 0), so no F/G/K skew.
+      STAR_BIAS = { 'normal' => 0, 'opera' => 0, 'firm' => 0 }.freeze
 
       def initialize(c,r)
         @name   = (config['named']) ? Astromapper.names.sample : "%02d%02d" % [c,r]

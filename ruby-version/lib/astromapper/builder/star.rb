@@ -82,17 +82,29 @@ module Astromapper
 
           if primary.nil?
             @orbit   = 0
-            natural  = toss(2,0)  # raw 2d6 — decides Hot vs main sequence, BEFORE genre bias
-            if natural >= 11
-              # Hot stars (A/B/O). Rolled on a natural 11-12 only, so this stays rare and is
-              # NOT inflated by the genre habitability bias (hot stars are not habitable).
-              @type_dm = natural  # kept so companions still derive off the primary
-              @star_type = %w{A A A A A A A A A A B B O}[toss(2,0)]
+            genre = config['genre'].to_s.downcase
+            # Sun-like (T5) model: opera always; normal half the time (a 50/50 blend of the
+            # T5 table and the M-heavy base, landing it midway between firm and opera).
+            if genre == 'opera' || (genre == 'normal' && 1.d6 <= 3)
+              # Traveller 5 spectral table (page 436), Flux -> type. G/K-dominant.
+              f = flux
+              @star_type = (f <= -4 ? 'A' : f <= -2 ? 'F' : f <= 0 ? 'G' : f <= 2 ? 'K' : 'M')
+              @star_type = 'K' if @star_type == 'M' && 1.d6 <= 3 # shift ~half the M dwarfs to K
+              @type_dm   = {'A'=>2,'F'=>4,'G'=>6,'K'=>8,'M'=>10}[@star_type] # for companion derivation
             else
-              # Main sequence. Genre bias pushes toward F/G/K but is capped at F (index 10),
-              # so it can never spill into the Hot band above.
-              @type_dm = (natural + star_dm).max(10)
-              @star_type = %w{B B A M M M M M K G F}[@type_dm]
+              natural  = toss(2,0)  # raw 2d6
+              if natural >= 12
+                # Hot stars (A/B/O) — rare (natural 12 only), to mirror the real galaxy's
+                # ~1% hot-star fraction. Mostly A, as in reality.
+                @type_dm = natural
+                @star_type = %w{A A A A A A A A A A B B O}[toss(2,0)]
+              else
+                # Realistic main-sequence demographics (~real galaxy): M-dominated, then
+                # K > G > F. Tuned so firm ≈ the real solar neighbourhood census.
+                #               0 1 2 3 4 5 6 7 8 9 10 11
+                @type_dm = (natural + star_dm).max(11)
+                @star_type = %w{M M F M M M M M K K G M}[@type_dm]
+              end
             end
             @size_dm = (toss(2,0) + 0 ).max(12)
             @star_size = %w{0 1 2 3 4 5 5 5 5 5 5 6 500}[@size_dm].to_i

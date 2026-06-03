@@ -241,9 +241,12 @@ module Astromapper
         if ('firm' == config['genre'].downcase)
           @popx -= 1 if (@size < 3 or @size > 9)
           @popx += [-1, -1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, -1, -1, -1, -1][@atmo]
-          @port_roll = (@port_roll - 7 + @popx.whole).whole
+          @port_roll = (@port_roll + 7 - @popx.whole).whole # T5: higher pop -> lower roll -> better port
         end
         @popx = @popx.whole.max(15) # population ceiling is F
+        # Short-lived, high-UV stars (F and hotter) can't host large native populations —
+        # only frontier colonies. Cap their worlds at colony size (6).
+        @popx = @popx.max(6) if %w{O B A F}.include?(@star.type)
 
         # Government = Flux + Pop (ceiling F); Law = Flux + Gov (ceiling J). T5 WorldGen.
         @govm = (flux + @popx).whole.max(15)
@@ -375,7 +378,8 @@ module Astromapper
         return [@base['Naval'],@base['Scout'],@gas_giant,@base['Depot'],@base['Way']].join('')
       end
       def port
-        %w{X X X E E D D C C B B A A A A A A A A A}[@port_roll.whole.max(19)]
+        # Traveller 5 orientation (page 432): low roll = best. 2-4 A, 5-6 B, 7-8 C, 9 D, 10-11 E, 12 X.
+        %w{A A A A A B B C C D E E X}[@port_roll.whole.max(12)]
       end
       def environmental_tek_limits
         #0 1 2 3 4 5 6 7 8 9 A  B C D E F

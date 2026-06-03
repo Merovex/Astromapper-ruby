@@ -163,18 +163,28 @@ For each occupied hex:
    | 8–11 | 1 |
    | 12 | 2 |
 
-**Genre star-type bias** (`Volume::STAR_BIAS`) — a die modifier added to the primary
-**type** roll so that settled space trends toward warm, long-lived (habitable) stars:
+**Genre stellar model** — genre selects *how* the primary star is rolled (see §3):
 
-| `genre` | `star_dm` | Effect | Observed F/G/K share |
-|---|---|---|---|
-| normal | 0 | gonzo, no skew | ~27% |
-| opera | +2 | moderate skew | ~59% |
-| firm | +4 | strong skew | ~83% |
+The genre dial is a **realism ⟷ romance slider** for stellar demographics — how far the
+galaxy deviates from the *real* solar-neighbourhood census toward a friendlier, more
+habitable (playable) one:
 
-The bias caps at F, so it only redistributes the **main-sequence** roll; a separate ~3–5%
-of stars are **hot A/B/O** (the §3 Hot branch), genre-independent, plus the usual M dwarfs
-and white dwarfs filling the remainder.
+| `genre` | Star model | Character | F/G/K | M |
+|---|---|---|---|---|
+| **firm** | realistic main-sequence census | the galaxy **as it is** | ~23% | ~76% |
+| normal | 50/50 blend of T5 table + realistic | classic-Traveller midpoint | ~48% | ~49% |
+| **opera** | **Traveller 5** spectral table, ½ M→K | adventure-fiction **Sun-like** | ~82% | ~14% |
+
+Reference — real solar neighbourhood: A 0.6% · F 3% · G 7.6% · K 12% · **M 76%** (F/G/K
+≈ 23%). `firm` is tuned to match this almost exactly (A 1 / F 2.6 / G 7.5 / K 12.7 / M
+76.1). `opera` rolls the T5 table directly (G 36 / K 22 / F 24 / M 14). `normal` rolls the
+T5 table half the time and the realistic base the other half. Hot A/B/O stars are rare
+(natural 12 only) in the realistic base, ~1% — matching reality. `STAR_BIAS` is now
+all-zero; the genre split is model-based.
+
+> **Habitability cap:** worlds around **F-and-hotter** stars are capped at **colony size**
+> (pop ≤ 6) — those stars are short-lived and UV-harsh, so they host frontier colonies, not
+> large populations or native life (`World`).
 
 ---
 
@@ -383,7 +393,7 @@ M-dwarf biozones sit at orbit 0–1, so most red-dwarf worlds are tidally locked
 
 | Attribute | T5 rule | Range |
 |---|---|---|
-| **Starport** | `2D` → `X X X E E D D C C B B A…` (Classic/MgT orientation, **not** T5's) | X–A |
+| **Starport** | **T5** `2D` (page 432): 2–4 A, 5–6 B, 7–8 C, 9 D, 10–11 E, 12 X (low roll = best) | X–A |
 | **Population** | `2D − 2`; on a 10, reroll `9 + 1D` (+firm adjustments) | 0–F |
 | **Government** | `Flux + Pop`, max F, Pop 0 → 0 | 0–F |
 | **Law** | `Flux + Gov`, max **J** (18, eHex), Pop 0 → 0 | 0–J |
