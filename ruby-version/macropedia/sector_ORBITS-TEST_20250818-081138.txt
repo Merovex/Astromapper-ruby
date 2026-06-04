@@ -1,0 +1,1973 @@
+# Sector: Unnamed
+# 32 columns x 40 rows
+Location UWP       Temp Bases TC          Factions     Stars         Orbits        Name
+-------- --------- ---- ----- ----------- ------------ ------------- ------------- ----
+
+# Subsector A
+0101     X100044-2 T    .     Lt Va                    K5II          BBHHRWGR.G    Sera
+  --  1.    B // 000000-0 //  0.7 au
+  --  2.    B // 000000-0 //  1.1 au
+  --  3.    H // 0D3000-0 //  1.9 au
+  --  4.    H // 0C3000-0 //  3.5 au
+  --  5.    R // 000000-0 //  6.7 au
+  --  6. *  W // X100044-2 // 13.1 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+  --  7.    G // 000000-0 // 25.9 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+  --  8.    R // 000000-0 // 51.5 au
+  --  9.    . // .......-. // 102.7 au
+  -- 10.    G // 000000-0 // 205.1 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+
+0303     C310448-8 T    .     Ni          M F M        M2V           WG            Solos
+  --  1. *  W // C310448-8 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+
+0403     D736310-3 T    .     Lo Lt       M M F N      M2V           WGG           Nasya
+  --  1. *  W // D736310-3 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+
+0803     D665400-6 T    S     Ga Ni       S F F M      K5V/DB        HWBS          Weald
+  --  1.    H // 0D4000-0 //  0.3 au
+  --  2. *  W // D665400-6 //  0.6 au
+  --  3.    B // 000000-0 //  1.2 au
+  --  7. *  S // 000000-0 // 19.2 au
+
+0204     XA39020-1 T    .     Lt                       G8IV/M4V      HRHWGS        Haven
+  --  1.    H // 0A0000-0 //  0.3 au
+  --  2.    R // 000000-0 //  0.7 au
+  --  3.    H // 0C1000-0 //  1.4 au
+  --  4. *  W // XA39020-1 //  2.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  5.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+  --  7. *  S // 000000-0 // 22.4 au
+
+0504     X611451-5 T    R     Ic Lt Ni    F N M        G0V/DB        R.GWGRRS      Manhome
+  --  1.    R // 000000-0 //  0.3 au
+  --  2.    . // .......-. //  0.6 au
+  --  3.    G // 000000-0 //  1.2 au
+  --  4. *  W // X611451-5 //  2.4 au
+  --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+  --  6.    R // 000000-0 //  9.6 au
+  --  7.    R // 000000-0 // 19.2 au
+  -- 10. -  S // 000000-0 // 153.6 au
+
+0605     X817486-0 T    .     Ic Lt Ni    P F M        M2V           WG            Raaga
+  --  1. *  W // X817486-0 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+
+0306     X637001-0 C    .     Lt                       A2V/DB        B..WGGGS      Orgone
+  --  1.    B // 000000-0 //  0.4 au
+  --  2.    . // .......-. //  0.8 au
+  --  3.    . // .......-. //  1.6 au
+  --  4. *  W // X637001-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 // 12.8 au
+  --  7.    G // 000000-0 // 25.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+  -- 10. -  S // 000000-0 // 204.8 au
+
+0406     A969786-8 T    R     Ga Ri       F M O        M4V           W             Unarius
+  --  1. *  W // A969786-8 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+
+0807     XA38103-3 F    .     Lo Lt       F M N        M6V           WRG           Auclaire
+  --  1. *  W // XA38103-3 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+  --  2.    R // 000000-0 //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+
+0709     X92A030-5 T    .     Lt Wa                    F2V           RBWGB..G      Rezerval
+  --  1.    R // 000000-0 //  0.4 au
+  --  2.    B // 000000-0 //  0.8 au
+  --  3. *  W // X92A030-5 //  1.6 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  5.    B // 000000-0 //  6.4 au
+  --  6.    . // .......-. // 12.8 au
+  --  7.    . // .......-. // 25.6 au
+  --  8.    G // 000000-0 // 51.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+
+0809     E611431-8 H    .     Ic Ni       N F F        M2V/DB        WBS           Tschai
+  --  1. *  W // E611431-8 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+  --  2.    B // 000000-0 //  0.4 au
+  -- 10. -  S // 000000-0 // 102.4 au
+
+0610     XA16100-0 T    .     Ic Lo Lt    N O O M      M4III         BRRHWRGGB     Psychon
+  --  1.    B // 000000-0 //  0.5 au
+  --  2.    R // 000000-0 //  0.9 au
+  --  3.    R // 000000-0 //  1.7 au
+  --  4.    H // 0A4000-0 //  3.3 au
+  --  5. *  W // XA16100-0 //  6.5 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+  --  6.    R // 000000-0 // 12.9 au
+  --  7.    G // 000000-0 // 25.7 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+  --  8.    G // 000000-0 // 51.3 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+  --  9.    B // 000000-0 // 102.5 au
+
+
+# Subsector B
+1101     X200000-1 T    .     Ba Lt Va                 F2V           BHWG.GG       Lea
+  --  1.    B // 000000-0 //  0.4 au
+  --  2.    H // 0E6000-0 //  0.8 au
+  --  3. *  W // X200000-1 //  1.6 au
+  --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+  --  5.    . // .......-. //  6.4 au
+  --  6.    G // 000000-0 // 12.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+     -- Moon 9: Size 1 Atmo 0 Hydro 0
+  --  7.    G // 000000-0 // 25.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
+
+1601     D511200-4 T    R     Ic Lo Lt    S N N O      M6V           WGB           Tetragrammaton
+  --  1. *  W // D511200-4 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+  --  3.    B // 000000-0 //  0.8 au
+
+1502     X200105-3 T    .     Lo Lt Va    P M S        M6V           WRG           Brolyo
+  --  1. *  W // X200105-3 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+  --  2.    R // 000000-0 //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+
+1403     X100052-6 T    .     Va                       M0V           WRG           Xodo
+  --  1. *  W // X100052-6 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+  --  2.    R // 000000-0 //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+
+1603     D310020-8 T    .                              K2V           BW            Indi
+  --  1.    B // 000000-0 //  0.3 au
+  --  2. *  W // D310020-8 //  0.6 au
+
+1304     E737454-8 C    .     Ni          S S M        M2V           WGG           Appelobetnees
+  --  1. *  W // E737454-8 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+
+1406     D555772-4 T    .     Ag Ga Lt    M M F        K5V/DB        HWRBRGGS      Zog
+  --  1.    H // 0E4000-0 //  0.3 au
+  --  2. *  W // D555772-4 //  0.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  3.    R // 000000-0 //  1.2 au
+  --  4.    B // 000000-0 //  2.4 au
+  --  5.    R // 000000-0 //  4.8 au
+  --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+  --  7.    G // 000000-0 // 19.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+  -- 10. -  S // 000000-0 // 153.6 au
+
+1506     XB4A000-0 C    .     Ba Lt Wa                 M4V/DB        WBS           Acquara
+  --  1. *  W // XB4A000-0 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+  --  2.    B // 000000-0 //  0.4 au
+  --  8. -  S // 000000-0 // 25.6 au
+
+1408     X72A103-5 F    .     Lo Lt Wa    S M M        M2V           WR            Dosadi
+  --  1. *  W // X72A103-5 //  0.2 au
+  --  2.    R // 000000-0 //  0.4 au
+
+
+# Subsector C
+1803     C7566AA-6 T    .     Ag Ga Ni    M N          M4V           WR            Mito
+  --  1. *  W // C7566AA-6 //  0.2 au
+  --  2.    R // 000000-0 //  0.4 au
+
+2004     E653301-3 T    .     Lo Lt Po    N F S        F2V           BRWRGBB       Dunuos
+  --  1.    B // 000000-0 //  0.4 au
+  --  2.    R // 000000-0 //  0.8 au
+  --  3. *  W // E653301-3 //  1.6 au
+  --  4.    R // 000000-0 //  3.2 au
+  --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  6.    B // 000000-0 // 12.8 au
+  --  7.    B // 000000-0 // 25.6 au
+
+1810     X615000-0 C    .     Ba Ic Lt                 M6V/DB        WS            Talorus
+  --  1. *  W // X615000-0 //  0.2 au
+  --  8. -  S // 000000-0 // 25.6 au
+
+
+# Subsector D
+3201     CA25333-8 C    .     Lo          S M M        M0II/DB       BRRRRRWSB     Santanni
+  --  1.    B // 000000-0 //  0.6 au
+  --  2.    R // 000000-0 //  0.9 au
+  --  3.    R // 000000-0 //  1.5 au
+  --  4.    R // 000000-0 //  2.7 au
+  --  5.    R // 000000-0 //  5.1 au
+  --  6.    R // 000000-0 //  9.9 au
+  --  7. *  W // CA25333-8 // 19.5 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+  --  9. *  S // 000000-0 // 77.1 au
+  -- 11.    B // 000000-0 // 307.5 au
+
+3102     E664430-2 T    .     Ga Lt Ni    F S M M      F2V           HRW.GR        Grand Teton
+  --  1.    H // 0A3000-0 //  0.4 au
+  --  2.    R // 000000-0 //  0.8 au
+  --  3. *  W // E664430-2 //  1.6 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+  --  4.    . // .......-. //  3.2 au
+  --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 1 Atmo 0 Hydro 0
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
+  --  6.    R // 000000-0 // 12.8 au
+
+2903     C541436-7 F    S     Ni Po       M M F        M0V           WGGG          Amish Home
+  --  1. *  W // C541436-7 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+  --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+
+3203     X535246-0 T    R     Lo Lt       F S S        M6V/DB        WS            Felis
+  --  1. *  W // X535246-0 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+  -- 10. -  S // 000000-0 // 102.4 au
+
+2504     X410234-4 T    R     Lo Lt       S M S        M4V           WR.R          Corobon
+  --  1. *  W // X410234-4 //  0.2 au
+  --  2.    R // 000000-0 //  0.4 au
+  --  3.    . // .......-. //  0.8 au
+  --  4.    R // 000000-0 //  1.6 au
+
+3005     D627464-4 T    .     Lt Ni       M N O        F5V           HRWGGRGG      Pompey
+  --  1.    H // 0E6000-0 //  0.4 au
+  --  2.    R // 000000-0 //  0.8 au
+  --  3. *  W // D627464-4 //  1.6 au
+  --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+  --  6.    R // 000000-0 // 12.8 au
+  --  7.    G // 000000-0 // 25.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+  --  8.    G // 000000-0 // 51.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+
+2606     X636420-1 F    R     Lt Ni       S M S N      K0V           RWGGB         Jewell
+  --  1.    R // 000000-0 //  0.3 au
+  --  2. *  W // X636420-1 //  0.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+  --  3.    G // 000000-0 //  1.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 2 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
+  --  4.    G // 000000-0 //  2.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 1 Atmo 0 Hydro 0
+  --  5.    B // 000000-0 //  4.8 au
+
+3106     E654401-8 T    .     Ga Ni       M F N        M2V/DB        WRBGS         Ginaz
+  --  1. *  W // E654401-8 //  0.2 au
+  --  2.    R // 000000-0 //  0.4 au
+  --  3.    B // 000000-0 //  0.8 au
+  --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+  --  7. -  S // 000000-0 // 12.8 au
+
+2607     C525589-5 F    R     Lt Ni       F N F        K0V/DB/DB     RWSS          Feral
+  --  1.    R // 000000-0 //  0.3 au
+  --  2. *  W // C525589-5 //  0.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+  --  7. *  S // 000000-0 // 19.2 au
+  -- 10. -  S // 000000-0 // 153.6 au
+
+3008     C100446-8 H    .     Ni Va       M O F        F0V/DB        RS            Tythonus
+  --  1.    R // 000000-0 //  0.4 au
+  --  3. *  S // 000000-0 //  1.6 au
+
+2910     E410436-6 H    R     Ni          M F M        M4V/DB        WR.RGBS       Zoob
+  --  1. *  W // E410436-6 //  0.2 au
+  --  2.    R // 000000-0 //  0.4 au
+  --  3.    . // .......-. //  0.8 au
+  --  4.    R // 000000-0 //  1.6 au
+  --  5.    G // 000000-0 //  3.2 au
+  --  6.    B // 000000-0 //  6.4 au
+  -- 10. -  S // 000000-0 // 102.4 au
+
+
+# Subsector E
+0114     X410000-4 T    .     Ba Lt                    G5IV/DB       HRBWBGS       Hulle
+  --  1.    H // 0B2000-0 //  0.3 au
+  --  2.    R // 000000-0 //  0.6 au
+  --  3.    B // 000000-0 //  1.2 au
+  --  4. *  W // X410000-4 //  2.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+  --  5.    B // 000000-0 //  4.8 au
+  --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+  --  8. *  S // 000000-0 // 38.4 au
+
+0514     XB4A042-0 T    .     Lt Wa                    M4V/DB        WRGGGS        Sphereon
+  --  1. *  W // XB4A042-0 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  2.    R // 000000-0 //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+  --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 0
+     -- Moon 8: Size 3 Atmo 0 Hydro 0
+  --  9. -  S // 000000-0 // 51.2 au
+
+0215     D554544-4 T    SR    Ag Ga Lt Ni F M S        M4V           WRR           Sel
+  --  1. *  W // D554544-4 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+  --  2.    R // 000000-0 //  0.4 au
+  --  3.    R // 000000-0 //  0.8 au
+
+0218     X544144-1 H    R     Ga Lo Lt    M N S        F0V           .RW.RR.G      Tupile
+  --  1.    . // .......-. //  0.4 au
+  --  2.    R // 000000-0 //  0.8 au
+  --  3. *  W // X544144-1 //  1.6 au
+  --  4.    . // .......-. //  3.2 au
+  --  5.    R // 000000-0 //  6.4 au
+  --  6.    R // 000000-0 // 12.8 au
+  --  7.    . // .......-. // 25.6 au
+  --  8.    G // 000000-0 // 51.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+
+
+# Subsector F
+0913     E523104-4 F    .     Lo Lt Po    N S N        M0V/M6VI      WS            Odlum
+  --  1. *  W // E523104-4 //  0.2 au
+  --  6. *  S // 000000-0 //  6.4 au
+
+1113     X311200-2 T    R     Ic Lo Lt    M M M S      M6V           W.G           Vega
+  --  1. *  W // X311200-2 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+  --  2.    . // .......-. //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+
+1214     E545455-4 T    .     Ga Lt Ni    M F N        M2III/DB      GR.RWS        Lingane
+  --  1.    G // 000000-0 //  0.5 au
+  --  2.    R // 000000-0 //  0.9 au
+  --  3.    . // .......-. //  1.7 au
+  --  4.    R // 000000-0 //  3.3 au
+  --  5. *  W // E545455-4 //  6.5 au
+  --  7. *  S // 000000-0 // 25.7 au
+
+0919     X839444-5 C    .     Lt Ni       M O S        M4V/DB        WGS           Eleutheria
+  --  1. *  W // X839444-5 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+  -- 11. -  S // 000000-0 // 204.8 au
+
+1219     D76A583-7 T    .     Ni Wa       O S M        M0V           WR            Brezane
+  --  1. *  W // D76A583-7 //  0.2 au
+  --  2.    R // 000000-0 //  0.4 au
+
+0920     X513112-1 T    .     Ic Lo Lt    M M F        M0V/DB        WGRS          Bildunsrunia
+  --  1. *  W // X513112-1 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  3.    R // 000000-0 //  0.8 au
+  --  8. -  S // 000000-0 // 25.6 au
+
+1220     X848000-0 C    .     Ba Ga Lt                 M4V/DB        WGS           Dregocia
+  --  1. *  W // X848000-0 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 1 Atmo 0 Hydro 0
+     -- Moon 8: Size 3 Atmo 0 Hydro 0
+  --  9. -  S // 000000-0 // 51.2 au
+
+1620     E547321-4 C    .     Ga Lo Lt    S F N        M0V           WRGB.G        Zia di Notte
+  --  1. *  W // E547321-4 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  2.    R // 000000-0 //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 2 Atmo 0 Hydro 0
+  --  4.    B // 000000-0 //  1.6 au
+  --  5.    . // .......-. //  3.2 au
+  --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+
+
+# Subsector G
+2111     X748446-0 H    .     Ga Lt Ni    M F F        F2V           BB.WGGB       Khepera
+  --  1.    B // 000000-0 //  0.3 au
+  --  2.    B // 000000-0 //  0.6 au
+  --  3.    . // .......-. //  1.2 au
+  --  4. *  W // X748446-0 //  2.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+     -- Moon 9: Size 1 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+  --  7.    B // 000000-0 // 19.2 au
+
+1812     X4A2353-2 T    .     Fl Lo Lt    F N S        M0V           WG            Guillarin
+  --  1. *  W // X4A2353-2 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+
+1713     XA59100-3 F    R     Ga Lo Lt    M S N M      M4V           WG            Balder
+  --  1. *  W // XA59100-3 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+
+2014     X710246-2 H    .     Lo Lt       M F M        F2V           HRWBGG        Peekaboo
+  --  1.    H // 0E2000-0 //  0.4 au
+  --  2.    R // 000000-0 //  0.8 au
+  --  3. *  W // X710246-2 //  1.6 au
+  --  4.    B // 000000-0 //  3.2 au
+  --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 // 12.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+
+2314     E311114-8 T    .     Ic Lo       F N F        K0IV/DB       BBWSGGB       Hurria
+  --  1.    B // 000000-0 //  0.3 au
+  --  2.    B // 000000-0 //  0.6 au
+  --  3. *  W // E311114-8 //  1.2 au
+  --  5. *  S // 000000-0 //  4.8 au
+  --  7.    G // 000000-0 // 19.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  8.    G // 000000-0 // 38.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+  --  9.    B // 000000-0 // 76.8 au
+
+1817     X410000-4 T    .     Ba Lt                    M6V           W             Troas
+  --  1. *  W // X410000-4 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+
+1718     E56449B-3 T    .     Ga Lt Ni    F N          M2V/DB        WS            Solaris
+  --  1. *  W // E56449B-3 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  -- 11. -  S // 000000-0 // 204.8 au
+
+1720     XA29311-2 T    .     Lo Lt       N S N        M2V/DB        WGBRS         Icebox
+  --  1. *  W // XA29311-2 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 1 Atmo 0 Hydro 0
+  --  3.    B // 000000-0 //  0.8 au
+  --  4.    R // 000000-0 //  1.6 au
+  -- 10. -  S // 000000-0 // 102.4 au
+
+
+# Subsector H
+2811     D410100-8 T    SR    Lo          F M M F      K2IV/DB       RRWGBGS       Quidde
+  --  1.    R // 000000-0 //  0.3 au
+  --  2.    R // 000000-0 //  0.7 au
+  --  3. *  W // D410100-8 //  1.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+  --  4.    G // 000000-0 //  2.8 au
+  --  5.    B // 000000-0 //  5.6 au
+  --  6.    G // 000000-0 // 11.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 3 Atmo 0 Hydro 0
+  --  9. *  S // 000000-0 // 89.6 au
+
+3212     E625333-4 T    R     Lo Lt       N P N        G2V/DB        B.RWS         Limbo
+  --  1.    B // 000000-0 //  0.3 au
+  --  2.    . // .......-. //  0.6 au
+  --  3.    R // 000000-0 //  1.2 au
+  --  4. *  W // E625333-4 //  2.4 au
+  -- 10. -  S // 000000-0 // 153.6 au
+
+2913     X916385-4 T    .     Ic Lo Lt    F F S        M6V/DB        WGBRS         Zenk
+  --  1. *  W // X916385-4 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  3.    B // 000000-0 //  0.8 au
+  --  4.    R // 000000-0 //  1.6 au
+  -- 10. -  S // 000000-0 // 102.4 au
+
+2915     X82A003-1 C    R     Lt Wa                    M6V/DB        WGGS          Bornok
+  --  1. *  W // X82A003-1 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+  --  8. -  S // 000000-0 // 25.6 au
+
+2716     X837311-0 T    .     Lo Lt       S M N        F0V           GHWGGGGG      Whitefall
+  --  1.    G // 000000-0 //  0.4 au
+  --  2.    H // 0C4000-0 //  0.8 au
+  --  3. *  W // X837311-0 //  1.6 au
+  --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 // 12.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
+     -- Moon 7: Size 1 Atmo 0 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+     -- Moon 9: Size 3 Atmo 0 Hydro 0
+  --  7.    G // 000000-0 // 25.6 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+  --  8.    G // 000000-0 // 51.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+
+2816     B835543-8 F    .     Ni          N F S        G0V           HHWRB         Derowd
+  --  1.    H // 0B3000-0 //  0.4 au
+  --  2.    H // 0C2000-0 //  0.8 au
+  --  3. *  W // B835543-8 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+  --  4.    R // 000000-0 //  3.2 au
+  --  5.    B // 000000-0 //  6.4 au
+
+2518     X727131-3 F    .     Lo Lt       M N S        F0V           HRRWGGGB      Melde
+  --  1.    H // 0D4000-0 //  0.3 au
+  --  2.    R // 000000-0 //  0.6 au
+  --  3.    R // 000000-0 //  1.2 au
+  --  4. *  W // X727131-3 //  2.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+  --  7.    G // 000000-0 // 19.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+  --  8.    B // 000000-0 // 38.4 au
+
+3118     X410200-4 H    .     Lo Lt       N S S F      M2V           W             Los Vada
+  --  1. *  W // X410200-4 //  0.2 au
+
+
+# Subsector I
+0524     E4A5559-6 C    R     Fl Ni       S F N        M0V           WG            Grand Teton
+  --  1. *  W // E4A5559-6 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+
+0326     X868200-3 C    .     Ga Lo Lt    F S M M      F5III         .RHWB.GG      Commerce
+  --  1.    . // .......-. //  0.4 au
+  --  2.    R // 000000-0 //  0.8 au
+  --  3.    H // 0B2000-0 //  1.5 au
+  --  4. *  W // X868200-3 //  2.9 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  5.    B // 000000-0 //  5.7 au
+  --  6.    . // .......-. // 11.3 au
+  --  7.    G // 000000-0 // 22.5 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+  --  8.    G // 000000-0 // 44.9 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+
+0526     XA59323-3 C    .     Ga Lo Lt    F S N        M4V           WG            Durendal
+  --  1. *  W // XA59323-3 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 0
+
+0328     E632302-8 C    R     Lo Po       S N M        F5V           BRWBBG        Netu
+  --  1.    B // 000000-0 //  0.4 au
+  --  2.    R // 000000-0 //  0.8 au
+  --  3. *  W // E632302-8 //  1.6 au
+  --  4.    B // 000000-0 //  3.2 au
+  --  5.    B // 000000-0 //  6.4 au
+  --  6.    G // 000000-0 // 12.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+
+0628     X869220-4 T    .     Ga Lo Lt    N M M M      G2V/DB/DB     HBWBGSS       Bornok
+  --  1.    H // 0B8000-0 //  0.4 au
+  --  2.    B // 000000-0 //  0.8 au
+  --  3. *  W // X869220-4 //  1.6 au
+  --  4.    B // 000000-0 //  3.2 au
+  --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+  --  7. *  S // 000000-0 // 25.6 au
+  --  9. -  S // 000000-0 // 102.4 au
+
+0330     BA67611-8 T    .     Ag Ga Ni Ri S N M        M4V           WR.GGG        Tolive
+  --  1. *  W // BA67611-8 //  0.2 au
+  --  2.    R // 000000-0 //  0.4 au
+  --  3.    . // .......-. //  0.8 au
+  --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+     -- Moon 9: Size 1 Atmo 0 Hydro 0
+     -- Moon 10: Size 2 Atmo 0 Hydro 0
+
+
+# Subsector J
+0922     E612436-5 T    .     Ic Lt Ni    F O N        A0V           RRRW          Phlenbahn
+  --  1.    R // 000000-0 //  0.4 au
+  --  2.    R // 000000-0 //  0.8 au
+  --  3.    R // 000000-0 //  1.6 au
+  --  4. *  W // E612436-5 //  3.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+
+1022     X838012-0 T    .     Lt                       G0V           R.WGGGG       Dido
+  --  1.    R // 000000-0 //  0.4 au
+  --  2.    . // .......-. //  0.8 au
+  --  3. *  W // X838012-0 //  1.6 au
+  --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 1 Atmo 0 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 // 12.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
+  --  7.    G // 000000-0 // 25.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+
+1124     E542441-3 T    .     Lt Ni Po    M M N        M6V/DB        WGS           Tolive
+  --  1. *  W // E542441-3 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+  --  4. *  S // 000000-0 //  1.6 au
+
+0926     XB19034-3 F    .     Ic Lt                    F0V           R.WGBRG       Secundus
+  --  1.    R // 000000-0 //  0.4 au
+  --  2.    . // .......-. //  0.8 au
+  --  3. *  W // XB19034-3 //  1.6 au
+  --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 1 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+     -- Moon 9: Size 1 Atmo 0 Hydro 0
+     -- Moon 10: Size 2 Atmo 0 Hydro 0
+  --  5.    B // 000000-0 //  6.4 au
+  --  6.    R // 000000-0 // 12.8 au
+  --  7.    G // 000000-0 // 25.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+
+1226     X626042-0 F    .     Lt                       M4V           WBGRG         Sarpeodon
+  --  1. *  W // X626042-0 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  2.    B // 000000-0 //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+  --  4.    R // 000000-0 //  1.6 au
+  --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+
+1227     D649334-3 T    .     Ga Lo Lt    O N M        F5V/DB        BRRWRGGS      Rohini
+  --  1.    B // 000000-0 //  0.3 au
+  --  2.    R // 000000-0 //  0.6 au
+  --  3.    R // 000000-0 //  1.2 au
+  --  4. *  W // D649334-3 //  2.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  5.    R // 000000-0 //  4.8 au
+  --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 2 Atmo 0 Hydro 0
+  --  7.    G // 000000-0 // 19.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+  --  9. -  S // 000000-0 // 76.8 au
+
+1427     C73A420-8 C    .     Ni Wa       N N N S      M2V           W.RGBG        Salt
+  --  1. *  W // C73A420-8 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+  --  2.    . // .......-. //  0.4 au
+  --  3.    R // 000000-0 //  0.8 au
+  --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+  --  5.    B // 000000-0 //  3.2 au
+  --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+     -- Moon 9: Size 3 Atmo 0 Hydro 0
+     -- Moon 10: Size 0 Atmo 0 Hydro 0
+
+1528     X551265-1 H    .     Lo Lt Po    N N F        G2V/DB/DB     HRW.BSS       Shangra-la
+  --  1.    H // 0C2000-0 //  0.4 au
+  --  2.    R // 000000-0 //  0.8 au
+  --  3. *  W // X551265-1 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  4.    . // .......-. //  3.2 au
+  --  5.    B // 000000-0 //  6.4 au
+  --  7. *  S // 000000-0 // 25.6 au
+  -- 10. -  S // 000000-0 // 204.8 au
+
+1029     D540463-3 T    .     De Lt Ni Po N S F        F5V           RRRWGGG       Sarn
+  --  1.    R // 000000-0 //  0.3 au
+  --  2.    R // 000000-0 //  0.6 au
+  --  3.    R // 000000-0 //  1.2 au
+  --  4. *  W // D540463-3 //  2.4 au
+  --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
+     -- Moon 7: Size 2 Atmo 0 Hydro 0
+  --  7.    G // 000000-0 // 19.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+
+
+# Subsector K
+2121     E93A364-5 T    .     Lo Lt Wa    N N M        M2V           WB            Norfolk
+  --  1. *  W // E93A364-5 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  2.    B // 000000-0 //  0.4 au
+
+2324     D410465-8 T    S     Ni          P S M        M2V           WR.B          Urras
+  --  1. *  W // D410465-8 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  2.    R // 000000-0 //  0.4 au
+  --  3.    . // .......-. //  0.8 au
+  --  4.    B // 000000-0 //  1.6 au
+
+2025     E626212-3 C    .     Lo Lt       F F S        M6V/DB        WGGS          Lurion
+  --  1. *  W // E626212-3 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+     -- Moon 7: Size 1 Atmo 0 Hydro 0
+     -- Moon 8: Size 3 Atmo 0 Hydro 0
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
+     -- Moon 10: Size 0 Atmo 0 Hydro 0
+  -- 10. -  S // 000000-0 // 102.4 au
+
+2329     E856301-6 H    .     Ga Lo       M S N        K5III         HHRBWRB       Nirene
+  --  1.    H // 0E4000-0 //  0.4 au
+  --  2.    H // 0B2000-0 //  0.8 au
+  --  3.    R // 000000-0 //  1.5 au
+  --  4.    B // 000000-0 //  2.9 au
+  --  5. *  W // E856301-6 //  5.7 au
+  --  6.    R // 000000-0 // 11.3 au
+  --  7.    B // 000000-0 // 22.5 au
+
+2030     X836422-2 C    .     Lt Ni       S F N        K2IV/DB       H.WGGS        Castor
+  --  1.    H // 0D0000-0 //  0.3 au
+  --  2.    . // .......-. //  0.6 au
+  --  3. *  W // X836422-2 //  1.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+  --  4.    G // 000000-0 //  2.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+  --  8. *  S // 000000-0 // 38.4 au
+
+
+# Subsector L
+2522     X200042-5 T    .     Lt Va                    M6V/DB        WG.S          Elysium
+  --  1. *  W // X200042-5 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+  --  3.    . // .......-. //  0.8 au
+  --  5. *  S // 000000-0 //  3.2 au
+
+2822     D543458-4 C    S     Lt Ni Po    P O S        M4II/M6IV     RGRHRSGR      Blackstrap
+  --  1.    R // 000000-0 //  0.6 au
+  --  2.    G // 000000-0 //  1.0 au
+  --  3.    R // 000000-0 //  1.7 au
+  --  4.    H // 0A5000-0 //  3.1 au
+  --  5.    R // 000000-0 //  5.9 au
+  --  7. *  S // 000000-0 // 22.7 au
+  --  9.    G // 000000-0 // 89.9 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 0
+  -- 10.    R // 000000-0 // 179.5 au
+
+3222     E925430-3 C    .     Lt Ni       M M M N      M6V           W             Faraway
+  --  1. *  W // E925430-3 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+
+2924     X753330-0 C    R     Lo Lt Po    O S N M      M4V           WGR           Icelanise
+  --  1. *  W // X753330-0 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  3.    R // 000000-0 //  0.8 au
+
+2826     E83A301-8 T    .     Lo Wa       N M F        M6V           W             Gatewood
+  --  1. *  W // E83A301-8 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+
+3126     X737210-3 C    .     Lo Lt       M M S M      M2V/DB        WS            Oxygen
+  --  1. *  W // X737210-3 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+  --  6. *  S // 000000-0 //  6.4 au
+
+2728     E811100-6 T    R     Ic Lo       M M O M      G8V           HHRWG         Minyos
+  --  1.    H // 0E0000-0 //  0.3 au
+  --  2.    H // 0C2000-0 //  0.6 au
+  --  3.    R // 000000-0 //  1.2 au
+  --  4. *  W // E811100-6 //  2.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  4.8 au
+
+2629     D410265-8 F    S     Lo          O F M        M0V/DB        WBGGS         Regulus
+  --  1. *  W // D410265-8 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+  --  2.    B // 000000-0 //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+  --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 1 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+  --  8. -  S // 000000-0 // 25.6 au
+
+3229     X662504-1 T    .     Lt Ni       N N M        M0V           WGGGGG        Ueter
+  --  1. *  W // X662504-1 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  4.    G // 000000-0 //  1.6 au
+  --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+
+
+# Subsector M
+0231     B568548-8 H    N     Ag Ga Ni    N F N        M0V           WBG           Xari
+  --  1. *  W // B568548-8 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+  --  2.    B // 000000-0 //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+
+0831     X510104-6 H    .     Lo          F S M        F0V/M2VI      .RS.GB        Dosadi
+  --  1.    . // .......-. //  0.4 au
+  --  2.    R // 000000-0 //  0.8 au
+  --  4. *  S // 000000-0 //  3.2 au
+  --  6.    . // .......-. // 12.8 au
+  --  7.    G // 000000-0 // 25.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+  --  8.    B // 000000-0 // 51.2 au
+
+0232     D829223-8 F    .     Lo          N F O        M2V/DB        WRR.GS        Halford
+  --  1. *  W // D829223-8 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+  --  2.    R // 000000-0 //  0.4 au
+  --  3.    R // 000000-0 //  0.8 au
+  --  4.    . // .......-. //  1.6 au
+  --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  7. -  S // 000000-0 // 12.8 au
+
+0332     E547568-4 T    .     Ag Ga Lt Ni F M M        M0V/DB        W..GBGS       Delphini
+  --  1. *  W // E547568-4 //  0.2 au
+  --  2.    . // .......-. //  0.4 au
+  --  3.    . // .......-. //  0.8 au
+  --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
+  --  5.    B // 000000-0 //  3.2 au
+  --  6.    G // 000000-0 //  6.4 au
+  -- 11. -  S // 000000-0 // 204.8 au
+
+0832     E632156-8 T    R     Lo Po       M F F        F0V/DB        R.WBGS        Nordholm
+  --  1.    R // 000000-0 //  0.4 au
+  --  2.    . // .......-. //  0.8 au
+  --  3. *  W // E632156-8 //  1.6 au
+  --  4.    B // 000000-0 //  3.2 au
+  --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 2 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
+     -- Moon 10: Size 3 Atmo 0 Hydro 0
+  --  7. *  S // 000000-0 // 25.6 au
+
+0635     C749332-8 C    S     Ga Lo       F F O        M2V/DB        WS            Nuri
+  --  1. *  W // C749332-8 //  0.2 au
+  -- 10. -  S // 000000-0 // 102.4 au
+
+0337     X635443-4 T    .     Lt Ni       N M O        M0V           WGGGGG        Tertius
+  --  1. *  W // X635443-4 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 0
+     -- Moon 8: Size 3 Atmo 0 Hydro 0
+     -- Moon 9: Size 3 Atmo 0 Hydro 0
+  --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 1 Atmo 0 Hydro 0
+     -- Moon 8: Size 1 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
+     -- Moon 10: Size 2 Atmo 0 Hydro 0
+
+0738     E737356-5 T    .     Lo Lt       S N N        M0V/DB        WGGGGGS       Jerusalem
+  --  1. *  W // E737356-5 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+  --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  3.2 au
+  --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 3 Atmo 0 Hydro 0
+     -- Moon 9: Size 1 Atmo 0 Hydro 0
+     -- Moon 10: Size 2 Atmo 0 Hydro 0
+     -- Moon 11: Size 0 Atmo 0 Hydro 0
+  --  9. -  S // 000000-0 // 51.2 au
+
+0739     E916100-5 T    .     Ic Lo Lt    F M M O      K2V/DB        HS            Hyff
+  --  1.    H // 0E4000-0 //  0.3 au
+  --  3. *  S // 000000-0 //  1.2 au
+
+
+# Subsector N
+1031     X747100-3 C    .     Ga Lo Lt    N P S M      M2V/DB        W.GGS         Breakmann
+  --  1. *  W // X747100-3 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+  --  2.    . // .......-. //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+  --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+  --  8. -  S // 000000-0 // 25.6 au
+
+1232     C610422-8 T    SR    Ni          F N M        M4V           WG            Par
+  --  1. *  W // C610422-8 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 2 Atmo 0 Hydro 0
+
+1034     X94A000-4 T    R     Ba Lt Wa                 M6V           W.B           Charcunga
+  --  1. *  W // X94A000-4 //  0.2 au
+  --  2.    . // .......-. //  0.4 au
+  --  3.    B // 000000-0 //  0.8 au
+
+1334     E313259-5 F    .     Ic Lo Lt    N F P        M6V/DB        WGGBGGS       Pushya
+  --  1. *  W // E313259-5 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 0
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 3 Atmo 0 Hydro 0
+     -- Moon 9: Size 1 Atmo 0 Hydro 0
+  --  4.    B // 000000-0 //  1.6 au
+  --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+  --  8. -  S // 000000-0 // 25.6 au
+
+1537     X533224-3 C    .     Lo Lt Po    F N F        F2V           .BRWGB.G      Tay
+  --  1.    . // .......-. //  0.3 au
+  --  2.    B // 000000-0 //  0.6 au
+  --  3.    R // 000000-0 //  1.2 au
+  --  4. *  W // X533224-3 //  2.4 au
+  --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+  --  6.    B // 000000-0 //  9.6 au
+  --  7.    . // .......-. // 19.2 au
+  --  8.    G // 000000-0 // 38.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+
+1637     X414056-5 T    .     Ic Lt                    F0V           BBBW          Urchachka
+  --  1.    B // 000000-0 //  0.3 au
+  --  2.    B // 000000-0 //  0.6 au
+  --  3.    B // 000000-0 //  1.2 au
+  --  4. *  W // X414056-5 //  2.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+
+1138     C767541-7 T    R     Ag Ga Ni    M M P        M4V/DB        WS            Vandos
+  --  1. *  W // C767541-7 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+  --  7. -  S // 000000-0 // 12.8 au
+
+0939     X638233-0 T    .     Lo Lt       S F S        M4V           W.G           Ifni
+  --  1. *  W // X638233-0 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  2.    . // .......-. //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+
+1239     E73A246-8 T    .     Lo Wa       M N N        F5V/DB        RGRWGGS       Annanworld
+  --  1.    R // 000000-0 //  0.3 au
+  --  2.    G // 000000-0 //  0.6 au
+  --  3.    R // 000000-0 //  1.2 au
+  --  4. *  W // E73A246-8 //  2.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 1 Atmo 0 Hydro 0
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
+     -- Moon 10: Size 0 Atmo 0 Hydro 0
+     -- Moon 11: Size 1 Atmo 0 Hydro 0
+  --  8. *  S // 000000-0 // 38.4 au
+
+
+# Subsector O
+2332     X814134-0 T    R     Ic Lo Lt    O M M        M4V           WGG           Arruckus
+  --  1. *  W // X814134-0 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
+     -- Moon 7: Size 1 Atmo 0 Hydro 0
+
+2133     E200341-6 C    .     Lo Va       M F M        M4V           WGBBG         Woden
+  --  1. *  W // E200341-6 //  0.2 au
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+     -- Moon 7: Size 2 Atmo 0 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
+  --  3.    B // 000000-0 //  0.8 au
+  --  4.    B // 000000-0 //  1.6 au
+  --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+
+1735     E66A551-8 T    .     Ni Wa       M M M        M6III/M4VI    HR.BWGS       Gwo
+  --  1.    H // 0E0000-0 //  0.5 au
+  --  2.    R // 000000-0 //  0.9 au
+  --  3.    . // .......-. //  1.7 au
+  --  4.    B // 000000-0 //  3.3 au
+  --  5. *  W // E66A551-8 //  6.5 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 // 12.9 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+  --  8. *  S // 000000-0 // 51.3 au
+
+1938     X413120-5 T    .     Ic Lo Lt    S M S F      M4V/DB        WRGRGS        Alphard
+  --  1. *  W // X413120-5 //  0.2 au
+  --  2.    R // 000000-0 //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+  --  4.    R // 000000-0 //  1.6 au
+  --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+  -- 11. -  S // 000000-0 // 204.8 au
+
+2138     E555568-6 T    .     Ag Ga Ni    O F N        M6V           WR            Gloni
+  --  1. *  W // E555568-6 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  2.    R // 000000-0 //  0.4 au
+
+2238     E828422-7 C    .     Ni          S N F        F5III/M6VI    BRRWSG        Claw
+  --  1.    B // 000000-0 //  0.4 au
+  --  2.    R // 000000-0 //  0.8 au
+  --  3.    R // 000000-0 //  1.5 au
+  --  4. *  W // E828422-7 //  2.9 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  6. *  S // 000000-0 // 11.3 au
+  --  8.    G // 000000-0 // 44.9 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+
+1840     D201202-8 H    .     Ic Lo Va    N F O        M6V           W             Huckleberry
+  --  1. *  W // D201202-8 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+
+
+# Subsector P
+2731     D713599-5 C    .     Ic Lt Ni    F F M        G5IV          RHRW.GGG      Novy Kurdistan
+  --  1.    R // 000000-0 //  0.3 au
+  --  2.    H // 0C4000-0 //  0.6 au
+  --  3.    R // 000000-0 //  1.2 au
+  --  4. *  W // D713599-5 //  2.4 au
+  --  5.    . // .......-. //  4.8 au
+  --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  7.    G // 000000-0 // 19.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 3 Atmo 0 Hydro 0
+  --  8.    G // 000000-0 // 38.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+
+2633     B657665-8 H    N     Ag Ga Ni    M M O        K0V/DB        BWGGRGS       Oshu
+  --  1.    B // 000000-0 //  0.3 au
+  --  2. *  W // B657665-8 //  0.6 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+  --  3.    G // 000000-0 //  1.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 1 Atmo 0 Hydro 0
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
+  --  4.    G // 000000-0 //  2.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+  --  5.    R // 000000-0 //  4.8 au
+  --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+     -- Moon 9: Size 1 Atmo 0 Hydro 0
+  --  8. -  S // 000000-0 // 38.4 au
+
+2933     XB28001-4 C    .     Lt                       M0V/DB        WSBG          Junior
+  --  1. *  W // XB28001-4 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  3. *  S // 000000-0 //  0.8 au
+  --  5.    B // 000000-0 //  3.2 au
+  --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+
+3033     X414200-3 C    R     Ic Lo Lt    M N N F      M2V           WGG           SC-28E
+  --  1. *  W // X414200-3 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+  --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 2 Atmo 0 Hydro 0
+
+2734     E82A377-8 T    .     Lo Wa       M N N F      K5V           HWGGGGG       Neverland
+  --  1.    H // 0E0000-0 //  0.3 au
+  --  2. *  W // E82A377-8 //  0.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  3.    G // 000000-0 //  1.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 0
+  --  4.    G // 000000-0 //  2.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 3 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+  --  7.    G // 000000-0 // 19.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+
+2735     C561630-5 C    .     Lt Ni Ri    M M F N      M6V           WRRBGG        Delicass
+  --  1. *  W // C561630-5 //  0.2 au
+  --  2.    R // 000000-0 //  0.4 au
+  --  3.    R // 000000-0 //  0.8 au
+  --  4.    B // 000000-0 //  1.6 au
+  --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+     -- Moon 9: Size 1 Atmo 0 Hydro 0
+     -- Moon 10: Size 3 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+
+2935     X764350-2 T    .     Ga Lo Lt    M S M N      M0V/DB        WBGS          Skathi
+  --  1. *  W // X764350-2 //  0.2 au
+  --  2.    B // 000000-0 //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+  --  6. *  S // 000000-0 //  6.4 au
+
+3035     X412000-0 T    .     Ba Ic Lt                 F0V/DB        HHGWGGS       Guillarin
+  --  1.    H // 0A4000-0 //  0.3 au
+  --  2.    H // 0E4000-0 //  0.6 au
+  --  3.    G // 000000-0 //  1.2 au
+  --  4. *  W // X412000-0 //  2.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 3 Atmo 0 Hydro 0
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
+  --  8. *  S // 000000-0 // 38.4 au
+
+3235     E321432-6 T    .     Ni Po       M N S        M0V           W             Acquara
+  --  1. *  W // E321432-6 //  0.2 au
+
+3236     X646410-1 T    .     Ga Lt Ni    M S O F      F2V           HRWRBR        Wess'ej
+  --  1.    H // 0D2000-0 //  0.4 au
+  --  2.    R // 000000-0 //  0.8 au
+  --  3. *  W // X646410-1 //  1.6 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+  --  4.    R // 000000-0 //  3.2 au
+  --  5.    B // 000000-0 //  6.4 au
+  --  6.    R // 000000-0 // 12.8 au
+
+2637     XA36032-1 C    .     Lt                       F0V           ..WG          Paloana
+  --  1.    . // .......-. //  0.4 au
+  --  2.    . // .......-. //  0.8 au
+  --  3. *  W // XA36032-1 //  1.6 au
+  --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 1 Atmo 0 Hydro 0
+
+2938     E4A0303-8 H    R     De Lo       F O M        F2V/DB        HRWSGG        Phlenbahn
+  --  1.    H // 0E6000-0 //  0.4 au
+  --  2.    R // 000000-0 //  0.8 au
+  --  3. *  W // E4A0303-8 //  1.6 au
+  --  5. *  S // 000000-0 //  6.4 au
+  --  7.    G // 000000-0 // 25.6 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+  --  8.    G // 000000-0 // 51.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+
+2539     X3A3000-5 T    .     Ba Fl Lt                 G5V           BRHWGR.G      Ctaru
+  --  1.    B // 000000-0 //  0.3 au
+  --  2.    R // 000000-0 //  0.6 au
+  --  3.    H // 0E2000-0 //  1.2 au
+  --  4. *  W // X3A3000-5 //  2.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 2 Atmo 0 Hydro 0
+  --  6.    R // 000000-0 //  9.6 au
+  --  7.    . // .......-. // 19.2 au
+  --  8.    G // 000000-0 // 38.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 1 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
+     -- Moon 10: Size 3 Atmo 0 Hydro 0
+
