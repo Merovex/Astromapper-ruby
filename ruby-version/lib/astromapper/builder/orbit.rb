@@ -391,6 +391,42 @@ module Astromapper
         # Traveller 5 orientation (page 432): low roll = best. 2-4 A, 5-6 B, 7-8 C, 9 D, 10-11 E, 12 X.
         %w{A A A A A B B C C D E E X}[@port_roll.whole.max(12)]
       end
+
+      # --- Canon override support (narrative-wins edits applied after generation) ---
+      # Set the UWP from a string like "A454655-B"; digits are eHex.
+      def apply_uwp!(str)
+        eh = Integer::EHEX
+        s = str.delete('-')
+        @port_roll = { 'A' => 0, 'B' => 5, 'C' => 7, 'D' => 9, 'E' => 10, 'X' => 12 }[s[0]] || 12
+        @size, @atmo, @h20 = eh.index(s[1]), eh.index(s[2]), eh.index(s[3])
+        @popx, @govm, @law, @tek = eh.index(s[4]), eh.index(s[5]), eh.index(s[6]), eh.index(s[7])
+        @gravity = nil
+      end
+
+      # Recompute the deterministic extensions (Ix, trade codes, native, Labor/Acceptance,
+      # RU) after a UWP/star/orbit override, while PRESERVING the already-rolled random
+      # Ex/Cx terms (Resources, Infrastructure, Efficiency, Homogeneity, Strangeness, Symbols).
+      def repatch!(gas_giants = 0, belts = 0)
+        tc = trade_codes
+        ix  = 0
+        ix += 1 if %w{A B}.include?(port)
+        ix -= 1 if %w{D E X}.include?(port)
+        ix += 1 if @tek >= 10
+        ix -= 1 if @tek <= 8
+        ix += (tc & %w{Ag Hi In Ri}).size
+        ix -= 1 if @popx <= 6
+        ix += 1 if @base['Naval'] == 'N' && @base['Scout'] == 'S'
+        ix += 1 if @base['Way'] == 'W'
+        @ix = ix
+        if @ex
+          @ex[:lab] = (@popx - 1).whole
+          nz = ->(v) { v.zero? ? 1 : v }
+          @ru = nz.(@ex[:res]) * nz.(@ex[:lab]) * nz.(@ex[:inf]) * nz.(@ex[:eff])
+        end
+        @cx[:acc] = (@popx + @ix) < 1 ? 1 : (@popx + @ix) if @cx
+        @native = native_status
+        self
+      end
       def empty?
         (uwp.include?('X000000'))
       end

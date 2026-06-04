@@ -165,6 +165,48 @@ module Astromapper
         def orbit_to_au(o)
           inner_limit + (self.bode_constant * (2 ** o)).round(1)
         end
+
+        # --- Canon override support ---
+        # Re-class the primary star from "M0 V" and re-lay-out the orbits around the new
+        # biozone (mainworld reseated to the habitable orbit; AUs recomputed).
+        def apply_star_override!(spec)
+          spectral, lum = spec.split(/\s+/)
+          @star_type = spectral[0]
+          @spectral  = spectral
+          @star_size = %w{Ia Ib II III IV V VI VII VIII IX X}.index(lum) || 5
+          @bode_constant = (@star_type == 'M' && @star_size == 5) ? 0.2 : @bode_constant
+          reseat_orbits!
+        end
+
+        def reseat_orbits!
+          return if @orbits.nil? || @orbits.empty? || @world.nil?
+          bz = biozone
+          bz = [0, 0] if bz.nil? || bz.empty?
+          bzorbit = (0..12).min_by { |i| au = orbit_to_au(i); au < bz[0] ? bz[0] - au : (au > bz[1] ? au - bz[1] : 0) }
+          others = @orbits.reject { |o| o.equal?(@world) }.sort_by(&:orbit_number)
+          nums = (0..others.size).to_a - [bzorbit]
+          @world.orbit_number = bzorbit
+          others.each_with_index { |o, i| o.orbit_number = nums[i] }
+          @orbits = @orbits.sort_by(&:orbit_number)
+          @orbits.each do |o|
+            o.au = orbit_to_au(o.orbit_number)
+            o.instance_variable_set(:@zone, o.au < bz[0] ? -1 : (o.au > bz[1] ? 1 : 0))
+          end
+          # A world tide-locked in a red-dwarf biozone (orbit 0-1) reads as Twilight.
+          @world.instance_variable_set(:@temp, 'Tz') if @world.orbit_number <= 1
+        end
+
+        # Top the system up to `target` gas giants, appending outer orbits (with moons).
+        def ensure_gas_giants!(target)
+          have = @orbits.count { |o| o.kid == 'G' }
+          maxnum = @orbits.map(&:orbit_number).max || 0
+          (target - have).times do |k|
+            num = maxnum + 1 + k
+            break if orbit_to_au(num) > outer_limit
+            @orbits << GasGiant.new(self, num)
+          end
+          @orbits = @orbits.sort_by(&:orbit_number)
+        end
         def au_to_orbit(au)
           constant = (@primary.nil?) ? @bode_constant : @primary.bode_constant
           (Math.log(au / constant) / Math.log(2) ).round(2).abs - inner_limit

@@ -1,3 +1,19 @@
+# Sector: Converted Sector (archipelago) -- T5 Second Survey (tab-delimited). Lines beginning with # are comments.
+#
+# COLUMNS: Sector SS Hex Name UWP Bases Remarks Zone PBG Allegiance Stars {Ix} (Ex) [Cx] Nobility W RU
+#   SS         Subsector A-P (4x4 grid of 8x10 subsectors)
+#   Hex        Column+row (e.g. 0801)
+#   UWP        Starport Size Atmo Hydro Pop Gov Law - Tech (eHex: 0-9 A-H J-N P-Z, skips I/O)
+#   Bases      N Naval  S Scout  D Depot  W Way  C Corsair  (blank = none)
+#   Remarks    Trade classifications (Traveller 5 TCS)
+#   Zone       A Amber  R Red  (blank = none)
+#   PBG        Population-multiplier, Belts, Gas giants
+#   Stars      Spectral + luminosity; companions space-separated (e.g. F2 V M4 V)
+#   {Ix}       Importance extension
+#   (Ex)       Economic: Resources Labor Infrastructure +-Efficiency
+#   [Cx]       Cultural: Homogeneity Acceptance Strangeness Symbols
+#   W  Worlds in system    RU  Resource Units (R x L x I x E)
+#
 Sector	SS	Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W	RU
 Converted Sector (archipelago)	A	0801	Anacreon	D739333-7	S	Lo		120	Na	M4 V	{ -3 }	(B20-1)	[2123]		1	-22
 Converted Sector (archipelago)	B	1201	Pradesh	E949556-5		Ni Lt		702	Na	F5 IV	{ -3 }	(543-2)	[3274]		1	-120

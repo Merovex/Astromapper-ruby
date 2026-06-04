@@ -107,6 +107,30 @@ vols = doc["volumes"]
 io = +""
 io << "# Sector: #{doc['name']}\n"
 io << "# 32 columns x 40 rows\n"
+io << <<~LEGEND
+  #
+  # FIELDS (left to right): Location UWP Temp Bases TC Factions Stars Orbits Name  { Ix } (Ex) [Cx] RU:n  Native
+  #   Location  Hex column+row (e.g. 0801)
+  #   UWP       Starport Size Atmo Hydro Pop Gov Law - Tech (eHex)
+  #   Temp      Climate: T Temperate  H Hot  C Cold  Tz Twilight  Lk Locked
+  #   Bases     N Naval  S Scout  D Depot  W Way  C Corsair  (. = none)
+  #   TC        Trade classifications (Traveller 5 TCS)
+  #   Factions  Government types present: O F M N S P
+  #   Stars     Spectral + luminosity, primary/companions (e.g. G2V/DB)
+  #   Orbits    Per orbit: W World  B Belt  G GasGiant  S Companion  R Rockball  H Hostile  . empty
+  #   Name      Mainworld name
+  #   { Ix }    Importance extension
+  #   (Ex)      Economic: Resources Labor Infrastructure +-Efficiency (eHex)
+  #   [Cx]      Cultural: Homogeneity Acceptance Strangeness Symbols (eHex)
+  #   RU:n      Resource Units (R x L x I x E)
+  #   Native    Settled / Colony (human) ; Native / Exotic (sophonts)
+  #
+  # eHex digits: 0-9 A-H J-N P-Z  (skips I and O)
+  #
+  # Orbit lines ( -- N. ): orbit no., * biozone / - beyond outer limit, type, UWP, distance (AU)
+  # Moon lines  ( -- Moon N: ): size, atmosphere, hydrographics
+  #
+LEGEND
 io << "Location UWP       Temp Bases TC          Factions     Stars         Orbits        Name\n"
 io << "-------- --------- ---- ----- ----------- ------------ ------------- ------------- ----\n"
 

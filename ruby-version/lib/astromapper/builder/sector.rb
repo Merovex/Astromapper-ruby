@@ -37,6 +37,26 @@ module Astromapper
 		      else (1.d100 <= 50) # Standard
 		    end
   		end
+  		# Apply narrative "canon override" patches (config['overrides']) on top of the
+  		# seed-generated base: re-class a star, retop gas giants, or set a UWP, then
+  		# recompute the affected world's deterministic extensions. Re-runnable each build.
+  		def apply_overrides!(overrides)
+  			return self if overrides.nil? || overrides.empty?
+  			by_loc = @volumes.each_with_object({}) { |v, h| h[v.location] = v }
+  			overrides.each do |hex, patch|
+  				v = by_loc[hex.to_s]
+  				next if v.nil?
+  				star = v.instance_variable_get(:@star)
+  				world = star.world
+  				next if world.nil?
+  				star.apply_star_override!(patch['star']) if patch['star']
+  				world.apply_uwp!(patch['uwp'])           if patch['uwp']
+  				star.ensure_gas_giants!(patch['gas_giants'].to_i) if patch['gas_giants']
+  				world.gas_giant = star.orbits.map(&:kid).include?('G') ? 'G' : '.'
+  				world.repatch!(star.orbits.count { |o| o.kid == 'G' }, star.orbits.count { |o| o.kid == 'B' })
+  			end
+  			self
+  		end
   		def to_file
   			file = Astromapper.output_file('sector')
 		    File.open(file,'w').write(key + @volumes.map{|v| v.to_ascii}.join("\n"))
@@ -45,10 +65,30 @@ module Astromapper
 		  # interchange format. Columns: Sector SS Hex Name UWP Bases Remarks Zone
 		  # PBG Allegiance Stars {Ix} (Ex) [Cx] Nobility W RU.
 		  T5_COLUMNS = %w[Sector SS Hex Name UWP Bases Remarks Zone PBG Allegiance Stars {Ix} (Ex) [Cx] Nobility W RU].freeze
+		  def tab_legend
+		    <<~LEG.chomp
+		      # Sector: #{config['name']} -- T5 Second Survey (tab-delimited). Lines beginning with # are comments.
+		      #
+		      # COLUMNS: Sector SS Hex Name UWP Bases Remarks Zone PBG Allegiance Stars {Ix} (Ex) [Cx] Nobility W RU
+		      #   SS         Subsector A-P (4x4 grid of 8x10 subsectors)
+		      #   Hex        Column+row (e.g. 0801)
+		      #   UWP        Starport Size Atmo Hydro Pop Gov Law - Tech (eHex: 0-9 A-H J-N P-Z, skips I/O)
+		      #   Bases      N Naval  S Scout  D Depot  W Way  C Corsair  (blank = none)
+		      #   Remarks    Trade classifications (Traveller 5 TCS)
+		      #   Zone       A Amber  R Red  (blank = none)
+		      #   PBG        Population-multiplier, Belts, Gas giants
+		      #   Stars      Spectral + luminosity; companions space-separated (e.g. F2 V M4 V)
+		      #   {Ix}       Importance extension
+		      #   (Ex)       Economic: Resources Labor Infrastructure +-Efficiency
+		      #   [Cx]       Cultural: Homogeneity Acceptance Strangeness Symbols
+		      #   W  Worlds in system    RU  Resource Units (R x L x I x E)
+		      #
+		    LEG
+		  end
 		  def to_tab
 		    allegiance = config['allegiance'] || 'Na'
 		    rows = @volumes.sort_by { |v| [v.row, v.column] }.map { |v| v.to_tab(config['name'], allegiance) }
-		    ([T5_COLUMNS.join("\t")] + rows).join("\n") + "\n"
+		    ([tab_legend, T5_COLUMNS.join("\t")] + rows).join("\n") + "\n"
 		  end
 		  def to_tab_file
 		    File.open(Astromapper.output_file('tab'), 'w').write(to_tab)

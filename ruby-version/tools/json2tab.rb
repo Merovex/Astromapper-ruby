@@ -48,7 +48,25 @@ doc = JSON.parse(File.read(input, encoding: "utf-8"))
 sector = doc["name"].to_s
 
 cols = %w[Sector SS Hex Name UWP Bases Remarks Zone PBG Allegiance Stars {Ix} (Ex) [Cx] Nobility W RU]
-rows = [cols.join("\t")]
+legend = <<~LEG.chomp
+  # Sector: #{sector} -- T5 Second Survey (tab-delimited). Lines beginning with # are comments.
+  #
+  # COLUMNS: Sector SS Hex Name UWP Bases Remarks Zone PBG Allegiance Stars {Ix} (Ex) [Cx] Nobility W RU
+  #   SS         Subsector A-P (4x4 grid of 8x10 subsectors)
+  #   Hex        Column+row (e.g. 0801)
+  #   UWP        Starport Size Atmo Hydro Pop Gov Law - Tech (eHex: 0-9 A-H J-N P-Z, skips I/O)
+  #   Bases      N Naval  S Scout  D Depot  W Way  C Corsair  (blank = none)
+  #   Remarks    Trade classifications (Traveller 5 TCS)
+  #   Zone       A Amber  R Red  (blank = none)
+  #   PBG        Population-multiplier, Belts, Gas giants
+  #   Stars      Spectral + luminosity; companions space-separated (e.g. F2 V M4 V)
+  #   {Ix}       Importance extension
+  #   (Ex)       Economic: Resources Labor Infrastructure +-Efficiency
+  #   [Cx]       Cultural: Homogeneity Acceptance Strangeness Symbols
+  #   W  Worlds in system    RU  Resource Units (R x L x I x E)
+  #
+LEG
+rows = [legend, cols.join("\t")]
 
 doc["volumes"].values.sort_by { |v| [v["row"], v["column"]] }.each do |v|
   s = v["star"]; w = s["world"]; orbits = s["orbits"] || []
