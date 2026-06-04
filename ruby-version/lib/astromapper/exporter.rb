@@ -25,6 +25,7 @@ module Astromapper
       sector = Builder::Sector.constitute(root_dir)
 
       sector.to_file
+      sector.to_tab_file   # T5 Second Survey tab-delimited export
 
       # export_pdf  = [nil, "pdf"].include?(options[:only])
       # export_html = [nil, "html", "mobi", "epub"].include?(options[:only])

@@ -380,6 +380,13 @@ module Astromapper
       def bases
         return [@base['Naval'],@base['Scout'],@gas_giant,@base['Depot'],@base['Way']].join('')
       end
+      def popx; @popx; end
+      # Bases for the T5SS Bases column: the gas-giant marker is dropped (it lives
+      # in PBG, not Bases).
+      def t5_bases
+        b = bases
+        (b[0] + b[1] + b[3] + b[4]).delete('.')
+      end
       def port
         # Traveller 5 orientation (page 432): low roll = best. 2-4 A, 5-6 B, 7-8 C, 9 D, 10-11 E, 12 X.
         %w{A A A A A B B C C D E E X}[@port_roll.whole.max(12)]

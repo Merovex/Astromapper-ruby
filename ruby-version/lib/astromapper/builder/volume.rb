@@ -31,6 +31,26 @@ module Astromapper
         return sumy
       end
 
+      # One T5 Second Survey (TravellerMap) tab-delimited row for this system.
+      def to_tab(sector, allegiance)
+        w = @star.world
+        ss     = (('A'.ord) + ((@row - 1) / 10) * 4 + ((@column - 1) / 8)).chr
+        belts  = @star.orbits.count { |o| o.kid == 'B' }
+        gg     = @star.orbits.count { |o| o.kid == 'G' }
+        pmul   = w.popx.to_i.zero? ? 0 : (1 + rand(9))     # population multiplier (1-9)
+        pbg    = "%d%d%d" % [pmul, [belts, 9].min, [gg, 9].min]
+        worlds = [@star.orbits.count { |o| o.kid == 'W' }, 1].max
+        zone   = { 'RZ' => 'R', 'AZ' => 'A' }[w.travel_code] || ''
+        ix = ex = cx = ''
+        if w.ix
+          ix = "{ %d }" % w.ix
+          ex = "(%s%s%s%+d)" % [w.ex[:res].hexd, w.ex[:lab].hexd, w.ex[:inf].hexd, w.ex[:eff]]
+          cx = "[%s%s%s%s]" % [w.cx[:homo].hexd, w.cx[:acc].hexd, w.cx[:str].hexd, w.cx[:sym].hexd]
+        end
+        [sector, ss, location, @name, w.uwp, w.t5_bases, w.trade_codes.join(' '),
+         zone, pbg, allegiance, @star.t5_stars, ix, ex, cx, '', worlds, w.ru].join("\t")
+      end
+
       def empty?
         return true if @star.world.nil? or @star.world.empty? or !@star.world?
       end

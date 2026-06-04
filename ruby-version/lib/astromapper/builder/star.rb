@@ -202,6 +202,14 @@ module Astromapper
           return @star_type + @star_subtype if (@star_type == 'D')
           "#{@spectral}#{@star_size.roman}"
         end
+        # T5 Second Survey stellar data: "F2 V", companions space-separated.
+        def t5_classification
+          return @star_type + @star_subtype.to_s if @star_type == 'D'
+          "#{@spectral} #{@star_size.roman}"
+        end
+        def t5_stars
+          ([self] + @companions).map(&:t5_classification).join(' ')
+        end
         def world?
           return @orbits.join('').include?('W')
           return false

@@ -41,6 +41,18 @@ module Astromapper
   			file = Astromapper.output_file('sector')
 		    File.open(file,'w').write(key + @volumes.map{|v| v.to_ascii}.join("\n"))
 		  end
+		  # T5 Second Survey (TravellerMap) tab-delimited export — the standard
+		  # interchange format. Columns: Sector SS Hex Name UWP Bases Remarks Zone
+		  # PBG Allegiance Stars {Ix} (Ex) [Cx] Nobility W RU.
+		  T5_COLUMNS = %w[Sector SS Hex Name UWP Bases Remarks Zone PBG Allegiance Stars {Ix} (Ex) [Cx] Nobility W RU].freeze
+		  def to_tab
+		    allegiance = config['allegiance'] || 'Na'
+		    rows = @volumes.sort_by { |v| [v.row, v.column] }.map { |v| v.to_tab(config['name'], allegiance) }
+		    ([T5_COLUMNS.join("\t")] + rows).join("\n") + "\n"
+		  end
+		  def to_tab_file
+		    File.open(Astromapper.output_file('tab'), 'w').write(to_tab)
+		  end
 		  # Legend prepended to the sector file. Lines start with '#', so the SVG/about
 		  # parsers (which match /^\d{4}/) skip them.
 		  def key
