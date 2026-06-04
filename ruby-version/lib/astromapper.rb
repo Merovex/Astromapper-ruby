@@ -25,6 +25,7 @@ module Astromapper
   # autoload :Stream,     "astromapper/stream"
   # autoload :TOC,        "astromapper/toc"
   autoload :Svg,         "astromapper/svg"
+  autoload :Islands,     "astromapper/islands"
 
 	Encoding.default_internal = "utf-8"
 	Encoding.default_external = "utf-8"

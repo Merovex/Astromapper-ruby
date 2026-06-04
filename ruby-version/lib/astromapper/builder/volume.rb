@@ -3,6 +3,7 @@ module Astromapper
     class Volume < Astromapper::Builder::Base
 
       attr_accessor :gas_giant, :name
+      attr_reader   :column, :row
 
       # Genre-driven bias toward warm, long-lived (F/G/K) primaries, so that
       # settled space trends toward scientifically-plausible habitable stars.

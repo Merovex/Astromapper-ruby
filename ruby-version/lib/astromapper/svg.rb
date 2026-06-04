@@ -54,6 +54,29 @@ module Astromapper
 
       return "<!-- #{shex}:#{thex} --><line class='line#{d}' x1='#{src[0]}' y1='#{src[1]}' x2='#{dst[0]}' y2='#{dst[1]}' />"
     end
+    # Trace borders around "islands" — clusters of nearby systems. On by default;
+    # disable with `islands: false` in _astromapper.yml. Reuses the shared
+    # Astromapper::Islands geometry so it stays in sync with the standalone tool.
+    def islands
+      return '' if [false, 'false'].include?(config['islands'])
+      hexes = @volumes.map { |v| [v[0..1].to_i, v[2..3].to_i] }
+      groups = Astromapper::Islands.borders(
+        hexes, side: @side, factor: @factor, cols: @columns, rows: @rows,
+        threshold: (config['island_jump'] || 2).to_i,
+        min_size:  (config['island_min']  || 2).to_i)
+      return '' if groups.empty?
+
+      opacity = config['island_opacity'] || 0.85
+      out = ["<g class='islands'>"]
+      groups.each do |colour, loops, size|
+        polys = loops.map { |ring|
+          pts = ring.map { |x, y| "#{x},#{y}" }.join(' ')
+          "<polygon points='#{pts}' stroke='#{colour}' style='opacity:#{opacity}'/>" }.join
+        out << "<g><!--island n=#{size}-->#{polys}</g>"
+      end
+      out << "</g><!--/islands-->"
+      out.join("\n")
+    end
     def build_routes
       routes = ["<g class='routes'>"]
       keys = @volumes.map { |v| v[0..3] }.sort
@@ -70,6 +93,7 @@ module Astromapper
       svg << header
       svg << tract_marks
       svg << hex_grid
+      svg << islands
       svg << build_routes
       svg << @volumes.map {|v| world(v) }
       svg << volumes
@@ -286,7 +310,7 @@ module Astromapper
     font: 120px sans-serif;
   }
   text.namestamp {
-    text-anchor: left;
+    text-anchor: start;
     font-size: 36px;
   }
   text.symbol {
@@ -335,6 +359,11 @@ module Astromapper
     stroke-width: 3;
     stroke-dasharray: 3,6;
     stroke-linecap: round;
+  }
+  g.islands polygon {
+    stroke-width: 6;
+    stroke-linejoin: round;
+    fill: none;
   }
   @media (prefers-color-scheme: light) {
       svg {

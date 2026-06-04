@@ -80,6 +80,31 @@ class T5Test < Minitest::Test
     refute_includes statuses, "Exotic"
   end
 
+  # Every surviving system must have a neighbour within jump-4 — isolated lone
+  # stars (which no route can reach) are pruned during generation.
+  def test_prune_removes_isolated_systems
+    Astromapper.test_config = SectorBuilder::DEFAULTS.merge("prune_isolated" => true)
+    srand(7)
+    sec = Astromapper::Builder::Sector.constitute(Pathname.new(Dir.pwd))
+    coords = sec.instance_variable_get(:@volumes).map { |v| [v.column, v.row] }
+    coords.each do |h|
+      assert coords.any? { |o| o != h && Astromapper::Islands.jump(h, o) <= 4 },
+        "#{'%02d%02d' % h} is isolated (no neighbour within jump-4) but survived pruning"
+    end
+  end
+
+  # Disabling the prune keeps every rolled system, so the count is >= pruned.
+  def test_prune_can_be_disabled
+    count = lambda do |prune|
+      Astromapper.test_config = SectorBuilder::DEFAULTS.merge("prune_isolated" => prune)
+      srand(7)
+      Astromapper::Builder::Sector.constitute(Pathname.new(Dir.pwd))
+        .instance_variable_get(:@volumes).size
+    end
+    assert_operator count.(false), :>=, count.(true),
+      "disabling the prune keeps at least as many systems"
+  end
+
   # Non-colony (Settled, pop >= 7) worlds must sit in the habitable gravity band:
   # ~0.4-1.5 g (size 5-A) — enough to shield radiation, not enough to crush.
   def test_settled_worlds_in_habitable_gravity_band

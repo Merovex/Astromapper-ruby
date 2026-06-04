@@ -1,0 +1,88 @@
+# @format
+
+# The map's name.
+name: "Teradoma"
+
+# The map's language.
+language: "en"
+
+# Density: How many stars in your sector
+#     Here's some examples:
+#
+# density: "rift"
+# density: "sparse"
+# density: "scattered"
+density: "dunbar"
+# density: "dense"
+
+# Sector Randomness?
+#
+seed: 2UDAG-CEZ5M
+
+# Genre
+genre: opera
+
+# Guarantee a habitable mainworld in every system's biozone.
+#   true  (default) - every generated system has a World
+#   false           - the biozone may roll up a gas giant instead,
+#                     leaving some systems without a mainworld
+always_inhabited: true
+islands: true
+island_opacity: 0.5
+
+giant_on: !ruby/range 0..9
+tech_cap: 11
+named: true
+
+# Your map copyright info.
+# Here's some examples:
+#
+#   Copyright 2026 by Ben Wilson.
+#   Copyright 2026 by Ben Wilson. This work is licensed under MIT License.
+#   This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
+#   This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
+#   This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+#
+copyright: "Copyright (C) 2026 Ben Wilson."
+
+# Who's publishing this map.
+publisher: "Ben Wilson"
+
+# When this map was published.
+published_at: "2026-06-03"
+
+# Some unique identification. Works great with your domain
+# like `http://yourmap.example.com`.
+uid: "f79e1a5b11f16e2d6e86f5e3076c7ef2"
+
+# This map authors.
+authors:
+  - "Ben Wilson"
+
+# The base URL from your source code.
+base_url: http://example.com
+
+colors:
+  base03: "#002b36"
+  base02: "#073642"
+  base01: "#586e75"
+  base00: "#657b83"
+  base0: "#839496"
+  base1: "#93a1a1"
+  base2: "#eee8d5"
+  base3: "#fdf6e3"
+  yellow: "#b58900"
+  orange: "#cb4b16"
+  red: "#dc322f"
+  magenta: "#d33682"
+  violet: "#6c71c4"
+  blue: "#268bd2"
+  cyan: "#2aa198"
+  green: "#859900"
+  white: "#FFFFFF"
+  black: "#222222"
+#
+fonts:
+  serif: "Garamond"
+  sans: "Tahoma"
+  mono: "Courier"

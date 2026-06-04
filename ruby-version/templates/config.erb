@@ -22,6 +22,23 @@ seed:
 # Genre
 genre: normal
 
+# Prune isolated systems: drop any system with no neighbour within jump-4
+# (a lone star no route can reach), so the map has no disconnected dots.
+#   true  (default) - remove isolated systems during generation
+#   false           - keep every rolled system, however isolated
+prune_isolated: true
+
+# Islands: outline clusters of nearby systems on the SVG map.
+#   true  (default) - draw a border around each cluster along the hex grid
+#   false           - omit the borders
+# island_jump:    systems within this many jumps are one island (default 2)
+# island_min:     only border clusters of at least this many systems (default 2)
+# island_opacity: border opacity, 0.0 (invisible) to 1.0 (solid) (default 0.85)
+islands: true
+island_jump: 2
+island_min: 2
+island_opacity: 0.85
+
 # Guarantee a habitable mainworld in every system's biozone.
 #   true  (default) - every generated system has a World
 #   false           - the biozone may roll up a gas giant instead,

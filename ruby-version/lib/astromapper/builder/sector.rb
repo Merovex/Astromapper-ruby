@@ -6,11 +6,23 @@ module Astromapper
 				40.times do |r|
 					32.times do |c|
 					next unless has_system?
-					v = Volume.new(c+1,r+1) 
+					v = Volume.new(c+1,r+1)
 					@volumes << v unless v.empty?
 					end
 				end
+				prune_isolated! unless [false, 'false'].include?(config['prune_isolated'])
 				self
+  		end
+  		# Remove systems with no neighbour within jump-4 — lone stars that no route
+  		# can reach. Isolated systems form an independent set (a system with a
+  		# neighbour in range is, by symmetry, a neighbour to it), so one pass
+  		# cannot create new isolates. On by default; disable with `prune_isolated: false`.
+  		def prune_isolated!(threshold = 4)
+  			coords = @volumes.map { |v| [v.column, v.row] }
+  			@volumes = @volumes.reject do |v|
+  				here = [v.column, v.row]
+  				coords.none? { |o| o != here && Astromapper::Islands.jump(here, o) <= threshold }
+  			end
   		end
   		def has_system?
 		    case
