@@ -1,0 +1,123 @@
+# Sector: Teradoma -- T5 Second Survey (tab-delimited). Lines beginning with # are comments.
+#
+# COLUMNS: Sector SS Hex Name UWP Bases Remarks Zone PBG Allegiance Stars {Ix} (Ex) [Cx] Nobility W RU
+#   SS         Subsector A-P (4x4 grid of 8x10 subsectors)
+#   Hex        Column+row (e.g. 0801)
+#   UWP        Starport Size Atmo Hydro Pop Gov Law - Tech (eHex: 0-9 A-H J-N P-Z, skips I/O)
+#   Bases      N Naval  S Scout  D Depot  W Way  C Corsair  (blank = none)
+#   Remarks    Trade classifications (Traveller 5 TCS)
+#   Zone       A Amber  R Red  (blank = none)
+#   PBG        Population-multiplier, Belts, Gas giants
+#   Stars      Spectral + luminosity; companions space-separated (e.g. F2 V M4 V)
+#   {Ix}       Importance extension
+#   (Ex)       Economic: Resources Labor Infrastructure +-Efficiency
+#   [Cx]       Cultural: Homogeneity Acceptance Strangeness Symbols
+#   W  Worlds in system    RU  Resource Units (R x L x I x E)
+#
+Sector	SS	Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W	RU
+Teradoma	C	2101	Wardhaven	C868402-8	S	Ni Pa Ho	A	403	Na	F5 III	{ -2 }	(833-4)	[5279]		1	-288
+Teradoma	C	1902	Domo	E7C069A-3		Ni Lt	A	101	Na	F5 V DB	{ -3 }	(752+1)	[9374]		1	70
+Teradoma	C	1903	Grundle	C413674-7	W	Ic Ni Na Tz	A	701	Na	M2 V DB	{ -1 }	(852+1)	[6569]		1	80
+Teradoma	D	2903	Bizmant	A889100-B	N	Lo Co	A	212	Na	G2 V	{ 1 }	(900+2)	[128B]		1	18
+Teradoma	A	0104	Pandora	E696300-8		Lo	A	222	Na	F2 IV	{ -3 }	(820-2)	[1136]		1	-32
+Teradoma	A	0304	Blargon	B4106BB-B	NW	Ni Na Ho	A	511	Na	K0 III	{ 2 }	(656+0)	[A81D]		1	180
+Teradoma	C	2104	Xaryio	B200134-8		Va Lo Ho		102	Na	A5 IV	{ -1 }	(D00+3)	[2184]		1	39
+Teradoma	C	1705	Gilgamesh	B410674-A		Ni Na Tz	A	503	Na	K5 V	{ 1 }	(F56-4)	[873B]		1	-1800
+Teradoma	C	2405	Pellinio	C3AA637-8	W	Fl Ni Tz	A	611	Na	M0 V	{ -1 }	(756+1)	[9527]		1	210
+Teradoma	D	2505	Korundio	B665630-7		Ga Ni Ag Ri	A	812	Na	F2 V DB	{ 1 }	(853+1)	[6728]		1	120
+Teradoma	D	2506	Elsewhere	A588000-0		Lt Co	A	021	Na	F2 V DB	{ -1 }	(C07+5)	[1141]		1	420
+Teradoma	D	2706	Frontios	B3A3632-B	D	Fl Ni Co	A	820	Na	G2 IV	{ 1 }	(851-3)	[7797]		1	-120
+Teradoma	B	1207	Eudorio	A510667-8		Ni Na Ho		212	Na	F2 IV	{ -1 }	(852+3)	[9575]		1	240
+Teradoma	A	0108	Angslan	B68A557-B	W	Wa Ni Pr Co		602	Na	F5 V	{ 2 }	(C43+0)	[874B]		1	144
+Teradoma	B	1008	Vasthold	B000659-B		As Va Ni Na Tz	A	211	Na	M0 V DB	{ 1 }	(B55+2)	[6746]		1	550
+Teradoma	B	1108	Tasu	B9A5000-0	NW	Fl Lt	A	020	Na	A0 V	{ 0 }	(806+3)	[1131]		1	144
+Teradoma	C	1708	Angslan	C300673-7	S	Va Ni Na Ho	A	611	Na	G5 V	{ -2 }	(352-4)	[7444]		1	-120
+Teradoma	C	1808	Thoros	B7A4330-9		Fl Lo Tz	A	303	Na	F2 VI	{ 0 }	(B20+2)	[235B]		1	44
+Teradoma	C	2208	Keicha	X100642-2		Va Ni Na Lt Tz		206	Na	K5 VI	{ -3 }	(553+2)	[6392]		1	150
+Teradoma	C	2209	Naqsa	B884340-8		Lo	A	610	Na	F0 V	{ -1 }	(320+2)	[523C]		1	12
+Teradoma	C	2010	Shexio	X69A559-4		Wa Ni Lt Tz	A	700	Na	K5 V	{ -3 }	(542+0)	[1276]		1	40
+Teradoma	D	3110	Oshan	B100677-B	N	Va Ni Na Ho	A	902	Na	F5 V DB	{ 1 }	(A55-4)	[673C]		1	-1000
+Teradoma	E	0311	St. Albans	B989574-B	D	Ni Pr Co	A	221	Na	G8 V	{ 1 }	(945+3)	[765A]		1	540
+Teradoma	F	0911	Zeos	A899665-8	N	Ni		622	Na	F2 V	{ -1 }	(C55+5)	[6529]		1	1500
+Teradoma	G	1711	Sabanio	A454655-B		Ni Ag Ho		431	Na	A5 V	{ 2 }	(D52+0)	[A88A]		1	130
+Teradoma	E	0112	Serendipity	D410657-4	S	Ni Na Lt		400	Na	G5 V	{ -3 }	(651-2)	[6347]		1	-60
+Teradoma	G	2012	Quinnio	C410300-B		Lo Ho	A	314	Na	F2 III	{ 0 }	(C20+2)	[3369]		1	48
+Teradoma	H	2812	Bear	C786415-8	W	Ga Ni Pa Co Tu		222	Na	G5 IV	{ -1 }	(A32+5)	[5344]		1	300
+Teradoma	H	2912	Sorchakvio	C000333-7	S	As Va Lo Tz		704	Na	K0 V	{ -2 }	(820+2)	[811C]		1	32
+Teradoma	F	0913	Monio	C000658-8		As Va Ni Na		820	Na	G5 V	{ -2 }	(954-2)	[A446]		1	-360
+Teradoma	F	1313	Praclush Toanas	D200678-5		Va Ni Na Lt	A	924	Na	F5 III	{ -3 }	(852+1)	[4353]		1	80
+Teradoma	G	1713	Armazin	B566545-A		Ni Ag Pr Tz		501	Na	M4 V DB	{ 2 }	(841+0)	[6757]		1	32
+Teradoma	G	2013	Dolchio	B565202-B	SW	Lo	A	113	Na	G5 V	{ 2 }	(910+2)	[145A]		1	18
+Teradoma	G	2113	Corvallisio	A540788-8	N	De He Pi Po Tz		900	Na	M0 V DB	{ 0 }	(96B+2)	[A737]		1	1188
+Teradoma	E	0314	Shadow	BCA2300-8	SW	Fl He Lo Tz	A	603	Na	K2 VI	{ 0 }	(520-2)	[4386]		1	-20
+Teradoma	F	1014	Metaxas	C200120-B		Va Lo Tz	A	312	Na	F2 VI	{ 0 }	(900-2)	[1158]		1	-18
+Teradoma	F	1115	Abaddon	E557300-7		Lo Ho	A	900	Na	K2 IV	{ -3 }	(620-2)	[4199]		1	-24
+Teradoma	E	0816	Dunatrio	B310698-8	SW	Ni Na		400	Na	G0 IV M2 V	{ 0 }	(551-2)	[5648]		1	-50
+Teradoma	G	2316	Manjamio	C100623-9	S	Va Ni Na Co		310	Na	G5 V DB	{ -1 }	(A56+2)	[352C]		1	600
+Teradoma	H	2516	Moyaba	B510555-8	S	Ni		210	Na	G2 V DB	{ -1 }	(843-5)	[1468]		1	-480
+Teradoma	H	3016	Ochven	C2006BE-6		Va Ni Na	A	723	Na	G0 V	{ -2 }	(855+1)	[8488]		1	200
+Teradoma	E	0517	Loris	C555434-5	S	Ni Pa Lt		121	Na	G2 V	{ -2 }	(732-4)	[4243]		1	-168
+Teradoma	G	1718	Shiva	E412320-9		Ic Lo	A	502	Na	F2 V	{ -2 }	(920+3)	[517A]		1	54
+Teradoma	E	0719	Mok	E865487-6		Ga Ni Pa		210	Na	K5 IV DB	{ -3 }	(632-3)	[3174]		1	-108
+Teradoma	F	1519	Kyleria	C4005A7-B		Va Ni	A	310	Na	F0 V	{ 0 }	(945+4)	[5567]		1	720
+Teradoma	G	1819	Krinan	D000410-6		As Va Ni Tz	A	802	Na	K0 V	{ -3 }	(C35+1)	[4129]		1	180
+Teradoma	G	1919	Katalio	A200599-A	ND	Va Ni Tz	A	201	Na	K5 V	{ 1 }	(646-3)	[464A]		1	-432
+Teradoma	G	2119	Copa	C564687-9		Ni Ag Ri Tz		901	Na	M6 V DB	{ 1 }	(955+5)	[6728]		1	1125
+Teradoma	G	2419	Sorrow	B9A98AC-A		Fl Ph Tz	A	810	Na	M6 V DB	{ 2 }	(677-3)	[9A46]		1	-882
+Teradoma	H	2919	Sigurd	B420659-8		De He Ni Na Po Tz	A	211	Na	K5 VI	{ -1 }	(D51-2)	[A539]		1	-130
+Teradoma	F	1120	Paramay	D655533-4	S	Ga Ni Ag Lt		422	Na	G2 III	{ -2 }	(941+1)	[6325]		1	36
+Teradoma	J	1021	Timdo	A100466-B	S	Va Ni		212	Na	F0 V	{ 1 }	(534+1)	[858E]		1	60
+Teradoma	K	1921	Ellysio	C553576-4		Ni Po Lt	A	211	Na	G2 V	{ -2 }	(841+1)	[6313]		1	32
+Teradoma	K	2221	Loki	E420620-8		De He Ni Na Po Tz	A	601	Na	F2 VI	{ -3 }	(951+1)	[5375]		1	45
+Teradoma	J	1322	Piranha	B841687-7	N	Ni Po Co		200	Na	F0 V	{ -1 }	(955+0)	[85A5]		1	225
+Teradoma	J	1622	Rosendanio	B200000-0	S	Va Lt	A	002	Na	G2 V DB	{ -1 }	(706-3)	[1121]		1	-126
+Teradoma	L	2522	Tanhusio	E66696A-8		Ga Hi Pr Tz	A	502	Na	K0 V	{ -1 }	(A84+4)	[C887]		1	1280
+Teradoma	L	3223	Pivetio	B300647-B		Va Ni Na Tz		802	Na	M4 V	{ 1 }	(B54-2)	[673D]		1	-440
+Teradoma	I	0224	Enesi	D420466-5		De He Ni Po Lt		600	Na	K2 III	{ -3 }	(834+1)	[3137]		1	96
+Teradoma	J	0924	Salostophus	C3A8000-0	SW	Fl Lt	A	001	Na	F5 II	{ -1 }	(806-2)	[11A1]		1	-96
+Teradoma	J	1224	D	D767267-7		Ga Lo		722	Na	G8 V	{ -3 }	(510-1)	[616C]		1	-5
+Teradoma	K	1724	Vort	B764200-8	S	Lo Tz	A	400	Na	K5 V	{ -1 }	(810-3)	[118A]		1	-24
+Teradoma	K	2324	Netu	A100668-A	W	Va Ni Na		703	Na	F0 II	{ 2 }	(C51+3)	[3868]		1	180
+Teradoma	K	2424	Mollan	A200548-B		Va Ni Tz		112	Na	G5 VI	{ 1 }	(B44+1)	[46A7]		1	176
+Teradoma	K	1925	Eagle	C530595-A	S	De Ni Po Tz		200	Na	K0 V	{ 0 }	(643-4)	[4529]		1	-288
+Teradoma	L	2525	Pendrakeentio	C4A8655-9		Fl Ni	A	211	Na	K0 III DB	{ -1 }	(852-3)	[3557]		1	-240
+Teradoma	I	0126	Hadriu	B7B2862-A	SDW	Fl Ph Tz	A	400	Na	M6 V DB	{ 3 }	(77B+0)	[CB6B]		1	539
+Teradoma	J	1126	Chapek	C620332-A		De Lo Po Tz		602	Na	F5 VI DB	{ 0 }	(820+2)	[137A]		1	32
+Teradoma	K	1826	Silesia	C599379-9	S	Lo Co	A	501	Na	G0 V DB	{ -1 }	(920+3)	[3279]		1	54
+Teradoma	L	2626	Virshafio	C200659-7		Va Ni Na	A	722	Na	G0 V	{ -2 }	(253-4)	[6469]		1	-120
+Teradoma	L	2826	Temasek	C41266A-8	SW	Ic Ni Na	A	603	Na	G0 V	{ -1 }	(A56+1)	[754D]		1	300
+Teradoma	L	2926	Simarka	E310314-5		Lo Lt		511	Na	G2 V DB	{ -3 }	(420+4)	[115A]		1	32
+Teradoma	I	0527	HalvmÃ¶rk	B410469-8	SW	Ni Tz	A	903	Na	G2 VI	{ 0 }	(C31+4)	[444A]		1	144
+Teradoma	J	1228	Chapek	D59A730-3	S	Wa Pi Lt Tz	A	402	Na	K2 V	{ -2 }	(566+3)	[6554]		1	540
+Teradoma	J	1428	Rakhat	E310659-9		Ni Na	A	220	Na	G5 V DB	{ -2 }	(B51-2)	[443A]		1	-110
+Teradoma	L	2628	Sovaĝio	B8B5775-B	S	Fl	A	112	Na	G2 V	{ 2 }	(C69+0)	[994B]		1	648
+Teradoma	L	2728	Zahnah	C569455-9	W	Ni		713	Na	A0 IV	{ 0 }	(D36+1)	[442C]		1	234
+Teradoma	L	3028	Euakovio	X610453-3		Ni Lt		622	Na	G5 V	{ -3 }	(833+0)	[7161]		1	72
+Teradoma	I	0329	Qamara	D310532-8		Ni		421	Na	F5 V	{ -3 }	(842+3)	[3276]		1	192
+Teradoma	K	2429	Adiantio	D56A986-7	S	Wa Hi Pr Tz		900	Na	K5 V	{ -1 }	(586+0)	[8867]		1	240
+Teradoma	L	2829	Merovingio	E310630-8		Ni Na Tz	A	702	Na	G2 VI	{ -3 }	(B55+5)	[3369]		1	1375
+Teradoma	I	0630	Eternium	C3AA645-B		Fl Ni Tz	A	901	Na	K0 V DB DB	{ 0 }	(A55-2)	[267C]		1	-500
+Teradoma	K	2130	Jordan Mining	A986210-9		Lo	A	901	Na	G0 V K5 VI	{ 0 }	(510-3)	[1286]		1	-15
+Teradoma	O	2131	Toris	B410688-7	W	Ni Na Tz		202	Na	K2 V	{ 0 }	(752-3)	[9657]		1	-210
+Teradoma	P	2531	Ymir	A999730-9	W	Pi Tz	A	801	Na	M2 V	{ 2 }	(A6A-1)	[99A5]		1	-600
+Teradoma	N	1032	Guillarin	A201522-B	D	Ic Va Ni Co		922	Na	K2 II	{ 1 }	(A43+3)	[762G]		1	360
+Teradoma	M	0133	Cygnus X	C645443-7		Ni Pa		700	Na	F0 V	{ -2 }	(536+2)	[3288]		1	180
+Teradoma	M	0533	Gallifrey	CDD8642-7	W	Ni Ho	A	701	Na	G8 V	{ -1 }	(356-2)	[9547]		1	-180
+Teradoma	N	1133	Argos	C200375-7		Va Lo	A	900	Na	G5 V DB	{ -2 }	(720+4)	[7166]		1	56
+Teradoma	O	2233	Smyrno	C586633-7		Ni Ag Ri Ho		600	Na	G5 III DB	{ 0 }	(755+5)	[7647]		1	875
+Teradoma	O	2333	Ondor Gambit	D42046A-4		De He Ni Po Lt	A	803	Na	K2 III	{ -3 }	(632-1)	[1151]		1	-36
+Teradoma	P	2533	Tesheuquio	B56A556-9		Wa Ni Pr		211	Na	G8 V	{ 0 }	(B44-4)	[5566]		1	-704
+Teradoma	M	0534	Tierra	BCDA410-A		Oc Ni	A	603	Na	G8 V	{ 1 }	(836-2)	[6549]		1	-288
+Teradoma	N	1234	Getty Premium	E855525-2		Ga Ni Ag Lt		100	Na	K5 IV	{ -2 }	(645-2)	[4382]		1	-240
+Teradoma	O	1834	Difektĝintio	A420413-A		De He Ni Po Co		511	Na	F0 IV	{ 1 }	(833+2)	[757C]		1	144
+Teradoma	P	2634	Griffoth	C577400-5	W	Ni Pa Lt	A	311	Na	K5 II	{ -1 }	(333-2)	[6326]		1	-54
+Teradoma	N	0935	Johor	B1006AC-B		Va Ni Na Ho	A	211	Na	G0 V DB	{ 1 }	(F53-1)	[6789]		1	-225
+Teradoma	M	0136	Yeowe	A200555-B	NW	Va Ni Ho		410	Na	F5 V DB	{ 2 }	(B44+0)	[373B]		1	176
+Teradoma	N	1137	Eurydice	C9A869A-9	SW	Fl Ni	A	903	Na	F0 V DB	{ 0 }	(B51+0)	[963B]		1	55
+Teradoma	N	1537	Deva Loka	D59A544-5		Wa Ni Lt Ho		504	Na	G0 V	{ -3 }	(643-2)	[42A7]		1	-144
+Teradoma	O	2137	Brinze	E410220-5		Lo Lt Tz	A	703	Na	F0 VI	{ -3 }	(910+0)	[4114]		1	9
+Teradoma	O	1838	Sipfarejio	A500630-B	N	Va Ni Na	A	701	Na	F2 V	{ 1 }	(956+0)	[573C]		1	270
+Teradoma	N	1539	Orsha	A678846-9	S	Ph Pa Pi Tz		200	Na	M4 V	{ 1 }	(77A+2)	[9976]		1	980
+Teradoma	N	1440	Minbar	C661523-8		Ni Pr Ho		321	Na	G5 V DB	{ -2 }	(B44-2)	[4326]		1	-352
+Teradoma	N	1640	Trogio	A4A7310-A	N	Fl Lo Co	A	831	Na	F2 IV	{ 1 }	(D20+0)	[1476]		1	26
+Teradoma	O	1740	Guna	C630737-7	S	De Na Po Tz		812	Na	M0 V	{ -1 }	(969-1)	[6668]		1	-486

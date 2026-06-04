@@ -69,6 +69,25 @@ when "highlight"
   File.write(path, svg)
   puts "highlighted #{MAP.size} canon hexes in #{path}"
 
+when "tab"
+  lines = File.readlines(path, encoding: "utf-8")
+  hdr   = lines.index { |l| l =~ /^Sector\t|^Hex\t/ } || lines.index { |l| !l.start_with?("#") }
+  cols  = lines[hdr].chomp.split("\t").each_with_index.to_h
+  hi, ni = cols["Hex"], cols["Name"]
+  n = 0
+  out = lines.each_with_index.map do |line, i|
+    next line if i <= hdr || line.start_with?("#")
+    f = line.chomp.split("\t")
+    if MAP[f[hi]]
+      f[ni] = MAP[f[hi]]; n += 1
+      f.join("\t") + "\n"
+    else
+      line
+    end
+  end
+  File.write(path, out.join)
+  puts "renamed #{n} systems in #{path}"
+
 else
-  abort "unknown mode #{mode.inspect}; use rename or highlight"
+  abort "unknown mode #{mode.inspect}; use rename, tab or highlight"
 end

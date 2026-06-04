@@ -1,0 +1,1378 @@
+# Astromapper Sector: Teradoma
+# Allegiance: Im
+#
+# System line fields (left to right):
+#   Loc  UWP  Tmp  Bases  TZ  Trade  Factions  Stars  Orbits  Name  Ix  Ex  Cx
+#
+#   Loc       Hex location (column+row, e.g. 0601)
+#   UWP       Universal World Profile: Starport Size Atmo Hydro Pop Gov Law-Tech (eHex)
+#   Tmp       Climate (by Habitable Zone): T Temperate, H Hot, C Cold, Tz Twilight, Lk Locked
+#   Bases     Naval Scout GasGiant Depot WayStation   (. = none)
+#   TZ        Travel Zone: AZ Amber, RZ Red, .. none
+#   Trade     Trade classification codes
+#   Factions  Faction government types: O F M N S P
+#   Stars     Star classifications, primary/companions (e.g. M6V, G2V/DB)
+#   Orbits    W World  G GasGiant  B Belt  R Rock  H Hostile  S Companion  . empty
+#   Name      Mainworld name
+#   Ix {+-n}  Importance Extension
+#   Ex (RLI+-E)  Economic: Resources Labor Infrastructure Efficiency
+#   Cx [HASS] Cultural: Homogeneity Acceptance Strangeness Symbols
+#   RU:n      Resource Units (R x L x I x E) - total economic output
+#   Native    Population: Settled, Colony (human); or Native, Exotic (sophonts: varied)
+#
+# Orbit lines ( -- ): orbit no., * = biozone, type, UWP, distance (AU).
+# Moon lines  (  / ): orbital radii, moon UWP.
+#
+2101 C868402-8 H .SG.. AZ	Ni,Pa,Ho       	F       	F5III             .RHWR.GGG       	Wardhaven      	{ -2 } (833-4) [5279] RU:-288	Colony
+  --  1.    . // .......-. //  0.5 au
+  --  2.    R // X600000-0 //  0.8 au
+  --  3.    H // X9C1000-0 //  1.5 au
+                            /    4 rad. X740000
+                            /    9 rad. X840000
+  --  4. *  W // C868402-8 //  2.9 au
+                            /    7 rad. X400000
+                            /   12 rad. X300000
+  --  5.    R // X800000-0 //  5.7 au
+  --  6.    . // .......-. // 11.3 au
+  --  7.    G // Small GG  // 22.5 au
+                            /    1 rad. XR00000
+                            /    6 rad. X104000
+                            /    7 rad. X100000
+                            /   11 rad. X102000
+  --  8.    G // Large GG  // 44.9 au
+                            /    3 rad. X642000
+                            /    6 rad. X400000
+                            /    7 rad. X204000
+                            /    8 rad. X633000
+                            /   10 rad. X203000
+  --  9.    G // Large GG  // 89.7 au
+
+1902 E7C069A-3 T ..G.. AZ	Ni,Lt          	        	F5V/DB            H.WG..S         	Domo           	{ -3 } (752+1) [9374] RU:70	Colony
+  --  1.    H // X2E6000-0 //  0.4 au
+  --  2.    . // .......-. //  0.8 au
+  --  3. *  W // E7C069A-3 //  1.6 au
+                            /    7 rad. X500000
+                            /   10 rad. X100000
+  --  4.    G // Large GG  //  3.2 au
+  --  5.    . // .......-. //  6.4 au
+  --  6.    . // .......-. // 12.8 au
+  --  7.    S // DB        // 25.6 au
+
+1903 C413674-7 Tz ..G.W AZ	Ic,Ni,Na,Tz    	F,F,N   	M2V/DB            WRG..S          	Grundle        	{ -1 } (852+1) [6569] RU:80	Colony
+  --  1. *  W // C413674-7 //  0.2 au
+                            /    9 rad. X305000
+  --  2.    R // X600000-0 //  0.4 au
+  --  3.    G // Small GG  //  0.8 au
+                            /    5 rad. X406000
+                            /    7 rad. X105000
+                            /    8 rad. X203000
+                            /    9 rad. X303000
+  --  4.    . // .......-. //  1.6 au
+  --  5.    . // .......-. //  3.2 au
+  --  6.    S // DB        //  6.4 au
+
+2903 A889100-B C N.G.. AZ	Lo,Co          	M,M     	G2V               .GW..BG         	Bizmant        	{ +1 } (900+2) [128B] RU:18	Colony
+  --  1.    . // .......-. //  0.4 au
+  --  2.    G // Large GG  //  0.8 au
+  --  3. *  W // A889100-B //  1.6 au
+                            /    2 rad. XR00000
+  --  4.    . // .......-. //  3.2 au
+  --  5.    . // .......-. //  6.4 au
+  --  6.    B // XR00000-0 // 12.8 au
+  --  7.    G // Small GG  // 25.6 au
+
+0104 E696300-8 T ..G.. AZ	Lo             	M,M,N   	F2IV              RBRWRBGG        	Pandora        	{ -3 } (820-2) [1136] RU:-32	Colony
+  --  1.    R // X900000-0 //  0.4 au
+                            /    7 rad. X410000
+                            /    9 rad. X300000
+  --  2.    B // XR00000-0 //  0.7 au
+  --  3.    R // X400000-0 //  1.4 au
+                            /    3 rad. XS00000
+  --  4. *  W // E696300-8 //  2.8 au
+                            /    6 rad. X202000
+                            /    8 rad. X202000
+                            /   10 rad. X503000
+  --  5.    R // X500000-0 //  5.6 au
+                            /    7 rad. X103000
+                            /    8 rad. X200000
+                            /   10 rad. X400000
+  --  6.    B // XR00000-0 // 11.2 au
+  --  7.    G // Small GG  // 22.4 au
+                            /    1 rad. XR00000
+                            /    2 rad. XR00000
+                            /    5 rad. X304000
+                            /    7 rad. X515000
+                            /   11 rad. X127000
+  --  8.    G // Small GG  // 44.8 au
+                            /    1 rad. XR00000
+                            /    4 rad. X215000
+                            /    6 rad. X401000
+
+0304 B4106BB-B H N.G.W AZ	Ni,Na,Ho       	M       	K0III             BHHRWG.R        	Blargon        	{ +2 } (656+0) [A81D] RU:180	Colony
+  --  1.    B // XR00000-0 //  0.4 au
+  --  2.    H // X2E4000-0 //  0.7 au
+  --  3.    H // X4C6000-0 //  1.3 au
+                            /    5 rad. X200000
+                            /    7 rad. X100000
+                            /   13 rad. X200000
+  --  4.    R // X100000-0 //  2.5 au
+  --  5. *  W // B4106BB-B //  4.9 au
+  --  6.    G // Small GG  //  9.7 au
+  --  7.    . // .......-. // 19.3 au
+  --  8.    R // X600000-0 // 38.5 au
+                            /    2 rad. XR00000
+                            /    3 rad. X400000
+                            /   12 rad. X302000
+
+2104 B200134-8 H ..G.. ..	Va,Lo,Ho       	N       	A5IV              HRHHW.GG        	Xaryio         	{ -1 } (D00+3) [2184] RU:39	Colony
+  --  1.    H // X3A4000-0 //  0.4 au
+                            /    1 rad. XR00000
+                            /    2 rad. XR00000
+  --  2.    R // X600000-0 //  0.7 au
+                            /    1 rad. XR00000
+                            /    6 rad. X100000
+                            /    7 rad. X100000
+  --  3.    H // X1B5000-0 //  1.4 au
+                            /    2 rad. XS00000
+  --  4.    H // X5E4000-0 //  2.8 au
+  --  5. *  W // B200134-8 //  5.6 au
+                            /    1 rad. XR00000
+                            /    2 rad. XR00000
+                            /   11 rad. X402000
+  --  6.    . // .......-. // 11.2 au
+  --  7.    G // Small GG  // 22.4 au
+  --  8.    G // Small GG  // 44.8 au
+
+1705 B410674-A Tz ..G.. AZ	Ni,Na,Tz       	O       	K5V               HWGGRG          	Gilgamesh      	{ +1 } (F56-4) [873B] RU:-1800	Colony
+  --  1.    H // X7D6000-0 //  0.3 au
+  --  2. *  W // B410674-A //  0.6 au
+                            /    1 rad. XS02000
+                            /    3 rad. XS03000
+  --  3.    G // Large GG  //  1.2 au
+                            /    3 rad. X766000
+                            /    4 rad. X205000
+                            /    5 rad. X103000
+                            /    7 rad. X412000
+                            /    8 rad. X302000
+                            /   10 rad. X306000
+                            /   12 rad. X100000
+  --  4.    G // Small GG  //  2.4 au
+  --  5.    R // X500000-0 //  4.8 au
+  --  6.    G // Large GG  //  9.6 au
+
+2405 C3AA637-8 Tz ..G.W AZ	Fl,Ni,Tz       	S,M,M   	M0V               WRRGB           	Pellinio       	{ -1 } (756+1) [9527] RU:210	Colony
+  --  1. *  W // C3AA637-8 //  0.2 au
+                            /    1 rad. XR00000
+                            /    2 rad. XR00000
+                            /   10 rad. X401000
+  --  2.    R // X400000-0 //  0.4 au
+                            /    3 rad. XR00000
+  --  3.    R // X600000-0 //  0.8 au
+                            /    7 rad. X301000
+  --  4.    G // Large GG  //  1.6 au
+  --  5.    B // XR00000-0 //  3.2 au
+
+2505 B665630-7 T ..G.. AZ	Ga,Ni,Ag,Ri    	M,S,N   	F2V/DB            BRWGG.S         	Korundio       	{ +1 } (853+1) [6728] RU:120	Colony
+  --  1.    B // XR00000-0 //  0.4 au
+  --  2.    R // X600000-0 //  0.8 au
+                            /    5 rad. X300000
+                            /    6 rad. X300000
+                            /    8 rad. X300000
+  --  3. *  W // B665630-7 //  1.6 au
+  --  4.    G // Small GG  //  3.2 au
+  --  5.    G // Small GG  //  6.4 au
+                            /    1 rad. XR00000
+                            /    3 rad. X200000
+                            /    8 rad. X107000
+                            /   11 rad. X100000
+  --  6.    . // .......-. // 12.8 au
+  --  7.    S // DB        // 25.6 au
+
+2506 A588000-0 C ..G.. AZ	Lt,Co          	        	F2V/DB            RHWRGBB..S      	Elsewhere      	{ -1 } (C07+5) [1141] RU:420	
+  --  1.    R // X700000-0 //  0.4 au
+  --  2.    H // X9B7000-0 //  0.8 au
+                            /    4 rad. X730000
+                            /    8 rad. X740000
+  --  3. *  W // A588000-0 //  1.6 au
+                            /    8 rad. X700000
+                            /    9 rad. X702000
+                            /   12 rad. X402000
+  --  4.    R // X500000-0 //  3.2 au
+                            /    1 rad. XS04000
+                            /    2 rad. XR00000
+  --  5.    G // Large GG  //  6.4 au
+  --  6.    B // XR00000-0 // 12.8 au
+  --  7.    B // XR00000-0 // 25.6 au
+  --  8.    . // .......-. // 51.2 au
+  --  9. -  . // .......-. // 102.4 au
+  -- 10. -  S // DB        // 204.8 au
+
+2706 B3A3632-B C ...D. AZ	Fl,Ni,Co       	M,M     	G2IV              RBRWB.R         	Frontios       	{ +1 } (851-3) [7797] RU:-120	Colony
+  --  1.    R // X200000-0 //  0.3 au
+  --  2.    B // XR00000-0 //  0.6 au
+  --  3.    R // X900000-0 //  1.2 au
+                            /    5 rad. X420000
+                            /    9 rad. X300000
+  --  4. *  W // B3A3632-B //  2.4 au
+  --  5.    B // XR00000-0 //  4.8 au
+  --  6.    . // .......-. //  9.6 au
+  --  7.    R // X700000-0 // 19.2 au
+
+1207 A510667-8 H ..G.. ..	Ni,Na,Ho       	M,N     	F2IV              RRHWRGGB        	Eudorio        	{ -1 } (852+3) [9575] RU:240	Colony
+  --  1.    R // X400000-0 //  0.4 au
+  --  2.    R // X000000-0 //  0.7 au
+                            /    1 rad. XS00000
+  --  3.    H // X3D6000-0 //  1.4 au
+  --  4. *  W // A510667-8 //  2.8 au
+                            /    8 rad. X200000
+                            /   12 rad. X203000
+  --  5.    R // X700000-0 //  5.6 au
+                            /   10 rad. X554000
+  --  6.    G // Large GG  // 11.2 au
+  --  7.    G // Large GG  // 22.4 au
+  --  8.    B // XR00000-0 // 44.8 au
+
+0108 B68A557-B C ..G.W ..	Wa,Ni,Pr,Co    	F,F     	F5V               HRWGG           	Angslan        	{ +2 } (C43+0) [874B] RU:144	Colony
+  --  1.    H // X8D1000-0 //  0.4 au
+                            /   12 rad. X300000
+  --  2.    R // X800000-0 //  0.8 au
+  --  3. *  W // B68A557-B //  1.6 au
+  --  4.    G // Small GG  //  3.2 au
+  --  5.    G // Large GG  //  6.4 au
+
+1008 B000659-B Tz ..G.. AZ	As,Va,Ni,Na,Tz 	M,F     	M0V/DB            WB.G.S          	Vasthold       	{ +1 } (B55+2) [6746] RU:550	Colony
+  --  1. *  W // B000659-B //  0.2 au
+  --  2.    B // XR00000-0 //  0.4 au
+  --  3.    . // .......-. //  0.8 au
+  --  4.    G // Small GG  //  1.6 au
+  --  5.    . // .......-. //  3.2 au
+  --  6.    S // DB        //  6.4 au
+
+1108 B9A5000-0 T N...W AZ	Fl,Lt          	        	A0V               HBBW            	Tasu           	{ +0 } (806+3) [1131] RU:144	
+  --  1.    H // X1B2000-0 //  0.4 au
+                            /    1 rad. XS00000
+  --  2.    B // XR00000-0 //  0.8 au
+  --  3.    B // XR00000-0 //  1.6 au
+  --  4. *  W // B9A5000-0 //  3.2 au
+                            /    7 rad. X400000
+                            /   11 rad. X202000
+                            /   13 rad. X103000
+
+1708 C300673-7 H .SG.. AZ	Va,Ni,Na,Ho    	M,N     	G5V               BHW.RG          	Angslan        	{ -2 } (352-4) [7444] RU:-120	Colony
+  --  1.    B // XR00000-0 //  0.4 au
+  --  2.    H // X4B3000-0 //  0.8 au
+  --  3. *  W // C300673-7 //  1.6 au
+  --  4.    . // .......-. //  3.2 au
+  --  5.    R // X700000-0 //  6.4 au
+  --  6.    G // Small GG  // 12.8 au
+                            /    1 rad. XR00000
+                            /    4 rad. X512000
+                            /    7 rad. X221000
+                            /    8 rad. X204000
+                            /   11 rad. X428000
+
+1808 B7A4330-9 Tz ..G.. AZ	Fl,Lo,Tz       	N,O,F   	F2VI              HWGRGG          	Thoros         	{ +0 } (B20+2) [235B] RU:44	Colony
+  --  1.    H // X8B5000-0 //  0.4 au
+                            /    6 rad. X200000
+  --  2. *  W // B7A4330-9 //  0.7 au
+                            /    2 rad. XR00000
+                            /   12 rad. X100000
+  --  3.    G // Large GG  //  1.4 au
+  --  4.    R // X800000-0 //  2.8 au
+  --  5.    G // Small GG  //  5.6 au
+  --  6.    G // Small GG  // 11.2 au
+
+2208 X100642-2 Tz ..G.. ..	Va,Ni,Na,Lt,Tz 	O       	K5VI              WGGGGGG         	Keicha         	{ -3 } (553+2) [6392] RU:150	Colony
+  --  1. *  W // X100642-2 //  0.3 au
+  --  2.    G // Small GG  //  0.6 au
+  --  3.    G // Small GG  //  1.2 au
+  --  4.    G // Large GG  //  2.4 au
+  --  5.    G // Large GG  //  4.8 au
+  --  6.    G // Large GG  //  9.6 au
+  --  7.    G // Large GG  // 19.2 au
+
+2209 B884340-8 T ..... AZ	Lo             	F,M,F,S 	F0V               B.HW            	Naqsa          	{ -1 } (320+2) [523C] RU:12	Colony
+  --  1.    B // XR00000-0 //  0.3 au
+  --  2.    . // .......-. //  0.6 au
+  --  3.    H // X5A0000-0 //  1.2 au
+                            /    7 rad. X200000
+                            /   12 rad. X330000
+  --  4. *  W // B884340-8 //  2.4 au
+
+2010 X69A559-4 Tz ..... AZ	Wa,Ni,Lt,Tz    	N       	K5V               .W              	Shexio         	{ -3 } (542+0) [1276] RU:40	Colony
+  --  1.    . // .......-. //  0.3 au
+  --  2. *  W // X69A559-4 //  0.6 au
+                            /    2 rad. XS00000
+                            /    8 rad. X104000
+
+3110 B100677-B H N.G.. AZ	Va,Ni,Na,Ho    	M,M     	F5V/DB            HHRWRRGGS       	Oshan          	{ +1 } (A55-4) [673C] RU:-1000	Colony
+  --  1.    H // X9E5000-0 //  0.3 au
+                            /    9 rad. X620000
+  --  2.    H // XAA2000-0 //  0.6 au
+  --  3.    R // X500000-0 //  1.2 au
+  --  4. *  W // B100677-B //  2.4 au
+                            /    3 rad. XS00000
+  --  5.    R // X800000-0 //  4.8 au
+  --  6.    R // X600000-0 //  9.6 au
+  --  7.    G // Large GG  // 19.2 au
+                            /    1 rad. XR00000
+                            /    4 rad. X301000
+                            /    6 rad. X847000
+                            /    7 rad. X207000
+                            /    9 rad. X440000
+                            /   10 rad. X314000
+                            /   12 rad. X311000
+                            /   13 rad. X315000
+  --  8.    G // Large GG  // 38.4 au
+  --  9. -  S // DB        // 76.8 au
+
+0311 B989574-B C ..GD. AZ	Ni,Pr,Co       	S       	G8V               RRWRBGB         	St. Albans     	{ +1 } (945+3) [765A] RU:540	Colony
+  --  1.    R // X600000-0 //  0.4 au
+                            /    1 rad. XR00000
+                            /   10 rad. X430000
+  --  2.    R // X600000-0 //  0.8 au
+                            /    1 rad. XR00000
+                            /    9 rad. X100000
+  --  3. *  W // B989574-B //  1.6 au
+                            /    6 rad. X203000
+  --  4.    R // X600000-0 //  3.2 au
+                            /    1 rad. XR00000
+                            /   10 rad. X304000
+                            /   12 rad. X200000
+  --  5.    B // XR00000-0 //  6.4 au
+  --  6.    G // Small GG  // 12.8 au
+  --  7.    B // XR00000-0 // 25.6 au
+
+0911 A899665-8 T N.G.. ..	Ni             	S,M     	F2V               RBHWGGB         	Zeos           	{ -1 } (C55+5) [6529] RU:1500	Colony
+  --  1.    R // X300000-0 //  0.3 au
+  --  2.    B // XR00000-0 //  0.6 au
+  --  3.    H // X4A2000-0 //  1.2 au
+                            /    2 rad. XR00000
+                            /    8 rad. X110000
+                            /    9 rad. X300000
+  --  4. *  W // A899665-8 //  2.4 au
+  --  5.    G // Large GG  //  4.8 au
+                            /    2 rad. XR00000
+                            /    3 rad. XR00000
+                            /    7 rad. X402000
+                            /    8 rad. X514000
+  --  6.    G // Small GG  //  9.6 au
+  --  7.    B // XR00000-0 // 19.2 au
+
+1711 A454655-B H ..G.. ..	Ni,Ag,Ho       	S,M     	A5V               GRBWBB          	Sabanio        	{ +2 } (D52+0) [A88A] RU:130	Colony
+  --  1.    G // Large GG  //  0.4 au
+  --  2.    R // X800000-0 //  0.8 au
+  --  3.    B // XR00000-0 //  1.6 au
+  --  4. *  W // A454655-B //  3.2 au
+                            /    7 rad. X701000
+  --  5.    B // XR00000-0 //  6.4 au
+  --  6.    B // XR00000-0 // 12.8 au
+
+0112 D410657-4 T .S... ..	Ni,Na,Lt       	M,N     	G5V               .RRW            	Serendipity    	{ -3 } (651-2) [6347] RU:-60	Colony
+  --  1.    . // .......-. //  0.3 au
+  --  2.    R // X800000-0 //  0.6 au
+  --  3.    R // X600000-0 //  1.2 au
+                            /    7 rad. X100000
+  --  4. *  W // D410657-4 //  2.4 au
+                            /    6 rad. X202000
+
+2012 C410300-B H ..G.. AZ	Lo,Ho          	M,S     	F2III             HHRWGBGGG       	Quinnio        	{ +0 } (C20+2) [3369] RU:48	Colony
+  --  1.    H // X2A3000-0 //  0.5 au
+                            /    1 rad. XS00000
+                            /    3 rad. XS00000
+  --  2.    H // X4E4000-0 //  0.8 au
+  --  3.    R // X400000-0 //  1.5 au
+  --  4. *  W // C410300-B //  2.9 au
+  --  5.    G // Small GG  //  5.7 au
+                            /   11 rad. X202000
+  --  6.    B // XR00000-0 // 11.3 au
+  --  7.    G // Large GG  // 22.5 au
+  --  8.    G // Large GG  // 44.9 au
+  --  9.    G // Large GG  // 89.7 au
+                            /    3 rad. XR00000
+                            /    5 rad. X516000
+                            /    7 rad. X532000
+                            /    8 rad. X300000
+                            /   11 rad. X511000
+
+2812 C786415-8 C ..G.W ..	Ga,Ni,Pa,Co,Tu 	N,P     	G5IV              B.BWGG          	Bear           	{ -1 } (A32+5) [5344] RU:300	Colony
+  --  1.    B // XR00000-0 //  0.4 au
+  --  2.    . // .......-. //  0.7 au
+  --  3.    B // XR00000-0 //  1.4 au
+  --  4. *  W // C786415-8 //  2.8 au
+                            /    8 rad. X800000
+  --  5.    G // Large GG  //  5.6 au
+  --  6.    G // Small GG  // 11.2 au
+
+2912 C000333-7 Tz .SG.. ..	As,Va,Lo,Tz    	F,F     	K0V               HWGRGGG         	Sorchakvio     	{ -2 } (820+2) [811C] RU:32	Colony
+  --  1.    H // X5B1000-0 //  0.3 au
+                            /    7 rad. X400000
+  --  2. *  W // C000333-7 //  0.6 au
+                            /    2 rad. XS00000
+                            /    3 rad. XR00000
+                            /    4 rad. X200000
+  --  3.    G // Small GG  //  1.2 au
+                            /    3 rad. X301000
+  --  4.    R // X900000-0 //  2.4 au
+  --  5.    G // Small GG  //  4.8 au
+  --  6.    G // Large GG  //  9.6 au
+  --  7.    G // Small GG  // 19.2 au
+                            /    1 rad. XR00000
+                            /    2 rad. XR00000
+                            /   12 rad. X102000
+
+0913 C000658-8 T ..... ..	As,Va,Ni,Na    	F,N,N   	G5V               BRBW            	Monio          	{ -2 } (954-2) [A446] RU:-360	Colony
+  --  1.    B // XR00000-0 //  0.3 au
+  --  2.    R // X000000-0 //  0.6 au
+  --  3.    B // XR00000-0 //  1.2 au
+  --  4. *  W // C000658-8 //  2.4 au
+                            /    3 rad. X700000
+                            /    9 rad. X200000
+                            /   10 rad. X300000
+
+1313 D200678-5 T ..G.. AZ	Va,Ni,Na,Lt    	N,N     	F5III             .GBWGGRBG       	Praclush Toanas	{ -3 } (852+1) [4353] RU:80	Colony
+  --  1.    . // .......-. //  0.5 au
+  --  2.    G // Small GG  //  0.8 au
+  --  3.    B // XR00000-0 //  1.5 au
+  --  4. *  W // D200678-5 //  2.9 au
+  --  5.    G // Large GG  //  5.7 au
+  --  6.    G // Small GG  // 11.3 au
+                            /   10 rad. X307000
+  --  7.    R // X600000-0 // 22.5 au
+  --  8.    B // XR00000-0 // 44.9 au
+  --  9.    G // Large GG  // 89.7 au
+
+1713 B566545-A Tz ..G.. ..	Ni,Ag,Pr,Tz    	O,O     	M4V/DB            W.G....S        	Armazin        	{ +2 } (841+0) [6757] RU:32	Colony
+  --  1. *  W // B566545-A //  0.2 au
+                            /    9 rad. X200000
+  --  2.    . // .......-. //  0.4 au
+  --  3.    G // Small GG  //  0.8 au
+                            /    7 rad. X217000
+                            /    9 rad. X300000
+                            /   10 rad. X205000
+  --  4.    . // .......-. //  1.6 au
+  --  5.    . // .......-. //  3.2 au
+  --  6.    . // .......-. //  6.4 au
+  --  7. -  . // .......-. // 12.8 au
+  --  8. -  S // DB        // 25.6 au
+
+2013 B565202-B T .SG.W AZ	Lo             	F       	G5V               .BWGGRG         	Dolchio        	{ +2 } (910+2) [145A] RU:18	Colony
+  --  1.    . // .......-. //  0.4 au
+  --  2.    B // XR00000-0 //  0.8 au
+  --  3. *  W // B565202-B //  1.6 au
+  --  4.    G // Small GG  //  3.2 au
+  --  5.    G // Large GG  //  6.4 au
+                            /    1 rad. XR00000
+                            /    2 rad. XR00000
+                            /    5 rad. X620000
+                            /    9 rad. X217000
+                            /   11 rad. X324000
+  --  6.    R // X100000-0 // 12.8 au
+  --  7.    G // Small GG  // 25.6 au
+
+2113 A540788-8 Tz N.... ..	De,He,Pi,Po,Tz 	M       	M0V/DB            W....S          	Corvallisio    	{ +0 } (96B+2) [A737] RU:1188	Settled
+  --  1. *  W // A540788-8 //  0.2 au
+                            /    5 rad. X400000
+                            /    9 rad. X100000
+                            /   11 rad. X102000
+  --  2.    . // .......-. //  0.4 au
+  --  3.    . // .......-. //  0.8 au
+  --  4.    . // .......-. //  1.6 au
+  --  5.    . // .......-. //  3.2 au
+  --  6.    S // DB        //  6.4 au
+
+0314 BCA2300-8 Tz .SG.W AZ	Fl,He,Lo,Tz    	F,M,F,M 	K2VI              WGGG            	Shadow         	{ +0 } (520-2) [4386] RU:-20	Colony
+  --  1. *  W // BCA2300-8 //  0.3 au
+                            /    8 rad. X200000
+  --  2.    G // Large GG  //  0.6 au
+                            /    2 rad. XR00000
+                            /    7 rad. X740000
+                            /    8 rad. X200000
+                            /   10 rad. X401000
+                            /   11 rad. X884000
+                            /   12 rad. X310000
+  --  3.    G // Large GG  //  1.2 au
+                            /    1 rad. XR00000
+                            /    2 rad. XR00000
+                            /    5 rad. X302000
+                            /    8 rad. X303000
+                            /    9 rad. X442000
+  --  4.    G // Large GG  //  2.4 au
+
+1014 C200120-B Tz ..G.. AZ	Va,Lo,Tz       	F,M,S   	F2VI              RW.GGB          	Metaxas        	{ +0 } (900-2) [1158] RU:-18	Colony
+  --  1.    R // X800000-0 //  0.4 au
+  --  2. *  W // C200120-B //  0.7 au
+                            /    2 rad. XS00000
+  --  3.    . // .......-. //  1.4 au
+  --  4.    G // Large GG  //  2.8 au
+  --  5.    G // Large GG  //  5.6 au
+                            /    1 rad. XR00000
+                            /    3 rad. X554000
+                            /    6 rad. X623000
+  --  6.    B // XR00000-0 // 11.2 au
+
+1115 E557300-7 H ..... AZ	Lo,Ho          	M,F,P   	K2IV              H.W             	Abaddon        	{ -3 } (620-2) [4199] RU:-24	Colony
+  --  1.    H // X2E6000-0 //  0.4 au
+  --  2.    . // .......-. //  0.7 au
+  --  3. *  W // E557300-7 //  1.4 au
+                            /    6 rad. X405000
+
+0816 B310698-8 T .SG.W ..	Ni,Na          	N,S,N   	G0IV/M2V          H..WR.RS        	Dunatrio       	{ +0 } (551-2) [5648] RU:-50	Colony
+  --  1.    H // X5D7000-0 //  0.3 au
+                            /    7 rad. X420000
+  --  2.    . // .......-. //  0.6 au
+  --  3.    . // .......-. //  1.2 au
+  --  4. *  W // B310698-8 //  2.4 au
+                            /    2 rad. XS00000
+                            /    3 rad. XS04000
+  --  5.    R // X200000-0 //  4.8 au
+                            /    2 rad. XS05000
+                            /    3 rad. XS00000
+  --  6.    . // .......-. //  9.6 au
+  --  7.    R // X700000-0 // 19.2 au
+                            /    5 rad. X523000
+                            /    8 rad. X221000
+  --  8.    S // M2V       // 38.4 au
+
+2316 C100623-9 C .SG.. ..	Va,Ni,Na,Co    	M,N     	G5V/DB            S...W.B         	Manjamio       	{ -1 } (A56+2) [352C] RU:600	Colony
+  --  1.    S // DB        //  0.3 au
+  --  2.    . // .......-. //  0.6 au
+  --  3.    . // .......-. //  1.2 au
+  --  4.    . // .......-. //  2.4 au
+  --  5. *  W // C100623-9 //  4.8 au
+  --  6.    . // .......-. //  9.6 au
+  --  7.    B // XR00000-0 // 19.2 au
+
+2516 B510555-8 T .SG.. ..	Ni             	M       	G2V/DB            BRW.S           	Moyaba         	{ -1 } (843-5) [1468] RU:-480	Colony
+  --  1.    B // XR00000-0 //  0.4 au
+  --  2.    R // X500000-0 //  0.8 au
+  --  3. *  W // B510555-8 //  1.6 au
+  --  4.    . // .......-. //  3.2 au
+  --  5.    S // DB        //  6.4 au
+
+3016 C2006BE-6 T ..G.. AZ	Va,Ni,Na       	M,M     	G0V               BGWGG.B         	Ochven         	{ -2 } (855+1) [8488] RU:200	Colony
+  --  1.    B // XR00000-0 //  0.4 au
+  --  2.    G // Small GG  //  0.8 au
+  --  3. *  W // C2006BE-6 //  1.6 au
+  --  4.    G // Small GG  //  3.2 au
+  --  5.    G // Large GG  //  6.4 au
+  --  6.    . // .......-. // 12.8 au
+  --  7.    B // XR00000-0 // 25.6 au
+
+0517 C555434-5 T .SG.. ..	Ni,Pa,Lt       	M       	G2V               RBWG.B          	Loris          	{ -2 } (732-4) [4243] RU:-168	Colony
+  --  1.    R // X600000-0 //  0.4 au
+                            /    2 rad. XR00000
+  --  2.    B // XR00000-0 //  0.8 au
+  --  3. *  W // C555434-5 //  1.6 au
+                            /    9 rad. X701000
+  --  4.    G // Small GG  //  3.2 au
+                            /    2 rad. XR00000
+  --  5.    . // .......-. //  6.4 au
+  --  6.    B // XR00000-0 // 12.8 au
+
+1718 E412320-9 T ..G.. AZ	Ic,Lo          	N,S,M   	F2V               HRWGGR          	Shiva          	{ -2 } (920+3) [517A] RU:54	Colony
+  --  1.    H // X8D3000-0 //  0.4 au
+  --  2.    R // X300000-0 //  0.8 au
+                            /    9 rad. X200000
+  --  3. *  W // E412320-9 //  1.6 au
+  --  4.    G // Large GG  //  3.2 au
+  --  5.    G // Small GG  //  6.4 au
+                            /    2 rad. XR00000
+  --  6.    R // X600000-0 // 12.8 au
+                            /    1 rad. XR00000
+                            /    5 rad. X105000
+                            /    8 rad. X410000
+
+0719 E865487-6 T ..... ..	Ga,Ni,Pa       	O,S     	K5IV/DB           BRW..S          	Mok            	{ -3 } (632-3) [3174] RU:-108	Colony
+  --  1.    B // XR00000-0 //  0.3 au
+  --  2.    R // X300000-0 //  0.6 au
+  --  3. *  W // E865487-6 //  1.2 au
+                            /    8 rad. X503000
+  --  4.    . // .......-. //  2.4 au
+  --  5.    . // .......-. //  4.8 au
+  --  6.    S // DB        //  9.6 au
+
+1519 C4005A7-B T ..... AZ	Va,Ni          	F,N,N,S 	F0V               RBRWRR          	Kyleria        	{ +0 } (945+4) [5567] RU:720	Colony
+  --  1.    R // X500000-0 //  0.3 au
+                            /    6 rad. X400000
+  --  2.    B // XR00000-0 //  0.6 au
+  --  3.    R // X100000-0 //  1.2 au
+  --  4. *  W // C4005A7-B //  2.4 au
+  --  5.    R // X300000-0 //  4.8 au
+                            /    3 rad. XS08000
+                            /    8 rad. X103000
+  --  6.    R // X500000-0 //  9.6 au
+
+1819 D000410-6 Tz ..G.. AZ	As,Va,Ni,Tz    	O,M,F,N 	K0V               HWGRG           	Krinan         	{ -3 } (C35+1) [4129] RU:180	Colony
+  --  1.    H // X8E1000-0 //  0.3 au
+                            /    8 rad. X510000
+  --  2. *  W // D000410-6 //  0.6 au
+  --  3.    G // Large GG  //  1.2 au
+  --  4.    R // X500000-0 //  2.4 au
+                            /    2 rad. XS03000
+                            /    7 rad. X306000
+                            /    8 rad. X425000
+  --  5.    G // Small GG  //  4.8 au
+
+1919 A200599-A Tz N.GD. AZ	Va,Ni,Tz       	S,M,N   	K5V               HWGR            	Katalio        	{ +1 } (646-3) [464A] RU:-432	Colony
+  --  1.    H // X4E2000-0 //  0.3 au
+                            /    8 rad. X200000
+                            /   11 rad. X300000
+  --  2. *  W // A200599-A //  0.6 au
+  --  3.    G // Small GG  //  1.2 au
+                            /    4 rad. X203000
+                            /   13 rad. X312000
+  --  4.    R // X400000-0 //  2.4 au
+                            /    3 rad. XS06000
+                            /    6 rad. X100000
+
+2119 C564687-9 Tz ..G.. ..	Ni,Ag,Ri,Tz    	F,F,S   	M6V/DB            WG.S            	Copa           	{ +1 } (955+5) [6728] RU:1125	Colony
+  --  1. *  W // C564687-9 //  0.2 au
+                            /    1 rad. XS02000
+                            /    9 rad. X100000
+  --  2.    G // Large GG  //  0.4 au
+  --  3.    . // .......-. //  0.8 au
+  --  4.    S // DB        //  1.6 au
+
+2419 B9A98AC-A Tz ..... AZ	Fl,Ph,Tz       	N       	M6V/DB            WB..S           	Sorrow         	{ +2 } (677-3) [9A46] RU:-882	Settled
+  --  1. *  W // B9A98AC-A //  0.2 au
+                            /    6 rad. X100000
+  --  2.    B // XR00000-0 //  0.4 au
+  --  3.    . // .......-. //  0.8 au
+  --  4.    . // .......-. //  1.6 au
+  --  5.    S // DB        //  3.2 au
+
+2919 B420659-8 Tz ..G.. AZ	De,He,Ni,Na,Po,Tz	N       	K5VI              WBG             	Sigurd         	{ -1 } (D51-2) [A539] RU:-130	Colony
+  --  1. *  W // B420659-8 //  0.3 au
+  --  2.    B // XR00000-0 //  0.6 au
+  --  3.    G // Large GG  //  1.2 au
+                            /    4 rad. X647000
+                            /    5 rad. X101000
+                            /    7 rad. X861000
+                            /    8 rad. X736000
+                            /   10 rad. X205000
+                            /   11 rad. X753000
+
+1120 D655533-4 T .SG.. ..	Ga,Ni,Ag,Lt    	M       	G2III             RBRWB.GG        	Paramay        	{ -2 } (941+1) [6325] RU:36	Colony
+  --  1.    R // X200000-0 //  0.4 au
+                            /    8 rad. X100000
+  --  2.    B // XR00000-0 //  0.7 au
+  --  3.    R // X600000-0 //  1.3 au
+  --  4. *  W // D655533-4 //  2.5 au
+  --  5.    B // XR00000-0 //  4.9 au
+  --  6.    . // .......-. //  9.7 au
+  --  7.    G // Large GG  // 19.3 au
+  --  8.    G // Large GG  // 38.5 au
+                            /    2 rad. XR00000
+                            /    6 rad. X642000
+                            /    8 rad. X304000
+                            /    9 rad. X304000
+
+1021 A100466-B T .SG.. ..	Va,Ni          	M,N     	F0V               RHWGB.G         	Timdo          	{ +1 } (534+1) [858E] RU:60	Colony
+  --  1.    R // X100000-0 //  0.4 au
+  --  2.    H // X5D0000-0 //  0.8 au
+                            /    1 rad. XR00000
+                            /    8 rad. X100000
+  --  3. *  W // A100466-B //  1.6 au
+                            /   10 rad. X402000
+  --  4.    G // Large GG  //  3.2 au
+                            /    1 rad. XR00000
+                            /   10 rad. X204000
+                            /   12 rad. X205000
+  --  5.    B // XR00000-0 //  6.4 au
+  --  6.    . // .......-. // 12.8 au
+  --  7.    G // Large GG  // 25.6 au
+
+1921 C553576-4 T ..G.. AZ	Ni,Po,Lt       	F       	G2V               RRWBGR          	Ellysio        	{ -2 } (841+1) [6313] RU:32	Colony
+  --  1.    R // X300000-0 //  0.4 au
+                            /    1 rad. XS00000
+                            /    2 rad. XS00000
+  --  2.    R // X500000-0 //  0.8 au
+                            /    2 rad. XR00000
+                            /    7 rad. X200000
+  --  3. *  W // C553576-4 //  1.6 au
+                            /    6 rad. X301000
+  --  4.    B // XR00000-0 //  3.2 au
+  --  5.    G // Small GG  //  6.4 au
+  --  6.    R // X400000-0 // 12.8 au
+                            /    1 rad. XS06000
+
+2221 E420620-8 Tz ..G.. AZ	De,He,Ni,Na,Po,Tz	M,S     	F2VI              HWRRG           	Loki           	{ -3 } (951+1) [5375] RU:45	Colony
+  --  1.    H // X5C0000-0 //  0.4 au
+  --  2. *  W // E420620-8 //  0.8 au
+                            /    2 rad. XR00000
+                            /    7 rad. X100000
+  --  3.    R // X600000-0 //  1.6 au
+  --  4.    R // X200000-0 //  3.2 au
+  --  5.    G // Large GG  //  6.4 au
+
+1322 B841687-7 C N.... ..	Ni,Po,Co       	O,S     	F0V               H.WR            	Piranha        	{ -1 } (955+0) [85A5] RU:225	Colony
+  --  1.    H // X8E4000-0 //  0.4 au
+                            /    5 rad. X510000
+                            /    9 rad. X430000
+  --  2.    . // .......-. //  0.8 au
+  --  3. *  W // B841687-7 //  1.6 au
+  --  4.    R // X500000-0 //  3.2 au
+                            /    7 rad. X404000
+                            /    9 rad. X205000
+
+1622 B200000-0 T .SG.. AZ	Va,Lt          	        	G2V/DB            RRWGG..S        	Rosendanio     	{ -1 } (706-3) [1121] RU:-126
+  --  1.    R // X500000-0 //  0.4 au
+                            /    1 rad. XR00000
+  --  2.    R // X100000-0 //  0.8 au
+  --  3. *  W // B200000-0 //  1.6 au
+  --  4.    G // Large GG  //  3.2 au
+  --  5.    G // Small GG  //  6.4 au
+  --  6.    . // .......-. // 12.8 au
+  --  7.    . // .......-. // 25.6 au
+  --  8. -  S // DB        // 51.2 au
+
+2522 E66696A-8 Tz ..G.. AZ	Ga,Hi,Pr,Tz    	F,M     	K0V               RWRGG           	Tanhusio       	{ -1 } (A84+4) [C887] RU:1280	Settled
+  --  1.    R // X700000-0 //  0.3 au
+  --  2. *  W // E66696A-8 //  0.6 au
+  --  3.    R // X300000-0 //  1.2 au
+                            /    8 rad. X105000
+  --  4.    G // Small GG  //  2.4 au
+  --  5.    G // Large GG  //  4.8 au
+
+3223 B300647-B Tz ..G.. ..	Va,Ni,Na,Tz    	O,F,M   	M4V               WRRGG           	Pivetio        	{ +1 } (B54-2) [673D] RU:-440	Colony
+  --  1. *  W // B300647-B //  0.2 au
+  --  2.    R // X800000-0 //  0.4 au
+                            /    5 rad. X208000
+                            /    6 rad. X304000
+                            /    7 rad. X542000
+  --  3.    R // X700000-0 //  0.8 au
+  --  4.    G // Small GG  //  1.6 au
+  --  5.    G // Large GG  //  3.2 au
+
+0224 D420466-5 T ..... ..	De,He,Ni,Po,Lt 	M       	K2III             HHRHW           	Enesi          	{ -3 } (834+1) [3137] RU:96	Colony
+  --  1.    H // X4E2000-0 //  0.5 au
+  --  2.    H // X8B4000-0 //  0.8 au
+                            /    8 rad. X230000
+                            /    9 rad. X300000
+  --  3.    R // X500000-0 //  1.5 au
+                            /    1 rad. XR00000
+                            /    5 rad. X300000
+  --  4.    H // X9A4000-0 //  2.9 au
+                            /    9 rad. X730000
+                            /   11 rad. X650000
+  --  5. *  W // D420466-5 //  5.7 au
+                            /    1 rad. XS00000
+                            /    5 rad. X401000
+                            /    8 rad. X200000
+
+0924 C3A8000-0 T .SG.W AZ	Fl,Lt          	        	F5II              RHHRRW.RRG      	Salostophus    	{ -1 } (806-2) [11A1] RU:-96	
+  --  1.    R // X400000-0 //  0.7 au
+                            /    2 rad. XS00000
+  --  2.    H // X4E1000-0 //  1.1 au
+                            /    3 rad. XS00000
+                            /    4 rad. X110000
+  --  3.    H // X3E0000-0 //  1.9 au
+                            /    5 rad. X210000
+  --  4.    R // X500000-0 //  3.5 au
+  --  5.    R // X800000-0 //  6.7 au
+  --  6. *  W // C3A8000-0 // 13.1 au
+                            /    2 rad. XR00000
+                            /    6 rad. X200000
+                            /    8 rad. X200000
+  --  7.    . // .......-. // 25.9 au
+  --  8.    R // X400000-0 // 51.5 au
+  --  9.    R // X200000-0 // 102.7 au
+  -- 10.    G // Small GG  // 205.1 au
+                            /    7 rad. X447000
+                            /   10 rad. X202000
+
+1224 D767267-7 T ..G.. ..	Ga,Lo          	M,M,N,F 	G8V               HHWBBGG         	D              	{ -3 } (510-1) [616C] RU:-5	Colony
+  --  1.    H // X5B3000-0 //  0.4 au
+  --  2.    H // X7E4000-0 //  0.8 au
+  --  3. *  W // D767267-7 //  1.6 au
+                            /   10 rad. X200000
+  --  4.    B // XR00000-0 //  3.2 au
+  --  5.    B // XR00000-0 //  6.4 au
+  --  6.    G // Large GG  // 12.8 au
+  --  7.    G // Small GG  // 25.6 au
+
+1724 B764200-8 Tz .S... AZ	Lo,Tz          	S,N     	K5V               RW              	Vort           	{ -1 } (810-3) [118A] RU:-24	Colony
+  --  1.    R // X500000-0 //  0.3 au
+  --  2. *  W // B764200-8 //  0.6 au
+                            /    1 rad. XS02000
+                            /    2 rad. XS00000
+                            /    6 rad. X200000
+
+2324 A100668-A T ..G.W ..	Va,Ni,Na       	N       	F0II              RRRH.WGGRG      	Netu           	{ +2 } (C51+3) [3868] RU:180	Colony
+  --  1.    R // X000000-0 //  0.7 au
+                            /    1 rad. XS00000
+                            /    2 rad. XS00000
+  --  2.    R // X400000-0 //  1.1 au
+                            /    4 rad. X100000
+                            /    6 rad. X200000
+  --  3.    R // X000000-0 //  1.9 au
+  --  4.    H // X7D2000-0 //  3.5 au
+  --  5.    . // .......-. //  6.7 au
+  --  6. *  W // A100668-A // 13.1 au
+  --  7.    G // Small GG  // 25.9 au
+  --  8.    G // Large GG  // 51.5 au
+  --  9.    R // X100000-0 // 102.7 au
+  -- 10.    G // Small GG  // 205.1 au
+
+2424 A200548-B Tz ..G.. ..	Va,Ni,Tz       	S,F,O   	G5VI              RWRGGB          	Mollan         	{ +1 } (B44+1) [46A7] RU:176	Colony
+  --  1.    R // X800000-0 //  0.4 au
+  --  2. *  W // A200548-B //  0.8 au
+  --  3.    R // X200000-0 //  1.6 au
+  --  4.    G // Small GG  //  3.2 au
+  --  5.    G // Small GG  //  6.4 au
+  --  6.    B // XR00000-0 // 12.8 au
+
+1925 C530595-A Tz .S... ..	De,Ni,Po,Tz    	M,O,S   	K0V               HW              	Eagle          	{ +0 } (643-4) [4529] RU:-288	Colony
+  --  1.    H // X4A5000-0 //  0.3 au
+  --  2. *  W // C530595-A //  0.6 au
+                            /    8 rad. X602000
+                            /    9 rad. X400000
+
+2525 C4A8655-9 T ..G.. AZ	Fl,Ni          	F,N     	K0III/DB          BH.RWG...S      	Pendrakeentio  	{ -1 } (852-3) [3557] RU:-240	Colony
+  --  1.    B // XR00000-0 //  0.5 au
+  --  2.    H // X5C0000-0 //  0.8 au
+  --  3.    . // .......-. //  1.5 au
+  --  4.    R // X500000-0 //  2.9 au
+                            /   10 rad. X300000
+  --  5. *  W // C4A8655-9 //  5.7 au
+                            /    2 rad. XR00000
+                            /    6 rad. X300000
+  --  6.    G // Large GG  // 11.3 au
+                            /    2 rad. XR00000
+                            /    5 rad. X104000
+                            /    6 rad. X105000
+                            /    9 rad. X634000
+                            /   11 rad. X300000
+  --  7.    . // .......-. // 22.5 au
+  --  8.    . // .......-. // 44.9 au
+  --  9.    . // .......-. // 89.7 au
+  -- 10. -  S // DB        // 179.3 au
+
+0126 B7B2862-A Tz .S.DW AZ	Fl,Ph,Tz       	M,F     	M6V/DB            WR......S       	Hadriu         	{ +3 } (77B+0) [CB6B] RU:539	Settled
+  --  1. *  W // B7B2862-A //  0.2 au
+  --  2.    R // X300000-0 //  0.4 au
+                            /    1 rad. XS06000
+                            /    2 rad. XS05000
+  --  3.    . // .......-. //  0.8 au
+  --  4.    . // .......-. //  1.6 au
+  --  5.    . // .......-. //  3.2 au
+  --  6.    . // .......-. //  6.4 au
+  --  7. -  . // .......-. // 12.8 au
+  --  8. -  . // .......-. // 25.6 au
+  --  9. -  S // DB        // 51.2 au
+
+1126 C620332-A Tz ..G.. ..	De,Lo,Po,Tz    	M       	F5VI/DB           .WGGR.S         	Chapek         	{ +0 } (820+2) [137A] RU:32	Colony
+  --  1.    . // .......-. //  0.4 au
+  --  2. *  W // C620332-A //  0.8 au
+  --  3.    G // Large GG  //  1.6 au
+  --  4.    G // Small GG  //  3.2 au
+  --  5.    R // X400000-0 //  6.4 au
+  --  6. -  . // .......-. // 12.8 au
+  --  7. -  S // DB        // 25.6 au
+
+1826 C599379-9 C .SG.. AZ	Lo,Co          	M       	G0V/DB            .RWRG..S        	Silesia        	{ -1 } (920+3) [3279] RU:54	Colony
+  --  1.    . // .......-. //  0.4 au
+  --  2.    R // X100000-0 //  0.8 au
+  --  3. *  W // C599379-9 //  1.6 au
+  --  4.    R // X000000-0 //  3.2 au
+  --  5.    G // Large GG  //  6.4 au
+                            /    5 rad. X406000
+                            /    7 rad. X847000
+                            /    8 rad. X517000
+  --  6.    . // .......-. // 12.8 au
+  --  7.    . // .......-. // 25.6 au
+  --  8. -  S // DB        // 51.2 au
+
+2626 C200659-7 T ..G.. AZ	Va,Ni,Na       	M,M     	G0V               B.BWGG          	Virshafio      	{ -2 } (253-4) [6469] RU:-120	Colony
+  --  1.    B // XR00000-0 //  0.3 au
+  --  2.    . // .......-. //  0.6 au
+  --  3.    B // XR00000-0 //  1.2 au
+  --  4. *  W // C200659-7 //  2.4 au
+                            /    7 rad. X504000
+                            /   10 rad. X600000
+  --  5.    G // Large GG  //  4.8 au
+                            /    1 rad. XR00000
+                            /    4 rad. X645000
+                            /    5 rad. X204000
+                            /    7 rad. X303000
+                            /    9 rad. X107000
+                            /   11 rad. X331000
+  --  6.    G // Large GG  //  9.6 au
+                            /    3 rad. X640000
+                            /    4 rad. X236000
+                            /    7 rad. X515000
+                            /    9 rad. X522000
+                            /   10 rad. X405000
+                            /   12 rad. X204000
+
+2826 C41266A-8 T .SG.W AZ	Ic,Ni,Na       	P,O     	G0V               R.HWG.GG        	Temasek        	{ -1 } (A56+1) [754D] RU:300	Colony
+  --  1.    R // X500000-0 //  0.3 au
+  --  2.    . // .......-. //  0.6 au
+  --  3.    H // X3E3000-0 //  1.2 au
+  --  4. *  W // C41266A-8 //  2.4 au
+  --  5.    G // Small GG  //  4.8 au
+  --  6.    . // .......-. //  9.6 au
+  --  7.    G // Small GG  // 19.2 au
+  --  8.    G // Small GG  // 38.4 au
+
+2926 E310314-5 T ..G.. ..	Lo,Lt          	M,M,F   	G2V/DB            RRWGRB...S      	Simarka        	{ -3 } (420+4) [115A] RU:32	Colony
+  --  1.    R // X700000-0 //  0.4 au
+  --  2.    R // X000000-0 //  0.8 au
+  --  3. *  W // E310314-5 //  1.6 au
+  --  4.    G // Small GG  //  3.2 au
+                            /   10 rad. X107000
+  --  5.    R // X400000-0 //  6.4 au
+                            /    4 rad. X101000
+                            /    5 rad. X207000
+  --  6.    B // XR00000-0 // 12.8 au
+  --  7.    . // .......-. // 25.6 au
+  --  8. -  . // .......-. // 51.2 au
+  --  9. -  . // .......-. // 102.4 au
+  -- 10. -  S // DB        // 204.8 au
+
+0527 B410469-8 Tz .SG.W AZ	Ni,Tz          	F       	G2VI              RWGG.G          	HalvmÃ¶rk      	{ +0 } (C31+4) [444A] RU:144	Colony
+  --  1.    R // X300000-0 //  0.3 au
+  --  2. *  W // B410469-8 //  0.6 au
+                            /    1 rad. XR00000
+                            /    7 rad. X300000
+                            /    9 rad. X400000
+  --  3.    G // Large GG  //  1.2 au
+  --  4.    G // Small GG  //  2.4 au
+  --  5.    . // .......-. //  4.8 au
+  --  6.    G // Small GG  //  9.6 au
+
+1228 D59A730-3 Tz .SG.. AZ	Wa,Pi,Lt,Tz    	F,M,O   	K2V               .WGG            	Chapek         	{ -2 } (566+3) [6554] RU:540	Settled
+  --  1.    . // .......-. //  0.3 au
+  --  2. *  W // D59A730-3 //  0.6 au
+                            /    6 rad. X300000
+                            /    7 rad. X200000
+                            /    8 rad. X701000
+  --  3.    G // Large GG  //  1.2 au
+  --  4.    G // Small GG  //  2.4 au
+                            /    1 rad. XR00000
+                            /    2 rad. XR00000
+                            /    5 rad. X202000
+                            /    8 rad. X105000
+                            /    9 rad. X212000
+
+1428 E310659-9 T ..... AZ	Ni,Na          	F,F,M   	G5V/DB            RBW.BR.S        	Rakhat         	{ -2 } (B51-2) [443A] RU:-110	Colony
+  --  1.    R // X700000-0 //  0.4 au
+  --  2.    B // XR00000-0 //  0.8 au
+  --  3. *  W // E310659-9 //  1.6 au
+                            /    7 rad. X504000
+  --  4.    . // .......-. //  3.2 au
+  --  5.    B // XR00000-0 //  6.4 au
+  --  6.    R // X400000-0 // 12.8 au
+                            /    2 rad. XS01000
+                            /   11 rad. X106000
+  --  7.    . // .......-. // 25.6 au
+  --  8. -  S // DB        // 51.2 au
+
+2628 B8B5775-B T .SG.. AZ	Fl             	M,O,N   	G2V               .HWGBG          	Sovaĝio        	{ +2 } (C69+0) [994B] RU:648	Settled
+  --  1.    . // .......-. //  0.4 au
+  --  2.    H // X3E2000-0 //  0.8 au
+  --  3. *  W // B8B5775-B //  1.6 au
+  --  4.    G // Small GG  //  3.2 au
+  --  5.    B // XR00000-0 //  6.4 au
+  --  6.    G // Large GG  // 12.8 au
+                            /    1 rad. XR00000
+                            /    3 rad. XR00000
+                            /    7 rad. X304000
+                            /    8 rad. X106000
+                            /    9 rad. X206000
+                            /   10 rad. X514000
+                            /   11 rad. X405000
+
+2728 C569455-9 T ..G.W ..	Ni             	F       	A0IV              R.H.WGGGB       	Zahnah         	{ +0 } (D36+1) [442C] RU:234	Colony
+  --  1.    R // X800000-0 //  0.4 au
+  --  2.    . // .......-. //  0.7 au
+  --  3.    H // X3C3000-0 //  1.4 au
+                            /    1 rad. XS00000
+                            /    2 rad. XR00000
+  --  4.    . // .......-. //  2.8 au
+  --  5. *  W // C569455-9 //  5.6 au
+  --  6.    G // Large GG  // 11.2 au
+  --  7.    G // Large GG  // 22.4 au
+  --  8.    G // Large GG  // 44.8 au
+  --  9.    B // XR00000-0 // 89.6 au
+
+3028 X610453-3 T ..G.. ..	Ni,Lt          	F,P,M   	G5V               HRWGBGB         	Euakovio       	{ -3 } (833+0) [7161] RU:72	Colony
+  --  1.    H // X3C4000-0 //  0.4 au
+                            /    2 rad. XR00000
+  --  2.    R // X300000-0 //  0.8 au
+  --  3. *  W // X610453-3 //  1.6 au
+  --  4.    G // Small GG  //  3.2 au
+  --  5.    B // XR00000-0 //  6.4 au
+  --  6.    G // Large GG  // 12.8 au
+                            /    7 rad. X302000
+                            /    8 rad. X513000
+                            /   10 rad. X758000
+                            /   12 rad. X451000
+  --  7.    B // XR00000-0 // 25.6 au
+
+0329 D310532-8 T ..G.. ..	Ni             	S,M,F   	F5V               HBWBG           	Qamara         	{ -3 } (842+3) [3276] RU:192	Colony
+  --  1.    H // X2D3000-0 //  0.4 au
+                            /    1 rad. XS00000
+  --  2.    B // XR00000-0 //  0.8 au
+  --  3. *  W // D310532-8 //  1.6 au
+  --  4.    B // XR00000-0 //  3.2 au
+  --  5.    G // Small GG  //  6.4 au
+                            /    3 rad. XR00000
+                            /    6 rad. X304000
+                            /    9 rad. X201000
+                            /   11 rad. X301000
+
+2429 D56A986-7 Tz .S... ..	Wa,Hi,Pr,Tz    	F       	K5V               RW              	Adiantio       	{ -1 } (586+0) [8867] RU:240	Settled
+  --  1.    R // X000000-0 //  0.3 au
+  --  2. *  W // D56A986-7 //  0.6 au
+                            /    8 rad. X602000
+
+2829 E310630-8 Tz ..G.. AZ	Ni,Na,Tz       	S,F     	G2VI              RWGR.G          	Merovingio     	{ -3 } (B55+5) [3369] RU:1375	Colony
+  --  1.    R // X800000-0 //  0.3 au
+  --  2. *  W // E310630-8 //  0.6 au
+  --  3.    G // Large GG  //  1.2 au
+                            /    3 rad. XR00000
+                            /    5 rad. X840000
+                            /    7 rad. X326000
+                            /    9 rad. X113000
+                            /   10 rad. X737000
+                            /   11 rad. X302000
+                            /   13 rad. X516000
+  --  4.    R // X500000-0 //  2.4 au
+  --  5.    . // .......-. //  4.8 au
+  --  6.    G // Large GG  //  9.6 au
+
+0630 C3AA645-B Tz ..G.. AZ	Fl,Ni,Tz       	O,M,N   	K0V/DB/DB         .WG.....S       	Eternium       	{ +0 } (A55-2) [267C] RU:-500	Colony
+  --  1.    . // .......-. //  0.3 au
+  --  2. *  W // C3AA645-B //  0.6 au
+  --  3.    G // Small GG  //  1.2 au
+                            /    1 rad. XR00000
+                            /    3 rad. X302000
+  --  4.    . // .......-. //  2.4 au
+  --  5.    . // .......-. //  4.8 au
+  --  6.    . // .......-. //  9.6 au
+  --  7.    . // .......-. // 19.2 au
+  --  8. -  . // .......-. // 38.4 au
+  --  9. -  S // DB        // 76.8 au
+
+2130 A986210-9 T ..G.. AZ	Lo             	O,S,M   	G0V/K5VI          RRWG..S         	Jordan Mining  	{ +0 } (510-3) [1286] RU:-15	Colony
+  --  1.    R // X000000-0 //  0.4 au
+                            /    3 rad. XS00000
+  --  2.    R // X100000-0 //  0.8 au
+  --  3. *  W // A986210-9 //  1.6 au
+                            /    2 rad. XS01000
+                            /    6 rad. X100000
+  --  4.    G // Large GG  //  3.2 au
+  --  5.    . // .......-. //  6.4 au
+  --  6.    . // .......-. // 12.8 au
+  --  7.    S // K5VI      // 25.6 au
+
+2131 B410688-7 Tz ..G.W ..	Ni,Na,Tz       	M       	K2V               .WGG            	Toris          	{ +0 } (752-3) [9657] RU:-210	Colony
+  --  1.    . // .......-. //  0.3 au
+  --  2. *  W // B410688-7 //  0.6 au
+                            /    4 rad. X400000
+                            /    9 rad. X201000
+  --  3.    G // Small GG  //  1.2 au
+  --  4.    G // Small GG  //  2.4 au
+
+2531 A999730-9 Tz ..G.W AZ	Pi,Tz          	M,F,N   	M2V               W.G             	Ymir           	{ +2 } (A6A-1) [99A5] RU:-600	Settled
+  --  1. *  W // A999730-9 //  0.2 au
+                            /    5 rad. X400000
+                            /    9 rad. X200000
+  --  2.    . // .......-. //  0.4 au
+  --  3.    G // Small GG  //  0.8 au
+
+1032 A201522-B C ..GD. ..	Ic,Va,Ni,Co    	S       	K2II              HRRHHWGBGB      	Guillarin      	{ +1 } (A43+3) [762G] RU:360	Colony
+  --  1.    H // X5E0000-0 //  0.7 au
+                            /    7 rad. X400000
+                            /    8 rad. X300000
+  --  2.    R // X000000-0 //  1.1 au
+                            /    1 rad. XS00000
+  --  3.    R // X500000-0 //  1.9 au
+                            /    5 rad. X200000
+  --  4.    H // X2A1000-0 //  3.5 au
+  --  5.    H // X6C8000-0 //  6.7 au
+                            /    6 rad. X530000
+                            /   12 rad. X400000
+                            /   13 rad. X200000
+  --  6. *  W // A201522-B // 13.1 au
+                            /    2 rad. XS00000
+  --  7.    G // Small GG  // 25.9 au
+  --  8.    B // XR00000-0 // 51.5 au
+  --  9.    G // Small GG  // 102.7 au
+                            /   12 rad. X300000
+  -- 10.    B // XR00000-0 // 205.1 au
+
+0133 C645443-7 T ..... ..	Ni,Pa          	S       	F0V               HRWR            	Cygnus X       	{ -2 } (536+2) [3288] RU:180	Colony
+  --  1.    H // X3C3000-0 //  0.4 au
+  --  2.    R // X700000-0 //  0.8 au
+                            /   11 rad. X100000
+  --  3. *  W // C645443-7 //  1.6 au
+  --  4.    R // X000000-0 //  3.2 au
+                            /    1 rad. XS00000
+                            /    2 rad. XS01000
+
+0533 CDD8642-7 H ..G.W AZ	Ni,Ho          	M,S     	G8V               RHW..G          	Gallifrey      	{ -1 } (356-2) [9547] RU:-180	Colony
+  --  1.    R // X500000-0 //  0.4 au
+                            /    2 rad. XR00000
+  --  2.    H // X8D5000-0 //  0.8 au
+  --  3. *  W // CDD8642-7 //  1.6 au
+  --  4.    . // .......-. //  3.2 au
+  --  5.    . // .......-. //  6.4 au
+  --  6.    G // Small GG  // 12.8 au
+
+1133 C200375-7 T ..... AZ	Va,Lo          	M       	G5V/DB            HHRW..S         	Argos          	{ -2 } (720+4) [7166] RU:56	Colony
+  --  1.    H // X3B2000-0 //  0.3 au
+                            /    2 rad. XS00000
+                            /    9 rad. X100000
+  --  2.    H // X5A5000-0 //  0.6 au
+  --  3.    R // X700000-0 //  1.2 au
+  --  4. *  W // C200375-7 //  2.4 au
+  --  5.    . // .......-. //  4.8 au
+  --  6.    . // .......-. //  9.6 au
+  --  7.    S // DB        // 19.2 au
+
+2233 C586633-7 H ..G.. ..	Ni,Ag,Ri,Ho    	N       	G5III/DB          HRRW.R.S        	Smyrno         	{ +0 } (755+5) [7647] RU:875	Colony
+  --  1.    H // X2D5000-0 //  0.5 au
+                            /    1 rad. XR00000
+  --  2.    R // X400000-0 //  0.9 au
+                            /    2 rad. XS00000
+                            /    5 rad. X300000
+                            /    9 rad. X100000
+  --  3.    R // X500000-0 //  1.7 au
+  --  4. *  W // C586633-7 //  3.3 au
+  --  5.    . // .......-. //  6.5 au
+  --  6.    R // X800000-0 // 12.9 au
+                            /    5 rad. X621000
+                            /    7 rad. X621000
+  --  7.    . // .......-. // 25.7 au
+  --  8.    S // DB        // 51.3 au
+
+2333 D42046A-4 T ..G.. AZ	De,He,Ni,Po,Lt 	        	K2III             HRHHWGGG        	Ondor Gambit   	{ -3 } (632-1) [1151] RU:-36	Colony
+  --  1.    H // X8B5000-0 //  0.5 au
+                            /    4 rad. X310000
+                            /    6 rad. X200000
+  --  2.    R // X300000-0 //  0.8 au
+  --  3.    H // X7C7000-0 //  1.5 au
+  --  4.    H // X2D3000-0 //  2.9 au
+  --  5. *  W // D42046A-4 //  5.7 au
+  --  6.    G // Large GG  // 11.3 au
+  --  7.    G // Large GG  // 22.5 au
+  --  8.    G // Small GG  // 44.9 au
+                            /    1 rad. XR00000
+                            /    8 rad. X323000
+                            /    9 rad. X205000
+                            /   12 rad. X515000
+
+2533 B56A556-9 T ..G.. ..	Wa,Ni,Pr       	N,O     	G8V               R.W.BRG         	Tesheuquio     	{ +0 } (B44-4) [5566] RU:-704	Colony
+  --  1.    R // X500000-0 //  0.4 au
+  --  2.    . // .......-. //  0.8 au
+  --  3. *  W // B56A556-9 //  1.6 au
+                            /    1 rad. XS02000
+  --  4.    . // .......-. //  3.2 au
+  --  5.    B // XR00000-0 //  6.4 au
+  --  6.    R // X500000-0 // 12.8 au
+                            /    2 rad. XS01000
+                            /    5 rad. X221000
+                            /    7 rad. X102000
+  --  7.    G // Small GG  // 25.6 au
+                            /    1 rad. XR00000
+                            /    2 rad. XR00000
+                            /    6 rad. X205000
+                            /    8 rad. X424000
+
+0534 BCDA410-A T ..G.. AZ	Oc,Ni          	S,N,S   	G8V               RHW.GGG         	Tierra         	{ +1 } (836-2) [6549] RU:-288	Colony
+  --  1.    R // X800000-0 //  0.4 au
+  --  2.    H // X6A6000-0 //  0.8 au
+                            /    8 rad. X200000
+  --  3. *  W // BCDA410-A //  1.6 au
+  --  4.    . // .......-. //  3.2 au
+  --  5.    G // Small GG  //  6.4 au
+                            /    4 rad. X620000
+                            /    8 rad. X626000
+                            /   10 rad. X204000
+  --  6.    G // Small GG  // 12.8 au
+  --  7.    G // Small GG  // 25.6 au
+
+1234 E855525-2 T ..... ..	Ga,Ni,Ag,Lt    	N,N     	K5IV              .RW             	Getty Premium  	{ -2 } (645-2) [4382] RU:-240	Colony
+  --  1.    . // .......-. //  0.4 au
+  --  2.    R // X300000-0 //  0.7 au
+                            /    2 rad. XS00000
+  --  3. *  W // E855525-2 //  1.4 au
+
+1834 A420413-A C ..G.. ..	De,He,Ni,Po,Co 	M,P,N   	F0IV              RRBW.G          	Difektĝintio   	{ +1 } (833+2) [757C] RU:144	Colony
+  --  1.    R // X400000-0 //  0.4 au
+  --  2.    R // X600000-0 //  0.7 au
+                            /    4 rad. X400000
+                            /    5 rad. X200000
+  --  3.    B // XR00000-0 //  1.4 au
+  --  4. *  W // A420413-A //  2.8 au
+  --  5.    . // .......-. //  5.6 au
+  --  6.    G // Large GG  // 11.2 au
+                            /    5 rad. X404000
+                            /    6 rad. X733000
+                            /    7 rad. X514000
+                            /    9 rad. X307000
+
+2634 C577400-5 T ..G.W AZ	Ni,Pa,Lt       	O,S     	K5II              .HHHHW..BG      	Griffoth       	{ -1 } (333-2) [6326] RU:-54	Colony
+  --  1.    . // .......-. //  0.7 au
+  --  2.    H // X6A0000-0 //  1.1 au
+                            /    8 rad. X100000
+                            /    9 rad. X100000
+                            /   11 rad. X200000
+  --  3.    H // X5E0000-0 //  1.9 au
+                            /    1 rad. XR00000
+                            /    7 rad. X100000
+                            /   10 rad. X200000
+  --  4.    H // X5D4000-0 //  3.5 au
+                            /   11 rad. X400000
+  --  5.    H // X6D6000-0 //  6.7 au
+  --  6. *  W // C577400-5 // 13.1 au
+  --  7.    . // .......-. // 25.9 au
+  --  8.    . // .......-. // 51.5 au
+  --  9.    B // XR00000-0 // 102.7 au
+  -- 10.    G // Large GG  // 205.1 au
+                            /    2 rad. XR00000
+                            /    3 rad. XR00000
+                            /    7 rad. X306000
+                            /   10 rad. X516000
+                            /   11 rad. X211000
+
+0935 B1006AC-B H ..G.. AZ	Va,Ni,Na,Ho    	N       	G0V/DB            BHWG...S        	Johor          	{ +1 } (F53-1) [6789] RU:-225	Colony
+  --  1.    B // XR00000-0 //  0.4 au
+  --  2.    H // X7D2000-0 //  0.8 au
+                            /    6 rad. X630000
+                            /   10 rad. X400000
+                            /   11 rad. X540000
+  --  3. *  W // B1006AC-B //  1.6 au
+                            /   13 rad. X100000
+  --  4.    G // Small GG  //  3.2 au
+                            /    4 rad. X210000
+                            /    6 rad. X315000
+                            /    7 rad. X110000
+                            /   10 rad. X407000
+                            /   11 rad. X512000
+                            /   13 rad. X106000
+  --  5.    . // .......-. //  6.4 au
+  --  6.    . // .......-. // 12.8 au
+  --  7.    . // .......-. // 25.6 au
+  --  8. -  S // DB        // 51.2 au
+
+0136 A200555-B H N.G.W ..	Va,Ni,Ho       	F       	F5V/DB            BRW..S          	Yeowe          	{ +2 } (B44+0) [373B] RU:176	Colony
+  --  1.    B // XR00000-0 //  0.4 au
+  --  2.    R // X800000-0 //  0.8 au
+  --  3. *  W // A200555-B //  1.6 au
+  --  4.    . // .......-. //  3.2 au
+  --  5.    . // .......-. //  6.4 au
+  --  6.    S // DB        // 12.8 au
+
+1137 C9A869A-9 T .SG.W AZ	Fl,Ni          	        	F0V/DB            .S.W.GGG        	Eurydice       	{ +0 } (B51+0) [963B] RU:55	Colony
+  --  1.    . // .......-. //  0.3 au
+  --  2.    S // DB        //  0.6 au
+  --  3.    . // .......-. //  1.2 au
+  --  4. *  W // C9A869A-9 //  2.4 au
+  --  5.    . // .......-. //  4.8 au
+  --  6.    G // Large GG  //  9.6 au
+                            /    4 rad. X734000
+                            /    6 rad. X412000
+                            /    7 rad. X534000
+                            /    8 rad. X400000
+                            /   10 rad. X442000
+                            /   11 rad. X622000
+                            /   12 rad. X103000
+  --  7.    G // Small GG  // 19.2 au
+  --  8.    G // Large GG  // 38.4 au
+                            /    2 rad. XR00000
+                            /    7 rad. X300000
+                            /    9 rad. X303000
+                            /   10 rad. X106000
+                            /   13 rad. X310000
+
+1537 D59A544-5 H ..G.. ..	Wa,Ni,Lt,Ho    	F,F     	G0V               RRWGGGG         	Deva Loka      	{ -3 } (643-2) [42A7] RU:-144	Colony
+  --  1.    R // X000000-0 //  0.4 au
+  --  2.    R // X400000-0 //  0.8 au
+  --  3. *  W // D59A544-5 //  1.6 au
+  --  4.    G // Large GG  //  3.2 au
+                            /    2 rad. XR00000
+                            /    7 rad. X103000
+                            /    9 rad. X408000
+                            /   10 rad. X304000
+  --  5.    G // Small GG  //  6.4 au
+                            /    2 rad. XR00000
+                            /    3 rad. XR00000
+                            /    7 rad. X305000
+                            /   13 rad. X625000
+  --  6.    G // Large GG  // 12.8 au
+  --  7.    G // Small GG  // 25.6 au
+
+2137 E410220-5 Tz ..G.. AZ	Lo,Lt,Tz       	M,P,F   	F0VI              RWGGG           	Brinze         	{ -3 } (910+0) [4114] RU:9	Colony
+  --  1.    R // XA00000-0 //  0.3 au
+                            /   12 rad. X400000
+  --  2. *  W // E410220-5 //  0.6 au
+                            /    8 rad. X300000
+                            /   10 rad. X405000
+  --  3.    G // Large GG  //  1.2 au
+                            /    1 rad. XR00000
+                            /    5 rad. X302000
+                            /    7 rad. X203000
+                            /    8 rad. X517000
+                            /    9 rad. X106000
+                            /   10 rad. X623000
+                            /   11 rad. X621000
+  --  4.    G // Small GG  //  2.4 au
+  --  5.    G // Small GG  //  4.8 au
+
+1838 A500630-B T N.G.. AZ	Va,Ni,Na       	N,N,O   	F2V               RRRWG           	Sipfarejio     	{ +1 } (956+0) [573C] RU:270	Colony
+  --  1.    R // X500000-0 //  0.3 au
+                            /    4 rad. X310000
+                            /    8 rad. X300000
+                            /    9 rad. X200000
+  --  2.    R // X900000-0 //  0.6 au
+                            /    5 rad. X840000
+                            /    9 rad. X870000
+  --  3.    R // X700000-0 //  1.2 au
+                            /    7 rad. X670000
+                            /    8 rad. X510000
+                            /   11 rad. X620000
+  --  4. *  W // A500630-B //  2.4 au
+                            /    9 rad. X200000
+                            /   12 rad. X504000
+  --  5.    G // Large GG  //  4.8 au
+                            /    2 rad. XR00000
+                            /    9 rad. X205000
+
+1539 A678846-9 Tz .S... ..	Ph,Pa,Pi,Tz    	N,N     	M4V               W               	Orsha          	{ +1 } (77A+2) [9976] RU:980	Settled
+  --  1. *  W // A678846-9 //  0.2 au
+
+1440 C661523-8 H ..G.. ..	Ni,Pr,Ho       	M,O     	G5V/DB            BB.WRG.S        	Minbar         	{ -2 } (B44-2) [4326] RU:-352	Colony
+  --  1.    B // XR00000-0 //  0.3 au
+  --  2.    B // XR00000-0 //  0.6 au
+  --  3.    . // .......-. //  1.2 au
+  --  4. *  W // C661523-8 //  2.4 au
+  --  5.    R // X500000-0 //  4.8 au
+  --  6.    G // Large GG  //  9.6 au
+  --  7.    . // .......-. // 19.2 au
+  --  8.    S // DB        // 38.4 au
+
+1640 A4A7310-A C N.G.. AZ	Fl,Lo,Co       	F,O     	F2IV              BRBWBGR         	Trogio         	{ +1 } (D20+0) [1476] RU:26	Colony
+  --  1.    B // XR00000-0 //  0.4 au
+  --  2.    R // X900000-0 //  0.7 au
+  --  3.    B // XR00000-0 //  1.4 au
+  --  4. *  W // A4A7310-A //  2.8 au
+  --  5.    B // XR00000-0 //  5.6 au
+  --  6.    G // Small GG  // 11.2 au
+                            /    1 rad. XR00000
+                            /    8 rad. X405000
+  --  7.    R // X600000-0 // 22.4 au
+
+1740 C630737-7 Tz .SG.. ..	De,Na,Po,Tz    	N,N,P,N 	M0V               WR.GGB          	Guna           	{ -1 } (969-1) [6668] RU:-486	Settled
+  --  1. *  W // C630737-7 //  0.2 au
+  --  2.    R // X400000-0 //  0.4 au
+                            /    3 rad. X100000
+                            /   10 rad. X100000
+                            /   13 rad. X100000
+  --  3.    . // .......-. //  0.8 au
+  --  4.    G // Large GG  //  1.6 au
+  --  5.    G // Small GG  //  3.2 au
+  --  6.    B // XR00000-0 //  6.4 au
