@@ -91,10 +91,10 @@ module Astromapper
         out
       end
 
-      clusters.each_with_index.map do |systems, i|
-        # Territory = the system hexes plus only the hexes that BRIDGE two systems
-        # (adjacent to >= 2 of them) — hugs the cluster, and keeps it contiguous
-        # since every jump-2 pair shares a common neighbour. No outer margin.
+      # A cluster's territory: system hexes + bridge hexes (adjacent to >= 2 systems) +
+      # a compactness close (absorb empty hexes with >= 3 neighbours inside, filling
+      # notches and pinwheel voids). Full territory — systems are never eroded.
+      build_territory = lambda do |systems|
         territory = {}
         systems.each { |s| territory[s] = true }
         adj = Hash.new(0)
@@ -108,9 +108,6 @@ module Astromapper
           end
         end
         adj.each { |h, n| territory[h] = true if n >= 2 }
-
-        # Compactness: absorb any empty hex with >= 3 of its 6 neighbours inside,
-        # closing notches and pinwheel voids without re-inflating into open space.
         loop do
           candidates = {}
           territory.each_key { |c, r| neighbours.(c, r).each { |n| candidates[n] = true unless territory[n] } }
@@ -118,9 +115,26 @@ module Astromapper
           break if add.empty?
           add.each { |h| territory[h] = true }
         end
+        territory
+      end
 
-        # Each hex contributes 6 edges; shared (interior) edges appear twice and
-        # cancel, leaving exactly the perimeter.
+      # Build each island's territory, then give any hex claimed by two islands to the
+      # NEAREST cluster (smallest jump to one of its systems). A system hex's nearest
+      # cluster is always its own (jump 0), so systems are never moved or dropped; only
+      # over-expanded close hexes get split. Removes the region-overlap while keeping
+      # every island intact and every system enclosed.
+      territories = clusters.map { |c| build_territory.(c) }
+      owner = Hash.new { |h, k| h[k] = [] }
+      territories.each_with_index { |t, i| t.each_key { |h| owner[h] << i } }
+      owner.each do |h, ids|
+        next if ids.size == 1
+        keep = ids.min_by { |i| clusters[i].map { |s| jump(h, s) }.min }
+        (ids - [keep]).each { |i| territories[i].delete(h) }
+      end
+
+      # Trace each island's perimeter. Each hex contributes 6 edges; shared (interior)
+      # edges appear twice and cancel, leaving exactly the perimeter.
+      territories.each_with_index.map do |territory, i|
         edges = Hash.new(0)
         raw   = {}
         territory.each_key do |c, r|
@@ -134,7 +148,7 @@ module Astromapper
           end
         end
         border = edges.select { |_, n| n == 1 }.keys.map { |k| raw[k] }
-        [PALETTE[i % PALETTE.size], chain_loops(border), systems.size]
+        [PALETTE[i % PALETTE.size], chain_loops(border), clusters[i].size]
       end
     end
   end

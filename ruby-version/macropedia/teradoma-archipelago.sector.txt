@@ -69,6 +69,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 0504     E82A669-6 T    G     Wa Ni       M            M4V           W.B.G....S    Borthal  { -3 } (651-2) [5381] RU:-60  Colony
   --  1. *  W // E82A669-6 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    . // .......-. //  1.6 au
@@ -104,6 +105,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 0305     D7698AA-8 T    SG    Ph Ri       N            M4V           WG            Arwy  { -1 } (C76-5) [4738] RU:-2520  Settled
   --  1. *  W // D7698AA-8 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 3 Atmo 0 Hydro 7
      -- Moon 2: Size 3 Atmo 0 Hydro 2
@@ -146,6 +148,8 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // B5A558A-B //  1.6 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  3.2 au
      -- Moon 1: Size 1 Atmo 0 Hydro 7
      -- Moon 2: Size 4 Atmo 0 Hydro 1
@@ -167,6 +171,8 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 0307     D579889-8 T    .     Ph Pi       M            M4V           WB.           Labura  { -2 } (775-2) [9637] RU:-490  Settled
   --  1. *  W // D579889-8 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
   --  2.    B // 000000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
 
@@ -198,6 +204,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 0208     EB4A555-6 F    G     Oc Ni       N M O        M2V           WG            Orsha  { -3 } (746+0) [124A] RU:168  Colony
   --  1. *  W // EB4A555-6 //  0.2 au
+     -- Moon 1: Size 7 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 0 Atmo 0 Hydro 0
      -- Moon 2: Size 3 Atmo 2 Hydro 2
@@ -209,8 +216,11 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 8: Size 0 Atmo 0 Hydro 0
      -- Moon 9: Size 4 Atmo 0 Hydro 4
 
-0109     B637599-B F    NSGC  Ni                       M6V           WB..GG        We Made It  { +2 } (E43+2) [7779] RU:336  Colony
+0109     B637599-B F    NSGC  Ni          O F          M6V           WB..GG        We Made It  { +2 } (E43+2) [7779] RU:336  Colony
   --  1. *  W // B637599-B //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 0 Hydro 0
   --  2.    B // 000000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
@@ -229,6 +239,8 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  3.    . // .......-. //  1.7 au
   --  4.    . // .......-. //  3.3 au
   --  5. *  W // B647444-9 //  6.5 au
+     -- Moon 1: Size 5 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
   --  6.    B // 000000-0 // 12.9 au
   --  7.    G // 000000-0 // 25.7 au
      -- Moon 1: Size 2 Atmo 0 Hydro 6
@@ -287,7 +299,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 
 # Subsector B
-1201     E949556-5 T    G     Ni Lt                    F5IV          ...WGG..S     Pradesh  { -3 } (543-2) [3274] RU:-120  Colony
+1201     E949556-5 T    G     Ni Lt       F            F5IV          ...WGG..S     Pradesh  { -3 } (543-2) [3274] RU:-120  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3.    . // .......-. //  1.4 au
@@ -328,7 +340,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5.    . // .......-. //  4.8 au
   --  6.    . // .......-. //  9.6 au
 
-0903     C76AAAA-A T    G     Wa Hi                    F0V           ..WGB         Korvel  { +2 } (C9A+4) [AC5E] RU:4320  Settled
+0903     C76AAAA-A T    G     Wa Hi       M N          F0V           ..WGB         Trogio  { +2 } (C9A+4) [AC5E] RU:4320  Settled
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // C76AAAA-A //  1.6 au
@@ -345,7 +357,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 8: Size 0 Atmo 0 Hydro 0
   --  5.    B // 000000-0 //  6.4 au
 
-1104     E569888-8 T    G     Ph Ri                    M0V           WGGGS         Q  { -1 } (978+0) [A79A] RU:504  Settled
+1104     E569888-8 T    G     Ph Ri       N M F        M0V           WGGGS         Q  { -1 } (978+0) [A79A] RU:504  Settled
   --  1. *  W // E569888-8 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 5 Atmo 1 Hydro 3
@@ -376,7 +388,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9.    . // .......-. // 89.9 au
   -- 10.    . // .......-. // 179.5 au
 
-1105     D646333-4 T    .     Lo Lt                    F0V           ...W.BS       Tintamarre  { -3 } (A20+1) [5117] RU:20  Colony
+1105     D646333-4 T    .     Lo Lt       N O M        F0V           ...W.BS       Tintamarre  { -3 } (A20+1) [5117] RU:20  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
@@ -388,6 +400,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 1205     DA4A788-7 T    S     Oc Pi       F            M6V           W...S         Agora  { -2 } (C63-2) [8535] RU:-432  Settled
   --  1. *  W // DA4A788-7 //  0.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
@@ -395,6 +408,8 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 1405     D53A111-8 C    SG    Wa Lo Co    O            M0V           WGG.S         Telmun  { -3 } (E00+2) [116B] RU:28  Colony
   --  1. *  W // D53A111-8 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 3 Atmo 1 Hydro 7
      -- Moon 2: Size 0 Atmo 0 Hydro 0
@@ -431,6 +446,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 0908     D565555-5 T    SG    Ni Ag Pr Lt M            M0V           WG.GGG        Folsom  { -2 } (741-4) [7391] RU:-112  Colony
   --  1. *  W // D565555-5 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 0 Atmo 0 Hydro 0
      -- Moon 2: Size 5 Atmo 1 Hydro 4
@@ -483,7 +501,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 4: Size 0 Atmo 0 Hydro 0
      -- Moon 5: Size 0 Atmo 0 Hydro 0
 
-2403     E491666-8 R    G     He Ni                    G2V           ..WGB         Sargon  { -3 } (756+5) [6324] RU:1050  Colony
+2403     E491666-8 R    G     He Ni       F O          G2V           ..WGB         Sargon  { -3 } (756+5) [6324] RU:1050  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // E491666-8 //  1.6 au
@@ -536,6 +554,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 # Subsector D
 2703     C959555-A T    G     Ni          N            M2V           W.BBBG        Flobee Mission  { +0 } (B43+3) [759C] RU:396  Colony
   --  1. *  W // C959555-A //  0.2 au
+     -- Moon 1: Size 7 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    B // 000000-0 //  1.6 au
@@ -546,6 +567,8 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 2705     DA5A67A-A T    .     Oc Ni       M            M6V           WB.           Tock  { -1 } (753+2) [458A] RU:210  Colony
   --  1. *  W // DA5A67A-A //  0.2 au
+     -- Moon 1: Size 8 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 0 Hydro 0
   --  2.    B // 000000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
 
@@ -562,6 +585,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5.    B // 000000-0 //  5.9 au
   --  6.    . // .......-. // 11.5 au
   --  7. *  W // B828222-8 // 22.7 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
   --  8.    G // 000000-0 // 45.1 au
      -- Moon 1: Size 5 Atmo 1 Hydro 5
      -- Moon 2: Size 0 Atmo 0 Hydro 0
@@ -588,6 +614,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // C536335-5 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  3.2 au
      -- Moon 1: Size 1 Atmo 0 Hydro 4
      -- Moon 2: Size 1 Atmo 0 Hydro 0
@@ -663,7 +692,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 6: Size 0 Atmo 0 Hydro 0
   --  7.    S // 000000-0 // 19.2 au
 
-2908     E9797AA-7 T    G     Pi                       M4V           WBGG          Jm'ho  { -2 } (367-2) [4578] RU:-252  Settled
+2908     E9797AA-7 T    G     Pi          O            M4V           WBGG          Jm'ho  { -2 } (367-2) [4578] RU:-252  Settled
   --  1. *  W // E9797AA-7 //  0.2 au
      -- Moon 1: Size 4 Atmo 0 Hydro 0
   --  2.    B // 000000-0 //  0.4 au
@@ -718,6 +747,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 # Subsector E
 0111     C545888-8 T    SG    Ph Pa Pi    N            M6V           W..S          Rigel  { -1 } (97A+0) [8747] RU:630  Settled
   --  1. *  W // C545888-8 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    S // 000000-0 //  1.6 au
@@ -739,6 +771,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 0212     CA7A000-0 T    .     Oc Lt                    M2V           W             Plookesia  { -2 } (905+4) [3191] RU:180  
   --  1. *  W // CA7A000-0 //  0.2 au
+     -- Moon 1: Size 7 Atmo 0 Hydro 0
+     -- Moon 2: Size 9 Atmo 0 Hydro 0
+     -- Moon 3: Size 9 Atmo 0 Hydro 0
 
 0612     DB3A666-6 T    S     Oc Ni       N S          M6V           W             Timdo  { -3 } (951+0) [933A] RU:45  Colony
   --  1. *  W // DB3A666-6 //  0.2 au
@@ -796,7 +831,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 5: Size 3 Atmo 2 Hydro 3
   --  9.    G // 000000-0 // 89.7 au
 
-0614     CA5A88A-8 T    .     Oc Ph                    M4V           W             Tnp  { -1 } (A71+2) [8745] RU:140  Settled
+0614     CA5A88A-8 T    .     Oc Ph       F            M4V           W             Tnp  { -1 } (A71+2) [8745] RU:140  Settled
   --  1. *  W // CA5A88A-8 //  0.2 au
      -- Moon 1: Size 6 Atmo 0 Hydro 0
 
@@ -810,7 +845,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 2: Size 4 Atmo 0 Hydro 0
      -- Moon 3: Size 2 Atmo 0 Hydro 0
 
-0418     C86A9DE-9 T    SG    Wa Hi Pr                 M6V           WGGG          Mynjhiro  { +1 } (D87-4) [AA59] RU:-2912  Settled
+0418     C86A9DE-9 T    SG    Wa Hi Pr    M            M6V           WGGG          Mynjhiro  { +1 } (D87-4) [AA59] RU:-2912  Settled
   --  1. *  W // C86A9DE-9 //  0.2 au
      -- Moon 1: Size 4 Atmo 0 Hydro 1
      -- Moon 2: Size 5 Atmo 0 Hydro 1
@@ -866,10 +901,28 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  2.    . // .......-. //  0.9 au
   --  3.    B // 000000-0 //  1.7 au
   --  4. *  W // CA2A666-7 //  3.3 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 0
+     -- Moon 2: Size 6 Atmo 0 Hydro 0
   --  5.    . // .......-. //  6.5 au
   --  6.    B // 000000-0 // 12.9 au
   --  7.    G // 000000-0 // 25.7 au
   --  8.    B // 000000-0 // 51.3 au
+
+0320     C000321-8 T    .     As Va Lo    N M          M0V           BWGGGG        Sorchakvio  { -2 } (720-2) [3118] RU:-28  Colony
+  --  1.    B // 000000-0 //  0.2 au
+  --  2. *  W // C000321-8 //  0.4 au
+  --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 1
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+  --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 1
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+  --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 1
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+  --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 1
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
 
 0720     E797122-8 T    G     Lo          S            M2V           WGGGGB        Virshafio  { -3 } (B00+1) [2166] RU:11  Colony
   --  1. *  W // E797122-8 //  0.2 au
@@ -932,6 +985,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 1612     D694555-8 T    SG    Ni Ag       F N M        M4V           WBG.BB...S    Sicily  { -2 } (644+1) [7377] RU:96  Colony
   --  1. *  W // D694555-8 //  0.2 au
+     -- Moon 1: Size 5 Atmo 0 Hydro 0
   --  2.    B // 000000-0 //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
      -- Moon 1: Size 0 Atmo 0 Hydro 0
@@ -962,7 +1016,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 3: Size 2 Atmo 0 Hydro 0
   --  4.    S // 000000-0 //  3.2 au
 
-1414     BA84779-B T    GC    Ag Ri                    M4V           WG.S          Vanaheim  { +4 } (96A+4) [7B8E] RU:2160  Settled
+1414     BA84779-B T    GC    Ag Ri       N            M4V           WG.S          Vanaheim  { +4 } (96A+4) [7B8E] RU:2160  Settled
   --  1. *  W // BA84779-B //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 1 Atmo 0 Hydro 1
@@ -985,10 +1039,12 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 7: Size 1 Atmo 0 Hydro 5
      -- Moon 8: Size 4 Atmo 0 Hydro 3
 
-1516     B242555-A T    NSG   Ni Po       M            G5V           .BWGBBG       Sharya  { +2 } (B46+2) [A75C] RU:528  Colony
+1516     B242555-A T    NSG   Ni Po       M            G5V           .BWGBBG       Dolchio  { +2 } (B46+2) [A75C] RU:528  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    B // 000000-0 //  0.8 au
   --  3. *  W // B242555-A //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  3.2 au
      -- Moon 1: Size 1 Atmo 0 Hydro 3
      -- Moon 2: Size 1 Atmo 0 Hydro 1
@@ -1007,6 +1063,8 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  1.    B // 000000-0 //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // D50366B-8 //  1.6 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
   --  4.    . // .......-. //  3.2 au
   --  5.    . // .......-. //  6.4 au
   --  6.    B // 000000-0 // 12.8 au
@@ -1016,7 +1074,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 3: Size 0 Atmo 0 Hydro 0
      -- Moon 4: Size 3 Atmo 0 Hydro 4
 
-1217     EA8A8AA-8 T    G     Oc Ph Ri    N            F0V           ...W.S        Pellin  { -1 } (478+1) [8737] RU:224  Settled
+1217     EA8A8AA-8 T    G     Oc Ph Ri    N            F0V           ...W.S        Pellinio  { -1 } (478+1) [8737] RU:224  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
@@ -1026,13 +1084,25 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 1617     C150556-B C    G     De Ni Po Co M            M4V           WG            Archimedes  { +0 } (B46+0) [558B] RU:264  Colony
   --  1. *  W // C150556-B //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 1 Atmo 0 Hydro 3
      -- Moon 2: Size 0 Atmo 0 Hydro 0
      -- Moon 3: Size 0 Atmo 0 Hydro 0
 
-1219     CA18555-9 F    GC    Ic Ni       N            M6V           WG..G..S      Guna  { -1 } (A44+1) [8439] RU:160  Colony
+1018     E665000-0 T    .     Ga Ba Lt    N M          M2V           WG            Rosendanio  { -3 } (600+3) [2172] RU:18  
+  --  3. *  W // E665000-0 //  0.8 au
+  --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 1
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+
+1219     CA38555-9 F    GC    Ni          N            M6V           WG..G..S      Guna  { -1 } (541+0) [6435] RU:20  Colony
   --  1. *  W // CA18555-9 //  0.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 0
+     -- Moon 2: Size 9 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 0 Atmo 0 Hydro 0
      -- Moon 2: Size 1 Atmo 0 Hydro 3
@@ -1049,7 +1119,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // 000000-0 // 25.6 au
 
-1619     D457477-6 T    SG    Ni Pa       M            M0V           WBGB          Bravo  { -3 } (836+1) [3159] RU:144  Colony
+1619     D457477-6 T    SG    Ni Pa       M            M0V           WBGB          Xaryio  { -3 } (836+1) [3159] RU:144  Colony
   --  1. *  W // D457477-6 //  0.2 au
      -- Moon 1: Size 2 Atmo 0 Hydro 2
      -- Moon 2: Size 3 Atmo 0 Hydro 4
@@ -1064,7 +1134,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 7: Size 8 Atmo 5 Hydro 1
   --  4.    B // 000000-0 //  1.6 au
 
-0920     C5538BB-8 H    S     Ph Po Ho                 M2V           WB            Sinsanmio  { -1 } (876+1) [B728] RU:336  Settled
+0920     C5538BB-8 H    S     Ph Po Ho    O F          M2V           WB            Sinsanimio  { -1 } (876+1) [B728] RU:336  Settled
   --  1. *  W // C5538BB-8 //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
 
@@ -1072,6 +1142,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 # Subsector G
 1711     C9A9777-A T    G     Fl          M M          M4V           WGB..S        Clyth  { +1 } (C6C-3) [5846] RU:-2592  Settled
   --  1. *  W // C9A9777-A //  0.2 au
+     -- Moon 1: Size 7 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 0 Atmo 0 Hydro 0
      -- Moon 2: Size 1 Atmo 0 Hydro 3
@@ -1080,17 +1153,19 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5.    . // .......-. //  3.2 au
   --  6.    S // 000000-0 //  6.4 au
 
-2013     A535888-B T    N     Ph          F M N        M2V           W             Sovaghio  { +2 } (47C+1) [AA6B] RU:336  Settled
+2013     A535888-B T    N     Ph          F M N        M2V           W             Sovaĝio  { +2 } (47C+1) [AA6B] RU:336  Settled
   --  1. *  W // A535888-B //  0.2 au
 
-1815     B616999-9 F    NS    Ic Hi In                 A0IV          S...W         Difektghintio  { +4 } (88B+5) [CD59] RU:3520  Settled
+1815     B616999-9 F    NS    Ic Hi In    M M          A0IV          S...W         Difektĝintio  { +4 } (88B+5) [CD59] RU:3520  Settled
   --  1.    S // 000000-0 //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3.    . // .......-. //  1.4 au
   --  4.    . // .......-. //  2.8 au
   --  5. *  W // B616999-9 //  5.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
 
-1915     B949111-7 F    NSGC  Lo                       M0V           WG.G          Ŝipfarejio  { +0 } (800+3) [3155] RU:24  Colony
+1915     B949111-7 F    NSGC  Lo          O F F        M0V           WG.G          Sipfarejio  { +0 } (800+3) [3155] RU:24  Colony
   --  1. *  W // B949111-7 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 3 Atmo 0 Hydro 5
@@ -1114,6 +1189,8 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // B868558-B //  1.6 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 0
+     -- Moon 2: Size 6 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  3.2 au
   --  5.    . // .......-. //  6.4 au
   --  6.    . // .......-. // 12.8 au
@@ -1198,7 +1275,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 2: Size 1 Atmo 0 Hydro 2
      -- Moon 3: Size 2 Atmo 0 Hydro 0
 
-2217     C767777-7 T    SG    Ga Ag Ri    N M S        F5V           ...WG         Kegron  { +1 } (46A-1) [4838] RU:-240  Settled
+2217     C767777-7 T    SG    Ga Ag Ri    N M S        F5V           ...WG         Bixirjian  { +1 } (46A-1) [4838] RU:-240  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
@@ -1250,16 +1327,19 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 2: Size 3 Atmo 0 Hydro 4
      -- Moon 3: Size 2 Atmo 0 Hydro 2
 
-1719     C959888-8 T    S     Ph                       M6V           W             Vanaheim  { -1 } (774+1) [A72A] RU:196  Settled
+1719     C959888-8 T    S     Ph          F            M6V           W             Vanaheim  { -1 } (774+1) [A72A] RU:196  Settled
   --  1. *  W // C959888-8 //  0.2 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
 
 2019     C280448-A R    S     De Ni       S M M        F2V           ...W          Smyrno  { +0 } (635-2) [643A] RU:-180  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // C280448-A //  2.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
 
-2219     X767235-2 T    G     Ga Lo Lt    S F          K5IV          ..WG.GGGB     Merovinghio  { -3 } (610-2) [1161] RU:-12  Colony
+2219     A767835-A T    G     Ga Ph Pa Ri S F          K5IV          ..WG.GGGB     Merovingio  { +3 } (877+0) [AB66] RU:392  Settled
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3. *  W // X767235-2 //  1.4 au
@@ -1306,7 +1386,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 
 # Subsector H
-3111     E130333-7 T    G     De Lo Po    O F          G8IV          ...WG.BG      York  { -3 } (420+1) [6165] RU:8  Colony
+3111     E130333-7 T    G     De Lo Po    O F          G8IV          ...WG.BG      Johor  { -3 } (420+1) [6165] RU:8  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3.    . // .......-. //  1.4 au
@@ -1404,7 +1484,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 11: Size 5 Atmo 1 Hydro 3
      -- Moon 12: Size 2 Atmo 0 Hydro 4
 
-3213     E658445-7 T    G     Ni Pa                    F5V           ...WBGGB      Brevor  { -3 } (A31+0) [517A] RU:30  Colony
+3213     E658445-7 T    G     Ni Pa       M            F5V           ...WBGGB      Brevor  { -3 } (A31+0) [517A] RU:30  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
@@ -1476,13 +1556,16 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-2815     E858112-7 T    .     Lo                       M2V           W.B.          Jawbone  { -3 } (200-2) [1128] RU:-4  Colony
+2815     E858112-7 T    .     Lo          N            M2V           W.B.          Jawbone  { -3 } (200-2) [1128] RU:-4  Colony
   --  1. *  W // E858112-7 //  0.2 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    . // .......-. //  1.6 au
 
-3115     C535ADF-A T    C     Hi          S            F2V           ...W          Chronos  { +2 } (C99+1) [7C69] RU:972  Settled
+3115     C535ADF-A T    C     Hi          S            F2V           ...W          Sigurd  { +2 } (C99+1) [7C69] RU:972  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
@@ -1508,8 +1591,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 8: Size 3 Atmo 1 Hydro 4
      -- Moon 9: Size 3 Atmo 0 Hydro 3
 
-3016     B676444-7 T    SC    Ni Pa       N S M        M4V           W.B....S      Moni  { -1 } (A32-5) [4347] RU:-300  Colony
+3016     B676444-7 T    SC    Ni Pa       N S M        M4V           W.B....S      Monio  { -1 } (A32-5) [4347] RU:-300  Colony
   --  1. *  W // B676444-7 //  0.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    . // .......-. //  1.6 au
@@ -1528,6 +1612,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 6: Size 1 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // D767257-8 //  1.6 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
   --  4.    . // .......-. //  3.2 au
   --  5.    G // 000000-0 //  6.4 au
      -- Moon 1: Size 3 Atmo 0 Hydro 7
@@ -1536,7 +1621,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  8. -  . // .......-. // 51.2 au
   --  9. -  S // 000000-0 // 102.4 au
 
-2717     C82A588-B F    GCP   Wa Ni       O            M2V           WGGG          Eudora  { +0 } (842+2) [5578] RU:128  Colony
+2717     C82A588-B F    GCP   Wa Ni       O            M2V           WGGG          Eudorio  { +0 } (842+2) [5578] RU:128  Colony
   --  1. *  W // C82A588-B //  0.2 au
      -- Moon 1: Size 6 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
@@ -1557,6 +1642,17 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 8: Size 1 Atmo 0 Hydro 0
      -- Moon 9: Size 7 Atmo 7 Hydro 3
 
+3117     C556762-8 T    .     Ag          N M          G0V/M2 V      WSGB          Dunatrio  { +0 } (564+1) [A7A7] RU:120  Settled
+  --  3. *  W // C556762-8 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 0 Hydro 0
+  --  4.    S // 000000-0 //  1.6 au
+  --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 1
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+  --  6.    B // 000000-0 //  6.4 au
+
 2718     A666335-B C    GC    Ga Lo Co Tu O            F5V           ..WGG         Casagan  { +1 } (A20+0) [144B] RU:20  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
@@ -1574,7 +1670,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 6: Size 1 Atmo 0 Hydro 2
      -- Moon 7: Size 2 Atmo 0 Hydro 0
 
-3218     D82A9BE-9 F    SG    Wa Hi In                 M6II          .....GWG.B    Aldebaran  { +1 } (A87-2) [DA78] RU:-1120  Settled
+3218     D82A9BE-9 F    SG    Wa Hi In    O            M6II          .....GWG.B    Aldebaran  { +1 } (A87-2) [DA78] RU:-1120  Settled
   --  1.    . // .......-. //  0.7 au
   --  2.    . // .......-. //  1.0 au
   --  3.    . // .......-. //  1.7 au
@@ -1605,6 +1701,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  2.    B // 000000-0 //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // A93A777-B //  2.4 au
+     -- Moon 1: Size 7 Atmo 0 Hydro 0
+     -- Moon 2: Size 6 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 0 Hydro 0
   --  5.    B // 000000-0 //  4.8 au
   --  6.    . // .......-. //  9.6 au
   --  7.    B // 000000-0 // 19.2 au
@@ -1635,6 +1734,8 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5.    . // .......-. //  5.1 au
   --  6.    . // .......-. //  9.9 au
   --  7. *  W // D548233-7 // 19.5 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
   --  8.    G // 000000-0 // 38.7 au
      -- Moon 1: Size 3 Atmo 0 Hydro 4
      -- Moon 2: Size 0 Atmo 0 Hydro 0
@@ -1670,7 +1771,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  3.    . // .......-. //  0.8 au
   --  4.    S // 000000-0 //  1.6 au
 
-0321     EA4A666-6 T    G     Oc Ni                    A5V           ...WGG.G      Tintamarre  { -3 } (655+2) [5326] RU:300  Colony
+0321     EA4A666-6 T    G     Oc Ni       M F          A5V           ...WGG.G      Tintamarre  { -3 } (655+2) [5326] RU:300  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3.    . // .......-. //  1.6 au
@@ -1692,8 +1793,11 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 2: Size 0 Atmo 0 Hydro 0
      -- Moon 3: Size 3 Atmo 0 Hydro 1
 
-0222     C37377A-A T    GP    Pi                       M4V           W.BBGS        Signik  { +1 } (F68+2) [A87A] RU:1440  Settled
+0222     C37377A-A T    GP    Pi          M M          M4V           W.BBGS        Signik  { +1 } (F68+2) [A87A] RU:1440  Settled
   --  1. *  W // C37377A-A //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    B // 000000-0 //  1.6 au
@@ -1713,7 +1817,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 4: Size 7 Atmo 4 Hydro 0
   --  6.    S // 000000-0 //  9.6 au
 
-0823     DA7A688-6 C    SG    Oc Ni Co                 F2V           ..BWBG.G      Corvallis  { -3 } (954+1) [4336] RU:180  Colony
+0823     DA7A688-6 C    SG    Oc Ni Co    F            F2V           ..BWBG.G      Corvallisio  { -3 } (954+1) [4336] RU:180  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    B // 000000-0 //  1.2 au
@@ -1734,8 +1838,10 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 6: Size 6 Atmo 4 Hydro 4
      -- Moon 7: Size 0 Atmo 0 Hydro 0
 
-0124     D85A333-5 T    SG    Wa Lo Lt                 M0V           WBG.S         K  { -3 } (C20+1) [5163] RU:24  Colony
+0124     D85A333-5 T    SG    Wa Lo Lt    N O M        M0V           WBG.S         K  { -3 } (C20+1) [5163] RU:24  Colony
   --  1. *  W // D85A333-5 //  0.2 au
+     -- Moon 1: Size 5 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 0 Hydro 0
   --  2.    B // 000000-0 //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
   --  4.    . // .......-. //  1.6 au
@@ -1806,6 +1912,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 0529     C438444-7 T    GC    Ni          S            M0V           WS...G        Rafe  { -2 } (C31-2) [1287] RU:-72  Colony
   --  1. *  W // C438444-7 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
   --  2.    S // 000000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
@@ -1874,7 +1981,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 
 # Subsector J
-1021     C646845-8 T    GP    Ph Pa Pi                 F2II          .....WG.GB    Keicah  { -1 } (972-2) [A717] RU:-252  Settled
+1021     C646845-8 T    GP    Ph Pa Pi    M O M        F2II          .....WG.GB    Keicha  { -1 } (972-2) [A717] RU:-252  Settled
   --  1.    . // .......-. //  0.7 au
   --  2.    . // .......-. //  1.1 au
   --  3.    . // .......-. //  1.9 au
@@ -1918,10 +2025,13 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 1122     D575555-5 T    .     Ni Ag Lt    O N          M4V           WBB           Naqsa  { -2 } (744+0) [6356] RU:112  Colony
   --  1. *  W // D575555-5 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
   --  2.    B // 000000-0 //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
 
-1622     C739689-7 F    GC    Ni          F F          G2V           ..WBG         Elyssium  { -2 } (956-2) [2483] RU:-540  Colony
+1622     C739689-7 F    GC    Ni          F F          G2V           ..WBG         Ellysio  { -2 } (956-2) [2483] RU:-540  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // C739689-7 //  1.6 au
@@ -1934,7 +2044,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 5: Size 5 Atmo 3 Hydro 2
      -- Moon 6: Size 0 Atmo 0 Hydro 0
 
-0923     D95979D-7 C    .     Co          N            A2V           ...W..S       Shexa  { -2 } (464-3) [7536] RU:-288  Settled
+0923     D95979D-7 C    .     Co          N            A2V           ...W..S       Naimio  { -2 } (464-3) [7536] RU:-288  Settled
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3.    . // .......-. //  1.6 au
@@ -1945,6 +2055,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 1023     E977899-8 H    G     Ph Pa Pi Ho Tr N F          M6V           WGGBG.S       Pendrakeentio  { -2 } (E74-3) [D695] RU:-1176  Settled
   --  1. *  W // E977899-8 //  0.2 au
+     -- Moon 1: Size 8 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 2 Atmo 0 Hydro 0
      -- Moon 2: Size 5 Atmo 3 Hydro 1
@@ -1964,7 +2075,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // 000000-0 // 12.8 au
 
-1523     C494333-8 C    SG    Lo Co                    M4V           WGGBGB        Flamme  { -2 } (G20-2) [6198] RU:-64  Colony
+1523     C494333-8 C    SG    Lo Co       M N          M4V           WGGBGB        Flamme  { -2 } (G20-2) [6198] RU:-64  Colony
   --  1. *  W // C494333-8 //  0.2 au
      -- Moon 1: Size 0 Atmo 0 Hydro 1
      -- Moon 2: Size 1 Atmo 0 Hydro 0
@@ -1983,14 +2094,16 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 3: Size 3 Atmo 0 Hydro 4
   --  6.    B // 000000-0 //  6.4 au
 
-1224     B86899A-B T    C     Hi Pr                    K5V           .WB.S         Kajleerio  { +3 } (388+3) [7C49] RU:576  Settled
+1224     B86899A-B T    C     Hi Pr       N            K5V           .WB.S         Kajleerio  { +3 } (388+3) [7C49] RU:576  Settled
   --  1.    . // .......-. //  0.3 au
   --  2. *  W // B86899A-B //  0.6 au
+     -- Moon 1: Size 7 Atmo 0 Hydro 0
+     -- Moon 2: Size 6 Atmo 0 Hydro 0
   --  3.    B // 000000-0 //  1.2 au
   --  4.    . // .......-. //  2.4 au
   --  5.    S // 000000-0 //  4.8 au
 
-1324     A838779-B T    .                              M6V           W......S      Hadriu  { +2 } (769+1) [496B] RU:378  Settled
+1324     A838779-B T    .                 O            M6V           W......S      Hadriu  { +2 } (769+1) [496B] RU:378  Settled
   --  1. *  W // A838779-B //  0.2 au
      -- Moon 1: Size 7 Atmo 0 Hydro 4
      -- Moon 2: Size 2 Atmo 0 Hydro 0
@@ -2003,8 +2116,10 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // 000000-0 // 25.6 au
 
-1424     E96A133-4 T    .     Wa Lo Lt                 M6V           W.......S     Korunda  { -3 } (800-4) [2166] RU:-32  Colony
+1424     E96A133-4 T    .     Wa Lo Lt    N O          M6V           W.......S     Korundio  { -3 } (800-4) [2166] RU:-32  Colony
   --  1. *  W // E96A133-4 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
@@ -2014,7 +2129,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  8. -  . // .......-. // 25.6 au
   --  9. -  S // 000000-0 // 51.2 au
 
-1325     B629666-A F    NSG   Ni          F N          M4V           WBGBGG        Tesheuqa  { +2 } (B55+1) [882C] RU:275  Colony
+1325     B629666-A F    NSG   Ni          F N          M4V           WBGBGG        Tesheuquio  { +2 } (B55+1) [882C] RU:275  Colony
   --  1. *  W // B629666-A //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
@@ -2046,7 +2161,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 8: Size 6 Atmo 2 Hydro 0
      -- Moon 9: Size 3 Atmo 0 Hydro 0
 
-1226     B6669CC-9 T    NSG   Ga Hi Pr                 G2V           ...W..S       Niami  { +3 } (888+3) [8C76] RU:1536  Settled
+1226     B6669CC-9 T    NSG   Ga Hi Pr    F            G2V           ...W..S       Niami  { +3 } (888+3) [8C76] RU:1536  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
@@ -2070,6 +2185,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 1626     A505000-0 F    G     Ic Va Lt                 M2V           W.BGBG        Xlephier  { -1 } (708-4) [1134] RU:-224  
   --  1. *  W // A505000-0 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    G // 000000-0 //  1.6 au
@@ -2078,7 +2194,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 1: Size 4 Atmo 1 Hydro 4
      -- Moon 2: Size 1 Atmo 0 Hydro 0
 
-1027     B738112-A T    SG    Lo          M            F0III         ...WB..G      Quinnius  { +1 } (C00+3) [229D] RU:36  Colony
+1027     B738112-A T    SG    Lo          M            F0III         ...WB..G      Quinnio  { +1 } (C00+3) [229D] RU:36  Colony
   --  1.    . // .......-. //  0.5 au
   --  2.    . // .......-. //  0.9 au
   --  3.    . // .......-. //  1.7 au
@@ -2103,6 +2219,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 1628     B757479-B T    GC    Ga Ni Pa    N            M4V           W.G....S      Golgotha  { +1 } (535+2) [555A] RU:150  Colony
   --  1. *  W // B757479-B //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
      -- Moon 1: Size 6 Atmo 2 Hydro 2
@@ -2112,8 +2231,11 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // 000000-0 // 25.6 au
 
-1229     C1506AA-A C    SG    De Ni Po Co              M2V           WG..S         Klairos  { +0 } (852+1) [36A8] RU:80  Colony
+1229     C1506AA-A C    SG    De Ni Po Co O            M2V           WG..S         Klairos  { +0 } (852+1) [36A8] RU:80  Colony
   --  1. *  W // C1506AA-A //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 5 Atmo 1 Hydro 2
      -- Moon 2: Size 0 Atmo 0 Hydro 0
@@ -2139,7 +2261,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 
 # Subsector K
-1921     B242888-A T    G     Ph Pi Po    P            M2V           WG.G.....S    Sabana  { +2 } (877-1) [BA58] RU:-392  Settled
+1921     B244888-A T    G     Ph Pa Pi    P            A5V           WG.G.....S    Sabanio  { +2 } (779-2) [3A59] RU:-882  Settled
   --  1. *  W // B242888-A //  0.2 au
      -- Moon 1: Size 1 Atmo 0 Hydro 1
      -- Moon 2: Size 0 Atmo 0 Hydro 0
@@ -2159,12 +2281,12 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 6: Size 2 Atmo 0 Hydro 6
   --  5.    . // .......-. //  3.2 au
   --  6.    . // .......-. //  6.4 au
-  --  7. -  . // .......-. // 12.8 au
-  --  8. -  . // .......-. // 25.6 au
-  --  9. -  . // .......-. // 51.2 au
-  -- 10. -  S // 000000-0 // 102.4 au
+  --  7.    . // .......-. // 12.8 au
+  --  8.    . // .......-. // 25.6 au
+  --  9.    . // .......-. // 51.2 au
+  -- 10.    S // 000000-0 // 102.4 au
 
-2421     C565556-7 T    SGP   Ni Ag Pr                 M6V           WG            Decapod  { -1 } (646-2) [8489] RU:-288  Colony
+2421     C565556-7 T    SGP   Ni Ag Pr    M N O        M6V           WG            Decapod  { -1 } (646-2) [8489] RU:-288  Colony
   --  1. *  W // C565556-7 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 3 Atmo 0 Hydro 6
@@ -2188,7 +2310,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 89.6 au
   -- 10. -  S // 000000-0 // 179.2 au
 
-1724     B748944-9 H    NGC   Hi In Ho    N            F0III         .G.WGGGG      Temask  { +3 } (H8E+0) [BC29] RU:1904  Settled
+1724     B748944-9 H    NGC   Hi In Ho    N            F0III         .G.WGGGG      Temasek  { +3 } (H8E+0) [BC29] RU:1904  Settled
   --  1.    . // .......-. //  0.5 au
   --  2.    G // 000000-0 //  0.9 au
      -- Moon 1: Size 0 Atmo 0 Hydro 0
@@ -2201,6 +2323,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 8: Size 4 Atmo 3 Hydro 0
   --  3.    . // .......-. //  1.7 au
   --  4. *  W // B748944-9 //  3.3 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
   --  5.    G // 000000-0 //  6.5 au
      -- Moon 1: Size 3 Atmo 0 Hydro 1
      -- Moon 2: Size 0 Atmo 0 Hydro 0
@@ -2318,6 +2443,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 2921     BB88666-9 T    NGC   Ni Ag Ri    O            M6V           WGB.G         Kaesov  { +2 } (C52-4) [885A] RU:-480  Colony
   --  1. *  W // BB88666-9 //  0.2 au
+     -- Moon 1: Size A Atmo 0 Hydro 0
+     -- Moon 2: Size A Atmo 0 Hydro 0
+     -- Moon 3: Size 8 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 3 Atmo 0 Hydro 2
      -- Moon 2: Size 1 Atmo 0 Hydro 3
@@ -2365,7 +2493,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-3222     C92958B-9 T    G     Ni                       M4V           WG.G          Paquin  { -1 } (B44-2) [645B] RU:-352  Colony
+3222     C92958B-9 T    G     Ni          O            M4V           WG.G          Paquin  { -1 } (B44-2) [645B] RU:-352  Colony
   --  1. *  W // C92958B-9 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 0 Atmo 0 Hydro 0
@@ -2419,7 +2547,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 2926     D73858C-5 T    .     Ni Lt       N M          M4V           W             Teta  { -3 } (244-3) [5235] RU:-96  Colony
   --  1. *  W // D73858C-5 //  0.2 au
 
-3226     C87A9CF-9 C    G     Wa Hi In Co              M2V           WGG.....S     Logarto  { +2 } (D88+1) [DB79] RU:832  Settled
+3226     C87A9CF-9 C    G     Wa Hi In Co O M          M2V           WGG.....S     Logarto  { +2 } (D88+1) [DB79] RU:832  Settled
   --  1. *  W // C87A9CF-9 //  0.2 au
      -- Moon 1: Size 3 Atmo 0 Hydro 1
   --  2.    G // 000000-0 //  0.4 au
@@ -2523,7 +2651,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  3.    . // .......-. //  0.8 au
   --  4.    S // 000000-0 //  1.6 au
 
-2730     B58566A-8 T    GC    Ni Ag Ri                 M2V           W.B.BG        Annanworld  { +1 } (852-2) [6768] RU:-160  Colony
+2730     B58566A-8 T    GC    Ni Ag Ri    O            M2V           W.B.BG        Annanworld  { +1 } (852-2) [6768] RU:-160  Colony
   --  1. *  W // B58566A-8 //  0.2 au
      -- Moon 1: Size 0 Atmo 0 Hydro 0
      -- Moon 2: Size 0 Atmo 0 Hydro 1
@@ -2590,7 +2718,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 7: Size 0 Atmo 0 Hydro 0
      -- Moon 8: Size 3 Atmo 3 Hydro 1
 
-0832     B82A336-A T    G     Wa Lo                    M6V           WGG..B...S    Atab Abas  { +1 } (620-4) [2417] RU:-48  Colony
+0832     B82A336-A T    G     Wa Lo       M N          M6V           WGG..B...S    Atab Abas  { +1 } (620-4) [2417] RU:-48  Colony
   --  1. *  W // B82A336-A //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 0 Atmo 0 Hydro 0
@@ -2645,6 +2773,8 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 0837     E661255-5 R    G     Lo Lt       M            M0V           WG..S         Fendi  { -3 } (510+2) [1133] RU:10  Colony
   --  1. *  W // E661255-5 //  0.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 0 Atmo 0 Hydro 0
      -- Moon 2: Size 0 Atmo 0 Hydro 0
@@ -2656,6 +2786,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 0138     B457444-8 T    GC    Ni Pa       N F S        M4V           WG.G          Veridani  { -1 } (936-4) [6399] RU:-648  Colony
   --  1. *  W // B457444-8 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 4 Atmo 2 Hydro 6
      -- Moon 2: Size 2 Atmo 0 Hydro 6
@@ -2695,7 +2826,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 2: Size 0 Atmo 0 Hydro 0
      -- Moon 3: Size 1 Atmo 0 Hydro 3
 
-0739     EA3A225-9 T    G     Oc Lo                    F0III         ...WG.S       Porcelo  { -2 } (910-1) [1146] RU:-9  Colony
+0739     EA3A225-9 T    G     Oc Lo       F            F0III         ...WG.S       Porcelo  { -2 } (910-1) [1146] RU:-9  Colony
   --  1.    . // .......-. //  0.5 au
   --  2.    . // .......-. //  0.8 au
   --  3.    . // .......-. //  1.5 au
@@ -2748,7 +2879,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5.    . // .......-. //  4.8 au
   --  6.    S // 000000-0 //  9.6 au
 
-0932     B667558-B T    NSGC  Ga Ni Ag Pr S            M0V           W.GG          Centuris  { +3 } (A44-4) [789A] RU:-640  Colony
+0932     B667558-B T    NSGC  Ga Ni Ag Pr S            M0V           W.GG          Katalio  { +3 } (A44-4) [789A] RU:-640  Colony
   --  1. *  W // B667558-B //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
@@ -2776,6 +2907,8 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5.    . // .......-. //  5.9 au
   --  6.    . // .......-. // 11.5 au
   --  7. *  W // E555377-6 // 22.7 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
   --  8.    G // 000000-0 // 45.1 au
      -- Moon 1: Size 5 Atmo 3 Hydro 3
      -- Moon 2: Size 3 Atmo 0 Hydro 6
@@ -2796,7 +2929,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 6: Size 2 Atmo 1 Hydro 5
      -- Moon 7: Size 2 Atmo 0 Hydro 0
 
-1633     B76A155-B C    SGC   Wa Lo Co                 M4V           W..GG         Shora  { +1 } (800-3) [127A] RU:-24  Colony
+1633     B76A155-B C    SGC   Wa Lo Co    O F          M4V           W..GG         Shora  { +1 } (800-3) [127A] RU:-24  Colony
   --  1. *  W // B76A155-B //  0.2 au
      -- Moon 1: Size 4 Atmo 0 Hydro 0
      -- Moon 2: Size 3 Atmo 0 Hydro 0
@@ -2845,7 +2978,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 3: Size 0 Atmo 0 Hydro 0
      -- Moon 4: Size 5 Atmo 3 Hydro 0
 
-1436     E636112-5 F    G     Lo Lt                    G0V           ..WGG.S       Boondock  { -3 } (700-1) [1138] RU:-7  Colony
+1436     E636112-5 F    G     Lo Lt       N            G0V           ..WGG.S       Boondock  { -3 } (700-1) [1138] RU:-7  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // E636112-5 //  1.6 au
@@ -2879,6 +3012,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 1438     D739333-7 F    S     Lo          N S          M0V           W.BBS....S    Aquitar  { -3 } (B20+5) [3145] RU:110  Colony
   --  1. *  W // D739333-7 //  0.2 au
+     -- Moon 1: Size 5 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    B // 000000-0 //  1.6 au
@@ -2935,7 +3071,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  6.    . // .......-. //  9.6 au
   --  7.    S // 000000-0 // 19.2 au
 
-1540     C76AAAA-A T    SGC   Wa Hi                    F0V           ..WGB         Ardamador  { +2 } (E96-1) [CC37] RU:-756  Settled
+1540     C76AAAA-A T    SGC   Wa Hi       N F          F0V           ..WGB         Ardamador  { +2 } (E96-1) [CC37] RU:-756  Settled
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // C76AAAA-A //  1.6 au
@@ -3017,6 +3153,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 2132     D868999-9 T    S     Hi Pr       O            M2V           W........S    Agni  { +0 } (C85+1) [D965] RU:480  Settled
   --  1. *  W // D868999-9 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
@@ -3030,6 +3167,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 2332     D535337-6 T    G     Lo          N            K0V           .W...GS       Hel  { -3 } (A20+0) [4148] RU:20  Colony
   --  1.    . // .......-. //  0.3 au
   --  2. *  W // D535337-6 //  0.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
   --  3.    . // .......-. //  1.2 au
   --  4.    . // .......-. //  2.4 au
   --  5.    . // .......-. //  4.8 au
@@ -3101,8 +3241,10 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-2233     C5356BD-7 T    G     Ni                       M2V           WBG.          Hurmuptha  { -2 } (453-3) [945A] RU:-180  Colony
+2233     C5356BD-7 T    G     Ni          O O          M2V           WBG.          Hurmuptha  { -2 } (453-3) [945A] RU:-180  Colony
   --  1. *  W // C5356BD-7 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  2.    B // 000000-0 //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
   --  4.    . // .......-. //  1.6 au
@@ -3132,7 +3274,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-2035     X967222-2 H    G     Lo Lt Ho Tr              M2V           WG..S         Wega  { -3 } (810+1) [2123] RU:8  Colony
+2035     X967222-2 H    G     Lo Lt Ho Tr M F          M2V           WG..S         Wega  { -3 } (810+1) [2123] RU:8  Colony
   --  1. *  W // X967222-2 //  0.2 au
      -- Moon 1: Size 3 Atmo 0 Hydro 3
      -- Moon 2: Size 5 Atmo 0 Hydro 0
@@ -3164,7 +3306,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-1838     E949556-5 T    G     Ni Lt                    F5IV          ...WGG..S     Bortresoye  { -3 } (741+0) [1276] RU:28  Colony
+1838     E949556-5 T    G     Ni Lt       N N F        F5IV          ...WGG..S     Bortresoye  { -3 } (741+0) [1276] RU:28  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3.    . // .......-. //  1.4 au
@@ -3180,17 +3322,18 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  8.    . // .......-. // 44.8 au
   --  9. -  S // 000000-0 // 89.6 au
 
-2140     C755737-9 T    C     Ga Ag       F            F2V           ...W..        Copa  { +1 } (669-2) [7847] RU:-648  Settled
+2140     C755737-9 T    C     Ga Ag       F            M4V/DB        ...W..S       Copa  { +1 } (669-2) [7847] RU:-648  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // C755737-9 //  2.4 au
   --  5.    . // .......-. //  4.8 au
-  --  6.    . // .......-. //  9.6 au
+  --  6. -  . // .......-. //  9.6 au
+  --  6. -  S // 000000-0 //  9.6 au
 
 
 # Subsector P
-3131     E949888-8 T    G     Ph Pi                    M6V           WGG.          Retha  { -2 } (A74-1) [D668] RU:-280  Settled
+3131     E949888-8 T    G     Ph Pi       O M O        M6V           WGG.          Retha  { -2 } (A74-1) [D668] RU:-280  Settled
   --  1. *  W // E949888-8 //  0.2 au
      -- Moon 1: Size 3 Atmo 0 Hydro 0
      -- Moon 2: Size 5 Atmo 0 Hydro 0
@@ -3219,7 +3362,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  3.    . // .......-. //  0.8 au
   --  4.    S // 000000-0 //  1.6 au
 
-2636     D61699D-9 F    .     Ic Hi In                 F5V           ..WB          Kiluwa  { +1 } (98C+1) [CA7C] RU:864  Settled
+2636     D61699D-9 F    .     Ic Hi In    M O          F5V           ..WB          Kiluwa  { +1 } (98C+1) [CA7C] RU:864  Settled
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // D61699D-9 //  1.6 au
@@ -3228,6 +3371,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 2736     C434555-7 C    .     Ni Co       F O S        M6V           W             Persephone  { -2 } (841+4) [5356] RU:128  Colony
   --  1. *  W // C434555-7 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
 
 2936     C848000-0 T    GC    Lt                       M4II          ..S...W.G     Nomolos  { -2 } (404+0) [1141] RU:16  
   --  1.    . // .......-. //  0.6 au
@@ -3237,6 +3381,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5.    . // .......-. //  5.1 au
   --  6.    . // .......-. //  9.9 au
   --  7. *  W // C848000-0 // 19.5 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 0 Hydro 0
   --  8.    . // .......-. // 38.7 au
   --  9.    G // 000000-0 // 77.1 au
      -- Moon 1: Size 5 Atmo 1 Hydro 1
@@ -3254,7 +3401,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 1: Size 6 Atmo 2 Hydro 3
      -- Moon 2: Size 2 Atmo 2 Hydro 8
 
-2537     E648559-5 T    .     Ni Ag Lt                 M4V           W..S          Bathyos  { -2 } (845-3) [6344] RU:-480  Colony
+2537     E648559-5 T    .     Ni Ag Lt    O O          M4V           W..S          Bathyos  { -2 } (845-3) [6344] RU:-480  Colony
   --  1. *  W // E648559-5 //  0.2 au
      -- Moon 1: Size 1 Atmo 0 Hydro 1
      -- Moon 2: Size 2 Atmo 0 Hydro 1
@@ -3263,7 +3410,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  3.    . // .......-. //  0.8 au
   --  4.    S // 000000-0 //  1.6 au
 
-2737     D526114-5 T    SG    Lo Lt                    F0V           B.W..S        Mela Five  { -3 } (600-3) [3181] RU:-18  Colony
+2737     D526114-5 T    SG    Lo Lt       M F          F0V           B.W..S        Mela Five  { -3 } (600-3) [3181] RU:-18  Colony
   --  1.    B // 000000-0 //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // D526114-5 //  1.6 au
@@ -3276,6 +3423,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  2.    . // .......-. //  0.7 au
   --  3.    . // .......-. //  1.4 au
   --  4. *  W // C87A456-A //  2.8 au
+     -- Moon 1: Size 5 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 0 Hydro 0
+     -- Moon 3: Size 7 Atmo 0 Hydro 0
   --  5.    . // .......-. //  5.6 au
   --  6.    S // 000000-0 // 11.2 au
 
@@ -3312,7 +3462,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-3237     EB2A145-7 F    G     Oc Lo                    M4V           WGGG          Wallach-Eli  { -3 } (600-2) [1169] RU:-12  Colony
+3237     EB2A145-7 F    G     Oc Lo       O N M        M4V           WGGG          Wallach-Eli  { -3 } (600-2) [1169] RU:-12  Colony
   --  1. *  W // EB2A145-7 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
      -- Moon 1: Size 1 Atmo 0 Hydro 4
@@ -3338,7 +3488,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 3: Size 0 Atmo 0 Hydro 0
      -- Moon 4: Size 1 Atmo 0 Hydro 3
 
-2638     BB28555-9 H    S     Ni Ho                    M6V           W..BS         Bel  { +0 } (A45+0) [7564] RU:200  Colony
+2638     BB28555-9 H    S     Ni Ho       F            M6V           W..BS         Bel  { +0 } (A45+0) [7564] RU:200  Colony
   --  1. *  W // BB28555-9 //  0.2 au
      -- Moon 1: Size 8 Atmo 0 Hydro 0
      -- Moon 2: Size 8 Atmo 0 Hydro 0
@@ -3364,7 +3514,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 2: Size 0 Atmo 0 Hydro 0
      -- Moon 3: Size 0 Atmo 0 Hydro 0
 
-3040     E491666-8 R    G     He Ni                    G0V           ..WGB         Hurria  { -3 } (B51-1) [639B] RU:-55  Colony
+3040     E491666-8 R    G     He Ni       F N          G0V           ..WGB         Hurria  { -3 } (B51-1) [639B] RU:-55  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // E491666-8 //  1.6 au

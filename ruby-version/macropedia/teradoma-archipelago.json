@@ -178,7 +178,8 @@
             "sym": 1
           },
           "ru": 9,
-          "native": ""
+          "native": "",
+          "factions": []
         }
       }
     },
@@ -211,7 +212,27 @@
               "size": 6,
               "starport": "B",
               "tech_level": 11,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 5,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -337,7 +358,11 @@
             "sym": 9
           },
           "ru": 336,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "O",
+            "F"
+          ]
         }
       }
     },
@@ -370,7 +395,27 @@
               "size": 5,
               "starport": "C",
               "tech_level": 8,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -623,7 +668,21 @@
               "size": 8,
               "starport": "D",
               "tech_level": 5,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 5,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 5,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -696,7 +755,12 @@
             "sym": 3
           },
           "ru": 24,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "N",
+            "O",
+            "M"
+          ]
         }
       }
     },
@@ -729,7 +793,15 @@
               "size": 4,
               "starport": "B",
               "tech_level": 8,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -999,7 +1071,15 @@
               "size": 11,
               "starport": "E",
               "tech_level": 6,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 7,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -1150,7 +1230,27 @@
               "size": 10,
               "starport": "C",
               "tech_level": 0,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 7,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 9,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 9,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           }
         ],
@@ -1189,7 +1289,8 @@
             "sym": 1
           },
           "ru": 180,
-          "native": ""
+          "native": "",
+          "factions": []
         }
       }
     },
@@ -1338,7 +1439,27 @@
               "size": 3,
               "starport": "C",
               "tech_level": 10,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -1426,7 +1547,11 @@
             "sym": 10
           },
           "ru": 1440,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "M",
+            "M"
+          ]
         }
       }
     },
@@ -1584,7 +1709,15 @@
               "size": 7,
               "starport": "D",
               "tech_level": 8,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -1712,7 +1845,21 @@
               "size": 5,
               "starport": "D",
               "tech_level": 8,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -1835,7 +1982,21 @@
               "size": 6,
               "starport": "B",
               "tech_level": 9,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 5,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -2404,7 +2565,11 @@
             "sym": 6
           },
           "ru": 300,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "M",
+            "F"
+          ]
         }
       }
     },
@@ -3439,7 +3604,10 @@
             "sym": 9
           },
           "ru": -2912,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "M"
+          ]
         }
       }
     },
@@ -3496,7 +3664,21 @@
               "size": 10,
               "starport": "C",
               "tech_level": 7,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 6,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 6,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -4143,7 +4325,15 @@
               "size": 8,
               "starport": "E",
               "tech_level": 6,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -4358,7 +4548,21 @@
               "size": 5,
               "starport": "B",
               "tech_level": 11,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -4746,7 +4950,15 @@
               "size": 4,
               "starport": "C",
               "tech_level": 7,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -5250,7 +5462,10 @@
             "sym": 5
           },
           "ru": 140,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "F"
+          ]
         }
       }
     },
@@ -6430,7 +6645,10 @@
             "sym": 6
           },
           "ru": -9,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "F"
+          ]
         }
       }
     },
@@ -7743,7 +7961,7 @@
       }
     },
     "0823": {
-      "name": "Corvallis",
+      "name": "Corvallisio",
       "column": 8,
       "row": 23,
       "star": {
@@ -7952,7 +8170,10 @@
             "sym": 6
           },
           "ru": 180,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "F"
+          ]
         }
       }
     },
@@ -8833,7 +9054,11 @@
             "sym": 7
           },
           "ru": -48,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "M",
+            "N"
+          ]
         }
       }
     },
@@ -9070,7 +9295,21 @@
               "size": 6,
               "starport": "E",
               "tech_level": 5,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -9180,7 +9419,7 @@
       }
     },
     "0903": {
-      "name": "Korvel",
+      "name": "Trogio",
       "column": 9,
       "row": 3,
       "star": {
@@ -9354,7 +9593,11 @@
             "sym": 14
           },
           "ru": 4320,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "M",
+            "N"
+          ]
         }
       }
     },
@@ -9387,7 +9630,27 @@
               "size": 5,
               "starport": "D",
               "tech_level": 5,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -9677,7 +9940,7 @@
       }
     },
     "0920": {
-      "name": "Sinsanmio",
+      "name": "Sinsanimio",
       "column": 9,
       "row": 20,
       "star": {
@@ -9753,12 +10016,16 @@
             "sym": 8
           },
           "ru": 336,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "O",
+            "F"
+          ]
         }
       }
     },
     "0923": {
-      "name": "Shexa",
+      "name": "Naimio",
       "column": 9,
       "row": 23,
       "star": {
@@ -9991,7 +10258,7 @@
       }
     },
     "0932": {
-      "name": "Centuris",
+      "name": "Katalio",
       "column": 9,
       "row": 32,
       "star": {
@@ -10272,7 +10539,21 @@
               "size": 5,
               "starport": "E",
               "tech_level": 6,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -10653,7 +10934,21 @@
               "size": 5,
               "starport": "D",
               "tech_level": 8,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -10766,7 +11061,7 @@
       }
     },
     "1021": {
-      "name": "Keicah",
+      "name": "Keicha",
       "column": 10,
       "row": 21,
       "star": {
@@ -11047,7 +11342,12 @@
             "sym": 7
           },
           "ru": -252,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "M",
+            "O",
+            "M"
+          ]
         }
       }
     },
@@ -11080,7 +11380,15 @@
               "size": 9,
               "starport": "E",
               "tech_level": 8,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 8,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -11270,7 +11578,7 @@
       }
     },
     "1027": {
-      "name": "Quinnius",
+      "name": "Quinnio",
       "column": 10,
       "row": 27,
       "star": {
@@ -12127,7 +12435,12 @@
             "sym": 10
           },
           "ru": 504,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "N",
+            "M",
+            "F"
+          ]
         }
       }
     },
@@ -12256,7 +12569,12 @@
             "sym": 7
           },
           "ru": 20,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "N",
+            "O",
+            "M"
+          ]
         }
       }
     },
@@ -12445,7 +12763,27 @@
               "size": 5,
               "starport": "D",
               "tech_level": 5,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -12694,7 +13032,10 @@
             "sym": 4
           },
           "ru": -120,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "F"
+          ]
         }
       }
     },
@@ -12727,7 +13068,15 @@
               "size": 10,
               "starport": "D",
               "tech_level": 7,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -12806,7 +13155,7 @@
       }
     },
     "1217": {
-      "name": "Pellin",
+      "name": "Pellinio",
       "column": 12,
       "row": 17,
       "star": {
@@ -12950,7 +13299,27 @@
               "size": 10,
               "starport": "C",
               "tech_level": 9,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 9,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 5,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -13080,7 +13449,7 @@
           "distant": false,
           "starport": "C",
           "size": 10,
-          "atmosphere": 1,
+          "atmosphere": 3,
           "hydrographics": 8,
           "population": 5,
           "government": 5,
@@ -13091,25 +13460,24 @@
             "N"
           ],
           "trade_codes": [
-            "Ic",
             "Ni"
           ],
           "bases": "..GC.",
-          "travel_code": "RZ",
+          "travel_code": "..",
           "ix": -1,
           "ex": {
-            "res": 10,
+            "res": 5,
             "lab": 4,
-            "inf": 4,
-            "eff": 1
+            "inf": 1,
+            "eff": 0
           },
           "cx": {
-            "homo": 8,
+            "homo": 6,
             "acc": 4,
             "str": 3,
-            "sym": 9
+            "sym": 5
           },
-          "ru": 160,
+          "ru": 20,
           "native": "Colony"
         }
       }
@@ -13151,7 +13519,21 @@
               "size": 8,
               "starport": "B",
               "tech_level": 11,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 7,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 6,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -13214,7 +13596,10 @@
             "sym": 9
           },
           "ru": 576,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "N"
+          ]
         }
       }
     },
@@ -13344,7 +13729,10 @@
             "sym": 6
           },
           "ru": 1536,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "F"
+          ]
         }
       }
     },
@@ -13377,7 +13765,27 @@
               "size": 1,
               "starport": "C",
               "tech_level": 10,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -13502,7 +13910,10 @@
             "sym": 8
           },
           "ru": 80,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "O"
+          ]
         }
       }
     },
@@ -14112,12 +14523,15 @@
             "sym": 11
           },
           "ru": 378,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "O"
+          ]
         }
       }
     },
     "1325": {
-      "name": "Tesheuqa",
+      "name": "Tesheuquio",
       "column": 13,
       "row": 25,
       "star": {
@@ -14768,7 +15182,21 @@
               "size": 5,
               "starport": "D",
               "tech_level": 8,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -15204,7 +15632,10 @@
             "sym": 14
           },
           "ru": 2160,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "N"
+          ]
         }
       }
     },
@@ -15347,7 +15778,7 @@
       }
     },
     "1424": {
-      "name": "Korunda",
+      "name": "Korundio",
       "column": 14,
       "row": 24,
       "star": {
@@ -15375,7 +15806,21 @@
               "size": 9,
               "starport": "E",
               "tech_level": 4,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -15479,7 +15924,11 @@
             "sym": 6
           },
           "ru": -32,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "N",
+            "O"
+          ]
         }
       }
     },
@@ -15835,7 +16284,10 @@
             "sym": 8
           },
           "ru": -7,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "N"
+          ]
         }
       }
     },
@@ -15868,7 +16320,27 @@
               "size": 7,
               "starport": "D",
               "tech_level": 7,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 5,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 5,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -16322,7 +16794,7 @@
       }
     },
     "1516": {
-      "name": "Sharya",
+      "name": "Dolchio",
       "column": 15,
       "row": 16,
       "star": {
@@ -16366,7 +16838,21 @@
               "size": 2,
               "starport": "B",
               "tech_level": 10,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -16709,7 +17195,11 @@
             "sym": 8
           },
           "ru": -64,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "M",
+            "N"
+          ]
         }
       }
     },
@@ -17200,7 +17690,11 @@
             "sym": 7
           },
           "ru": -756,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "N",
+            "F"
+          ]
         }
       }
     },
@@ -17233,7 +17727,15 @@
               "size": 6,
               "starport": "D",
               "tech_level": 8,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 5,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -17462,7 +17964,27 @@
               "size": 1,
               "starport": "C",
               "tech_level": 11,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -17543,7 +18065,7 @@
       }
     },
     "1619": {
-      "name": "Bravo",
+      "name": "Xaryio",
       "column": 16,
       "row": 19,
       "star": {
@@ -17710,7 +18232,7 @@
       }
     },
     "1622": {
-      "name": "Elyssium",
+      "name": "Ellysio",
       "column": 16,
       "row": 22,
       "star": {
@@ -17890,7 +18412,15 @@
               "size": 5,
               "starport": "A",
               "tech_level": 0,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -17988,7 +18518,8 @@
             "sym": 4
           },
           "ru": -224,
-          "native": ""
+          "native": "",
+          "factions": []
         }
       }
     },
@@ -18021,7 +18552,27 @@
               "size": 7,
               "starport": "B",
               "tech_level": 11,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -18438,7 +18989,11 @@
             "sym": 10
           },
           "ru": -24,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "O",
+            "F"
+          ]
         }
       }
     },
@@ -18816,7 +19371,27 @@
               "size": 9,
               "starport": "C",
               "tech_level": 10,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 7,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 5,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -19095,7 +19670,21 @@
               "size": 9,
               "starport": "C",
               "tech_level": 8,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 6,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           }
         ],
@@ -19133,12 +19722,15 @@
             "sym": 10
           },
           "ru": 196,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "F"
+          ]
         }
       }
     },
     "1724": {
-      "name": "Temask",
+      "name": "Temasek",
       "column": 17,
       "row": 24,
       "star": {
@@ -19249,7 +19841,27 @@
               "size": 7,
               "starport": "B",
               "tech_level": 9,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -19785,7 +20397,7 @@
       }
     },
     "1815": {
-      "name": "Difektghintio",
+      "name": "Difektĝintio",
       "column": 18,
       "row": 15,
       "star": {
@@ -19845,7 +20457,21 @@
               "size": 6,
               "starport": "B",
               "tech_level": 9,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           }
         ],
@@ -19885,7 +20511,11 @@
             "sym": 9
           },
           "ru": 3520,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "M",
+            "M"
+          ]
         }
       }
     },
@@ -20337,12 +20967,17 @@
             "sym": 6
           },
           "ru": 28,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "N",
+            "N",
+            "F"
+          ]
         }
       }
     },
     "1915": {
-      "name": "Ŝipfarejio",
+      "name": "Sipfarejio",
       "column": 19,
       "row": 15,
       "star": {
@@ -20536,18 +21171,23 @@
             "sym": 5
           },
           "ru": 24,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "O",
+            "F",
+            "F"
+          ]
         }
       }
     },
     "1921": {
-      "name": "Sabana",
+      "name": "Sabanio",
       "column": 19,
       "row": 21,
       "star": {
-        "star_type": "M",
+        "star_type": "A",
         "star_size": 5,
-        "spectral": "M2",
+        "spectral": "A5",
         "bode_constant": 0.2,
         "type_dm": 0,
         "size_dm": 0,
@@ -20753,7 +21393,7 @@
           "starport": "B",
           "size": 2,
           "atmosphere": 4,
-          "hydrographics": 2,
+          "hydrographics": 4,
           "population": 8,
           "government": 8,
           "law_level": 8,
@@ -20764,25 +21404,25 @@
           ],
           "trade_codes": [
             "Ph",
-            "Pi",
-            "Po"
+            "Pa",
+            "Pi"
           ],
           "bases": "..G..",
           "travel_code": "..",
           "ix": 2,
           "ex": {
-            "res": 8,
+            "res": 7,
             "lab": 7,
-            "inf": 7,
-            "eff": -1
+            "inf": 9,
+            "eff": -2
           },
           "cx": {
-            "homo": 11,
+            "homo": 3,
             "acc": 10,
             "str": 5,
-            "sym": 8
+            "sym": 9
           },
-          "ru": -392,
+          "ru": -882,
           "native": "Settled"
         }
       }
@@ -21390,7 +22030,7 @@
       }
     },
     "2013": {
-      "name": "Sovaghio",
+      "name": "Sovaĝio",
       "column": 20,
       "row": 13,
       "star": {
@@ -22123,7 +22763,15 @@
               "size": 2,
               "starport": "C",
               "tech_level": 10,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           }
         ],
@@ -22578,7 +23226,11 @@
             "sym": 3
           },
           "ru": 8,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "M",
+            "F"
+          ]
         }
       }
     },
@@ -22627,7 +23279,21 @@
               "size": 8,
               "starport": "B",
               "tech_level": 11,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 6,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 6,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -22941,7 +23607,15 @@
               "size": 8,
               "starport": "D",
               "tech_level": 9,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -23410,7 +24084,7 @@
       }
     },
     "2217": {
-      "name": "Kegron",
+      "name": "Bixirjian",
       "column": 22,
       "row": 17,
       "star": {
@@ -23736,7 +24410,7 @@
       }
     },
     "2219": {
-      "name": "Merovinghio",
+      "name": "Merovingio",
       "column": 22,
       "row": 19,
       "star": {
@@ -23985,14 +24659,14 @@
           "orbit_type": "W",
           "zone": 0,
           "distant": false,
-          "starport": "X",
+          "starport": "A",
           "size": 7,
           "atmosphere": 6,
           "hydrographics": 7,
-          "population": 2,
+          "population": 8,
           "government": 3,
           "law_level": 5,
-          "tech_level": 2,
+          "tech_level": 10,
           "temperature": "T",
           "factions": [
             "S",
@@ -24000,26 +24674,27 @@
           ],
           "trade_codes": [
             "Ga",
-            "Lo",
-            "Lt"
+            "Ph",
+            "Pa",
+            "Ri"
           ],
           "bases": "..G..",
           "travel_code": "..",
-          "ix": -3,
+          "ix": 3,
           "ex": {
-            "res": 6,
-            "lab": 1,
-            "inf": 0,
-            "eff": -2
+            "res": 8,
+            "lab": 7,
+            "inf": 7,
+            "eff": 0
           },
           "cx": {
-            "homo": 1,
-            "acc": 1,
+            "homo": 10,
+            "acc": 11,
             "str": 6,
-            "sym": 1
+            "sym": 6
           },
-          "ru": -12,
-          "native": "Colony"
+          "ru": 392,
+          "native": "Settled"
         }
       }
     },
@@ -24052,7 +24727,21 @@
               "size": 5,
               "starport": "C",
               "tech_level": 7,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -24115,7 +24804,11 @@
             "sym": 10
           },
           "ru": -180,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "O",
+            "O"
+          ]
         }
       }
     },
@@ -25229,7 +25922,27 @@
               "size": 5,
               "starport": "D",
               "tech_level": 6,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -25680,7 +26393,11 @@
             "sym": 4
           },
           "ru": 1050,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "F",
+            "O"
+          ]
         }
       }
     },
@@ -26014,7 +26731,12 @@
             "sym": 9
           },
           "ru": -288,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "M",
+            "N",
+            "O"
+          ]
         }
       }
     },
@@ -26488,7 +27210,27 @@
               "size": 9,
               "starport": "A",
               "tech_level": 11,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 7,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 6,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 5,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -27147,7 +27889,11 @@
             "sym": 4
           },
           "ru": -480,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "O",
+            "O"
+          ]
         }
       }
     },
@@ -27811,7 +28557,11 @@
             "sym": 12
           },
           "ru": 864,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "M",
+            "O"
+          ]
         }
       }
     },
@@ -27938,7 +28688,10 @@
             "sym": 4
           },
           "ru": 200,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "F"
+          ]
         }
       }
     },
@@ -27971,7 +28724,27 @@
               "size": 9,
               "starport": "C",
               "tech_level": 10,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 7,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -28102,7 +28875,21 @@
               "size": 10,
               "starport": "D",
               "tech_level": 10,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 8,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -28209,7 +28996,27 @@
               "size": 5,
               "starport": "C",
               "tech_level": 5,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -28850,7 +29657,7 @@
       }
     },
     "2717": {
-      "name": "Eudora",
+      "name": "Eudorio",
       "column": 27,
       "row": 17,
       "star": {
@@ -29326,7 +30133,21 @@
               "size": 5,
               "starport": "D",
               "tech_level": 7,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -30118,7 +30939,10 @@
             "sym": 8
           },
           "ru": -160,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "O"
+          ]
         }
       }
     },
@@ -30151,7 +30975,15 @@
               "size": 4,
               "starport": "C",
               "tech_level": 7,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           }
         ],
@@ -30307,7 +31139,11 @@
             "sym": 1
           },
           "ru": -18,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "M",
+            "F"
+          ]
         }
       }
     },
@@ -30867,7 +31703,27 @@
               "size": 8,
               "starport": "E",
               "tech_level": 7,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 6,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 5,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -30929,7 +31785,10 @@
             "sym": 8
           },
           "ru": -4,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "N"
+          ]
         }
       }
     },
@@ -31239,7 +32098,27 @@
               "size": 8,
               "starport": "C",
               "tech_level": 10,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 5,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 5,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 7,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -31501,7 +32380,27 @@
               "size": 8,
               "starport": "B",
               "tech_level": 8,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 3,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -31836,7 +32735,10 @@
             "sym": 8
           },
           "ru": -252,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "O"
+          ]
         }
       }
     },
@@ -32012,7 +32914,8 @@
             "sym": 1
           },
           "ru": 56,
-          "native": ""
+          "native": "",
+          "factions": []
         }
       }
     },
@@ -32547,7 +33450,27 @@
               "size": 11,
               "starport": "B",
               "tech_level": 9,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 10,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 10,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 8,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -33151,7 +34074,27 @@
               "size": 8,
               "starport": "C",
               "tech_level": 0,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 5,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -33229,7 +34172,8 @@
             "sym": 1
           },
           "ru": 16,
-          "native": ""
+          "native": "",
+          "factions": []
         }
       }
     },
@@ -33738,7 +34682,7 @@
       }
     },
     "3016": {
-      "name": "Moni",
+      "name": "Monio",
       "column": 30,
       "row": 16,
       "star": {
@@ -33766,7 +34710,15 @@
               "size": 6,
               "starport": "B",
               "tech_level": 7,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -34339,12 +35291,16 @@
             "sym": 11
           },
           "ru": -55,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "F",
+            "N"
+          ]
         }
       }
     },
     "3111": {
-      "name": "York",
+      "name": "Johor",
       "column": 31,
       "row": 11,
       "star": {
@@ -34581,7 +35537,7 @@
       }
     },
     "3115": {
-      "name": "Chronos",
+      "name": "Sigurd",
       "column": 31,
       "row": 15,
       "star": {
@@ -34784,7 +35740,15 @@
               "size": 7,
               "starport": "D",
               "tech_level": 8,
-              "zone": 0
+              "zone": 0,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
             }
           },
           {
@@ -35263,7 +36227,12 @@
             "sym": 8
           },
           "ru": -280,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "O",
+            "M",
+            "O"
+          ]
         }
       }
     },
@@ -35975,7 +36944,10 @@
             "sym": 10
           },
           "ru": 30,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "M"
+          ]
         }
       }
     },
@@ -36153,7 +37125,10 @@
             "sym": 11
           },
           "ru": -352,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "O"
+          ]
         }
       }
     },
@@ -36397,7 +37372,11 @@
             "sym": 9
           },
           "ru": 832,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "O",
+            "M"
+          ]
         }
       }
     },
@@ -36903,7 +37882,12 @@
             "sym": 9
           },
           "ru": -12,
-          "native": "Colony"
+          "native": "Colony",
+          "factions": [
+            "O",
+            "N",
+            "M"
+          ]
         }
       }
     },
@@ -37277,7 +38261,10 @@
             "sym": 8
           },
           "ru": -1120,
-          "native": "Settled"
+          "native": "Settled",
+          "factions": [
+            "O"
+          ]
         }
       }
     },
@@ -37286,9 +38273,9 @@
       "column": 21,
       "row": 40,
       "star": {
-        "star_type": "F",
+        "star_type": "M",
         "star_size": 5,
-        "spectral": "F2",
+        "spectral": "M4",
         "bode_constant": 0.2,
         "type_dm": 0,
         "size_dm": 0,
@@ -37351,6 +38338,16 @@
               "au": 9.6,
               "orbit_number": 5,
               "orbit_type": "."
+            }
+          },
+          {
+            "type": "companion",
+            "data": {
+              "orbit_number": 5,
+              "au": 9.6,
+              "orbit_type": "S",
+              "star_classification": "DB",
+              "distant": false
             }
           }
         ],
@@ -37509,6 +38506,502 @@
           },
           "ru": -504,
           "native": "Settled"
+        }
+      }
+    },
+    "0320": {
+      "name": "Sorchakvio",
+      "column": 3,
+      "row": 20,
+      "star": {
+        "star_type": "M",
+        "star_size": 5,
+        "spectral": "M0",
+        "bode_constant": 0.2,
+        "has_gas_giant": true,
+        "orbit": 0,
+        "orbits": [
+          {
+            "type": "belt",
+            "data": {
+              "orbit_number": 0,
+              "au": 0.2,
+              "orbit_type": "B",
+              "zone": -1,
+              "distant": false
+            }
+          },
+          {
+            "type": "world",
+            "data": {
+              "orbit_number": 1,
+              "au": 0.4,
+              "orbit_type": "W",
+              "zone": 0,
+              "distant": false,
+              "starport": "C",
+              "size": 0,
+              "atmosphere": 0,
+              "hydrographics": 0,
+              "population": 3,
+              "government": 2,
+              "law_level": 1,
+              "tech_level": 8,
+              "temperature": "T",
+              "bases": ".",
+              "trade_codes": [
+                "As",
+                "Va",
+                "Lo"
+              ],
+              "factions": [
+                "N",
+                "M"
+              ],
+              "travel_code": "..",
+              "ix": -2,
+              "ex": {
+                "res": 7,
+                "lab": 2,
+                "inf": 0,
+                "eff": -2
+              },
+              "cx": {
+                "homo": 3,
+                "acc": 1,
+                "str": 1,
+                "sym": 8
+              },
+              "ru": -28,
+              "native": "Colony"
+            }
+          },
+          {
+            "type": "gas_giant",
+            "data": {
+              "orbit_number": 2,
+              "au": 0.8,
+              "orbit_type": "G",
+              "zone": 1,
+              "distant": false,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 1
+                },
+                {
+                  "orbit": 1,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
+            }
+          },
+          {
+            "type": "gas_giant",
+            "data": {
+              "orbit_number": 3,
+              "au": 1.6,
+              "orbit_type": "G",
+              "zone": 1,
+              "distant": false,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 1
+                },
+                {
+                  "orbit": 1,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
+            }
+          },
+          {
+            "type": "gas_giant",
+            "data": {
+              "orbit_number": 4,
+              "au": 3.2,
+              "orbit_type": "G",
+              "zone": 1,
+              "distant": false,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 1
+                },
+                {
+                  "orbit": 1,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
+            }
+          },
+          {
+            "type": "gas_giant",
+            "data": {
+              "orbit_number": 5,
+              "au": 6.4,
+              "orbit_type": "G",
+              "zone": 1,
+              "distant": false,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 1
+                },
+                {
+                  "orbit": 1,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
+            }
+          }
+        ],
+        "world": {
+          "orbit_number": 1,
+          "au": 0.4,
+          "orbit_type": "W",
+          "zone": 0,
+          "distant": false,
+          "starport": "C",
+          "size": 0,
+          "atmosphere": 0,
+          "hydrographics": 0,
+          "population": 3,
+          "government": 2,
+          "law_level": 1,
+          "tech_level": 8,
+          "temperature": "T",
+          "bases": ".",
+          "trade_codes": [
+            "As",
+            "Va",
+            "Lo"
+          ],
+          "factions": [
+            "N",
+            "M"
+          ],
+          "travel_code": "..",
+          "ix": -2,
+          "ex": {
+            "res": 7,
+            "lab": 2,
+            "inf": 0,
+            "eff": -2
+          },
+          "cx": {
+            "homo": 3,
+            "acc": 1,
+            "str": 1,
+            "sym": 8
+          },
+          "ru": -28,
+          "native": "Colony"
+        }
+      }
+    },
+    "3117": {
+      "name": "Dunatrio",
+      "column": 31,
+      "row": 17,
+      "star": {
+        "star_type": "G",
+        "star_size": 5,
+        "spectral": "G0",
+        "bode_constant": 0.4,
+        "has_gas_giant": true,
+        "orbit": 0,
+        "orbits": [
+          {
+            "type": "world",
+            "data": {
+              "orbit_number": 2,
+              "au": 0.8,
+              "orbit_type": "W",
+              "zone": 0,
+              "distant": false,
+              "starport": "C",
+              "size": 5,
+              "atmosphere": 5,
+              "hydrographics": 6,
+              "population": 7,
+              "government": 6,
+              "law_level": 2,
+              "tech_level": 8,
+              "temperature": "T",
+              "bases": ".",
+              "trade_codes": [
+                "Ag"
+              ],
+              "factions": [
+                "N",
+                "M"
+              ],
+              "travel_code": "..",
+              "ix": 0,
+              "ex": {
+                "res": 5,
+                "lab": 6,
+                "inf": 4,
+                "eff": 1
+              },
+              "cx": {
+                "homo": 10,
+                "acc": 7,
+                "str": 10,
+                "sym": 7
+              },
+              "ru": 120,
+              "native": "Settled",
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 0,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 1,
+                  "size": 1,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                },
+                {
+                  "orbit": 2,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
+            }
+          },
+          {
+            "type": "companion",
+            "data": {
+              "orbit_number": 3,
+              "au": 1.6,
+              "orbit_type": "S",
+              "star_classification": "M2 V",
+              "distant": false
+            }
+          },
+          {
+            "type": "gas_giant",
+            "data": {
+              "orbit_number": 4,
+              "au": 3.2,
+              "orbit_type": "G",
+              "zone": 1,
+              "distant": false,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 1
+                },
+                {
+                  "orbit": 1,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
+            }
+          },
+          {
+            "type": "belt",
+            "data": {
+              "orbit_number": 5,
+              "au": 6.4,
+              "orbit_type": "B",
+              "zone": -1,
+              "distant": false
+            }
+          }
+        ],
+        "world": {
+          "orbit_number": 2,
+          "au": 0.8,
+          "orbit_type": "W",
+          "zone": 0,
+          "distant": false,
+          "starport": "C",
+          "size": 5,
+          "atmosphere": 5,
+          "hydrographics": 6,
+          "population": 7,
+          "government": 6,
+          "law_level": 2,
+          "tech_level": 8,
+          "temperature": "T",
+          "bases": ".",
+          "trade_codes": [
+            "Ag"
+          ],
+          "factions": [
+            "N",
+            "M"
+          ],
+          "travel_code": "..",
+          "ix": 0,
+          "ex": {
+            "res": 5,
+            "lab": 6,
+            "inf": 4,
+            "eff": 1
+          },
+          "cx": {
+            "homo": 10,
+            "acc": 7,
+            "str": 10,
+            "sym": 7
+          },
+          "ru": 120,
+          "native": "Settled"
+        }
+      }
+    },
+    "1018": {
+      "name": "Rosendanio",
+      "column": 10,
+      "row": 18,
+      "star": {
+        "star_type": "M",
+        "star_size": 5,
+        "spectral": "M2",
+        "bode_constant": 0.3,
+        "has_gas_giant": true,
+        "orbit": 0,
+        "orbits": [
+          {
+            "type": "world",
+            "data": {
+              "orbit_number": 2,
+              "au": 0.8,
+              "orbit_type": "W",
+              "zone": 0,
+              "distant": false,
+              "starport": "E",
+              "size": 6,
+              "atmosphere": 6,
+              "hydrographics": 5,
+              "population": 0,
+              "government": 0,
+              "law_level": 0,
+              "tech_level": 0,
+              "temperature": "T",
+              "bases": ".",
+              "trade_codes": [
+                "Ga",
+                "Ba",
+                "Lt"
+              ],
+              "factions": [
+                "N",
+                "M"
+              ],
+              "travel_code": "AZ",
+              "ix": -3,
+              "ex": {
+                "res": 6,
+                "lab": 0,
+                "inf": 0,
+                "eff": 3
+              },
+              "cx": {
+                "homo": 2,
+                "acc": 1,
+                "str": 7,
+                "sym": 2
+              },
+              "ru": 18,
+              "native": ""
+            }
+          },
+          {
+            "type": "gas_giant",
+            "data": {
+              "orbit_number": 4,
+              "au": 3.2,
+              "orbit_type": "G",
+              "zone": 1,
+              "distant": false,
+              "moons": [
+                {
+                  "orbit": 0,
+                  "size": 4,
+                  "atmosphere": 0,
+                  "hydrographics": 1
+                },
+                {
+                  "orbit": 1,
+                  "size": 2,
+                  "atmosphere": 0,
+                  "hydrographics": 0
+                }
+              ]
+            }
+          }
+        ],
+        "world": {
+          "orbit_number": 2,
+          "au": 0.8,
+          "orbit_type": "W",
+          "zone": 0,
+          "distant": false,
+          "starport": "E",
+          "size": 6,
+          "atmosphere": 6,
+          "hydrographics": 5,
+          "population": 0,
+          "government": 0,
+          "law_level": 0,
+          "tech_level": 0,
+          "temperature": "T",
+          "bases": ".",
+          "trade_codes": [
+            "Ga",
+            "Ba",
+            "Lt"
+          ],
+          "factions": [
+            "N",
+            "M"
+          ],
+          "travel_code": "AZ",
+          "ix": -3,
+          "ex": {
+            "res": 6,
+            "lab": 0,
+            "inf": 0,
+            "eff": 3
+          },
+          "cx": {
+            "homo": 2,
+            "acc": 1,
+            "str": 7,
+            "sym": 2
+          },
+          "ru": 18,
+          "native": ""
         }
       }
     }
