@@ -4,8 +4,11 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 -------- --------- ---- ----- ----------- ------------ ------------- ------------- ----
 
 # Subsector A
-0801     D739333-7 F    S     Lo          N S          M4V           W.BBS....S    Anacreon
+0801     D739333-7 F    S     Lo          N S          M4V           W.BBS....S    Anacreon  { -3 } (B20-1) [2123] RU:-22  Colony
   --  1. *  W // D739333-7 //  0.2 au
+     -- Moon 1: Size 5 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    B // 000000-0 //  1.6 au
@@ -16,8 +19,10 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-0402     D262466-4 T    SG    Lt,NI       O            M4V           WG....S       G'iri
+0402     D262466-4 T    SG    Ni Lt       O            M4V           WG....S       G'iri  { -3 } (635-5) [7144] RU:-450  Colony
   --  1. *  W // D262466-4 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 4
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
@@ -25,96 +30,178 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // 000000-0 // 12.8 au
 
-0703     C95A122-7 T    GP    Lo          F M N        F5V           ...WG.S       Golter
+0703     C95A122-7 T    GP    Wa Lo       F M N        F5V           ...WG.S       Golter  { -2 } (A00-3) [1157] RU:-30  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // C95A122-7 //  2.4 au
+     -- Moon 1: Size 7 Atmo 0 Hydro 5
   --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 7
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 3 Hydro 6
+     -- Moon 4: Size 6 Atmo 2 Hydro 5
+     -- Moon 5: Size 4 Atmo 0 Hydro 6
   --  6.    . // .......-. //  9.6 au
   --  7.    S // 000000-0 // 19.2 au
 
-0504     E82A669-6 T    G     NI          M            M4V           W.B.G....S    Borthal
+0504     E82A669-6 T    G     Wa Ni       M            M4V           W.B.G....S    Borthal  { -3 } (651-2) [5381] RU:-60  Colony
   --  1. *  W // E82A669-6 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 0 Hydro 2
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 4 Atmo 0 Hydro 3
+     -- Moon 6: Size 2 Atmo 0 Hydro 6
+     -- Moon 7: Size 5 Atmo 1 Hydro 3
   --  6.    . // .......-. //  6.4 au
   --  7. -  . // .......-. // 12.8 au
   --  8. -  . // .......-. // 25.6 au
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-0604     E658777-7 T    G     Ag          M M N S      M4V           W.G.B         Arachna
+0604     E658777-7 T    G     Ag          M M N S      M4V           W.G.B         Arachna  { -1 } (468-4) [6669] RU:-768  Settled
   --  1. *  W // E658777-7 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 1
+     -- Moon 2: Size 2 Atmo 0 Hydro 2
+     -- Moon 3: Size 4 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 4
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 2 Hydro 3
+     -- Moon 4: Size 4 Atmo 1 Hydro 5
+     -- Moon 5: Size 7 Atmo 3 Hydro 1
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
   --  4.    . // .......-. //  1.6 au
   --  5.    B // 000000-0 //  3.2 au
 
-0305     D7698AA-8 T    SG    Ri          N            M4V           WG            Arwy
+0305     D7698AA-8 T    SG    Ph Ri       N            M4V           WG            Arwy  { -1 } (C76-5) [4738] RU:-2520  Settled
   --  1. *  W // D7698AA-8 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 7
+     -- Moon 2: Size 3 Atmo 0 Hydro 2
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 5
+     -- Moon 5: Size 4 Atmo 0 Hydro 3
+     -- Moon 6: Size 1 Atmo 0 Hydro 4
 
-0405     C464666-6 T    G     Ag,NI,Ri    M            F0III         ...WG.BGB     Midworld
+0405     C464666-6 T    G     Ni Ag Ri    M            F0III         ...WG.BGB     Midworld  { +0 } (854+0) [4647] RU:160  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3.    . // .......-. //  1.3 au
   --  4. *  W // C464666-6 //  2.5 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  5.    G // 000000-0 //  4.9 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 4
+     -- Moon 2: Size 4 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 5
+     -- Moon 4: Size 1 Atmo 0 Hydro 2
+     -- Moon 5: Size 7 Atmo 3 Hydro 7
+     -- Moon 6: Size 8 Atmo 4 Hydro 6
+     -- Moon 7: Size 7 Atmo 3 Hydro 1
+     -- Moon 8: Size 1 Atmo 0 Hydro 2
+     -- Moon 9: Size 4 Atmo 1 Hydro 3
+     -- Moon 10: Size 3 Atmo 0 Hydro 1
+     -- Moon 11: Size 0 Atmo 0 Hydro 0
   --  6.    . // .......-. //  9.7 au
   --  7.    B // 000000-0 // 19.3 au
   --  8.    G // 000000-0 // 38.5 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 3
+     -- Moon 2: Size 1 Atmo 0 Hydro 3
+     -- Moon 3: Size 2 Atmo 0 Hydro 2
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 2 Hydro 1
+     -- Moon 6: Size 1 Atmo 0 Hydro 6
   --  9.    B // 000000-0 // 76.9 au
 
-0505     B5A558A-B T    G     Fl,NI       M            G5V           ..WG.B        Cerklicing
+0505     B5A558A-B T    G     Fl Ni       M            G5V           ..WG.B        Cerklicing  { +1 } (645+0) [866B] RU:120  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // B5A558A-B //  1.6 au
   --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 7
+     -- Moon 2: Size 4 Atmo 0 Hydro 1
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 5 Atmo 1 Hydro 6
+     -- Moon 5: Size 1 Atmo 0 Hydro 3
+     -- Moon 6: Size 5 Atmo 3 Hydro 4
   --  5.    . // .......-. //  6.4 au
   --  6.    B // 000000-0 // 12.8 au
 
-0805     C515599-9 F    P     IC,NI       F            M6V           W             Bizmant
+0805     C515599-9 F    P     Ic Ni       F            M6V           W             Bizmant  { -1 } (741+2) [7488] RU:56  Colony
   --  1. *  W // C515599-9 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
 
-0207     AB3A155-B F    N     Lo          M M O        M4V           W             Nhar-Gk'ok
+0207     AB3A155-B F    N     Oc Lo       M M O        M4V           W             Nhar-Gk'ok  { +1 } (400-4) [328D] RU:-16  Colony
   --  1. *  W // AB3A155-B //  0.2 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 4
 
-0307     D579889-8 T    .                 M            M4V           WB.           Labura
+0307     D579889-8 T    .     Ph Pi       M            M4V           WB.           Labura  { -2 } (775-2) [9637] RU:-490  Settled
   --  1. *  W // D579889-8 //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
 
-0607     E747333-5 T    .     Lo,Lt       N            F2V           .B.W.         Van Maanan
+0607     E747333-5 T    .     Lo Lt       N            F2V           .B.W.         Van Maanan  { -3 } (920+2) [1177] RU:36  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    B // 000000-0 //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // E747333-5 //  2.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 1
+     -- Moon 2: Size 1 Atmo 0 Hydro 3
   --  5.    . // .......-. //  4.8 au
 
-0108     B767000-0 T    GC    Ba,Lt                    F0V           .BWGG.        Wardhaven
+0108     B767000-0 T    GC    Ga Lt                    F0V           .BWGG.        Wardhaven  { -1 } (303+0) [2161] RU:9  
   --  1.    . // .......-. //  0.4 au
   --  2.    B // 000000-0 //  0.8 au
   --  3. *  W // B767000-0 //  1.6 au
   --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 4 Atmo 1 Hydro 0
+     -- Moon 5: Size 5 Atmo 4 Hydro 2
+     -- Moon 6: Size 4 Atmo 1 Hydro 4
+     -- Moon 7: Size 6 Atmo 2 Hydro 7
   --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 1
   --  6.    . // .......-. // 12.8 au
 
-0208     EB4A555-6 F    G     NI          N M O        M2V           WG            Orsha
+0208     EB4A555-6 F    G     Oc Ni       N M O        M2V           WG            Orsha  { -3 } (746+0) [124A] RU:168  Colony
   --  1. *  W // EB4A555-6 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 2 Hydro 2
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 5 Atmo 1 Hydro 3
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 3
+     -- Moon 7: Size 8 Atmo 6 Hydro 2
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+     -- Moon 9: Size 4 Atmo 0 Hydro 4
 
-0109     B637599-B F    NSGC  NI                       M6V           WB..GG        We Made It
+0109     B637599-B F    NSGC  Ni                       M6V           WB..GG        We Made It  { +2 } (E43+2) [7779] RU:336  Colony
   --  1. *  W // B637599-B //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 1 Hydro 2
   --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 1
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
 
-0309     B647444-9 T    NG    NI          F            M2III         ....WBG       Alexandria
+0309     B647444-9 T    NG    Ni Pa       F            M2III         ....WBG       Alexandria  { +0 } (A35+0) [1426] RU:150  Colony
   --  1.    . // .......-. //  0.5 au
   --  2.    . // .......-. //  0.9 au
   --  3.    . // .......-. //  1.7 au
@@ -122,39 +209,81 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5. *  W // B647444-9 //  6.5 au
   --  6.    B // 000000-0 // 12.9 au
   --  7.    G // 000000-0 // 25.7 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 6
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 1
+     -- Moon 4: Size 5 Atmo 1 Hydro 5
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 5 Atmo 1 Hydro 3
+     -- Moon 7: Size 5 Atmo 2 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 1
+     -- Moon 9: Size 3 Atmo 0 Hydro 2
+     -- Moon 10: Size 5 Atmo 1 Hydro 7
 
-0409     B72779C-7 T    SGC               M            F0V           ...WG.G       Pirri
+0409     B72779C-7 T    SGC   Pi          M            F0V           ...WG.G       Pirri  { +0 } (86B-2) [8769] RU:-1056  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // B72779C-7 //  2.4 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 0 Hydro 1
   --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 2
   --  6.    . // .......-. //  9.6 au
   --  7.    G // 000000-0 // 19.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 1 Hydro 3
+     -- Moon 3: Size 5 Atmo 1 Hydro 3
+     -- Moon 4: Size 3 Atmo 0 Hydro 3
+     -- Moon 5: Size 4 Atmo 0 Hydro 2
+     -- Moon 6: Size 1 Atmo 1 Hydro 6
 
-0809     D5858DF-8 T    SG    Ri          N M          G2V           ..WG.GG       Orban
+0809     D5858DF-8 T    SG    Ph Pa Ri    N M          G2V           ..WG.GG       Orban  { -1 } (577+2) [574C] RU:490  Settled
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // D5858DF-8 //  1.6 au
   --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 2
+     -- Moon 3: Size 1 Atmo 0 Hydro 5
+     -- Moon 4: Size 5 Atmo 1 Hydro 3
   --  5.    . // .......-. //  6.4 au
   --  6.    G // 000000-0 // 12.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 5
+     -- Moon 3: Size 3 Atmo 0 Hydro 1
+     -- Moon 4: Size 4 Atmo 0 Hydro 6
+     -- Moon 5: Size 1 Atmo 0 Hydro 1
   --  7.    G // 000000-0 // 25.6 au
+     -- Moon 1: Size 7 Atmo 8 Hydro 5
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 7
 
 
 # Subsector B
-1201     E949556-5 T    G     Lt,NI                    F5IV          ...WGG..S     Pradesh
+1201     E949556-5 T    G     Ni Lt                    F5IV          ...WGG..S     Pradesh  { -3 } (543-2) [3274] RU:-120  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3.    . // .......-. //  1.4 au
   --  4. *  W // E949556-5 //  2.8 au
   --  5.    G // 000000-0 //  5.6 au
   --  6.    G // 000000-0 // 11.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 2
+     -- Moon 2: Size 2 Atmo 0 Hydro 8
+     -- Moon 3: Size 3 Atmo 3 Hydro 0
+     -- Moon 4: Size 4 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 6
+     -- Moon 6: Size 2 Atmo 2 Hydro 5
+     -- Moon 7: Size 6 Atmo 6 Hydro 0
   --  7.    . // .......-. // 22.4 au
   --  8.    . // .......-. // 44.8 au
   --  9. -  S // 000000-0 // 89.6 au
 
-1002     E679789-7 T    .                 N F          M0V           W........S    Hamshiltristia
+1002     E679789-7 T    .     Pi          N F          M0V           W........S    Hamshiltristia  { -2 } (96A-1) [7563] RU:-540  Settled
   --  1. *  W // E679789-7 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
@@ -166,29 +295,51 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-1402     BA4A111-B T    NS    Lo          F            F5V           ...W..        Tiercel
+1402     BA4A111-B T    NS    Oc Lo       F            F5V           ...W..        Tiercel  { +2 } (500+1) [138C] RU:5  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // BA4A111-B //  2.4 au
+     -- Moon 1: Size 5 Atmo 0 Hydro 0
+     -- Moon 2: Size 9 Atmo 0 Hydro 0
+     -- Moon 3: Size 7 Atmo 0 Hydro 5
   --  5.    . // .......-. //  4.8 au
   --  6.    . // .......-. //  9.6 au
 
-0903     C76AAAA-A T    G     Hi                       F0V           ..WGB         Korvel
+0903     C76AAAA-A T    G     Wa Hi                    F0V           ..WGB         Korvel  { +2 } (C9A+4) [AC5E] RU:4320  Settled
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // C76AAAA-A //  1.6 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 0 Hydro 3
   --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 5 Atmo 2 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 2
+     -- Moon 4: Size 2 Atmo 0 Hydro 5
+     -- Moon 5: Size 1 Atmo 0 Hydro 4
+     -- Moon 6: Size 5 Atmo 1 Hydro 5
+     -- Moon 7: Size 2 Atmo 0 Hydro 4
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
   --  5.    B // 000000-0 //  6.4 au
 
-1104     E569888-8 T    G     Ri                       M0V           WGGGS         Q
+1104     E569888-8 T    G     Ph Ri                    M0V           WGGGS         Q  { -1 } (978+0) [A79A] RU:504  Settled
   --  1. *  W // E569888-8 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 3
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
+     -- Moon 4: Size 5 Atmo 1 Hydro 0
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 1
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 2
   --  5.    S // 000000-0 //  3.2 au
 
-1304     C26599D-9 H    S     Hi          M            M6II          ......W...    Flesk
+1304     C26599D-9 H    S     Hi Pr Ho    M            M6II          ......W...    Flesk  { +1 } (489-3) [7A76] RU:-864  Settled
   --  1.    . // .......-. //  0.7 au
   --  2.    . // .......-. //  1.0 au
   --  3.    . // .......-. //  1.7 au
@@ -196,78 +347,160 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5.    . // .......-. //  5.9 au
   --  6.    . // .......-. // 11.5 au
   --  7. *  W // C26599D-9 // 22.7 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
   --  8.    . // .......-. // 45.1 au
   --  9.    . // .......-. // 89.9 au
   -- 10.    . // .......-. // 179.5 au
 
-1105     D646333-4 T    .     Lo,Lt                    F0V           ...W.BS       Tintamarre
+1105     D646333-4 T    .     Lo Lt                    F0V           ...W.BS       Tintamarre  { -3 } (A20+1) [5117] RU:20  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // D646333-4 //  2.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
   --  5.    . // .......-. //  4.8 au
   --  6.    B // 000000-0 //  9.6 au
   --  7.    S // 000000-0 // 19.2 au
 
-1205     DA4A788-7 T    S                 F            M6V           W...S         Agora
+1205     DA4A788-7 T    S     Oc Pi       F            M6V           W...S         Agora  { -2 } (C63-2) [8535] RU:-432  Settled
   --  1. *  W // DA4A788-7 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-1405     D53A111-8 C    SG    Lo          O            M0V           WGG.S         Telmun
+1405     D53A111-8 C    SG    Wa Lo Co    O            M0V           WGG.S         Telmun  { -3 } (E00+2) [116B] RU:28  Colony
   --  1. *  W // D53A111-8 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 3 Atmo 1 Hydro 7
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 1 Hydro 5
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 4
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 5 Atmo 3 Hydro 5
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 1 Hydro 6
+     -- Moon 2: Size 2 Atmo 2 Hydro 4
+     -- Moon 3: Size 8 Atmo 4 Hydro 1
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 2 Atmo 0 Hydro 5
+     -- Moon 8: Size 1 Atmo 0 Hydro 4
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-1507     C243777-9 C    SG    Po          M O          M2V           W.GGS         Cynthia
+1507     C243777-9 C    SG    Pi Po Co    M O          M2V           W.GGS         Cynthia  { +0 } (B64+1) [57A7] RU:264  Settled
   --  1. *  W // C243777-9 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 5
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 1 Atmo 2 Hydro 0
+     -- Moon 2: Size 4 Atmo 0 Hydro 4
+     -- Moon 3: Size 2 Atmo 0 Hydro 5
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
   --  5.    S // 000000-0 //  3.2 au
 
-0908     D565555-5 T    SG    Ag,Lt,NI    M            M0V           WG.GGG        Folsom
+0908     D565555-5 T    SG    Ni Ag Pr Lt M            M0V           WG.GGG        Folsom  { -2 } (741-4) [7391] RU:-112  Colony
   --  1. *  W // D565555-5 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 1 Hydro 4
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 7
   --  3.    . // .......-. //  0.8 au
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 4
+     -- Moon 2: Size 4 Atmo 2 Hydro 3
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 4 Atmo 1 Hydro 6
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 1
+     -- Moon 2: Size 3 Atmo 2 Hydro 1
+     -- Moon 3: Size 8 Atmo 7 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 5 Atmo 1 Hydro 8
+     -- Moon 7: Size 5 Atmo 1 Hydro 7
+     -- Moon 8: Size 2 Atmo 0 Hydro 7
   --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 5
+     -- Moon 2: Size 2 Atmo 0 Hydro 2
+     -- Moon 3: Size 7 Atmo 3 Hydro 3
+     -- Moon 4: Size 6 Atmo 4 Hydro 2
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 7 Atmo 3 Hydro 4
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+     -- Moon 9: Size 5 Atmo 4 Hydro 0
+     -- Moon 10: Size 4 Atmo 1 Hydro 0
 
 
 # Subsector C
-2301     X2626AA-6 T    .     NI,Ri       F            M2V           WB            Dragon End
+2301     X2626AA-6 T    .     Ni Ri       F            M2V           WB            Dragon End  { -2 } (551+3) [B451] RU:75  Colony
   --  1. *  W // X2626AA-6 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
   --  2.    B // 000000-0 //  0.4 au
 
-2202     A75779A-8 T    GC    Ag          O            M4V           WG            Hablu
+2202     A75779A-8 T    GC    Ga Ag       O            M4V           WG            Hablu  { +1 } (B67+3) [6869] RU:1386  Settled
   --  1. *  W // A75779A-8 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 0 Hydro 0
+     -- Moon 3: Size 6 Atmo 0 Hydro 3
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 4
+     -- Moon 2: Size 2 Atmo 0 Hydro 6
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
 
-2403     E491666-8 R    G     NI                       G2V           ..WGB         Sargon
+2403     E491666-8 R    G     He Ni                    G2V           ..WGB         Sargon  { -3 } (756+5) [6324] RU:1050  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // E491666-8 //  1.6 au
   --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 7 Atmo 6 Hydro 0
+     -- Moon 5: Size 5 Atmo 3 Hydro 1
+     -- Moon 6: Size 4 Atmo 0 Hydro 6
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
   --  5.    B // 000000-0 //  6.4 au
 
-2407     DBA86AA-9 H    GP    Fl,NI       F            M6V           WGG....S      Rohini
+2407     DBA86AA-9 H    GP    Fl Ni Ho    F            M6V           WGG....S      Rohini  { -2 } (C52-1) [1479] RU:-120  Colony
   --  1. *  W // DBA86AA-9 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 1
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 1 Hydro 5
+     -- Moon 4: Size 5 Atmo 1 Hydro 0
+     -- Moon 5: Size 5 Atmo 1 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 3
+     -- Moon 7: Size 1 Atmo 0 Hydro 2
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 2 Atmo 1 Hydro 3
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
   --  6.    . // .......-. //  6.4 au
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // 000000-0 // 25.6 au
 
-1710     B356566-A T    SG    Ag,NI       N O F        M0V           WG.......S    Hospital
+1710     B356566-A T    SG    Ni Ag       N O F        M0V           WG.......S    Hospital  { +2 } (A41+1) [6727] RU:40  Colony
   --  1. *  W // B356566-A //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 2
+     -- Moon 3: Size 5 Atmo 6 Hydro 3
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
@@ -279,23 +512,27 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 
 # Subsector D
-2703     C959555-A T    G     NI          N            M2V           W.BBBG        Flobee Mission
+2703     C959555-A T    G     Ni          N            M2V           W.BBBG        Flobee Mission  { +0 } (B43+3) [759C] RU:396  Colony
   --  1. *  W // C959555-A //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    B // 000000-0 //  1.6 au
   --  5.    B // 000000-0 //  3.2 au
   --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 3 Hydro 4
 
-2705     DA5A67A-A T    .     NI          M            M6V           WB.           Tock
+2705     DA5A67A-A T    .     Oc Ni       M            M6V           WB.           Tock  { -1 } (753+2) [458A] RU:210  Colony
   --  1. *  W // DA5A67A-A //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
 
-2805     C696448-9 T    S     NI          O N          M2V           W             Jm'ho
+2805     C696448-9 T    S     Ni Pa       O N          M2V           W             Jm'ho  { -1 } (634-4) [536D] RU:-288  Colony
   --  1. *  W // C696448-9 //  0.2 au
+     -- Moon 1: Size 5 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
 
-2905     B828222-8 T    GC    Lo          F M F        M4II          ....B.WG.G    Dregocia
+2905     B828222-8 T    GC    Lo          F M F        M4II          ....B.WG.G    Dregocia  { -1 } (810+1) [5145] RU:8  Colony
   --  1.    . // .......-. //  0.7 au
   --  2.    . // .......-. //  1.0 au
   --  3.    . // .......-. //  1.7 au
@@ -304,38 +541,81 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  6.    . // .......-. // 11.5 au
   --  7. *  W // B828222-8 // 22.7 au
   --  8.    G // 000000-0 // 45.1 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 5
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 7 Atmo 3 Hydro 4
+     -- Moon 5: Size 7 Atmo 3 Hydro 7
+     -- Moon 6: Size 4 Atmo 2 Hydro 3
+     -- Moon 7: Size 1 Atmo 0 Hydro 3
+     -- Moon 8: Size 7 Atmo 3 Hydro 0
   --  9.    . // .......-. // 89.9 au
   -- 10.    G // 000000-0 // 179.5 au
 
-3005     B802337-B F    C     IC,Lo,Va    N M M        M6V           W...S         Germania
+3005     B802337-B F    C     Ic Va Lo    N M M        M6V           W...S         Germania  { +1 } (820-4) [644A] RU:-64  Colony
   --  1. *  W // B802337-B //  0.2 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 7 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-2706     C536335-5 F    SG    Lo,Lt       F            G0V           ..WGBGB       Cheyne
+2706     C536335-5 F    SG    Lo Lt       F            G0V           ..WGBGB       Cheyne  { -2 } (420+2) [5183] RU:16  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // C536335-5 //  1.6 au
   --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 4
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 4
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 1 Hydro 4
   --  5.    B // 000000-0 //  6.4 au
   --  6.    G // 000000-0 // 12.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 6
+     -- Moon 3: Size 2 Atmo 0 Hydro 1
+     -- Moon 4: Size 3 Atmo 0 Hydro 2
   --  7.    B // 000000-0 // 25.6 au
 
-2607     D688599-5 T    SG    Ag,Lt,NI    N            F5V           ..WG.GGG      Jast
+2607     D688599-5 T    SG    Ni Ag Pr Lt N            F5V           ..WG.GGG      Jast  { -2 } (742+1) [8346] RU:56  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // D688599-5 //  1.6 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  3.2 au
   --  5.    . // .......-. //  6.4 au
   --  6.    G // 000000-0 // 12.8 au
+     -- Moon 1: Size 5 Atmo 6 Hydro 2
+     -- Moon 2: Size 6 Atmo 2 Hydro 5
+     -- Moon 3: Size 2 Atmo 0 Hydro 6
+     -- Moon 4: Size 1 Atmo 0 Hydro 1
+     -- Moon 5: Size 2 Atmo 0 Hydro 4
+     -- Moon 6: Size 2 Atmo 0 Hydro 3
+     -- Moon 7: Size 4 Atmo 0 Hydro 3
   --  7.    G // 000000-0 // 25.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 1
+     -- Moon 2: Size 3 Atmo 0 Hydro 2
+     -- Moon 3: Size 7 Atmo 3 Hydro 5
+     -- Moon 4: Size 1 Atmo 0 Hydro 4
   --  8.    G // 000000-0 // 51.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 1 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
 
-2707     D929222-9 C    SG    Lo          N N          M2V           WG.....S      Carsus
+2707     D929222-9 C    SG    Lo Co       N N          M2V           WG.....S      Carsus  { -2 } (910+1) [1116] RU:9  Colony
   --  1. *  W // D929222-9 //  0.2 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 0
+     -- Moon 2: Size 8 Atmo 0 Hydro 1
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 4
+     -- Moon 2: Size 4 Atmo 3 Hydro 2
+     -- Moon 3: Size 5 Atmo 1 Hydro 1
+     -- Moon 4: Size 5 Atmo 1 Hydro 1
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
@@ -343,31 +623,68 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // 000000-0 // 25.6 au
 
-2708     C8A6777-9 H    SG    Fl          O O          G2V           ...WBGS       Kegron Pluva
+2708     C8A6777-9 H    SG    Fl Ho       O O          G2V           ...WBGS       Kegron Pluva  { +0 } (669+3) [973C] RU:972  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // C8A6777-9 //  2.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 0 Hydro 0
+     -- Moon 3: Size 7 Atmo 0 Hydro 0
   --  5.    B // 000000-0 //  4.8 au
   --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 1
+     -- Moon 2: Size 6 Atmo 2 Hydro 4
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
   --  7.    S // 000000-0 // 19.2 au
 
-2908     E9797AA-7 T    G                              M4V           WBGG          Jm'ho
+2908     E9797AA-7 T    G     Pi                       M4V           WBGG          Jm'ho  { -2 } (367-2) [4578] RU:-252  Settled
   --  1. *  W // E9797AA-7 //  0.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 0
   --  2.    B // 000000-0 //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 4
+     -- Moon 2: Size 5 Atmo 1 Hydro 1
+     -- Moon 3: Size 2 Atmo 0 Hydro 7
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 1
+     -- Moon 6: Size 4 Atmo 5 Hydro 7
+     -- Moon 7: Size 7 Atmo 4 Hydro 0
+     -- Moon 8: Size 3 Atmo 0 Hydro 1
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 2
+     -- Moon 2: Size 1 Atmo 0 Hydro 7
+     -- Moon 3: Size 4 Atmo 1 Hydro 3
+     -- Moon 4: Size 1 Atmo 0 Hydro 5
+     -- Moon 5: Size 2 Atmo 0 Hydro 5
 
-2909     C898000-0 T    SG    Ba,Lt                    M0V           W.G           Dracon
+2909     C898000-0 T    SG    Lt                       M0V           W.G           Dracon  { -2 } (708+0) [1181] RU:56  
   --  1. *  W // C898000-0 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 2
+     -- Moon 2: Size 7 Atmo 0 Hydro 2
   --  2.    . // .......-. //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 2 Atmo 2 Hydro 4
+     -- Moon 2: Size 4 Atmo 1 Hydro 2
+     -- Moon 3: Size 5 Atmo 1 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 3
+     -- Moon 5: Size 1 Atmo 0 Hydro 2
+     -- Moon 6: Size 5 Atmo 5 Hydro 3
+     -- Moon 7: Size 3 Atmo 0 Hydro 5
+     -- Moon 8: Size 4 Atmo 0 Hydro 2
+     -- Moon 9: Size 4 Atmo 0 Hydro 8
+     -- Moon 10: Size 5 Atmo 1 Hydro 6
 
-3010     C84A788-7 F    .                 N            F0IV          ..BWB....S    Camelot
+3010     C84A788-7 F    .     Wa Pi       N            F0IV          ..BWB....S    Camelot  { -1 } (568+1) [5615] RU:240  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    B // 000000-0 //  1.2 au
   --  4. *  W // C84A788-7 //  2.4 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 2
   --  5.    B // 000000-0 //  4.8 au
   --  6.    . // .......-. //  9.6 au
   --  7.    . // .......-. // 19.2 au
@@ -377,90 +694,152 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 
 # Subsector E
-0111     C545888-8 T    SG                N            M6V           W..S          Rigel
+0111     C545888-8 T    SG    Ph Pa Pi    N            M6V           W..S          Rigel  { -1 } (97A+0) [8747] RU:630  Settled
   --  1. *  W // C545888-8 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    S // 000000-0 //  1.6 au
 
-0811     A73A68A-A F    GC    NI          S F          G5V           B.W.G         Kaihapiota
+0811     A73A68A-A F    GC    Wa Ni       S F          G5V           B.W.G         Kaihapiota  { +1 } (B56+0) [675D] RU:330  Colony
   --  1.    B // 000000-0 //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // A73A68A-A //  1.6 au
   --  4.    . // .......-. //  3.2 au
   --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 1 Hydro 5
+     -- Moon 4: Size 1 Atmo 0 Hydro 4
+     -- Moon 5: Size 5 Atmo 1 Hydro 2
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 6
+     -- Moon 8: Size 1 Atmo 0 Hydro 3
 
-0212     CA7A000-0 T    .     Ba,Lt                    M2V           W             Plookesia
+0212     CA7A000-0 T    .     Oc Lt                    M2V           W             Plookesia  { -2 } (905+4) [3191] RU:180  
   --  1. *  W // CA7A000-0 //  0.2 au
 
-0612     DB3A666-6 T    S     NI          N S          M6V           W             Timdo
+0612     DB3A666-6 T    S     Oc Ni       N S          M6V           W             Timdo  { -3 } (951+0) [933A] RU:45  Colony
   --  1. *  W // DB3A666-6 //  0.2 au
+     -- Moon 1: Size 8 Atmo 0 Hydro 0
+     -- Moon 2: Size 8 Atmo 0 Hydro 0
 
-0812     C474555-8 T    P     Ag,NI       F S          F5V           .B.W..S       Krepuskio
+0812     C474555-8 T    P     Ni Ag       F S          F5V           .B.W..S       Krepuskio  { -1 } (941+0) [344A] RU:36  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    B // 000000-0 //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // C474555-8 //  2.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 2
   --  5.    . // .......-. //  4.8 au
   --  6.    . // .......-. //  9.6 au
   --  7.    S // 000000-0 // 19.2 au
 
-0313     D556266-4 C    S     Lo,Lt       S            M2V           WB            Clom
+0313     D556266-4 C    S     Lo Lt Co    S            M2V           WB            Clom  { -3 } (810+1) [6121] RU:8  Colony
   --  1. *  W // D556266-4 //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
 
-0413     B748999-9 T    NSG   Hi,In       S            M2V           WG..S         Shoa
+0413     B748999-9 T    NSG   Hi In       S            M2V           WG..S         Shoa  { +4 } (789-1) [7D79] RU:-504  Settled
   --  1. *  W // B748999-9 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 1
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-0813     C68A223-A T    G     Lo          N O          K5III         ....WBGGG     Silvergalde
+0813     C68A223-A T    G     Wa Lo       N O          K5III         ....WBGGG     Silvergalde  { +0 } (910+3) [126D] RU:27  Colony
   --  1.    . // .......-. //  0.5 au
   --  2.    . // .......-. //  0.8 au
   --  3.    . // .......-. //  1.5 au
   --  4.    . // .......-. //  2.9 au
   --  5. *  W // C68A223-A //  5.7 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
   --  6.    B // 000000-0 // 11.3 au
   --  7.    G // 000000-0 // 22.5 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 3
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 1 Hydro 3
+     -- Moon 5: Size 3 Atmo 0 Hydro 5
+     -- Moon 6: Size 1 Atmo 0 Hydro 1
+     -- Moon 7: Size 1 Atmo 0 Hydro 3
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+     -- Moon 9: Size 2 Atmo 0 Hydro 0
   --  8.    G // 000000-0 // 44.9 au
+     -- Moon 1: Size 3 Atmo 1 Hydro 6
+     -- Moon 2: Size 3 Atmo 0 Hydro 5
+     -- Moon 3: Size 1 Atmo 0 Hydro 4
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 2 Hydro 3
   --  9.    G // 000000-0 // 89.7 au
 
-0614     CA5A88A-8 T    .                              M4V           W             Tnp
+0614     CA5A88A-8 T    .     Oc Ph                    M4V           W             Tnp  { -1 } (A71+2) [8745] RU:140  Settled
   --  1. *  W // CA5A88A-8 //  0.2 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 0
 
-0315     C64677B-A T    .     Ag          F M          A5IV          ...BW         Dinadh
+0315     C64677B-A T    .     Ag Pi       F M          A5IV          ...BW         Dinadh  { +2 } (46C-4) [8937] RU:-1152  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4.    B // 000000-0 //  2.4 au
   --  5. *  W // C64677B-A //  4.8 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 1
+     -- Moon 2: Size 4 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
 
-0418     C86A9DE-9 T    SG    Hi                       M6V           WGGG          Mynjhiro
+0418     C86A9DE-9 T    SG    Wa Hi Pr                 M6V           WGGG          Mynjhiro  { +1 } (D87-4) [AA59] RU:-2912  Settled
   --  1. *  W // C86A9DE-9 //  0.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 1
+     -- Moon 2: Size 5 Atmo 0 Hydro 1
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 6
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 6
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 6 Atmo 3 Hydro 4
+     -- Moon 2: Size 5 Atmo 1 Hydro 2
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 4 Atmo 2 Hydro 4
+     -- Moon 5: Size 5 Atmo 2 Hydro 2
+     -- Moon 6: Size 4 Atmo 1 Hydro 2
+     -- Moon 7: Size 8 Atmo 9 Hydro 1
+     -- Moon 8: Size 5 Atmo 1 Hydro 5
+     -- Moon 9: Size 4 Atmo 0 Hydro 7
+     -- Moon 10: Size 4 Atmo 0 Hydro 5
+     -- Moon 11: Size 2 Atmo 0 Hydro 2
+     -- Moon 12: Size 5 Atmo 1 Hydro 4
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 2
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
 
-0718     C919222-8 F    SC    IC,Lo       F S M        M2V           W             Tollana
+0718     C919222-8 F    SC    Ic Lo       F S M        M2V           W             Tollana  { -2 } (910+0) [2155] RU:9  Colony
   --  1. *  W // C919222-8 //  0.2 au
 
-0818     B676333-7 T    SC    Lo          M            M4III         .BB.WS        Zahnah
+0818     B676333-7 T    SC    Lo          M            M4III         .BB.WS        Zahnah  { -1 } (520+2) [5266] RU:20  Colony
   --  1.    . // .......-. //  0.5 au
   --  2.    B // 000000-0 //  0.8 au
   --  3.    B // 000000-0 //  1.5 au
   --  4.    . // .......-. //  2.9 au
   --  5. *  W // B676333-7 //  5.7 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 2
   --  6.    S // 000000-0 // 11.3 au
 
-0219     A676666-8 T    NS    Ag,NI       M F          M4V           W..S          Miranda
+0219     A676666-8 T    NS    Ni Ag       M F          M4V           W..S          Miranda  { +1 } (854+0) [572C] RU:160  Colony
   --  1. *  W // A676666-8 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 1
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    S // 000000-0 //  1.6 au
 
-0419     CA2A666-7 T    G     NI          N F          F2III         ..BW.BGB      Asagarth
+0419     CA2A666-7 T    G     Oc Ni       N F          F2III         ..BW.BGB      Asagarth  { -2 } (851-3) [9468] RU:-120  Colony
   --  1.    . // .......-. //  0.5 au
   --  2.    . // .......-. //  0.9 au
   --  3.    B // 000000-0 //  1.7 au
@@ -470,44 +849,80 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  7.    G // 000000-0 // 25.7 au
   --  8.    B // 000000-0 // 51.3 au
 
-0720     E797122-8 T    G     Lo          S            M2V           WGGGGB        Virshafio
+0720     E797122-8 T    G     Lo          S            M2V           WGGGGB        Virshafio  { -3 } (B00+1) [2166] RU:11  Colony
   --  1. *  W // E797122-8 //  0.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 3
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 4 Hydro 1
+     -- Moon 4: Size 3 Atmo 0 Hydro 3
+     -- Moon 5: Size 6 Atmo 2 Hydro 0
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 3
+     -- Moon 2: Size 6 Atmo 2 Hydro 0
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
   --  6.    B // 000000-0 //  6.4 au
 
 
 # Subsector F
-1111     B546444-B T    GC    NI          N S          M0III         ....WG        Tanhusio
+1111     B546444-B T    GC    Ni Pa       N S          M0III         ....WG        Tanhusio  { +1 } (A33+0) [354D] RU:90  Colony
   --  1.    . // .......-. //  0.5 au
   --  2.    . // .......-. //  0.8 au
   --  3.    . // .......-. //  1.5 au
   --  4.    . // .......-. //  2.9 au
   --  5. *  W // B546444-B //  5.7 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 0
   --  6.    G // 000000-0 // 11.3 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 1
+     -- Moon 4: Size 2 Atmo 0 Hydro 2
 
-1311     D445688-7 T    G     Ag,NI       P N F        M2V           WG..GB        Ithavoll
+1311     D445688-7 T    G     Ni Ag       P N F        M2V           WG..GB        Ithavoll  { -2 } (455+0) [A468] RU:100  Colony
   --  1. *  W // D445688-7 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 3
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 1 Hydro 1
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 5 Atmo 4 Hydro 2
   --  6.    B // 000000-0 //  6.4 au
 
-1411     B95A7AA-A F    .                 F            F5V           ...W.S        Mollan
+1411     B95A7AA-A F    .     Wa          F            F5V           ...W.S        Mollan  { +2 } (769+3) [493C] RU:1134  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // B95A7AA-A //  2.4 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 1
+     -- Moon 2: Size 5 Atmo 0 Hydro 1
+     -- Moon 3: Size 3 Atmo 0 Hydro 3
   --  5.    . // .......-. //  4.8 au
   --  6.    S // 000000-0 //  9.6 au
 
-1612     D694555-8 T    SG    Ag,NI       F N M        M4V           WBG.BB...S    Sicily
+1612     D694555-8 T    SG    Ni Ag       F N M        M4V           WBG.BB...S    Sicily  { -2 } (644+1) [7377] RU:96  Colony
   --  1. *  W // D694555-8 //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 3 Hydro 4
+     -- Moon 3: Size 6 Atmo 4 Hydro 2
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 5 Atmo 1 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 6
+     -- Moon 7: Size 4 Atmo 0 Hydro 3
+     -- Moon 8: Size 4 Atmo 2 Hydro 2
+     -- Moon 9: Size 5 Atmo 1 Hydro 1
+     -- Moon 10: Size 5 Atmo 1 Hydro 3
+     -- Moon 11: Size 2 Atmo 0 Hydro 0
   --  4.    . // .......-. //  1.6 au
   --  5.    B // 000000-0 //  3.2 au
   --  6.    B // 000000-0 //  6.4 au
@@ -516,35 +931,57 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-1313     C548555-6 T    G     Ag,NI       F S F        G0V           ..WS          Plateau
+1313     C548555-6 T    G     Ni Ag       F S F        G0V           ..WS          Plateau  { -1 } (643+0) [1426] RU:72  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // C548555-6 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
   --  4.    S // 000000-0 //  3.2 au
 
-1414     BA84779-B T    GC    Ag,Ri                    M4V           WG.S          Vanaheim
+1414     BA84779-B T    GC    Ag Ri                    M4V           WG.S          Vanaheim  { +4 } (96A+4) [7B8E] RU:2160  Settled
   --  1. *  W // BA84779-B //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 1
   --  3.    . // .......-. //  0.8 au
   --  4.    S // 000000-0 //  1.6 au
 
-1514     A787445-B T    NG    NI          S S          M4V           W.G.G         Maugham Station
+1514     A787445-B T    NG    Ga Ni Pa    S S          M4V           W.G.G         Maugham Station  { +1 } (933+0) [352C] RU:81  Colony
   --  1. *  W // A787445-B //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
   --  4.    . // .......-. //  1.6 au
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 6 Atmo 2 Hydro 2
+     -- Moon 2: Size 4 Atmo 1 Hydro 7
+     -- Moon 3: Size 5 Atmo 1 Hydro 0
+     -- Moon 4: Size 4 Atmo 2 Hydro 1
+     -- Moon 5: Size 8 Atmo 4 Hydro 2
+     -- Moon 6: Size 1 Atmo 0 Hydro 6
+     -- Moon 7: Size 1 Atmo 0 Hydro 5
+     -- Moon 8: Size 4 Atmo 0 Hydro 3
 
-1516     B242555-A T    NSG   NI,Po       M            G5V           .BWGBBG       Sharya
+1516     B242555-A T    NSG   Ni Po       M            G5V           .BWGBBG       Sharya  { +2 } (B46+2) [A75C] RU:528  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    B // 000000-0 //  0.8 au
   --  3. *  W // B242555-A //  1.6 au
   --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 3
+     -- Moon 2: Size 1 Atmo 0 Hydro 1
+     -- Moon 3: Size 2 Atmo 0 Hydro 2
   --  5.    B // 000000-0 //  6.4 au
   --  6.    B // 000000-0 // 12.8 au
   --  7.    G // 000000-0 // 25.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 4
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 7 Atmo 3 Hydro 4
+     -- Moon 4: Size 6 Atmo 3 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
 
-1017     D50366B-8 F    G     IC,Na,NI,Va N M          F0V           B.W..BG       Pivetio
+1017     D50366B-8 F    G     Ic Va Ni Na N M          F0V           B.W..BG       Pivetio  { -3 } (852+4) [1326] RU:320  Colony
   --  1.    B // 000000-0 //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // D50366B-8 //  1.6 au
@@ -552,8 +989,12 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5.    . // .......-. //  6.4 au
   --  6.    B // 000000-0 // 12.8 au
   --  7.    G // 000000-0 // 25.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 4
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 4
 
-1217     EA8A8AA-8 T    G     Ri          N            F0V           ...W.S        Pellin
+1217     EA8A8AA-8 T    G     Oc Ph Ri    N            F0V           ...W.S        Pellin  { -1 } (478+1) [8737] RU:224  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
@@ -561,57 +1002,93 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5.    . // .......-. //  4.8 au
   --  6.    S // 000000-0 //  9.6 au
 
-1617     C150556-B C    G     De,NI,Po    M            M4V           WG            Archimedes
+1617     C150556-B C    G     De Ni Po Co M            M4V           WG            Archimedes  { +0 } (B46+0) [558B] RU:264  Colony
   --  1. *  W // C150556-B //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 3
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
 
-1219     CA18555-9 F    GC    IC,NI       N            M6V           WG..G..S      Guna
+1219     CA18555-9 F    GC    Ic Ni       N            M6V           WG..G..S      Guna  { -1 } (A44+1) [8439] RU:160  Colony
   --  1. *  W // CA18555-9 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 3
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 3
+     -- Moon 3: Size 4 Atmo 2 Hydro 3
+     -- Moon 4: Size 5 Atmo 1 Hydro 3
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
   --  6.    . // .......-. //  6.4 au
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // 000000-0 // 25.6 au
 
-1619     D457477-6 T    SG    NI          M            M0V           WBGB          Bravo
+1619     D457477-6 T    SG    Ni Pa       M            M0V           WBGB          Bravo  { -3 } (836+1) [3159] RU:144  Colony
   --  1. *  W // D457477-6 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 2
+     -- Moon 2: Size 3 Atmo 0 Hydro 4
   --  2.    B // 000000-0 //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 2
+     -- Moon 2: Size 3 Atmo 0 Hydro 8
+     -- Moon 3: Size 3 Atmo 0 Hydro 4
+     -- Moon 4: Size 6 Atmo 2 Hydro 0
+     -- Moon 5: Size 4 Atmo 1 Hydro 3
+     -- Moon 6: Size 3 Atmo 0 Hydro 3
+     -- Moon 7: Size 8 Atmo 5 Hydro 1
   --  4.    B // 000000-0 //  1.6 au
 
-0920     C5538BB-8 H    S     Po                       M2V           WB            Sinsanmio
+0920     C5538BB-8 H    S     Ph Po Ho                 M2V           WB            Sinsanmio  { -1 } (876+1) [B728] RU:336  Settled
   --  1. *  W // C5538BB-8 //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
 
 
 # Subsector G
-1711     C9A9777-A T    G     Fl          M M          M4V           WGB..S        Clyth
+1711     C9A9777-A T    G     Fl          M M          M4V           WGB..S        Clyth  { +1 } (C6C-3) [5846] RU:-2592  Settled
   --  1. *  W // C9A9777-A //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 3
   --  3.    B // 000000-0 //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
   --  6.    S // 000000-0 //  6.4 au
 
-2013     A535888-B T    N                 F M N        M2V           W             Sovaghio
+2013     A535888-B T    N     Ph          F M N        M2V           W             Sovaghio  { +2 } (47C+1) [AA6B] RU:336  Settled
   --  1. *  W // A535888-B //  0.2 au
 
-1815     B616999-9 F    NS    Hi,IC,In                 A0IV          S...W         Difektghintio
+1815     B616999-9 F    NS    Ic Hi In                 A0IV          S...W         Difektghintio  { +4 } (88B+5) [CD59] RU:3520  Settled
   --  1.    S // 000000-0 //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3.    . // .......-. //  1.4 au
   --  4.    . // .......-. //  2.8 au
   --  5. *  W // B616999-9 //  5.6 au
 
-1915     B949111-7 F    NSGC  Lo                       M0V           WG.G          Ŝipfarejio
+1915     B949111-7 F    NSGC  Lo                       M0V           WG.G          Ŝipfarejio  { +0 } (800+3) [3155] RU:24  Colony
   --  1. *  W // B949111-7 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 5
+     -- Moon 2: Size 1 Atmo 0 Hydro 3
+     -- Moon 3: Size 6 Atmo 2 Hydro 2
+     -- Moon 4: Size 6 Atmo 2 Hydro 1
+     -- Moon 5: Size 7 Atmo 3 Hydro 4
+     -- Moon 6: Size 3 Atmo 2 Hydro 5
+     -- Moon 7: Size 7 Atmo 3 Hydro 3
+     -- Moon 8: Size 6 Atmo 3 Hydro 2
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
   --  3.    . // .......-. //  0.8 au
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 3 Atmo 3 Hydro 7
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 5
 
-2115     B868558-B T    G     Ag,NI       N N S        F5V           ..WG...S      Rymok
+2115     B868558-B T    G     Ni Ag Pr    N N S        F5V           ..WG...S      Rymok  { +2 } (942-4) [876D] RU:-288  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // B868558-B //  1.6 au
@@ -621,38 +1098,102 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  7.    . // .......-. // 25.6 au
   --  8.    S // 000000-0 // 51.2 au
 
-2016     B606555-B F    SG    IC,NI,Va    N            G0V           ...WBS        Panghandruio
+2016     B606555-B F    SG    Ic Va Ni    N            G0V           ...WBS        Panghandruio  { +1 } (741-1) [5658] RU:-28  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // B606555-B //  2.4 au
+     -- Moon 1: Size 5 Atmo 0 Hydro 0
   --  5.    B // 000000-0 //  4.8 au
   --  6.    S // 000000-0 //  9.6 au
 
-2316     C264333-A C    G     Lo          F N S        K2V           .W.GGGG       Euakovio
+2316     C264333-A C    G     Lo Co       F N S        K2V           .W.GGGG       Euakovio  { +0 } (A20-3) [434D] RU:-60  Colony
   --  1.    . // .......-. //  0.3 au
   --  2. *  W // C264333-A //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4.    G // 000000-0 //  2.4 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 2
+     -- Moon 2: Size 1 Atmo 0 Hydro 5
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 7 Atmo 3 Hydro 3
   --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 6 Atmo 4 Hydro 7
+     -- Moon 3: Size 3 Atmo 0 Hydro 2
+     -- Moon 4: Size 1 Atmo 0 Hydro 2
+     -- Moon 5: Size 6 Atmo 6 Hydro 4
+     -- Moon 6: Size 3 Atmo 0 Hydro 2
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+     -- Moon 9: Size 3 Atmo 0 Hydro 0
+     -- Moon 10: Size 0 Atmo 0 Hydro 0
+     -- Moon 11: Size 8 Atmo 4 Hydro 5
+     -- Moon 12: Size 6 Atmo 2 Hydro 2
   --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 5
+     -- Moon 3: Size 8 Atmo 4 Hydro 3
+     -- Moon 4: Size 3 Atmo 0 Hydro 3
+     -- Moon 5: Size 4 Atmo 3 Hydro 0
   --  7.    G // 000000-0 // 19.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 5
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
 
-2017     B838699-8 F    NG    NI          M S          M2V           WGGGG         Adiantio
+2017     B838699-8 F    NG    Ni          M S          M2V           WGGGG         Adiantio  { -1 } (A56+0) [3586] RU:300  Colony
   --  1. *  W // B838699-8 //  0.2 au
+     -- Moon 1: Size 5 Atmo 0 Hydro 4
+     -- Moon 2: Size 5 Atmo 0 Hydro 4
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 1 Hydro 1
+     -- Moon 3: Size 5 Atmo 1 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 1
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 1 Atmo 0 Hydro 0
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 6 Atmo 3 Hydro 4
+     -- Moon 2: Size 4 Atmo 0 Hydro 8
+     -- Moon 3: Size 5 Atmo 2 Hydro 0
+     -- Moon 4: Size 5 Atmo 1 Hydro 4
+     -- Moon 5: Size 4 Atmo 0 Hydro 3
+     -- Moon 6: Size 1 Atmo 0 Hydro 4
+     -- Moon 7: Size 3 Atmo 0 Hydro 6
+     -- Moon 8: Size 4 Atmo 2 Hydro 1
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
+     -- Moon 10: Size 1 Atmo 0 Hydro 0
+     -- Moon 11: Size 5 Atmo 1 Hydro 1
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 6
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 1 Hydro 3
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 2 Hydro 2
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 4 Atmo 2 Hydro 3
+     -- Moon 2: Size 1 Atmo 0 Hydro 2
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
 
-2217     C767777-7 T    SG    Ag,Ri       N M S        F5V           ...WG         Kegron
+2217     C767777-7 T    SG    Ga Ag Ri    N M S        F5V           ...WG         Kegron  { +1 } (46A-1) [4838] RU:-240  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // C767777-7 //  2.4 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 2
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 6 Atmo 0 Hydro 1
   --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 1 Hydro 2
+     -- Moon 3: Size 3 Atmo 0 Hydro 6
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 4 Atmo 0 Hydro 3
 
-1718     B898ACC-A T    N     Hi,In       N            M2V           W........S    Vodais
+1718     B898ACC-A T    N     Hi In       N            M2V           W........S    Vodais  { +4 } (39A-3) [AE69] RU:-810  Settled
   --  1. *  W // B898ACC-A //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
@@ -664,42 +1205,74 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-2018     C343577-8 T    G     NI,Po       M N N        M2V           W...G         Chiron
+2018     C343577-8 T    G     Ni Po       M N N        M2V           W...G         Chiron  { -2 } (643-3) [3365] RU:-216  Colony
   --  1. *  W // C343577-8 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 1
+     -- Moon 2: Size 0 Atmo 0 Hydro 5
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
 
-2218     D636569-5 C    G     Lt,NI       N            M2V           W.GG          Vendetio
+2218     D636569-5 C    G     Ni Lt Co    N            M2V           W.GG          Vendetio  { -3 } (745+2) [8212] RU:280  Colony
   --  1. *  W // D636569-5 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 4 Atmo 3 Hydro 1
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 4
+     -- Moon 2: Size 3 Atmo 0 Hydro 4
+     -- Moon 3: Size 2 Atmo 0 Hydro 2
 
-1719     C959888-8 T    S                              M6V           W             Vanaheim
+1719     C959888-8 T    S     Ph                       M6V           W             Vanaheim  { -1 } (774+1) [A72A] RU:196  Settled
   --  1. *  W // C959888-8 //  0.2 au
 
-2019     C280448-A R    S     De,NI       S M M        F2V           ...W          Smyrno
+2019     C280448-A R    S     De Ni       S M M        F2V           ...W          Smyrno  { +0 } (635-2) [643A] RU:-180  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // C280448-A //  2.4 au
 
-2219     X767235-2 T    G     Lo,Lt       S F          K5IV          ..WG.GGGB     Merovinghio
+2219     X767235-2 T    G     Ga Lo Lt    S F          K5IV          ..WG.GGGB     Merovinghio  { -3 } (610-2) [1161] RU:-12  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3. *  W // X767235-2 //  1.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 1
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  2.8 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 5
+     -- Moon 2: Size 4 Atmo 1 Hydro 6
+     -- Moon 3: Size 5 Atmo 5 Hydro 4
+     -- Moon 4: Size 6 Atmo 6 Hydro 7
+     -- Moon 5: Size 2 Atmo 0 Hydro 1
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
   --  5.    . // .......-. //  5.6 au
   --  6.    G // 000000-0 // 11.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 1
+     -- Moon 2: Size 8 Atmo 4 Hydro 8
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
   --  7.    G // 000000-0 // 22.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  8.    G // 000000-0 // 44.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 3
+     -- Moon 3: Size 1 Atmo 0 Hydro 3
   --  9.    B // 000000-0 // 89.6 au
 
-2320     C61688A-8 F    SGP   IC          S O          K5V           .WB.S....S    SK
+2320     C61688A-8 F    SGP   Ic Ph Pi    S O          K5V           .WB.S....S    SK  { -1 } (47A+0) [8758] RU:280  Settled
   --  1.    . // .......-. //  0.3 au
   --  2. *  W // C61688A-8 //  0.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 4
   --  3.    B // 000000-0 //  1.2 au
   --  4.    . // .......-. //  2.4 au
   --  5.    S // 000000-0 //  4.8 au
@@ -711,89 +1284,209 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 
 # Subsector H
-3111     E130333-7 T    G     De,Lo,Po    O F          G8IV          ...WG.BG      York
+3111     E130333-7 T    G     De Lo Po    O F          G8IV          ...WG.BG      York  { -3 } (420+1) [6165] RU:8  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3.    . // .......-. //  1.4 au
   --  4. *  W // E130333-7 //  2.8 au
   --  5.    G // 000000-0 //  5.6 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 1 Hydro 2
+     -- Moon 3: Size 3 Atmo 0 Hydro 6
+     -- Moon 4: Size 4 Atmo 0 Hydro 6
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 6 Atmo 3 Hydro 7
   --  6.    . // .......-. // 11.2 au
   --  7.    B // 000000-0 // 22.4 au
   --  8.    G // 000000-0 // 44.8 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 6
+     -- Moon 2: Size 4 Atmo 2 Hydro 3
+     -- Moon 3: Size 1 Atmo 0 Hydro 5
+     -- Moon 4: Size 7 Atmo 3 Hydro 3
+     -- Moon 5: Size 7 Atmo 3 Hydro 7
+     -- Moon 6: Size 5 Atmo 3 Hydro 2
+     -- Moon 7: Size 4 Atmo 0 Hydro 0
+     -- Moon 8: Size 5 Atmo 4 Hydro 4
 
-3211     EB5A344-8 T    G     Lo          M S          M4V           W..G          Candela
+3211     EB5A344-8 T    G     Oc Lo       M S          M4V           W..G          Candela  { -3 } (820+1) [2164] RU:16  Colony
   --  1. *  W // EB5A344-8 //  0.2 au
+     -- Moon 1: Size 8 Atmo 0 Hydro 0
+     -- Moon 2: Size 6 Atmo 0 Hydro 0
+     -- Moon 3: Size 6 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 2
+     -- Moon 2: Size 6 Atmo 2 Hydro 6
+     -- Moon 3: Size 6 Atmo 3 Hydro 0
+     -- Moon 4: Size 4 Atmo 0 Hydro 1
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 4 Atmo 0 Hydro 6
+     -- Moon 8: Size 2 Atmo 0 Hydro 4
+     -- Moon 9: Size 2 Atmo 0 Hydro 8
+     -- Moon 10: Size 2 Atmo 0 Hydro 4
+     -- Moon 11: Size 2 Atmo 0 Hydro 3
+     -- Moon 12: Size 3 Atmo 2 Hydro 2
 
-2713     E668888-8 T    G     Ri          M            M2V           WG            Abaddon
+2713     E668888-8 T    G     Ph Pa Ri    M            M2V           WG            Abaddon  { -1 } (976-3) [8767] RU:-1134  Settled
   --  1. *  W // E668888-8 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 7
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 6 Atmo 4 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 5
 
-2813     C567466-4 T    GC    Lt,NI       F            M0V           WBGGG         Far Dingle
+2813     C567466-4 T    GC    Ni Pa Lt    F            M0V           WBGGG         Far Dingle  { -2 } (931-1) [3248] RU:-27  Colony
   --  1. *  W // C567466-4 //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 2
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
 
-2913     E74A444-9 T    G     NI          F            K5V           .WGGBGG       Bohraj
+2913     E74A444-9 T    G     Wa Ni       F            K5V           .WGGBGG       Bohraj  { -2 } (D31+0) [1249] RU:39  Colony
   --  1.    . // .......-. //  0.3 au
   --  2. *  W // E74A444-9 //  0.6 au
   --  3.    G // 000000-0 //  1.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 2
+     -- Moon 2: Size 2 Atmo 0 Hydro 6
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 2
   --  4.    G // 000000-0 //  2.4 au
+     -- Moon 1: Size 1 Atmo 1 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
   --  5.    B // 000000-0 //  4.8 au
   --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 1 Hydro 6
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 6
+     -- Moon 5: Size 1 Atmo 0 Hydro 8
+     -- Moon 6: Size 6 Atmo 2 Hydro 7
   --  7.    G // 000000-0 // 19.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 0 Hydro 3
+     -- Moon 3: Size 3 Atmo 0 Hydro 4
+     -- Moon 4: Size 7 Atmo 7 Hydro 3
+     -- Moon 5: Size 1 Atmo 0 Hydro 8
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 6
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+     -- Moon 9: Size 1 Atmo 1 Hydro 2
+     -- Moon 10: Size 3 Atmo 1 Hydro 5
+     -- Moon 11: Size 5 Atmo 1 Hydro 3
+     -- Moon 12: Size 2 Atmo 0 Hydro 4
 
-3213     E658445-7 T    G     NI                       F5V           ...WBGGB      Brevor
+3213     E658445-7 T    G     Ni Pa                    F5V           ...WBGGB      Brevor  { -3 } (A31+0) [517A] RU:30  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // E658445-7 //  2.4 au
   --  5.    B // 000000-0 //  4.8 au
   --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 2
+     -- Moon 3: Size 5 Atmo 1 Hydro 4
+     -- Moon 4: Size 4 Atmo 4 Hydro 3
+     -- Moon 5: Size 1 Atmo 0 Hydro 2
   --  7.    G // 000000-0 // 19.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 1
+     -- Moon 3: Size 1 Atmo 0 Hydro 5
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
   --  8.    B // 000000-0 // 38.4 au
 
-2514     D83A556-9 T    SG    NI          M            M6V           WGBG          Alzarius
+2514     D83A556-9 T    SG    Wa Ni       M            M6V           WGBG          Alzarius  { -2 } (943+3) [6399] RU:324  Colony
   --  1. *  W // D83A556-9 //  0.2 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 1 Hydro 6
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 1
+     -- Moon 6: Size 1 Atmo 0 Hydro 1
   --  3.    B // 000000-0 //  0.8 au
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
 
-2814     E377578-9 T    G     Ag,NI       M            M2V           WGGG          Riddle
+2814     E377578-9 T    G     Ni Ag       M            M2V           WGGG          Riddle  { -1 } (D41-3) [243C] RU:-156  Colony
   --  1. *  W // E377578-9 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 2
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 1
+     -- Moon 2: Size 5 Atmo 3 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 0 Hydro 1
+     -- Moon 5: Size 5 Atmo 1 Hydro 1
+     -- Moon 6: Size 1 Atmo 0 Hydro 7
+     -- Moon 7: Size 5 Atmo 5 Hydro 8
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 4 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 7 Atmo 3 Hydro 4
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 1
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 1
+     -- Moon 2: Size 5 Atmo 1 Hydro 6
+     -- Moon 3: Size 5 Atmo 1 Hydro 2
+     -- Moon 4: Size 1 Atmo 0 Hydro 1
+     -- Moon 5: Size 2 Atmo 0 Hydro 4
+     -- Moon 6: Size 3 Atmo 1 Hydro 6
+     -- Moon 7: Size 6 Atmo 2 Hydro 0
+     -- Moon 8: Size 6 Atmo 5 Hydro 7
+     -- Moon 9: Size 7 Atmo 3 Hydro 0
+     -- Moon 10: Size 4 Atmo 0 Hydro 3
 
-3014     C677666-6 T    .     Ag,NI       M S M        M4V           W...S         Jean
+3014     C677666-6 T    .     Ni Ag       M S M        M4V           W...S         Jean  { -1 } (553+0) [A579] RU:75  Colony
   --  1. *  W // C677666-6 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-2815     E858112-7 T    .     Lo                       M2V           W.B.          Jawbone
+2815     E858112-7 T    .     Lo                       M2V           W.B.          Jawbone  { -3 } (200-2) [1128] RU:-4  Colony
   --  1. *  W // E858112-7 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    . // .......-. //  1.6 au
 
-3115     C535ADF-A T    C     Hi          S            F2V           ...W          Chronos
+3115     C535ADF-A T    C     Hi          S            F2V           ...W          Chronos  { +2 } (C99+1) [7C69] RU:972  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // C535ADF-A //  2.4 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 4
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
 
-2916     C604336-8 F    G     IC,Lo,Va    N N          M6V           WGG           The Pit
+2916     C604336-8 F    G     Ic Va Lo    N N          M6V           WGG           The Pit  { -2 } (620+1) [3155] RU:12  Colony
   --  1. *  W // C604336-8 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 2
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 4
+     -- Moon 2: Size 1 Atmo 0 Hydro 3
+     -- Moon 3: Size 3 Atmo 0 Hydro 2
+     -- Moon 4: Size 7 Atmo 3 Hydro 4
+     -- Moon 5: Size 3 Atmo 0 Hydro 5
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 4 Atmo 3 Hydro 4
+     -- Moon 8: Size 3 Atmo 1 Hydro 4
+     -- Moon 9: Size 3 Atmo 0 Hydro 3
 
-3016     B676444-7 T    SC    NI          N S M        M4V           W.B....S      Moni
+3016     B676444-7 T    SC    Ni Pa       N S M        M4V           W.B....S      Moni  { -1 } (A32-5) [4347] RU:-300  Colony
   --  1. *  W // B676444-7 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
@@ -803,43 +1496,89 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // 000000-0 // 25.6 au
 
-3116     D767257-8 T    SG    Lo          M O M        G0V           G.W.G...S     Valhalla
+3116     D767257-8 T    SG    Ga Lo       M O M        G0V           G.W.G...S     Valhalla  { -3 } (610+0) [1189] RU:6  Colony
   --  1.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 1 Hydro 0
+     -- Moon 4: Size 6 Atmo 2 Hydro 0
+     -- Moon 5: Size 6 Atmo 2 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // D767257-8 //  1.6 au
   --  4.    . // .......-. //  3.2 au
   --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 7
   --  6.    . // .......-. // 12.8 au
   --  7.    . // .......-. // 25.6 au
   --  8. -  . // .......-. // 51.2 au
   --  9. -  S // 000000-0 // 102.4 au
 
-2717     C82A588-B F    GCP   NI          O            M2V           WGGG          Eudora
+2717     C82A588-B F    GCP   Wa Ni       O            M2V           WGGG          Eudora  { +0 } (842+2) [5578] RU:128  Colony
   --  1. *  W // C82A588-B //  0.2 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 3
+     -- Moon 3: Size 2 Atmo 0 Hydro 2
+     -- Moon 4: Size 1 Atmo 0 Hydro 2
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 3
+     -- Moon 3: Size 4 Atmo 0 Hydro 6
+     -- Moon 4: Size 1 Atmo 1 Hydro 4
+     -- Moon 5: Size 5 Atmo 1 Hydro 4
+     -- Moon 6: Size 3 Atmo 0 Hydro 2
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 1 Atmo 0 Hydro 0
+     -- Moon 9: Size 7 Atmo 7 Hydro 3
 
-2718     A666335-B C    GC    Lo          O            F5V           ..WGG         Casagan
+2718     A666335-B C    GC    Ga Lo Co Tu O            F5V           ..WGG         Casagan  { +1 } (A20+0) [144B] RU:20  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // A666335-B //  1.6 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 2
+     -- Moon 2: Size 2 Atmo 0 Hydro 4
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  3.2 au
   --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 3
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 5
+     -- Moon 4: Size 3 Atmo 0 Hydro 6
+     -- Moon 5: Size 5 Atmo 3 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 2
+     -- Moon 7: Size 2 Atmo 0 Hydro 0
 
-3218     D82A9BE-9 F    SG    Hi,In                    M6II          .....GWG.B    Aldebaran
+3218     D82A9BE-9 F    SG    Wa Hi In                 M6II          .....GWG.B    Aldebaran  { +1 } (A87-2) [DA78] RU:-1120  Settled
   --  1.    . // .......-. //  0.7 au
   --  2.    . // .......-. //  1.0 au
   --  3.    . // .......-. //  1.7 au
   --  4.    . // .......-. //  3.1 au
   --  5.    . // .......-. //  5.9 au
   --  6.    G // 000000-0 // 11.5 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 7 Atmo 4 Hydro 0
+     -- Moon 3: Size 5 Atmo 1 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 5 Atmo 3 Hydro 0
+     -- Moon 6: Size 3 Atmo 1 Hydro 0
+     -- Moon 7: Size 1 Atmo 0 Hydro 0
   --  7. *  W // D82A9BE-9 // 22.7 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 4
   --  8.    G // 000000-0 // 45.1 au
+     -- Moon 1: Size 1 Atmo 1 Hydro 1
+     -- Moon 2: Size 2 Atmo 0 Hydro 1
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
   --  9.    . // .......-. // 89.9 au
   -- 10.    B // 000000-0 // 179.5 au
 
-2519     A93A777-B C    C                 S O          F2V           .B.WB.B       Madrona
+2519     A93A777-B C    C     Wa Co       S O          F2V           .B.WB.B       Madrona  { +2 } (A6A-2) [595B] RU:-1200  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    B // 000000-0 //  0.6 au
   --  3.    . // .......-. //  1.2 au
@@ -848,16 +1587,25 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  6.    . // .......-. //  9.6 au
   --  7.    B // 000000-0 // 19.2 au
 
-2619     C748237-9 F    GC    Lo          F N M        F5IV          ..BW.GB       Cynthia
+2619     C748237-9 F    GC    Lo          F N M        F5IV          ..BW.GB       Cynthia  { -1 } (A10+1) [1186] RU:10  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3.    B // 000000-0 //  1.4 au
   --  4. *  W // C748237-9 //  2.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 0 Hydro 0
   --  5.    . // .......-. //  5.6 au
   --  6.    G // 000000-0 // 11.2 au
+     -- Moon 1: Size 5 Atmo 3 Hydro 2
+     -- Moon 2: Size 2 Atmo 0 Hydro 3
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 1
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
   --  7.    B // 000000-0 // 22.4 au
 
-2719     D548233-7 T    SG    Lo          N O F        M6II          ......WGGGG   Yandro
+2719     D548233-7 T    SG    Lo          N O F        M6II          ......WGGGG   Yandro  { -3 } (710-2) [1136] RU:-14  Colony
   --  1.    . // .......-. //  0.6 au
   --  2.    . // .......-. //  0.9 au
   --  3.    . // .......-. //  1.5 au
@@ -866,145 +1614,305 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  6.    . // .......-. //  9.9 au
   --  7. *  W // D548233-7 // 19.5 au
   --  8.    G // 000000-0 // 38.7 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 4
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 4
+     -- Moon 4: Size 4 Atmo 0 Hydro 2
   --  9.    G // 000000-0 // 77.1 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 3
+     -- Moon 2: Size 2 Atmo 0 Hydro 4
+     -- Moon 3: Size 2 Atmo 0 Hydro 3
+     -- Moon 4: Size 5 Atmo 1 Hydro 3
+     -- Moon 5: Size 4 Atmo 0 Hydro 3
+     -- Moon 6: Size 4 Atmo 1 Hydro 7
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
   -- 10.    G // 000000-0 // 153.9 au
+     -- Moon 1: Size 7 Atmo 4 Hydro 8
+     -- Moon 2: Size 5 Atmo 1 Hydro 0
   -- 11.    G // 000000-0 // 307.5 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 5
+     -- Moon 2: Size 2 Atmo 1 Hydro 8
 
 
 # Subsector I
-0121     B8389CC-A T    GC    Hi          P N          M4V           WG.S          Big Ben
+0121     B8389CC-A T    GC    Hi          P N          M4V           WG.S          Big Ben  { +3 } (D8B+2) [DC2E] RU:2288  Settled
   --  1. *  W // B8389CC-A //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 2
+     -- Moon 2: Size 3 Atmo 0 Hydro 3
+     -- Moon 3: Size 3 Atmo 0 Hydro 2
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 6 Atmo 2 Hydro 6
+     -- Moon 3: Size 2 Atmo 2 Hydro 6
+     -- Moon 4: Size 1 Atmo 0 Hydro 1
   --  3.    . // .......-. //  0.8 au
   --  4.    S // 000000-0 //  1.6 au
 
-0321     EA4A666-6 T    G     NI                       A5V           ...WGG.G      Tintamarre
+0321     EA4A666-6 T    G     Oc Ni                    A5V           ...WGG.G      Tintamarre  { -3 } (655+2) [5326] RU:300  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3.    . // .......-. //  1.6 au
   --  4. *  W // EA4A666-6 //  3.2 au
+     -- Moon 1: Size 9 Atmo 0 Hydro 0
   --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 1
+     -- Moon 2: Size 3 Atmo 2 Hydro 3
+     -- Moon 3: Size 4 Atmo 5 Hydro 6
+     -- Moon 4: Size 5 Atmo 2 Hydro 0
+     -- Moon 5: Size 4 Atmo 1 Hydro 4
   --  6.    G // 000000-0 // 12.8 au
+     -- Moon 1: Size 3 Atmo 3 Hydro 2
+     -- Moon 2: Size 1 Atmo 0 Hydro 5
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
   --  7.    . // .......-. // 25.6 au
   --  8.    G // 000000-0 // 51.2 au
+     -- Moon 1: Size 8 Atmo 4 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 1
 
-0222     C37377A-A T    GP                             M4V           W.BBGS        Signik
+0222     C37377A-A T    GP    Pi                       M4V           W.BBGS        Signik  { +1 } (F68+2) [A87A] RU:1440  Settled
   --  1. *  W // C37377A-A //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    B // 000000-0 //  1.6 au
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
   --  6.    S // 000000-0 //  6.4 au
 
-0422     B917111-B F    G     IC,Lo       N N          F0V           ...WGS        Manjamio
+0422     B917111-B F    G     Ic Lo       N N          F0V           ...WGS        Manjamio  { +1 } (900+0) [325A] RU:9  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // B917111-B //  2.4 au
   --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 4 Atmo 1 Hydro 5
+     -- Moon 2: Size 2 Atmo 0 Hydro 3
+     -- Moon 3: Size 5 Atmo 1 Hydro 2
+     -- Moon 4: Size 7 Atmo 4 Hydro 0
   --  6.    S // 000000-0 //  9.6 au
 
-0823     DA7A688-6 C    SG    NI                       F2V           ..BWBG.G      Corvallis
+0823     DA7A688-6 C    SG    Oc Ni Co                 F2V           ..BWBG.G      Corvallis  { -3 } (954+1) [4336] RU:180  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    B // 000000-0 //  1.2 au
   --  4. *  W // DA7A688-6 //  2.4 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 3
+     -- Moon 2: Size 8 Atmo 0 Hydro 3
+     -- Moon 3: Size 4 Atmo 0 Hydro 2
   --  5.    B // 000000-0 //  4.8 au
   --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 3 Atmo 2 Hydro 1
   --  7.    . // .......-. // 19.2 au
   --  8.    G // 000000-0 // 38.4 au
+     -- Moon 1: Size 1 Atmo 1 Hydro 3
+     -- Moon 2: Size 3 Atmo 0 Hydro 6
+     -- Moon 3: Size 8 Atmo 5 Hydro 4
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 5 Atmo 1 Hydro 0
+     -- Moon 6: Size 6 Atmo 4 Hydro 4
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
 
-0124     D85A333-5 T    SG    Lo,Lt                    M0V           WBG.S         K
+0124     D85A333-5 T    SG    Wa Lo Lt                 M0V           WBG.S         K  { -3 } (C20+1) [5163] RU:24  Colony
   --  1. *  W // D85A333-5 //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-0524     D130668-6 T    SG    De,Na,NI,Po F N          F0V           ..WGGGBG      Ochvenio
+0524     D130668-6 T    SG    De Ni Na Po F N          F0V           ..WGGGBG      Ochvenio  { -3 } (756-2) [8345] RU:-420  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // D130668-6 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 1
   --  4.    G // 000000-0 //  3.2 au
   --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 6 Atmo 2 Hydro 2
+     -- Moon 2: Size 3 Atmo 0 Hydro 4
+     -- Moon 3: Size 2 Atmo 0 Hydro 1
   --  6.    G // 000000-0 // 12.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 3
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 7 Atmo 4 Hydro 5
+     -- Moon 6: Size 7 Atmo 5 Hydro 7
+     -- Moon 7: Size 3 Atmo 3 Hydro 1
   --  7.    B // 000000-0 // 25.6 au
   --  8.    G // 000000-0 // 51.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 5
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
 
-0726     C626446-9 T    .     NI          O            M6V           WB            Krinanio
+0726     C626446-9 T    .     Ni          O            M6V           WB            Krinanio  { -1 } (636+2) [6318] RU:216  Colony
   --  1. *  W // C626446-9 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
   --  2.    B // 000000-0 //  0.4 au
 
-0827     C334555-9 C    G     NI          F            M4V           WGG...S       Carsus
+0827     C334555-9 C    G     Ni Co       F            M4V           WGG...S       Carsus  { -1 } (A41-2) [3489] RU:-80  Colony
   --  1. *  W // C334555-9 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 2
+     -- Moon 5: Size 8 Atmo 4 Hydro 1
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 2 Atmo 0 Hydro 6
+     -- Moon 8: Size 7 Atmo 5 Hydro 1
+     -- Moon 9: Size 0 Atmo 0 Hydro 0
+     -- Moon 10: Size 1 Atmo 1 Hydro 0
+     -- Moon 11: Size 5 Atmo 4 Hydro 4
+     -- Moon 12: Size 0 Atmo 0 Hydro 0
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 6 Atmo 2 Hydro 2
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // 000000-0 // 12.8 au
 
-0228     C52989A-8 F    GC                M S          M0V           W.G           Terminus
+0228     C52989A-8 F    GC    Ph Pi       M S          M0V           W.G           Terminus  { -1 } (674-3) [8756] RU:-504  Settled
   --  1. *  W // C52989A-8 //  0.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
 
-0529     C438444-7 T    GC    NI          S            M0V           WS...G        Rafe
+0529     C438444-7 T    GC    Ni          S            M0V           WS...G        Rafe  { -2 } (C31-2) [1287] RU:-72  Colony
   --  1. *  W // C438444-7 //  0.2 au
   --  2.    S // 000000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
   --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 4
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 1 Hydro 0
+     -- Moon 4: Size 4 Atmo 0 Hydro 4
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 2
+     -- Moon 7: Size 5 Atmo 2 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+     -- Moon 9: Size 3 Atmo 4 Hydro 3
+     -- Moon 10: Size 6 Atmo 6 Hydro 0
 
-0829     D6567BD-7 T    G     Ag          M            M6V           WGGB          Tollana
+0829     D6567BD-7 T    G     Ga Ag       M            M6V           WGGB          Tollana  { -1 } (867-1) [A667] RU:-336  Settled
   --  1. *  W // D6567BD-7 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 2
+     -- Moon 2: Size 3 Atmo 0 Hydro 1
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 4
+     -- Moon 4: Size 1 Atmo 0 Hydro 6
+     -- Moon 5: Size 6 Atmo 5 Hydro 0
+     -- Moon 6: Size 7 Atmo 3 Hydro 1
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 6
+     -- Moon 2: Size 4 Atmo 2 Hydro 1
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 7 Atmo 3 Hydro 7
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 5 Atmo 1 Hydro 1
+     -- Moon 8: Size 1 Atmo 0 Hydro 6
   --  4.    B // 000000-0 //  1.6 au
 
-0430     B327222-B T    NS    Lo          M            M4V           W             Sandurst
+0430     B327222-B T    NS    Lo          M            M4V           W             Sandurst  { +2 } (610+2) [141B] RU:12  Colony
   --  1. *  W // B327222-B //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 2
 
-0630     B676355-B H    SGC   Lo          S            M6V           W.GGG         Sangre
+0630     B676355-B H    SGC   Lo Ho Tr    S            M6V           W.GGG         Sangre  { +1 } (B20+3) [143A] RU:66  Colony
   --  1. *  W // B676355-B //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 6 Atmo 5 Hydro 6
+     -- Moon 4: Size 7 Atmo 3 Hydro 3
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 6
+     -- Moon 2: Size 2 Atmo 0 Hydro 3
+     -- Moon 3: Size 3 Atmo 1 Hydro 3
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 5 Atmo 3 Hydro 4
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 5
+     -- Moon 2: Size 4 Atmo 3 Hydro 6
+     -- Moon 3: Size 2 Atmo 0 Hydro 3
+     -- Moon 4: Size 4 Atmo 0 Hydro 5
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 7
+     -- Moon 8: Size 4 Atmo 3 Hydro 6
 
 
 # Subsector J
-1021     C646845-8 T    GP    Lo                       F2II          .....WG.GB    Keicah
+1021     C646845-8 T    GP    Ph Pa Pi                 F2II          .....WG.GB    Keicah  { -1 } (972-2) [A717] RU:-252  Settled
   --  1.    . // .......-. //  0.7 au
   --  2.    . // .......-. //  1.1 au
   --  3.    . // .......-. //  1.9 au
   --  4.    . // .......-. //  3.5 au
   --  5.    . // .......-. //  6.7 au
   --  6. *  W // C646845-8 // 13.1 au
+     -- Moon 1: Size 5 Atmo 0 Hydro 0
   --  7.    G // 000000-0 // 25.9 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 2
+     -- Moon 2: Size 3 Atmo 1 Hydro 2
+     -- Moon 3: Size 6 Atmo 2 Hydro 4
+     -- Moon 4: Size 5 Atmo 5 Hydro 3
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 7 Atmo 3 Hydro 7
+     -- Moon 7: Size 2 Atmo 1 Hydro 5
+     -- Moon 8: Size 3 Atmo 0 Hydro 1
   --  8.    . // .......-. // 51.5 au
   --  9.    G // 000000-0 // 102.7 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 1
+     -- Moon 2: Size 1 Atmo 0 Hydro 1
+     -- Moon 3: Size 7 Atmo 4 Hydro 1
+     -- Moon 4: Size 6 Atmo 6 Hydro 1
+     -- Moon 5: Size 2 Atmo 0 Hydro 5
+     -- Moon 6: Size 3 Atmo 4 Hydro 4
+     -- Moon 7: Size 5 Atmo 3 Hydro 5
+     -- Moon 8: Size 1 Atmo 0 Hydro 4
+     -- Moon 9: Size 3 Atmo 3 Hydro 0
+     -- Moon 10: Size 0 Atmo 0 Hydro 0
   -- 10.    B // 000000-0 // 205.1 au
 
-1421     D676578-6 T    G     Ag,NI       M            M2V           WG.           Kingdom
+1421     D676578-6 T    G     Ni Ag       M            M2V           WG.           Kingdom  { -2 } (945-5) [7396] RU:-900  Colony
   --  1. *  W // D676578-6 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 3
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 4
+     -- Moon 2: Size 4 Atmo 1 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 3
+     -- Moon 5: Size 1 Atmo 0 Hydro 4
   --  3.    . // .......-. //  0.8 au
 
-1122     D575555-5 T    .     Ag,Lt,NI    O N          M4V           WBB           Naqsa
+1122     D575555-5 T    .     Ni Ag Lt    O N          M4V           WBB           Naqsa  { -2 } (744+0) [6356] RU:112  Colony
   --  1. *  W // D575555-5 //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
 
-1622     C739689-7 F    GC    NI          F F          G2V           ..WBG         Elyssium
+1622     C739689-7 F    GC    Ni          F F          G2V           ..WBG         Elyssium  { -2 } (956-2) [2483] RU:-540  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // C739689-7 //  1.6 au
   --  4.    B // 000000-0 //  3.2 au
   --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 8
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 2
+     -- Moon 5: Size 5 Atmo 3 Hydro 2
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
 
-0923     D95979D-7 C    .                 N            A2V           ...W..S       Shexa
+0923     D95979D-7 C    .     Co          N            A2V           ...W..S       Shexa  { -2 } (464-3) [7536] RU:-288  Settled
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3.    . // .......-. //  1.6 au
@@ -1013,32 +1921,58 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  6.    . // .......-. // 12.8 au
   --  7.    S // 000000-0 // 25.6 au
 
-1023     E977899-8 H    G                 N F          M6V           WGGBG.S       Pendrakeentio
+1023     E977899-8 H    G     Ph Pa Pi Ho Tr N F          M6V           WGGBG.S       Pendrakeentio  { -2 } (E74-3) [D695] RU:-1176  Settled
   --  1. *  W // E977899-8 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 3 Hydro 1
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 6 Atmo 2 Hydro 3
+     -- Moon 5: Size 1 Atmo 0 Hydro 4
   --  3.    G // 000000-0 //  0.8 au
   --  4.    B // 000000-0 //  1.6 au
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 5 Atmo 6 Hydro 2
+     -- Moon 2: Size 4 Atmo 0 Hydro 2
+     -- Moon 3: Size 1 Atmo 1 Hydro 4
+     -- Moon 4: Size 4 Atmo 0 Hydro 2
+     -- Moon 5: Size 7 Atmo 3 Hydro 2
+     -- Moon 6: Size 1 Atmo 0 Hydro 5
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // 000000-0 // 12.8 au
 
-1523     C494333-8 C    SG    Lo                       M4V           WGGBGB        Flamme
+1523     C494333-8 C    SG    Lo Co                    M4V           WGGBGB        Flamme  { -2 } (G20-2) [6198] RU:-64  Colony
   --  1. *  W // C494333-8 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 1
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 2
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 5
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 3 Atmo 2 Hydro 4
+     -- Moon 2: Size 7 Atmo 3 Hydro 6
+     -- Moon 3: Size 7 Atmo 3 Hydro 6
+     -- Moon 4: Size 3 Atmo 2 Hydro 1
   --  4.    B // 000000-0 //  1.6 au
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 7 Atmo 3 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 2
+     -- Moon 3: Size 3 Atmo 0 Hydro 4
   --  6.    B // 000000-0 //  6.4 au
 
-1224     B86899A-B T    C     Hi                       K5V           .WB.S         Kajleerio
+1224     B86899A-B T    C     Hi Pr                    K5V           .WB.S         Kajleerio  { +3 } (388+3) [7C49] RU:576  Settled
   --  1.    . // .......-. //  0.3 au
   --  2. *  W // B86899A-B //  0.6 au
   --  3.    B // 000000-0 //  1.2 au
   --  4.    . // .......-. //  2.4 au
   --  5.    S // 000000-0 //  4.8 au
 
-1324     A838779-B T    .                              M6V           W......S      Hadriu
+1324     A838779-B T    .                              M6V           W......S      Hadriu  { +2 } (769+1) [496B] RU:378  Settled
   --  1. *  W // A838779-B //  0.2 au
+     -- Moon 1: Size 7 Atmo 0 Hydro 4
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
@@ -1047,7 +1981,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // 000000-0 // 25.6 au
 
-1424     E96A133-4 T    .     Lo,Lt                    M6V           W.......S     Korunda
+1424     E96A133-4 T    .     Wa Lo Lt                 M6V           W.......S     Korunda  { -3 } (800-4) [2166] RU:-32  Colony
   --  1. *  W // E96A133-4 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
@@ -1058,37 +1992,71 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  8. -  . // .......-. // 25.6 au
   --  9. -  S // 000000-0 // 51.2 au
 
-1325     B629666-A F    NSG   NI          F N          M4V           WBGBGG        Tesheuqa
+1325     B629666-A F    NSG   Ni          F N          M4V           WBGBGG        Tesheuqa  { +2 } (B55+1) [882C] RU:275  Colony
   --  1. *  W // B629666-A //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 0 Hydro 4
+     -- Moon 3: Size 1 Atmo 0 Hydro 5
+     -- Moon 4: Size 1 Atmo 0 Hydro 3
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
+     -- Moon 7: Size 1 Atmo 0 Hydro 5
+     -- Moon 8: Size 3 Atmo 3 Hydro 4
+     -- Moon 9: Size 1 Atmo 0 Hydro 2
   --  4.    B // 000000-0 //  1.6 au
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 6
+     -- Moon 2: Size 3 Atmo 1 Hydro 8
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 7 Atmo 3 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 4
+     -- Moon 6: Size 6 Atmo 2 Hydro 0
   --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 3
+     -- Moon 3: Size 5 Atmo 1 Hydro 2
+     -- Moon 4: Size 1 Atmo 1 Hydro 2
+     -- Moon 5: Size 2 Atmo 0 Hydro 6
+     -- Moon 6: Size 7 Atmo 3 Hydro 5
+     -- Moon 7: Size 6 Atmo 3 Hydro 5
+     -- Moon 8: Size 6 Atmo 2 Hydro 0
+     -- Moon 9: Size 3 Atmo 0 Hydro 0
 
-1226     B6669CC-9 T    NSG   Hi                       G2V           ...W..S       Niami
+1226     B6669CC-9 T    NSG   Ga Hi Pr                 G2V           ...W..S       Niami  { +3 } (888+3) [8C76] RU:1536  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // B6669CC-9 //  2.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
   --  5.    . // .......-. //  4.8 au
   --  6.    . // .......-. //  9.6 au
   --  7.    S // 000000-0 // 19.2 au
 
-1526     B76A888-B T    SGC   Ri          S F F        M4V           WBG           Golgafrincham
+1526     B76A888-B T    SGC   Wa Ph Ri    S F F        M4V           WBG           Golgafrincham  { +3 } (67C-3) [6B2C] RU:-1512  Settled
   --  1. *  W // B76A888-B //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 2
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 1 Hydro 1
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 4 Atmo 3 Hydro 0
+     -- Moon 7: Size 4 Atmo 4 Hydro 4
 
-1626     A505000-0 F    G     Ba,IC,Lt,Va              M2V           W.BGBG        Xlephier
+1626     A505000-0 F    G     Ic Va Lt                 M2V           W.BGBG        Xlephier  { -1 } (708-4) [1134] RU:-224  
   --  1. *  W // A505000-0 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    G // 000000-0 //  1.6 au
   --  5.    B // 000000-0 //  3.2 au
   --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 4 Atmo 1 Hydro 4
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
 
-1027     B738112-A T    SG    Lo          M            F0III         ...WB..G      Quinnius
+1027     B738112-A T    SG    Lo          M            F0III         ...WB..G      Quinnius  { +1 } (C00+3) [229D] RU:36  Colony
   --  1.    . // .......-. //  0.5 au
   --  2.    . // .......-. //  0.9 au
   --  3.    . // .......-. //  1.7 au
@@ -1097,45 +2065,76 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  6.    . // .......-. // 12.9 au
   --  7.    . // .......-. // 25.7 au
   --  8.    G // 000000-0 // 51.3 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 3
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 5
+     -- Moon 5: Size 6 Atmo 3 Hydro 4
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
 
-0928     E444569-5 T    G     Ag,Lt,NI    O M M        M4V           WG.BS         Xeriphas
+0928     E444569-5 T    G     Ni Ag Lt    O M M        M4V           WG.BS         Xeriphas  { -2 } (742+1) [8385] RU:56  Colony
   --  1. *  W // E444569-5 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    B // 000000-0 //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-1628     B757479-B T    GC    NI          N            M4V           W.G....S      Golgotha
+1628     B757479-B T    GC    Ga Ni Pa    N            M4V           W.G....S      Golgotha  { +1 } (535+2) [555A] RU:150  Colony
   --  1. *  W // B757479-B //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 6 Atmo 2 Hydro 2
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
   --  6.    . // .......-. //  6.4 au
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // 000000-0 // 25.6 au
 
-1229     C1506AA-A C    SG    De,NI,Po                 M2V           WG..S         Klairos
+1229     C1506AA-A C    SG    De Ni Po Co              M2V           WG..S         Klairos  { +0 } (852+1) [36A8] RU:80  Colony
   --  1. *  W // C1506AA-A //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 2
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 3 Atmo 1 Hydro 1
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-1429     D849666-6 F    SG    NI          N            M0V           WG..S         Cerulia
+1429     D849666-6 F    SG    Ni          N            M0V           WG..S         Cerulia  { -3 } (551+0) [A353] RU:25  Colony
   --  1. *  W // D849666-6 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 7
+     -- Moon 4: Size 1 Atmo 0 Hydro 3
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
 
 # Subsector K
-1921     B242888-A T    G     Po          P            M2V           WG.G.....S    Sabana
+1921     B242888-A T    G     Ph Pi Po    P            M2V           WG.G.....S    Sabana  { +2 } (877-1) [BA58] RU:-392  Settled
   --  1. *  W // B242888-A //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 1
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 1
+     -- Moon 4: Size 2 Atmo 0 Hydro 3
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
   --  3.    . // .......-. //  0.8 au
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 0
+     -- Moon 2: Size 6 Atmo 5 Hydro 7
+     -- Moon 3: Size 1 Atmo 0 Hydro 3
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 6
   --  5.    . // .......-. //  3.2 au
   --  6.    . // .......-. //  6.4 au
   --  7. -  . // .......-. // 12.8 au
@@ -1143,11 +2142,19 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-2421     C565556-7 T    SGP   Ag,NI                    M6V           WG            Decapod
+2421     C565556-7 T    SGP   Ni Ag Pr                 M6V           WG            Decapod  { -1 } (646-2) [8489] RU:-288  Colony
   --  1. *  W // C565556-7 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 6
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 3
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 0
+     -- Moon 7: Size 7 Atmo 3 Hydro 2
+     -- Moon 8: Size 3 Atmo 0 Hydro 4
 
-1823     C553557-8 H    .     NI,Po       F M M F      F5VI          .WB......S    Daedelus
+1823     C553557-8 H    .     Ni Po Ho    F M M F      F5VI          .WB......S    Daedelus  { -2 } (B43-1) [733D] RU:-132  Colony
   --  1.    . // .......-. //  0.4 au
   --  2. *  W // C553557-8 //  0.7 au
   --  3.    B // 000000-0 //  1.4 au
@@ -1159,31 +2166,60 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 89.6 au
   -- 10. -  S // 000000-0 // 179.2 au
 
-1724     B748944-9 H    NGC   Lo          N            F0III         .G.WGGGG      Temask
+1724     B748944-9 H    NGC   Hi In Ho    N            F0III         .G.WGGGG      Temask  { +3 } (H8E+0) [BC29] RU:1904  Settled
   --  1.    . // .......-. //  0.5 au
   --  2.    G // 000000-0 //  0.9 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 1 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 0
+     -- Moon 8: Size 4 Atmo 3 Hydro 0
   --  3.    . // .......-. //  1.7 au
   --  4. *  W // B748944-9 //  3.3 au
   --  5.    G // 000000-0 //  6.5 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 1
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
   --  6.    G // 000000-0 // 12.9 au
+     -- Moon 1: Size 5 Atmo 3 Hydro 2
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 8
   --  7.    G // 000000-0 // 25.7 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 2
+     -- Moon 2: Size 6 Atmo 3 Hydro 4
   --  8.    G // 000000-0 // 51.3 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 2
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 1 Hydro 2
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
 
-1924     C658455-A T    G     NI          M            M6V           WB.G          Goat
+1924     C658455-A T    G     Ni Pa       M            M6V           WB.G          Goat  { +0 } (A34-1) [547E] RU:-120  Colony
   --  1. *  W // C658455-A //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    G // 000000-0 //  1.6 au
 
-2326     C353555-6 T    G     NI,Po       M F          M0V           W..GGG        Camden
+2326     C353555-6 T    G     Ni Po       M F          M0V           W..GGG        Camden  { -2 } (A46+1) [7347] RU:240  Colony
   --  1. *  W // C353555-6 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 3
+     -- Moon 4: Size 1 Atmo 0 Hydro 3
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
   --  6.    G // 000000-0 //  6.4 au
 
-1827     C579111-8 T    S     Lo          S N M        M4V           WB....S       Charon
+1827     C579111-8 T    S     Lo          S N M        M4V           WB....S       Charon  { -2 } (500+2) [113C] RU:10  Colony
   --  1. *  W // C579111-8 //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
@@ -1192,49 +2228,114 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // 000000-0 // 12.8 au
 
-1927     A444557-B T    NGC   Ag,NI       M M P M      K0V           .WGGG         Lahmu
+1927     A444557-B T    NGC   Ni Ag       M M P M      K0V           .WGGG         Lahmu  { +2 } (C41+4) [178D] RU:192  Colony
   --  1.    . // .......-. //  0.3 au
   --  2. *  W // A444557-B //  0.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  3.    G // 000000-0 //  1.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 0 Hydro 5
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
+     -- Moon 4: Size 4 Atmo 2 Hydro 4
   --  4.    G // 000000-0 //  2.4 au
+     -- Moon 1: Size 3 Atmo 3 Hydro 2
+     -- Moon 2: Size 3 Atmo 0 Hydro 7
+     -- Moon 3: Size 3 Atmo 0 Hydro 4
   --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 6
+     -- Moon 2: Size 6 Atmo 4 Hydro 7
+     -- Moon 3: Size 5 Atmo 1 Hydro 7
+     -- Moon 4: Size 4 Atmo 0 Hydro 7
+     -- Moon 5: Size 8 Atmo 4 Hydro 2
+     -- Moon 6: Size 6 Atmo 4 Hydro 0
 
-2129     A949444-A T    NGC   NI          N M S        M6III         ....WG..G     Dulkis
+2129     A949444-A T    NGC   Ni          N M S        M6III         ....WG..G     Dulkis  { +1 } (A32-5) [156A] RU:-300  Colony
   --  1.    . // .......-. //  0.5 au
   --  2.    . // .......-. //  0.8 au
   --  3.    . // .......-. //  1.5 au
   --  4.    . // .......-. //  2.9 au
   --  5. *  W // A949444-A //  5.7 au
   --  6.    G // 000000-0 // 11.3 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 5
+     -- Moon 2: Size 3 Atmo 0 Hydro 2
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 1 Hydro 6
+     -- Moon 5: Size 4 Atmo 0 Hydro 0
   --  7.    . // .......-. // 22.5 au
   --  8.    . // .......-. // 44.9 au
   --  9.    G // 000000-0 // 89.7 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 2
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
 
-2030     B829555-9 C    S     NI          S            M4V           W             Vampire
+2030     B829555-9 C    S     Ni Co       S            M4V           W             Vampire  { +0 } (A41-5) [3545] RU:-200  Colony
   --  1. *  W // B829555-9 //  0.2 au
+     -- Moon 1: Size 7 Atmo 0 Hydro 0
 
 
 # Subsector L
-2521     B311558-B F    G     IC,NI       O F          M0V           WG.GBG        Dis
+2521     B311558-B F    G     Ic Ni       O F          M0V           WG.GBG        Dis  { +1 } (C41-2) [764C] RU:-96  Colony
   --  1. *  W // B311558-B //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 3
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  3.    . // .......-. //  0.8 au
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 1 Hydro 8
+     -- Moon 3: Size 3 Atmo 1 Hydro 3
+     -- Moon 4: Size 4 Atmo 0 Hydro 2
+     -- Moon 5: Size 1 Atmo 2 Hydro 2
+     -- Moon 6: Size 4 Atmo 1 Hydro 2
+     -- Moon 7: Size 4 Atmo 0 Hydro 5
+     -- Moon 8: Size 6 Atmo 4 Hydro 3
   --  5.    B // 000000-0 //  3.2 au
   --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 3
+     -- Moon 2: Size 6 Atmo 2 Hydro 1
 
-2921     BB88666-9 T    NGC   Ag,NI,Ri    O            M6V           WGB.G         Kaesov
+2921     BB88666-9 T    NGC   Ni Ag Ri    O            M6V           WGB.G         Kaesov  { +2 } (C52-4) [885A] RU:-480  Colony
   --  1. *  W // BB88666-9 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 2
+     -- Moon 2: Size 1 Atmo 0 Hydro 3
+     -- Moon 3: Size 2 Atmo 0 Hydro 6
   --  3.    B // 000000-0 //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 1
+     -- Moon 2: Size 2 Atmo 0 Hydro 1
+     -- Moon 3: Size 2 Atmo 0 Hydro 2
+     -- Moon 4: Size 7 Atmo 3 Hydro 4
 
-2922     B272899-8 T    GC                M            M6V           WGGG.....S    G'iri
+2922     B272899-8 T    GC    Ph Pi       M            M6V           WGGG.....S    G'iri  { +0 } (D78-4) [788B] RU:-2912  Settled
   --  1. *  W // B272899-8 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 2
+     -- Moon 2: Size 1 Atmo 0 Hydro 1
+     -- Moon 3: Size 7 Atmo 3 Hydro 1
+     -- Moon 4: Size 2 Atmo 0 Hydro 1
+     -- Moon 5: Size 4 Atmo 3 Hydro 3
+     -- Moon 6: Size 3 Atmo 0 Hydro 4
+     -- Moon 7: Size 8 Atmo 5 Hydro 1
+     -- Moon 8: Size 6 Atmo 2 Hydro 2
+     -- Moon 9: Size 3 Atmo 3 Hydro 6
+     -- Moon 10: Size 3 Atmo 0 Hydro 2
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 3
+     -- Moon 4: Size 4 Atmo 0 Hydro 6
+     -- Moon 5: Size 5 Atmo 1 Hydro 1
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
+     -- Moon 7: Size 2 Atmo 0 Hydro 1
+     -- Moon 8: Size 7 Atmo 3 Hydro 3
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 7 Atmo 3 Hydro 5
+     -- Moon 3: Size 1 Atmo 0 Hydro 3
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 5 Atmo 1 Hydro 6
   --  5.    . // .......-. //  3.2 au
   --  6.    . // .......-. //  6.4 au
   --  7. -  . // .......-. // 12.8 au
@@ -1242,42 +2343,78 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-3222     C92958B-9 T    G     NI                       M4V           WG.G          Paquin
+3222     C92958B-9 T    G     Ni                       M4V           WG.G          Paquin  { -1 } (B44-2) [645B] RU:-352  Colony
   --  1. *  W // C92958B-9 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 4 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 4
+     -- Moon 5: Size 4 Atmo 0 Hydro 2
+     -- Moon 6: Size 5 Atmo 1 Hydro 2
+     -- Moon 7: Size 5 Atmo 1 Hydro 7
+     -- Moon 8: Size 1 Atmo 0 Hydro 3
   --  3.    . // .......-. //  0.8 au
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 1
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 6
 
-3123     C414669-8 F    SG    IC,NI       F            K5V           .W.G..S       Linnisfarne
+3123     C414669-8 F    SG    Ic Ni       F            K5V           .W.G..S       Linnisfarne  { -2 } (851+0) [3446] RU:40  Colony
   --  1.    . // .......-. //  0.3 au
   --  2. *  W // C414669-8 //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4.    G // 000000-0 //  2.4 au
+     -- Moon 1: Size 2 Atmo 2 Hydro 1
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 3
+     -- Moon 6: Size 3 Atmo 1 Hydro 1
+     -- Moon 7: Size 4 Atmo 0 Hydro 0
   --  5.    . // .......-. //  4.8 au
   --  6.    . // .......-. //  9.6 au
   --  7.    S // 000000-0 // 19.2 au
 
-2526     D555377-8 T    SG    Lo          M M          K0V           .W.B.G        Ithavoll
+2526     D555377-8 T    SG    Lo          M M          K0V           .W.B.G        Ithavoll  { -3 } (720-3) [314A] RU:-42  Colony
   --  1.    . // .......-. //  0.3 au
   --  2. *  W // D555377-8 //  0.6 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 1
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 0 Hydro 0
   --  3.    . // .......-. //  1.2 au
   --  4.    B // 000000-0 //  2.4 au
   --  5.    . // .......-. //  4.8 au
   --  6.    G // 000000-0 //  9.6 au
 
-2626     B929888-A T    S                 N N          F2V           ...W          TP
+2626     B929888-A T    S     Ph Pi       N N          F2V           ...W          TP  { +2 } (277-2) [5A7E] RU:-196  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // B929888-A //  2.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
 
-2926     D73858C-5 T    .     Lt,NI       N M          M4V           W             Teta
+2926     D73858C-5 T    .     Ni Lt       N M          M4V           W             Teta  { -3 } (244-3) [5235] RU:-96  Colony
   --  1. *  W // D73858C-5 //  0.2 au
 
-3226     C87A9CF-9 C    G     Hi,In                    M2V           WGG.....S     Logarto
+3226     C87A9CF-9 C    G     Wa Hi In Co              M2V           WGG.....S     Logarto  { +2 } (D88+1) [DB79] RU:832  Settled
   --  1. *  W // C87A9CF-9 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 1
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 3 Hydro 3
+     -- Moon 2: Size 1 Atmo 0 Hydro 4
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 3
+     -- Moon 2: Size 7 Atmo 3 Hydro 1
+     -- Moon 3: Size 5 Atmo 1 Hydro 5
+     -- Moon 4: Size 6 Atmo 2 Hydro 3
+     -- Moon 5: Size 4 Atmo 3 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 6 Atmo 2 Hydro 2
+     -- Moon 9: Size 4 Atmo 0 Hydro 6
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
   --  6.    . // .......-. //  6.4 au
@@ -1285,10 +2422,17 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  8. -  . // .......-. // 25.6 au
   --  9. -  S // 000000-0 // 51.2 au
 
-2727     C353668-7 T    GP    NI,Po       M N          M0V           W.G.....S     Valencia
+2727     C353668-7 T    GP    Ni Po       M N          M0V           W.G.....S     Valencia  { -2 } (354-1) [3435] RU:-60  Colony
   --  1. *  W // C353668-7 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 3
+     -- Moon 2: Size 1 Atmo 0 Hydro 7
+     -- Moon 3: Size 5 Atmo 2 Hydro 3
+     -- Moon 4: Size 7 Atmo 3 Hydro 6
+     -- Moon 5: Size 3 Atmo 1 Hydro 4
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 3 Atmo 0 Hydro 0
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
   --  6.    . // .......-. //  6.4 au
@@ -1296,69 +2440,145 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  8. -  . // .......-. // 25.6 au
   --  9. -  S // 000000-0 // 51.2 au
 
-2728     D86A156-6 T    SG    Lo          M O          F2V           ..WGB.S       Salusa Secundus
+2728     D86A156-6 T    SG    Wa Lo       M O          F2V           ..WGB.S       Salusa Secundus  { -3 } (800-1) [1165] RU:-8  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // D86A156-6 //  1.6 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 7 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 7 Atmo 3 Hydro 6
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 6 Atmo 2 Hydro 3
+     -- Moon 4: Size 7 Atmo 4 Hydro 0
+     -- Moon 5: Size 4 Atmo 0 Hydro 2
+     -- Moon 6: Size 4 Atmo 2 Hydro 0
+     -- Moon 7: Size 4 Atmo 0 Hydro 3
+     -- Moon 8: Size 7 Atmo 3 Hydro 5
+     -- Moon 9: Size 5 Atmo 1 Hydro 2
+     -- Moon 10: Size 3 Atmo 1 Hydro 0
+     -- Moon 11: Size 4 Atmo 2 Hydro 0
   --  5.    B // 000000-0 //  6.4 au
   --  6.    . // .......-. // 12.8 au
   --  7.    S // 000000-0 // 25.6 au
 
-3228     D494666-8 T    S     Ag,NI       S            M6V           WBB..S        Qamara
+3228     D494666-8 T    S     Ni Ag       S            M6V           WBB..S        Qamara  { -2 } (B51+3) [6417] RU:165  Colony
   --  1. *  W // D494666-8 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 2
+     -- Moon 3: Size 3 Atmo 0 Hydro 4
   --  2.    B // 000000-0 //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
   --  6.    S // 000000-0 //  6.4 au
 
-3029     X737577-6 T    G     NI          S F          M6V           WBGG          Hazard
+3029     X737577-6 T    G     Ni          S F          M6V           WBGG          Hazard  { -3 } (945+1) [4233] RU:180  Colony
   --  1. *  W // X737577-6 //  0.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 5
   --  2.    B // 000000-0 //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 1
+     -- Moon 2: Size 4 Atmo 0 Hydro 4
+     -- Moon 3: Size 4 Atmo 0 Hydro 5
+     -- Moon 4: Size 1 Atmo 0 Hydro 4
+     -- Moon 5: Size 2 Atmo 0 Hydro 4
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 2
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 6 Atmo 3 Hydro 3
 
-3229     D848111-5 F    SG    Lo,Lt       F F          M0V           W..S          Florana
+3229     D848111-5 F    SG    Lo Lt       F F          M0V           W..S          Florana  { -3 } (900+3) [1151] RU:27  Colony
   --  1. *  W // D848111-5 //  0.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 0
+     -- Moon 2: Size 7 Atmo 0 Hydro 0
+     -- Moon 3: Size 6 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    S // 000000-0 //  1.6 au
 
-2730     B58566A-8 T    GC    Ag,NI,Ri                 M2V           W.B.BG        Annanworld
+2730     B58566A-8 T    GC    Ni Ag Ri                 M2V           W.B.BG        Annanworld  { +1 } (852-2) [6768] RU:-160  Colony
   --  1. *  W // B58566A-8 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 1
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    B // 000000-0 //  3.2 au
   --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 4
+     -- Moon 2: Size 6 Atmo 2 Hydro 5
+     -- Moon 3: Size 4 Atmo 2 Hydro 5
+     -- Moon 4: Size 1 Atmo 0 Hydro 2
+     -- Moon 5: Size 5 Atmo 6 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 4
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
 
-2830     BB4A111-A T    NG    Lo          N            A5II          ...G..WG..    Resurgam
+2830     BB4A111-A T    NG    Oc Lo       N            A5II          ...G..WG..    Resurgam  { +1 } (B00+3) [123B] RU:33  Colony
   --  1.    . // .......-. //  0.8 au
   --  2.    . // .......-. //  1.2 au
   --  3.    . // .......-. //  2.0 au
   --  4.    G // 000000-0 //  3.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 4 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 0
   --  5.    . // .......-. //  6.8 au
   --  6.    . // .......-. // 13.2 au
   --  7. *  W // BB4A111-A // 26.0 au
+     -- Moon 1: Size 9 Atmo 0 Hydro 2
   --  8.    G // 000000-0 // 51.6 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 2
+     -- Moon 2: Size 5 Atmo 1 Hydro 4
+     -- Moon 3: Size 3 Atmo 0 Hydro 2
+     -- Moon 4: Size 3 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 8
+     -- Moon 6: Size 6 Atmo 2 Hydro 2
+     -- Moon 7: Size 4 Atmo 3 Hydro 6
+     -- Moon 8: Size 3 Atmo 0 Hydro 2
+     -- Moon 9: Size 1 Atmo 0 Hydro 2
+     -- Moon 10: Size 3 Atmo 0 Hydro 2
   --  9.    . // .......-. // 102.8 au
   -- 10.    . // .......-. // 205.2 au
 
 
 # Subsector M
-0831     C5486AA-6 T    SG    Ag,NI       F O          M0V           W...GG        Harmonia
+0831     C5486AA-6 T    SG    Ni Ag       F O          M0V           W...GG        Harmonia  { -1 } (854+3) [9566] RU:480  Colony
   --  1. *  W // C5486AA-6 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 1
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 0 Hydro 3
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 1
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  6.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 6 Atmo 2 Hydro 5
+     -- Moon 3: Size 6 Atmo 5 Hydro 2
+     -- Moon 4: Size 3 Atmo 0 Hydro 5
+     -- Moon 5: Size 4 Atmo 0 Hydro 3
+     -- Moon 6: Size 4 Atmo 0 Hydro 8
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 3 Atmo 3 Hydro 1
 
-0832     B82A336-A T    G     Lo                       M6V           WGG..B...S    Atab Abas
+0832     B82A336-A T    G     Wa Lo                    M6V           WGG..B...S    Atab Abas  { +1 } (620-4) [2417] RU:-48  Colony
   --  1. *  W // B82A336-A //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 6 Atmo 2 Hydro 1
+     -- Moon 2: Size 3 Atmo 0 Hydro 3
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 2
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
   --  6.    B // 000000-0 //  6.4 au
@@ -1367,65 +2587,109 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-0834     C160222-9 T    G     De,Lo       O            K2V           .WG..GG       Bergerac
+0834     C160222-9 T    G     De Lo       O            K2V           .WG..GG       Bergerac  { -1 } (810-3) [2148] RU:-24  Colony
   --  1.    . // .......-. //  0.3 au
   --  2. *  W // C160222-9 //  0.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 4
   --  3.    G // 000000-0 //  1.2 au
+     -- Moon 1: Size 4 Atmo 1 Hydro 7
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 2 Hydro 1
+     -- Moon 4: Size 1 Atmo 0 Hydro 3
+     -- Moon 5: Size 2 Atmo 0 Hydro 5
   --  4.    . // .......-. //  2.4 au
   --  5.    . // .......-. //  4.8 au
   --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 4 Hydro 2
   --  7.    G // 000000-0 // 19.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
 
-0635     B474223-7 C    SC    Lo          N            M2III         ....W         Poowadya
+0635     B474223-7 C    SC    Lo Co       N            M2III         ....W         Poowadya  { -1 } (710-1) [3169] RU:-7  Colony
   --  1.    . // .......-. //  0.5 au
   --  2.    . // .......-. //  0.8 au
   --  3.    . // .......-. //  1.5 au
   --  4.    . // .......-. //  2.9 au
   --  5. *  W // B474223-7 //  5.7 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 1
 
-0735     E666555-6 T    G     Ag,NI       F            F2V           ..W.S         Saudade
+0735     E666555-6 T    G     Ga Ni Ag Pr F            F2V           ..W.S         Saudade  { -2 } (545+3) [7314] RU:300  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // E666555-6 //  1.6 au
   --  4.    . // .......-. //  3.2 au
   --  5.    S // 000000-0 //  6.4 au
 
-0837     E661255-5 R    G     Lo,Lt       M            M0V           WG..S         Fendi
+0837     E661255-5 R    G     Lo Lt       M            M0V           WG..S         Fendi  { -3 } (510+2) [1133] RU:10  Colony
   --  1. *  W // E661255-5 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 1 Hydro 1
+     -- Moon 4: Size 5 Atmo 1 Hydro 1
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-0138     B457444-8 T    GC    NI          N F S        M4V           WG.G          Veridani
+0138     B457444-8 T    GC    Ni Pa       N F S        M4V           WG.G          Veridani  { -1 } (936-4) [6399] RU:-648  Colony
   --  1. *  W // B457444-8 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 4 Atmo 2 Hydro 6
+     -- Moon 2: Size 2 Atmo 0 Hydro 6
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 3
+     -- Moon 6: Size 1 Atmo 0 Hydro 8
+     -- Moon 7: Size 5 Atmo 1 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
   --  3.    . // .......-. //  0.8 au
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 0 Hydro 7
+     -- Moon 3: Size 6 Atmo 3 Hydro 1
 
-0238     D777666-6 T    .     Ag,NI       M M          M2V           W....S        Lea
+0238     D777666-6 T    .     Ni Ag       M M          M2V           W....S        Lea  { -2 } (755+0) [8485] RU:175  Colony
   --  1. *  W // D777666-6 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 1
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
   --  6.    S // 000000-0 //  6.4 au
 
-0439     D252667-6 T    G     NI,Po       O            M0V           WGG           Bandicoot
+0439     D252667-6 T    G     Ni Po       O            M0V           WGG           Bandicoot  { -3 } (654+0) [4386] RU:120  Colony
   --  1. *  W // D252667-6 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 3 Atmo 3 Hydro 3
+     -- Moon 2: Size 1 Atmo 0 Hydro 3
+     -- Moon 3: Size 3 Atmo 3 Hydro 1
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 1 Atmo 0 Hydro 4
+     -- Moon 6: Size 1 Atmo 0 Hydro 1
+     -- Moon 7: Size 2 Atmo 3 Hydro 3
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 7
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 3
 
-0739     EA3A225-9 T    G     Lo                       F0III         ...WG.S       Porcelo
+0739     EA3A225-9 T    G     Oc Lo                    F0III         ...WG.S       Porcelo  { -2 } (910-1) [1146] RU:-9  Colony
   --  1.    . // .......-. //  0.5 au
   --  2.    . // .......-. //  0.8 au
   --  3.    . // .......-. //  1.5 au
   --  4. *  W // EA3A225-9 //  2.9 au
+     -- Moon 1: Size 7 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 0 Hydro 5
   --  5.    G // 000000-0 //  5.7 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 1 Hydro 6
+     -- Moon 4: Size 5 Atmo 1 Hydro 7
+     -- Moon 5: Size 5 Atmo 1 Hydro 0
   --  6.    . // .......-. // 11.3 au
   --  7.    S // 000000-0 // 22.5 au
 
-0440     AA7A9DD-B T    .     Hi,In       F N          K0IV          ..WB....S     Ament Cour
+0440     AA7A9DD-B T    .     Oc Hi In    F N          K0IV          ..WB....S     Ament Cour  { +4 } (78B+3) [9D27] RU:1848  Settled
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3. *  W // AA7A9DD-B //  1.4 au
@@ -1436,29 +2700,53 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  8.    . // .......-. // 44.8 au
   --  9.    S // 000000-0 // 89.6 au
 
-0740     C222888-8 T    S     Na,Po       N            M4V           W..S          Caliban
+0740     C222888-8 T    S     Ph Na Pi Po N            M4V           W..S          Caliban  { -1 } (573+3) [9787] RU:315  Settled
   --  1. *  W // C222888-8 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 2
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 2
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    S // 000000-0 //  1.6 au
 
 
 # Subsector N
-1631     C565AAA-A T    SG    Hi          F M          K0V           .WG..S        Mercator
+1631     C565AAA-A T    SG    Hi          F M          K0V           .WG..S        Mercator  { +2 } (796-1) [9C4B] RU:-378  Settled
   --  1.    . // .......-. //  0.3 au
   --  2. *  W // C565AAA-A //  0.6 au
   --  3.    G // 000000-0 //  1.2 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 5
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 4
+     -- Moon 4: Size 4 Atmo 0 Hydro 2
+     -- Moon 5: Size 5 Atmo 4 Hydro 7
+     -- Moon 6: Size 3 Atmo 0 Hydro 4
+     -- Moon 7: Size 3 Atmo 0 Hydro 4
   --  4.    . // .......-. //  2.4 au
   --  5.    . // .......-. //  4.8 au
   --  6.    S // 000000-0 //  9.6 au
 
-0932     B667558-B T    NSGC  Ag,NI       S            M0V           W.GG          Centuris
+0932     B667558-B T    NSGC  Ga Ni Ag Pr S            M0V           W.GG          Centuris  { +3 } (A44-4) [789A] RU:-640  Colony
   --  1. *  W // B667558-B //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 6
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 3
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 5
+     -- Moon 5: Size 2 Atmo 0 Hydro 5
+     -- Moon 6: Size 3 Atmo 3 Hydro 5
+     -- Moon 7: Size 2 Atmo 0 Hydro 0
+     -- Moon 8: Size 0 Atmo 0 Hydro 0
+     -- Moon 9: Size 1 Atmo 0 Hydro 0
+     -- Moon 10: Size 5 Atmo 1 Hydro 8
+     -- Moon 11: Size 3 Atmo 0 Hydro 2
 
-0933     E555377-6 F    G     Lo          M F M O      M4II          ..B...WGG     Korvel
+0933     E555377-6 F    G     Lo          M F M O      M4II          ..B...WGG     Korvel  { -3 } (820-1) [5157] RU:-16  Colony
   --  1.    . // .......-. //  0.7 au
   --  2.    . // .......-. //  1.0 au
   --  3.    B // 000000-0 //  1.7 au
@@ -1467,16 +2755,37 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  6.    . // .......-. // 11.5 au
   --  7. *  W // E555377-6 // 22.7 au
   --  8.    G // 000000-0 // 45.1 au
+     -- Moon 1: Size 5 Atmo 3 Hydro 3
+     -- Moon 2: Size 3 Atmo 0 Hydro 6
+     -- Moon 3: Size 1 Atmo 0 Hydro 2
+     -- Moon 4: Size 3 Atmo 2 Hydro 5
+     -- Moon 5: Size 2 Atmo 0 Hydro 0
+     -- Moon 6: Size 1 Atmo 0 Hydro 4
+     -- Moon 7: Size 1 Atmo 0 Hydro 3
+     -- Moon 8: Size 2 Atmo 0 Hydro 0
+     -- Moon 9: Size 5 Atmo 6 Hydro 0
+     -- Moon 10: Size 2 Atmo 0 Hydro 3
   --  9.    G // 000000-0 // 89.9 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 1
+     -- Moon 3: Size 5 Atmo 1 Hydro 3
+     -- Moon 4: Size 2 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 1 Hydro 5
+     -- Moon 7: Size 2 Atmo 0 Hydro 0
 
-1633     B76A155-B C    SGC   Lo                       M4V           W..GG         Shora
+1633     B76A155-B C    SGC   Wa Lo Co                 M4V           W..GG         Shora  { +1 } (800-3) [127A] RU:-24  Colony
   --  1. *  W // B76A155-B //  0.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 3
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
 
-1535     C879778-7 T    GP                S F          M4II          ...B..WGG     Heinlein
+1535     C879778-7 T    GP    Pi          S F          M4II          ...B..WGG     Heinlein  { -1 } (C65+1) [7633] RU:360  Settled
   --  1.    . // .......-. //  0.7 au
   --  2.    . // .......-. //  1.0 au
   --  3.    . // .......-. //  1.7 au
@@ -1484,29 +2793,61 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5.    . // .......-. //  5.9 au
   --  6.    . // .......-. // 11.5 au
   --  7. *  W // C879778-7 // 22.7 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
   --  8.    G // 000000-0 // 45.1 au
   --  9.    G // 000000-0 // 89.9 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 2
+     -- Moon 2: Size 3 Atmo 0 Hydro 2
+     -- Moon 3: Size 2 Atmo 0 Hydro 5
+     -- Moon 4: Size 3 Atmo 0 Hydro 6
+     -- Moon 5: Size 5 Atmo 1 Hydro 0
+     -- Moon 6: Size 4 Atmo 0 Hydro 3
 
-1036     C515238-8 F    GP    IC,Lo       O            G0V           .GWGB.G       Shadow
+1036     C515238-8 F    GP    Ic Lo       O            G0V           .GWGB.G       Shadow  { -2 } (F10+4) [1139] RU:60  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    G // 000000-0 //  0.8 au
   --  3. *  W // C515238-8 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 1
+     -- Moon 3: Size 4 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 5
+     -- Moon 4: Size 1 Atmo 0 Hydro 3
   --  5.    B // 000000-0 //  6.4 au
   --  6.    . // .......-. // 12.8 au
   --  7.    G // 000000-0 // 25.6 au
+     -- Moon 1: Size 6 Atmo 6 Hydro 2
+     -- Moon 2: Size 3 Atmo 0 Hydro 4
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 5 Atmo 3 Hydro 0
 
-1436     E636112-5 F    G     Lo,Lt                    G0V           ..WGG.S       Boondock
+1436     E636112-5 F    G     Lo Lt                    G0V           ..WGG.S       Boondock  { -3 } (700-1) [1138] RU:-7  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // E636112-5 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 8
+     -- Moon 2: Size 1 Atmo 0 Hydro 2
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
   --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 4 Atmo 2 Hydro 2
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 2
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 4 Atmo 2 Hydro 2
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
   --  6.    . // .......-. // 12.8 au
   --  7.    S // 000000-0 // 25.6 au
 
-1037     D95A334-9 C    .     Lo          O F          M6V           W.....S       Felis
+1037     D95A334-9 C    .     Wa Lo Co    O F          M6V           W.....S       Felis  { -2 } (620+0) [5116] RU:12  Colony
   --  1. *  W // D95A334-9 //  0.2 au
+     -- Moon 1: Size 8 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
@@ -1514,7 +2855,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // 000000-0 // 12.8 au
 
-1438     D739333-7 F    S     Lo          N S          M0V           W.BBS....S    Aquitar
+1438     D739333-7 F    S     Lo          N S          M0V           W.BBS....S    Aquitar  { -3 } (B20+5) [3145] RU:110  Colony
   --  1. *  W // D739333-7 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    B // 000000-0 //  0.8 au
@@ -1526,17 +2867,24 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-1039     D262466-4 T    SG    Lt,NI       O            M6V           WG....S       Axista
+1039     D262466-4 T    SG    Ni Lt       O            M6V           WG....S       Axista  { -3 } (836+2) [3139] RU:288  Colony
   --  1. *  W // D262466-4 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 3 Atmo 0 Hydro 7
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 2
+     -- Moon 6: Size 5 Atmo 1 Hydro 3
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // 000000-0 // 12.8 au
 
-1639     E679789-7 T    .                 N F          M6V           W........S    Karesitio
+1639     E679789-7 T    .     Pi          N F          M6V           W........S    Karesitio  { -2 } (465-3) [7529] RU:-360  Settled
   --  1. *  W // E679789-7 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
@@ -1547,43 +2895,105 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-1340     C95A122-7 T    SG    Lo          F M N        F2V           ...WG.S       Stombos
+1340     C95A122-7 T    SG    Wa Lo       F M N        F2V           ...WG.S       Stombos  { -2 } (700-3) [1157] RU:-21  Colony
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // C95A122-7 //  2.4 au
+     -- Moon 1: Size 7 Atmo 0 Hydro 1
+     -- Moon 2: Size 7 Atmo 0 Hydro 0
   --  5.    G // 000000-0 //  4.8 au
+     -- Moon 1: Size 7 Atmo 3 Hydro 0
+     -- Moon 2: Size 3 Atmo 0 Hydro 6
+     -- Moon 3: Size 4 Atmo 0 Hydro 3
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 2 Atmo 0 Hydro 1
+     -- Moon 6: Size 3 Atmo 2 Hydro 8
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
   --  6.    . // .......-. //  9.6 au
   --  7.    S // 000000-0 // 19.2 au
 
-1540     C76AAAA-A T    SGC   Hi                       F0V           ..WGB         Ardamador
+1540     C76AAAA-A T    SGC   Wa Hi                    F0V           ..WGB         Ardamador  { +2 } (E96-1) [CC37] RU:-756  Settled
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // C76AAAA-A //  1.6 au
+     -- Moon 1: Size 5 Atmo 0 Hydro 1
   --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 2 Atmo 0 Hydro 3
+     -- Moon 4: Size 1 Atmo 1 Hydro 2
+     -- Moon 5: Size 1 Atmo 0 Hydro 2
   --  5.    B // 000000-0 //  6.4 au
 
 
 # Subsector O
-1931     DA2A445-8 T    G     NI          F F M        G5V           G.W.GBG       Eternium
+1931     DA2A445-8 T    G     Oc Ni       F F M        G5V           G.W.GBG       Eternium  { -3 } (B31+3) [6158] RU:99  Colony
   --  1.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 5 Atmo 3 Hydro 0
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // DA2A445-8 //  1.6 au
+     -- Moon 1: Size 9 Atmo 0 Hydro 2
+     -- Moon 2: Size 5 Atmo 0 Hydro 0
   --  4.    . // .......-. //  3.2 au
   --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 6 Atmo 2 Hydro 3
+     -- Moon 2: Size 6 Atmo 5 Hydro 5
+     -- Moon 3: Size 5 Atmo 4 Hydro 6
+     -- Moon 4: Size 3 Atmo 0 Hydro 3
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 4 Atmo 3 Hydro 0
+     -- Moon 7: Size 2 Atmo 0 Hydro 0
+     -- Moon 8: Size 5 Atmo 1 Hydro 0
+     -- Moon 9: Size 3 Atmo 4 Hydro 2
+     -- Moon 10: Size 5 Atmo 2 Hydro 3
   --  6.    B // 000000-0 // 12.8 au
   --  7.    G // 000000-0 // 25.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 4 Hydro 1
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
 
-2331     CB8A336-6 T    GP    Lo          N N N        M4V           WGG.G.S       Leseum
+2331     CB8A336-6 T    GP    Oc Lo       N N N        M4V           WGG.G.S       Leseum  { -2 } (820-2) [2165] RU:-32  Colony
   --  1. *  W // CB8A336-6 //  0.2 au
+     -- Moon 1: Size 9 Atmo 0 Hydro 0
+     -- Moon 2: Size A Atmo 0 Hydro 1
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 1
+     -- Moon 3: Size 5 Atmo 1 Hydro 2
+     -- Moon 4: Size 5 Atmo 1 Hydro 5
+     -- Moon 5: Size 3 Atmo 2 Hydro 0
+     -- Moon 6: Size 5 Atmo 1 Hydro 6
+     -- Moon 7: Size 6 Atmo 4 Hydro 1
+     -- Moon 8: Size 4 Atmo 0 Hydro 4
+     -- Moon 9: Size 2 Atmo 0 Hydro 4
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 2
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 2
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 6 Atmo 5 Hydro 4
+     -- Moon 8: Size 4 Atmo 0 Hydro 0
+     -- Moon 9: Size 5 Atmo 4 Hydro 8
+     -- Moon 10: Size 0 Atmo 0 Hydro 0
   --  4.    . // .......-. //  1.6 au
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 6 Atmo 4 Hydro 3
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 1 Hydro 3
+     -- Moon 4: Size 2 Atmo 0 Hydro 4
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 6 Atmo 2 Hydro 2
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // 000000-0 // 12.8 au
 
-2132     D868999-9 T    S     Hi          O            M2V           W........S    Agni
+2132     D868999-9 T    S     Hi Pr       O            M2V           W........S    Agni  { +0 } (C85+1) [D965] RU:480  Settled
   --  1. *  W // D868999-9 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
@@ -1595,33 +3005,72 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-2332     D535337-6 T    G     Lo          N            K0V           .W...GS       Hel
+2332     D535337-6 T    G     Lo          N            K0V           .W...GS       Hel  { -3 } (A20+0) [4148] RU:20  Colony
   --  1.    . // .......-. //  0.3 au
   --  2. *  W // D535337-6 //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4.    . // .......-. //  2.4 au
   --  5.    . // .......-. //  4.8 au
   --  6.    G // 000000-0 //  9.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 0
+     -- Moon 5: Size 6 Atmo 2 Hydro 6
+     -- Moon 6: Size 4 Atmo 0 Hydro 5
   --  7.    S // 000000-0 // 19.2 au
 
-2432     B3A3336-B T    NG    Fl,Lo       F O          F2V           ..W.G         Serieve
+2432     B3A3336-B T    NG    Fl Lo       F O          F2V           ..W.G         Serieve  { +1 } (720+0) [648B] RU:14  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // B3A3336-B //  1.6 au
   --  4.    . // .......-. //  3.2 au
   --  5.    G // 000000-0 //  6.4 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 2
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 5
 
-1733     D669233-8 T    G     Lo          N M          M2V           W.GBG         Tupile
+1733     D669233-8 T    G     Lo          N M          M2V           W.GBG         Tupile  { -3 } (810+2) [1167] RU:16  Colony
   --  1. *  W // D669233-8 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 3
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 2
+     -- Moon 2: Size 1 Atmo 0 Hydro 3
+     -- Moon 3: Size 8 Atmo 5 Hydro 1
+     -- Moon 4: Size 1 Atmo 2 Hydro 4
+     -- Moon 5: Size 4 Atmo 5 Hydro 1
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 7 Atmo 8 Hydro 0
+     -- Moon 8: Size 3 Atmo 3 Hydro 4
+     -- Moon 9: Size 4 Atmo 0 Hydro 3
   --  4.    B // 000000-0 //  1.6 au
   --  5.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 4 Atmo 0 Hydro 3
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 3 Atmo 0 Hydro 2
+     -- Moon 6: Size 1 Atmo 0 Hydro 2
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 2 Atmo 0 Hydro 6
+     -- Moon 9: Size 1 Atmo 0 Hydro 5
+     -- Moon 10: Size 1 Atmo 0 Hydro 2
 
-2133     B7A5888-B H    GC    Fl          O            M4V           WGGG.....S    Toog
+2133     B7A5888-B H    GC    Fl Ph Ho    O            M4V           WGGG.....S    Toog  { +2 } (575+1) [9A68] RU:175  Settled
   --  1. *  W // B7A5888-B //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 6
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 3
+     -- Moon 2: Size 7 Atmo 3 Hydro 3
+     -- Moon 3: Size 4 Atmo 4 Hydro 5
+     -- Moon 4: Size 5 Atmo 1 Hydro 7
+     -- Moon 5: Size 5 Atmo 1 Hydro 4
   --  4.    G // 000000-0 //  1.6 au
   --  5.    . // .......-. //  3.2 au
   --  6.    . // .......-. //  6.4 au
@@ -1630,55 +3079,86 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-2233     C5356BD-7 T    G     NI                       M2V           WBG.          Hurmuptha
+2233     C5356BD-7 T    G     Ni                       M2V           WBG.          Hurmuptha  { -2 } (453-3) [945A] RU:-180  Colony
   --  1. *  W // C5356BD-7 //  0.2 au
   --  2.    B // 000000-0 //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
   --  4.    . // .......-. //  1.6 au
 
-2034     D818344-8 F    SG    IC,Lo       N O          M6V           W.G           Intinogurzibeshilaha
+2034     D818344-8 F    SG    Ic Lo       N O          M6V           W.G           Intinogurzibeshilaha  { -3 } (720+1) [2158] RU:14  Colony
   --  1. *  W // D818344-8 //  0.2 au
+     -- Moon 1: Size 6 Atmo 0 Hydro 1
   --  2.    . // .......-. //  0.4 au
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 2 Atmo 2 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 6
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
 
-2334     D66A666-6 T    G     NI,Ri       M            M4V           WG..S         Umber
+2334     D66A666-6 T    G     Wa Ni Ri    M            M4V           WG..S         Umber  { -2 } (956-1) [4493] RU:-270  Colony
   --  1. *  W // D66A666-6 //  0.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 2
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 1
+     -- Moon 2: Size 7 Atmo 7 Hydro 4
+     -- Moon 3: Size 1 Atmo 0 Hydro 1
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 2 Atmo 0 Hydro 3
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-2035     X967222-2 H    G     Lo,Lt                    M2V           WG..S         Wega
+2035     X967222-2 H    G     Lo Lt Ho Tr              M2V           WG..S         Wega  { -3 } (810+1) [2123] RU:8  Colony
   --  1. *  W // X967222-2 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 3
+     -- Moon 2: Size 5 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 3 Atmo 2 Hydro 2
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 5 Atmo 2 Hydro 5
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 4 Atmo 2 Hydro 6
+     -- Moon 7: Size 3 Atmo 0 Hydro 3
+     -- Moon 8: Size 5 Atmo 1 Hydro 0
+     -- Moon 9: Size 4 Atmo 3 Hydro 3
+     -- Moon 10: Size 3 Atmo 0 Hydro 5
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-1736     C293389-8 H    .     Lo          S            M0V           W.S           Peekaboo
+1736     C293389-8 H    .     Lo Ho       S            M0V           W.S           Peekaboo  { -2 } (920-1) [4149] RU:-18  Colony
   --  1. *  W // C293389-8 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    S // 000000-0 //  0.8 au
 
-2437     C525566-7 T    GC    NI          M            M6V           WB..S         Atlast
+2437     C525566-7 T    GC    Ni          M            M6V           WB..S         Atlast  { -2 } (A46-1) [2349] RU:-240  Colony
   --  1. *  W // C525566-7 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 1
   --  2.    B // 000000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-1838     E949556-5 T    G     Lt,NI                    F5IV          ...WGG..S     Bortresoye
+1838     E949556-5 T    G     Ni Lt                    F5IV          ...WGG..S     Bortresoye  { -3 } (741+0) [1276] RU:28  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3.    . // .......-. //  1.4 au
   --  4. *  W // E949556-5 //  2.8 au
   --  5.    G // 000000-0 //  5.6 au
+     -- Moon 1: Size 2 Atmo 2 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  6.    G // 000000-0 // 11.2 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 2
+     -- Moon 2: Size 5 Atmo 3 Hydro 4
+     -- Moon 3: Size 1 Atmo 0 Hydro 0
   --  7.    . // .......-. // 22.4 au
   --  8.    . // .......-. // 44.8 au
   --  9. -  S // 000000-0 // 89.6 au
 
-2140     C755737-9 T    C     Lo          F            F2V           ...W..        Copa
+2140     C755737-9 T    C     Ga Ag       F            F2V           ...W..        Copa  { +1 } (669-2) [7847] RU:-648  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
@@ -1688,28 +3168,46 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 
 # Subsector P
-3131     E949888-8 T    G                              M6V           WGG.          Retha
+3131     E949888-8 T    G     Ph Pi                    M6V           WGG.          Retha  { -2 } (A74-1) [D668] RU:-280  Settled
   --  1. *  W // E949888-8 //  0.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 0
+     -- Moon 2: Size 5 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 0 Hydro 4
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 0 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 7
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 6 Atmo 2 Hydro 4
+     -- Moon 4: Size 3 Atmo 0 Hydro 5
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
   --  4.    . // .......-. //  1.6 au
 
-2536     D470566-5 R    S     De,Lt,NI    N            M0V           W..S          San-Ska-Re
+2536     D470566-5 R    S     De He Ni Lt N            M0V           W..S          San-Ska-Re  { -3 } (746+5) [4271] RU:840  Colony
   --  1. *  W // D470566-5 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 1
+     -- Moon 2: Size 1 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    S // 000000-0 //  1.6 au
 
-2636     D61699D-9 F    .     Hi,IC,In                 F5V           ..WB          Kiluwa
+2636     D61699D-9 F    .     Ic Hi In                 F5V           ..WB          Kiluwa  { +1 } (98C+1) [CA7C] RU:864  Settled
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // D61699D-9 //  1.6 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
   --  4.    B // 000000-0 //  3.2 au
 
-2736     C434555-7 C    .     NI          F O S        M6V           W             Persephone
+2736     C434555-7 C    .     Ni Co       F O S        M6V           W             Persephone  { -2 } (841+4) [5356] RU:128  Colony
   --  1. *  W // C434555-7 //  0.2 au
 
-2936     C848000-0 T    GC    Ba,Lt                    M4II          ..S...W.G     Nomolos
+2936     C848000-0 T    GC    Lt                       M4II          ..S...W.G     Nomolos  { -2 } (404+0) [1141] RU:16  
   --  1.    . // .......-. //  0.6 au
   --  2.    . // .......-. //  0.9 au
   --  3.    S // 000000-0 //  1.5 au
@@ -1719,19 +3217,31 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  7. *  W // C848000-0 // 19.5 au
   --  8.    . // .......-. // 38.7 au
   --  9.    G // 000000-0 // 77.1 au
+     -- Moon 1: Size 5 Atmo 1 Hydro 1
+     -- Moon 2: Size 3 Atmo 0 Hydro 0
+     -- Moon 3: Size 1 Atmo 0 Hydro 4
 
-3036     E727669-6 F    G     NI          F            M0V           WGG           Mito
+3036     E727669-6 F    G     Ni          F            M0V           WGG           Mito  { -3 } (951-2) [7345] RU:-90  Colony
   --  1. *  W // E727669-6 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 0
+     -- Moon 2: Size 1 Atmo 0 Hydro 1
+     -- Moon 3: Size 6 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 8
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 6 Atmo 2 Hydro 3
+     -- Moon 2: Size 2 Atmo 2 Hydro 8
 
-2537     E648559-5 T    .     Ag,Lt,NI                 M4V           W..S          Bathyos
+2537     E648559-5 T    .     Ni Ag Lt                 M4V           W..S          Bathyos  { -2 } (845-3) [6344] RU:-480  Colony
   --  1. *  W // E648559-5 //  0.2 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 1
+     -- Moon 2: Size 2 Atmo 0 Hydro 1
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    S // 000000-0 //  1.6 au
 
-2737     D526114-5 T    SG    Lo,Lt                    F0V           B.W..S        Mela Five
+2737     D526114-5 T    SG    Lo Lt                    F0V           B.W..S        Mela Five  { -3 } (600-3) [3181] RU:-18  Colony
   --  1.    B // 000000-0 //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // D526114-5 //  1.6 au
@@ -1739,7 +3249,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5.    . // .......-. //  6.4 au
   --  6.    S // 000000-0 // 12.8 au
 
-2837     C87A456-A F    SC    NI          S            G5IV          ...W.S        Metaluna
+2837     C87A456-A F    SC    Wa Ni       S            G5IV          ...W.S        Metaluna  { +0 } (533+0) [445B] RU:45  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3.    . // .......-. //  1.4 au
@@ -1747,11 +3257,32 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5.    . // .......-. //  5.6 au
   --  6.    S // 000000-0 // 11.2 au
 
-3137     C497225-8 T    SGP   Lo          N M          M6V           WGGGB....S    Nomolos
+3137     C497225-8 T    SGP   Lo          N M          M6V           WGGGB....S    Nomolos  { -2 } (A10+0) [5149] RU:10  Colony
   --  1. *  W // C497225-8 //  0.2 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 1
+     -- Moon 2: Size 2 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 2
+     -- Moon 2: Size 3 Atmo 0 Hydro 5
+     -- Moon 3: Size 1 Atmo 0 Hydro 6
+     -- Moon 4: Size 3 Atmo 0 Hydro 4
+     -- Moon 5: Size 3 Atmo 2 Hydro 8
+     -- Moon 6: Size 4 Atmo 0 Hydro 1
+     -- Moon 7: Size 4 Atmo 0 Hydro 7
+     -- Moon 8: Size 2 Atmo 0 Hydro 3
+     -- Moon 9: Size 6 Atmo 5 Hydro 3
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 4 Atmo 0 Hydro 6
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 2 Atmo 0 Hydro 2
+     -- Moon 5: Size 1 Atmo 0 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 6
+     -- Moon 7: Size 6 Atmo 3 Hydro 4
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 0
+     -- Moon 2: Size 2 Atmo 3 Hydro 3
+     -- Moon 3: Size 5 Atmo 1 Hydro 4
   --  5.    B // 000000-0 //  3.2 au
   --  6.    . // .......-. //  6.4 au
   --  7. -  . // .......-. // 12.8 au
@@ -1759,31 +3290,66 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // 000000-0 // 102.4 au
 
-3237     EB2A145-7 F    G     Lo                       M4V           WGGG          Wallach-Eli
+3237     EB2A145-7 F    G     Oc Lo                    M4V           WGGG          Wallach-Eli  { -3 } (600-2) [1169] RU:-12  Colony
   --  1. *  W // EB2A145-7 //  0.2 au
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 4
+     -- Moon 2: Size 3 Atmo 0 Hydro 4
+     -- Moon 3: Size 7 Atmo 3 Hydro 5
+     -- Moon 4: Size 3 Atmo 0 Hydro 1
+     -- Moon 5: Size 0 Atmo 0 Hydro 0
+     -- Moon 6: Size 4 Atmo 0 Hydro 4
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
+     -- Moon 8: Size 4 Atmo 0 Hydro 4
+     -- Moon 9: Size 7 Atmo 4 Hydro 5
   --  3.    G // 000000-0 //  0.8 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 4
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 0 Atmo 0 Hydro 0
+     -- Moon 5: Size 5 Atmo 5 Hydro 0
+     -- Moon 6: Size 3 Atmo 0 Hydro 0
+     -- Moon 7: Size 0 Atmo 0 Hydro 0
   --  4.    G // 000000-0 //  1.6 au
+     -- Moon 1: Size 2 Atmo 0 Hydro 6
+     -- Moon 2: Size 1 Atmo 0 Hydro 6
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 1 Atmo 0 Hydro 3
 
-2638     BB28555-9 H    S     NI                       M6V           W..BS         Bel
+2638     BB28555-9 H    S     Ni Ho                    M6V           W..BS         Bel  { +0 } (A45+0) [7564] RU:200  Colony
   --  1. *  W // BB28555-9 //  0.2 au
+     -- Moon 1: Size 8 Atmo 0 Hydro 0
+     -- Moon 2: Size 8 Atmo 0 Hydro 0
+     -- Moon 3: Size 7 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    B // 000000-0 //  1.6 au
   --  5.    S // 000000-0 //  3.2 au
 
-2938     X2626AA-6 T    .     NI,Ri       F            M0V           WB            Euterpe
+2938     X2626AA-6 T    .     Ni Ri       F            M0V           WB            Euterpe  { -2 } (B55+0) [9436] RU:275  Colony
   --  1. *  W // X2626AA-6 //  0.2 au
+     -- Moon 1: Size 0 Atmo 0 Hydro 0
+     -- Moon 2: Size 0 Atmo 0 Hydro 3
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
   --  2.    B // 000000-0 //  0.4 au
 
-2839     A75779A-8 T    NGC   Ag          O            M4V           WG            Yugopotamia
+2839     A75779A-8 T    NGC   Ga Ag       O            M4V           WG            Yugopotamia  { +1 } (56B-4) [5878] RU:-1320  Settled
   --  1. *  W // A75779A-8 //  0.2 au
+     -- Moon 1: Size 4 Atmo 0 Hydro 1
+     -- Moon 2: Size 6 Atmo 0 Hydro 4
   --  2.    G // 000000-0 //  0.4 au
+     -- Moon 1: Size 1 Atmo 0 Hydro 8
+     -- Moon 2: Size 0 Atmo 0 Hydro 0
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
 
-3040     E491666-8 R    G     NI                       G0V           ..WGB         Hurria
+3040     E491666-8 R    G     He Ni                    G0V           ..WGB         Hurria  { -3 } (B51-1) [639B] RU:-55  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // E491666-8 //  1.6 au
   --  4.    G // 000000-0 //  3.2 au
+     -- Moon 1: Size 3 Atmo 0 Hydro 4
+     -- Moon 2: Size 4 Atmo 0 Hydro 5
+     -- Moon 3: Size 0 Atmo 0 Hydro 0
+     -- Moon 4: Size 4 Atmo 2 Hydro 5
   --  5.    B // 000000-0 //  6.4 au
 

@@ -14,6 +14,8 @@
 require 'json'
 
 ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"].freeze
+EHEX  = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ".freeze   # T5 extended hex for Ix/Ex/Cx (skips I,O)
+def ehex(n); n = n.to_i; n < 0 ? "0" : (EHEX[n] || EHEX[-1]); end
 # go: StarMass[type][size]; OuterLimit = 40 * mass (default mass 0.3)
 STAR_MASS = {
   "O" => [70, 60, 0, 0, 50, 0], "B" => [50, 40, 35, 30, 20, 10],
@@ -83,6 +85,15 @@ def volume_ascii(v)
     "%02d%02d" % [v["column"], v["row"]], body_uwp(w, "W"), w["temperature"], bases,
     (w["trade_codes"] || []).join(" "), (w["factions"] || []).join(" "),
     stars, orbits.map { |o| orbit_letter(o) }.join, v["name"]]
+
+  # T5 extensions, appended after the name when present (Ix / Ex / Cx / RU + native)
+  if w["ix"]
+    ex = w["ex"]; cx = w["cx"]
+    summary += "  { %+d } (%s%s%s%+d) [%s%s%s%s] RU:%d  %s" % [w["ix"],
+      ehex(ex["res"]), ehex(ex["lab"]), ehex(ex["inf"]), ex["eff"].to_i,
+      ehex(cx["homo"]), ehex(cx["acc"]), ehex(cx["str"]), ehex(cx["sym"]), w["ru"], w["native"]]
+  end
+
   return summary if orbits.empty?
   limit = outer_limit(s)
   summary + "\n" + orbits.map { |o| orbit_ascii(o, limit) }.join("\n") + "\n"
