@@ -1,0 +1,43 @@
+# Traveller 5 ruleset (data-driven). Phase 1: the trade-classification table.
+# Conditions are evaluated by Astromapper::Rules::Expr against a world's UWP
+# (size, atmo, hydro, pop, gov, law, tech, port, temp). Order = output order.
+name: Traveller 5
+hex: "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ"   # extended hex (skips I and O)
+
+# Trade Classifications — Traveller 5 WorldGen TCS table (page 434).
+trade_codes:
+  # Planetary
+  As: "size==0 and atmo==0 and hydro==0"
+  De: "atmo>=2 and atmo<=9 and hydro==0"
+  Fl: "(atmo==10 or atmo==11 or atmo==12) and hydro>=1 and hydro<=10"
+  Ga: "(size>=6 and size<=8) and (atmo==5 or atmo==6 or atmo==8) and (hydro>=5 and hydro<=7)"
+  He: "(size==3 or size==4 or size==5 or size==9 or size==10 or size==11 or size==12) and (atmo==2 or atmo==4 or atmo==7 or atmo==9 or atmo==10 or atmo==11 or atmo==12) and hydro>=0 and hydro<=2"
+  Ic: "(atmo==0 or atmo==1) and hydro>=1 and hydro<=10"
+  Oc: "(size==10 or size==11 or size==12) and hydro==10"
+  Va: "atmo==0"
+  Wa: "(size>=5 and size<=9) and hydro==10"
+  # Population
+  Ba: "pop==0 and gov==0 and law==0 and (port=='E' or port=='X')"
+  Lo: "pop>=1 and pop<=3"
+  Ni: "pop>=4 and pop<=6"
+  Ph: "pop==8"
+  Hi: "pop>=9"
+  # Economic
+  Pa: "atmo>=4 and atmo<=9 and hydro>=4 and hydro<=8 and (pop==4 or pop==8)"
+  Ag: "atmo>=4 and atmo<=9 and hydro>=4 and hydro<=8 and pop>=5 and pop<=7"
+  Na: "atmo>=0 and atmo<=3 and hydro>=0 and hydro<=3 and pop>=6"
+  Pi: "(atmo==0 or atmo==1 or atmo==2 or atmo==4 or atmo==7 or atmo==9) and (pop==7 or pop==8)"
+  In: "(atmo==0 or atmo==1 or atmo==2 or atmo==4 or atmo==7 or atmo==9) and pop>=9"
+  Po: "atmo>=2 and atmo<=5 and hydro>=0 and hydro<=3"
+  Pr: "(atmo==6 or atmo==8) and (pop==5 or pop==9)"
+  Ri: "(atmo==6 or atmo==8) and pop>=6 and pop<=8"
+  # Technology (conventional, not on the T5 TCS page)
+  Ht: "tech>12"
+  Lt: "tech<6"
+  # Climate descriptors (HZ-derived)
+  Tz: "temp=='Tz'"
+  Lk: "temp=='Lk'"
+  Ho: "temp=='H'"
+  Co: "temp=='C'"
+  Tr: "temp=='H' and (size>=6 and size<=9) and (atmo>=4 and atmo<=9) and (hydro>=3 and hydro<=7)"
+  Tu: "temp=='C' and (size>=6 and size<=9) and (atmo>=4 and atmo<=9) and (hydro>=3 and hydro<=7)"
