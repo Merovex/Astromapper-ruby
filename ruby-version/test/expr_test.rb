@@ -75,4 +75,17 @@ class ExprTest < Minitest::Test
       assert_includes (0..18), rs.uwp_step("law",   { "gov" => 15 })
     end
   end
+
+  def test_module_registry
+    rs = Astromapper::Rules::Ruleset.load("t5")
+    %w[extensions climate native].each { |slot| assert_equal "t5", rs.module_for(slot) }
+    # default to t5 when a slot is unspecified
+    assert_equal "t5", Astromapper::Rules::Ruleset.new("bare", {}).module_for("extensions")
+    # explicit disable
+    off = Astromapper::Rules::Ruleset.new("off", { "modules" => { "extensions" => "none" } })
+    assert_equal "none", off.module_for("extensions")
+    # a module name is constrained to a word, so YAML can't smuggle a method/call
+    bad = Astromapper::Rules::Ruleset.new("bad", { "modules" => { "climate" => "system('x')" } })
+    assert_raises(RuntimeError) { bad.module_for("climate") }
+  end
 end

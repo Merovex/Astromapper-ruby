@@ -200,10 +200,18 @@ module Astromapper
         end
       end
 
+      # Climate slot — dispatched to the ruleset's climate module (t5 | none | …). The
+      # name can only resolve to a `climate_<name>` method, so YAML can't reach arbitrary code.
+      def climate
+        mod = Astromapper.ruleset.module_for('climate')
+        return 'T' if mod == 'none'
+        send("climate_#{mod}")
+      end
+
       # Traveller 5 climate, from the Habitable Zone Variance (a Flux roll, page 432):
       # HZ−1 = Hot, HZ = Temperate, HZ+1 = Cold; orbits 0–1 are tidally locked = Twilight.
       #   T Temperate · H Hot · C Cold · Tz Twilight · Lk Locked
-      def climate
+      def climate_t5
         return 'Tz' if @orbit_number <= 1
         #            Flux: -6 -5 -4 -3 -2 -1  0 +1 +2 +3 +4 +5 +6
         variance = [-2,-1,-1,-1, 0, 0, 0, 0, 0, 1, 1, 1, 2][flux + 6]
@@ -296,9 +304,18 @@ module Astromapper
         '..'
       end
 
+      # Extensions slot — dispatched to the ruleset's extensions module (t5 | none | …),
+      # then the native status (its own slot). `none` leaves Ix/Ex/Cx unset (no display).
+      def build_extensions(gas_giants = 0, belts = 0)
+        mod = Astromapper.ruleset.module_for('extensions')
+        send("build_extensions_#{mod}", gas_giants, belts) unless mod == 'none'
+        @native = native_status
+        self
+      end
+
       # Traveller 5 Extensions (Ix / Ex / Cx). Computed after the system is built,
       # since Resources depends on the system's gas-giant and planetoid-belt counts.
-      def build_extensions(gas_giants = 0, belts = 0)
+      def build_extensions_t5(gas_giants = 0, belts = 0)
         tc = trade_codes
 
         # Importance Extension (Ix) — T5 WorldGen page 435.
@@ -333,9 +350,13 @@ module Astromapper
           str:  min1.(5 + flux),
           sym:  min1.(@tek + flux),
         }
+      end
 
-        @native = native_status
-        self
+      # Native slot — dispatched to the ruleset's native module (t5 | none | …).
+      def native_status
+        mod = Astromapper.ruleset.module_for('native')
+        return '' if mod == 'none'
+        send("native_status_#{mod}")
       end
 
       # Native Intelligent Life / Native Status — T5 WorldGen page 436 (NIL).
@@ -343,7 +364,7 @@ module Astromapper
       # are simply Settled (established) or a Colony (frontier). Set `sophonts: varied` in
       # the config to allow native alien sophonts (Native = evolved here; Exotic = non-human
       # transplants on a world that couldn't grow native intelligent life).
-      def native_status
+      def native_status_t5
         if config['sophonts'].to_s.downcase == 'varied'
           if @popx >= 7
             return 'Exotic' if @atmo <= 1
