@@ -68,13 +68,14 @@ module Astromapper
 		  def tab_legend
 		    <<~LEG.chomp
 		      # Sector: #{config['name']} -- T5 Second Survey (tab-delimited). Lines beginning with # are comments.
+		      # Ruleset: #{Astromapper.ruleset.title}
 		      #
 		      # COLUMNS: Sector SS Hex Name UWP Bases Remarks Zone PBG Allegiance Stars {Ix} (Ex) [Cx] Nobility W RU
 		      #   SS         Subsector A-P (4x4 grid of 8x10 subsectors)
 		      #   Hex        Column+row (e.g. 0801)
 		      #   UWP        Starport Size Atmo Hydro Pop Gov Law - Tech (eHex: 0-9 A-H J-N P-Z, skips I/O)
 		      #   Bases      N Naval  S Scout  D Depot  W Way  C Corsair  (blank = none)
-		      #   Remarks    Trade classifications (Traveller 5 TCS)
+		      #   Remarks    Trade classifications (#{Astromapper.ruleset.title})
 		      #   Zone       A Amber  R Red  (blank = none)
 		      #   PBG        Population-multiplier, Belts, Gas giants
 		      #   Stars      Spectral + luminosity; companions space-separated (e.g. F2 V M4 V)
@@ -98,6 +99,7 @@ module Astromapper
 		  def key
 		    <<~KEY
 		      # Astromapper Sector: #{config['name']}
+      # Ruleset: #{Astromapper.ruleset.title}
 		      # Allegiance: #{config['allegiance'] || 'Im'}
 		      #
 		      # System line fields (left to right):
