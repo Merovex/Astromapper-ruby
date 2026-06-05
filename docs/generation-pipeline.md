@@ -4,6 +4,13 @@ This document walks through **how a sector is generated**, stage by stage: what 
 rolled, what is calculated, the value ranges produced, and **which game system each
 step comes from**.
 
+> **Note:** the world-generation rules described below (UWP step formulas, trade
+> codes, starport/base/tech tables, and the Ix/Ex/Cx, climate and native modules)
+> are no longer hardcoded — they are loaded from a **data-driven ruleset**,
+> `rules/<name>.yml`, selected by `ruleset:` in `_astromapper.yml` (default `t5`,
+> with `cepheus` also shipped). The values below describe the **T5** ruleset. See
+> the "Data-driven rulesets" section of `CLAUDE.md` for the YAML model.
+
 Astromapper is a deliberate **hybrid**:
 
 | Concern | Source system |
