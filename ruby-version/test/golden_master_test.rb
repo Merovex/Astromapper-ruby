@@ -8,8 +8,9 @@ require_relative "test_helper"
 class GoldenMasterTest < Minitest::Test
   include SectorBuilder
 
-  SEED   = 20260603
-  GOLDEN = File.expand_path("fixtures/sector_normal_#{SEED}.txt", __dir__)
+  SEED    = 20260603
+  GOLDEN  = File.expand_path("fixtures/sector_normal_#{SEED}.txt", __dir__)
+  CEPHEUS = File.expand_path("fixtures/sector_cepheus_#{SEED}.txt", __dir__)
 
   def test_matches_golden_master
     text = sector_text(seed: SEED, genre: "normal")
@@ -24,6 +25,28 @@ class GoldenMasterTest < Minitest::Test
       "missing golden master; create it with UPDATE_GOLDEN=1"
     assert_equal File.read(GOLDEN), text,
       "sector output drifted from the golden master (run UPDATE_GOLDEN=1 if intended)"
+  end
+
+  # The Cepheus ruleset (rules/cepheus.yml) is internally reproducible too.
+  def test_matches_cepheus_golden_master
+    text = sector_text(seed: SEED, genre: "normal", ruleset: "cepheus")
+
+    if ENV["UPDATE_GOLDEN"]
+      FileUtils.mkdir_p(File.dirname(CEPHEUS))
+      File.write(CEPHEUS, text)
+      skip "regenerated cepheus golden master at #{CEPHEUS}"
+    end
+
+    assert File.exist?(CEPHEUS),
+      "missing cepheus golden master; create it with UPDATE_GOLDEN=1"
+    assert_equal File.read(CEPHEUS), text,
+      "cepheus output drifted from the golden master (run UPDATE_GOLDEN=1 if intended)"
+  end
+
+  # Same seed, different ruleset -> different map (no Ix/Ex/Cx, different trade codes).
+  def test_cepheus_differs_from_t5
+    refute_equal sector_text(seed: SEED, ruleset: "t5"),
+                 sector_text(seed: SEED, ruleset: "cepheus")
   end
 
   def test_same_seed_is_reproducible
