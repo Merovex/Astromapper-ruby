@@ -4,6 +4,29 @@
 name: Traveller 5
 hex: "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ"   # extended hex (skips I and O)
 
+# Starport — Traveller 5 "orientation": low roll = best port. Indexed by the 2D
+# orientation roll, clamped 0..12.
+starport:
+  method: orientation
+  table: [A, A, A, A, A, B, B, C, C, D, E, E, X]
+
+# Tech-Level die modifiers (TL = 1D + sum of these). Arrays indexed by the UWP digit.
+tech_dm:
+  port:  { A: 6, B: 4, C: 2, D: 0, E: 0, F: 1, X: -4 }
+  size:  [2, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  atmo:  [1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1]
+  hydro: [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2]
+  pop:   [0, 1, 1, 1, 1, 1, 0, 0, 0, 2, 4, 4, 4, 4, 4, 4]
+  gov:   [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0]
+
+# Bases — each rolls 2D against a per-starport threshold (present if 2D <= threshold).
+# A port absent from a base's map can never have that base. (Page 432; Depot/Way approx.)
+bases:
+  naval: { A: 6, B: 5 }
+  scout: { A: 4, B: 5, C: 6, D: 7 }
+  depot: { A: 3, B: 3 }
+  way:   { A: 4, B: 4, C: 4 }
+
 # Trade Classifications — Traveller 5 WorldGen TCS table (page 434).
 trade_codes:
   # Planetary
