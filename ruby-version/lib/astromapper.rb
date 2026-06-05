@@ -26,6 +26,19 @@ module Astromapper
   # autoload :TOC,        "astromapper/toc"
   autoload :Svg,         "astromapper/svg"
   autoload :Islands,     "astromapper/islands"
+  require 'astromapper/rules/ruleset'
+
+  # The active data-driven ruleset (rules/<name>.yml). `ruleset:` in _astromapper.yml
+  # selects it (default: t5). Cached per name+project so loading/compiling is one-time.
+  def self.ruleset(root_dir = nil)
+    root_dir ||= Pathname.new(Dir.pwd)
+    name = (config(root_dir)['ruleset'] || 't5').to_s
+    (@rulesets ||= {})[[name, root_dir.to_s]] ||= Astromapper::Rules::Ruleset.load(name, root: root_dir.to_s)
+  rescue StandardError
+    # No project config (e.g. unit tests) — fall back to the built-in t5 ruleset.
+    @rulesets ||= {}
+    @rulesets[['t5', nil]] ||= Astromapper::Rules::Ruleset.load('t5')
+  end
 
 	Encoding.default_internal = "utf-8"
 	Encoding.default_external = "utf-8"

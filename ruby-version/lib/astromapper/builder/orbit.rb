@@ -433,45 +433,14 @@ module Astromapper
       # Trade Classifications — Traveller 5 WorldGen TCS table (page 434).
       # Political and Special TCs are referee-assigned (not generated). Lk/Tz/Ho/Co
       # are climate descriptors, included here as the T5 page lists them.
+      # Data-driven: the conditions live in rules/<ruleset>.yml (default t5.yml) and
+      # are evaluated by Astromapper::Rules::Expr. Same table, same order — just no
+      # longer hardcoded — so a different ruleset (Cepheus, house rules) can swap it.
       def trade_codes
-        a, h, s, p, g, l = @atmo, @h20, @size, @popx, @govm, @law
-        code = []
-        # Planetary
-        code << 'As' if (s == 0 and a == 0 and h == 0)
-        code << 'De' if ((2..9).include?(a) and h == 0)
-        code << 'Fl' if ([10,11,12].include?(a) and (1..10).include?(h))
-        code << 'Ga' if ([6,7,8].include?(s) and [5,6,8].include?(a) and [5,6,7].include?(h))
-        code << 'He' if ([3,4,5,9,10,11,12].include?(s) and [2,4,7,9,10,11,12].include?(a) and [0,1,2].include?(h))
-        code << 'Ic' if ([0,1].include?(a) and (1..10).include?(h))
-        code << 'Oc' if ([10,11,12].include?(s) and h == 10)
-        code << 'Va' if (a == 0)
-        code << 'Wa' if ([5,6,7,8,9].include?(s) and h == 10)
-        # Population
-        code << 'Ba' if (p == 0 and g == 0 and l == 0 and %w{E X}.include?(port))
-        code << 'Lo' if ((1..3).include?(p))
-        code << 'Ni' if ((4..6).include?(p))
-        code << 'Ph' if (p == 8)
-        code << 'Hi' if (p >= 9)
-        # Economic
-        code << 'Pa' if ((4..9).include?(a) and (4..8).include?(h) and [4,8].include?(p))
-        code << 'Ag' if ((4..9).include?(a) and (4..8).include?(h) and (5..7).include?(p))
-        code << 'Na' if ((0..3).include?(a) and (0..3).include?(h) and p >= 6)
-        code << 'Pi' if ([0,1,2,4,7,9].include?(a) and [7,8].include?(p))
-        code << 'In' if ([0,1,2,4,7,9].include?(a) and p >= 9)
-        code << 'Po' if ((2..5).include?(a) and (0..3).include?(h))
-        code << 'Pr' if ([6,8].include?(a) and [5,9].include?(p))
-        code << 'Ri' if ([6,8].include?(a) and (6..8).include?(p))
-        # Technology (not on the T5 TCS page; conventional)
-        code << 'Ht' if (@tek > 12)
-        code << 'Lt' if (@tek < 6)
-        # Climate descriptors (HZ-derived)
-        code << 'Tz' if @temp == 'Tz'
-        code << 'Lk' if @temp == 'Lk'
-        code << 'Ho' if @temp == 'H'
-        code << 'Co' if @temp == 'C'
-        code << 'Tr' if (@temp == 'H' and [6,7,8,9].include?(s) and (4..9).include?(a) and (3..7).include?(h))
-        code << 'Tu' if (@temp == 'C' and [6,7,8,9].include?(s) and (4..9).include?(a) and (3..7).include?(h))
-        code
+        Astromapper.ruleset.trade_codes(
+          "size" => @size.to_i, "atmo" => @atmo.to_i, "hydro" => @h20.to_i,
+          "pop"  => @popx.to_i, "gov"  => @govm.to_i, "law"   => @law.to_i,
+          "tech" => @tek.to_i,  "port" => port,       "temp"  => @temp)
       end
     end # End World (Mainworld)
 
