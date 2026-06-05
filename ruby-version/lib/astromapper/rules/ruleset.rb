@@ -26,7 +26,7 @@ module Astromapper
         if (base = data['extends'])               # shallow inheritance: child keys win
           data = deep_merge(load(base, root: root).data, data)
         end
-        new(name, data)
+        new(name, data).validate!
       end
 
       def self.deep_merge(a, b)
@@ -37,6 +37,21 @@ module Astromapper
         @name = name
         @data = data
         @trade = (data['trade_codes'] || {}).transform_values { |cond| Expr.compile(cond) }
+      end
+
+      # Fail fast on a malformed ruleset (typo'd custom file, broken inheritance), with
+      # a message that names every problem at once. Returns self so load can chain it.
+      def validate!
+        errors = []
+        errors << "missing `hex` alphabet" unless @data['hex'].is_a?(String) && !@data['hex'].empty?
+        %w[size atmo hydro pop gov law].each do |step|
+          s = (@data['uwp'] || {})[step]
+          errors << "uwp.#{step}: missing or has no `roll`" unless s.is_a?(Hash) && s['roll']
+        end
+        errors << "missing `starport.table`" unless @data.dig('starport', 'table').is_a?(Array)
+        %w[extensions climate native].each { |slot| module_for(slot) }   # raises on a bad name
+        raise "ruleset #{@name.inspect} is invalid:\n- #{errors.join("\n- ")}" unless errors.empty?
+        self
       end
 
       # Trade classifications for a world. `ctx` is a Hash of UWP values keyed by name
@@ -62,6 +77,12 @@ module Astromapper
       # 2D threshold for a base at this starport, or nil if that port can't have it.
       def base_threshold(kind, port)
         (@data.dig('bases', kind) || {})[port]
+      end
+
+      # Does a base roll qualify? T5 wants `roll <= threshold` (default); Cepheus and
+      # classic Traveller want `>=`. Set `bases.op` in the ruleset to switch.
+      def base_meets?(roll, threshold)
+        Expr.compare(@data.dig('bases', 'op') || '<=', roll, threshold)
       end
 
       # Name of the code module wired to an algorithmic slot (extensions/climate/native).

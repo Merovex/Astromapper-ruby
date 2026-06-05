@@ -88,4 +88,24 @@ class ExprTest < Minitest::Test
     bad = Astromapper::Rules::Ruleset.new("bad", { "modules" => { "climate" => "system('x')" } })
     assert_raises(RuntimeError) { bad.module_for("climate") }
   end
+
+  def test_loader_validation
+    err = assert_raises(RuntimeError) do
+      Astromapper::Rules::Ruleset.new("broken", { "modules" => {} }).validate!
+    end
+    assert_match(/hex/, err.message)
+    assert_match(/uwp\.size/, err.message)
+    assert_match(/starport/, err.message)
+    assert_same_kind = Astromapper::Rules::Ruleset.load("t5")   # the real one validates clean
+    refute_nil assert_same_kind
+  end
+
+  def test_base_comparison_direction
+    rs = Astromapper::Rules::Ruleset.load("t5")                 # default op: roll <= threshold
+    assert rs.base_meets?(5, 6)
+    refute rs.base_meets?(7, 6)
+    ge = Astromapper::Rules::Ruleset.new("ge", { "bases" => { "op" => ">=" } })  # Cepheus-style
+    assert ge.base_meets?(8, 7)
+    refute ge.base_meets?(6, 7)
+  end
 end

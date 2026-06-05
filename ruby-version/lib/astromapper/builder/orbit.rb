@@ -292,9 +292,11 @@ module Astromapper
       end
 
       # Roll 2D against this base's per-port threshold (no roll if the port can't have it).
+      # The comparison direction (T5 <=, Cepheus >=) is the ruleset's to decide.
       def base_roll(kind)
         th = Astromapper.ruleset.base_threshold(kind, port)
-        th ? (2.d6 <= th) : false
+        return false unless th
+        Astromapper.ruleset.base_meets?(2.d6, th)
       end
       def travel_code
         # Travel zones. T5 leaves these to the referee; this auto-assigns a default:
