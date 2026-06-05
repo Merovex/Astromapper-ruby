@@ -29,8 +29,21 @@ module Astromapper
         new(name, data).validate!
       end
 
+      # Child keys win. A child key with a trailing "!" replaces the parent value
+      # wholesale instead of deep-merging — needed when a ruleset has a *different*
+      # set (e.g. Cepheus trade codes), not additions to the parent's.
       def self.deep_merge(a, b)
-        a.merge(b) { |_k, av, bv| av.is_a?(Hash) && bv.is_a?(Hash) ? deep_merge(av, bv) : bv }
+        result = a.dup
+        b.each do |k, bv|
+          if k.to_s.end_with?('!')
+            result[k.to_s.chomp('!')] = bv
+          elsif result[k].is_a?(Hash) && bv.is_a?(Hash)
+            result[k] = deep_merge(result[k], bv)
+          else
+            result[k] = bv
+          end
+        end
+        result
       end
 
       def initialize(name, data)

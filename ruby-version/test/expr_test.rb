@@ -108,4 +108,28 @@ class ExprTest < Minitest::Test
     assert ge.base_meets?(8, 7)
     refute ge.base_meets?(6, 7)
   end
+
+  def test_cepheus_inherits_and_overrides_t5
+    cep = Astromapper::Rules::Ruleset.load("cepheus")
+    assert_equal "none", cep.module_for("extensions")   # overridden
+    assert_equal "t5",   cep.module_for("climate")       # inherited
+    # starport is high=best here (opposite of T5's low=best)
+    assert_equal "X", cep.starport(2)
+    assert_equal "A", cep.starport(12)
+    # bases replaced wholesale: depot/way are gone, comparison is >=
+    assert_equal 8,   cep.base_threshold("naval", "A")
+    assert_nil        cep.base_threshold("depot", "A")
+    assert cep.base_meets?(8, 8)
+    # trade table replaced: classic set has no Ga, no Ht
+    refute_includes cep.trade_codes("size"=>7,"atmo"=>6,"hydro"=>6,"pop"=>6,"gov"=>5,"law"=>5,"tech"=>15,"port"=>"A","temp"=>"T"), "Ht"
+    # the size reroll-on-10 is dropped (classic 2D-2 caps at A)
+    assert_nil cep.data.dig("uwp", "size", "reroll")
+  end
+
+  def test_deep_merge_bang_replaces
+    base  = { "x" => { "a" => 1, "b" => 2 } }
+    child = { "x!" => { "a" => 9 } }                      # `x!` replaces, not merges
+    merged = Astromapper::Rules::Ruleset.deep_merge(base, child)
+    assert_equal({ "a" => 9 }, merged["x"])              # b is gone
+  end
 end
