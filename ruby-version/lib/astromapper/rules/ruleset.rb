@@ -44,6 +44,25 @@ module Astromapper
       def trade_codes(ctx)
         @trade.select { |_code, test| test.call(ctx) == true }.keys
       end
+
+      # Starport letter for an orientation roll (clamped to the table). Deterministic.
+      def starport(roll)
+        table = @data.dig('starport', 'table') || []
+        table[roll.to_i.clamp(0, table.size - 1)]
+      end
+
+      # Summed Tech-Level DM from the port map + per-digit arrays. Deterministic.
+      def tech_dm(ctx)
+        t = @data['tech_dm'] || {}
+        dm = (t['port'] || {})[ctx['port']].to_i
+        %w[size atmo hydro pop gov].each { |k| dm += ((t[k] || [])[ctx[k].to_i] || 0) }
+        dm
+      end
+
+      # 2D threshold for a base at this starport, or nil if that port can't have it.
+      def base_threshold(kind, port)
+        (@data.dig('bases', kind) || {})[port]
+      end
     end
   end
 end

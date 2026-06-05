@@ -264,34 +264,30 @@ module Astromapper
         rolls = [toss(2,0),toss(2,0),toss(2,0),toss(2,0),toss(2,0)]
         @factions = (@popx == 0) ? [] : fax_r.times.map { |r| %w{O O O O F F M M N N S S P}[rolls.shift] }
         
-        # Technology die modifiers — Traveller 5 (TL = 1D + mods).
-        tek_dm  = { 'A' => 6, 'B' => 4, 'C' => 2, 'D' => 0, 'E' => 0, 'F' => 1, 'X' => -4}[port] || 0
-        #            0 1 2 3 4 5 6 7 8 9 A  B  C  D  E  F
-        tek_dm += [2,2,1,1,1,0,0,0,0,0,0,0,0,0,0,0][@size]  # Siz 0,1=+2; 2,3,4=+1
-        tek_dm += [1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1][@atmo]  # Atm 0-3=+1; A-F=+1
-        tek_dm += [0,0,0,0,0,0,0,0,0,1,2][@h20]             # Hyd 9=+1; A=+2
-        tek_dm += [0,1,1,1,1,1,0,0,0,2,4,4,4,4,4,4][@popx]  # Pop 1-5=+1; 9=+2; A+=+4
-        tek_dm += [1,0,0,0,0,1,0,0,0,0,0,0,0,-2,0,0][@govm] # Gov 0,5=+1; D=-2
+        # Technology — TL = 1D + DMs. The DM tables live in the ruleset (data); the 1D
+        # roll and caps stay here so the RNG draw is unchanged.
+        tek_dm = Astromapper.ruleset.tech_dm("port" => port, "size" => @size, "atmo" => @atmo,
+                                             "hydro" => @h20, "pop" => @popx, "gov" => @govm)
         @tek = (toss(1,0) + tek_dm).whole   # T5: TL = 1D + mods (floored at 0)
         # Optional cap for those who want to limit technology, then a single UWP digit (0-F).
         @tek = @tek.max(config['tech_cap']) unless config['tech_cap'].nil?
         @tek = @tek.max(15)
         @law = @govm = @tek = 0 if @popx == 0
-        
-        # Bases — Traveller 5 (page 432). Each rolls 2D against a starport threshold.
-        # Naval/Scout are exact; Depot/Way Station are "Possible" (full Chart F-B), so the
-        # thresholds below are a conservative approximation.
-        naval = (port == 'A' && 2.d6 <= 6) || (port == 'B' && 2.d6 <= 5)
-        scout = (port == 'A' && 2.d6 <= 4) || (port == 'B' && 2.d6 <= 5) ||
-                (port == 'C' && 2.d6 <= 6) || (port == 'D' && 2.d6 <= 7)
-        depot = %w{A B}.include?(port)   && 2.d6 <= 3   # approximate
-        way   = %w{A B C}.include?(port) && 2.d6 <= 4   # approximate
+
+        # Bases — thresholds from the ruleset; each rolls 2D in order (naval, scout,
+        # depot, way) only when this port can host it, matching the original dice draw.
         @base = {
-          'Naval' => naval ? 'N' : '.',
-          'Scout' => scout ? 'S' : '.',
-          'Depot' => depot ? 'D' : '.',
-          'Way'   => way   ? 'W' : '.',
+          'Naval' => base_roll('naval') ? 'N' : '.',
+          'Scout' => base_roll('scout') ? 'S' : '.',
+          'Depot' => base_roll('depot') ? 'D' : '.',
+          'Way'   => base_roll('way')   ? 'W' : '.',
         }
+      end
+
+      # Roll 2D against this base's per-port threshold (no roll if the port can't have it).
+      def base_roll(kind)
+        th = Astromapper.ruleset.base_threshold(kind, port)
+        th ? (2.d6 <= th) : false
       end
       def travel_code
         # Travel zones. T5 leaves these to the referee; this auto-assigns a default:
@@ -388,8 +384,8 @@ module Astromapper
         (b[0] + b[1] + b[3] + b[4]).delete('.')
       end
       def port
-        # Traveller 5 orientation (page 432): low roll = best. 2-4 A, 5-6 B, 7-8 C, 9 D, 10-11 E, 12 X.
-        %w{A A A A A B B C C D E E X}[@port_roll.whole.max(12)]
+        # Starport letter from the ruleset's orientation table (data-driven).
+        Astromapper.ruleset.starport(@port_roll)
       end
 
       # --- Canon override support (narrative-wins edits applied after generation) ---

@@ -46,4 +46,18 @@ class ExprTest < Minitest::Test
     rock = { "size"=>0, "atmo"=>0, "hydro"=>0, "pop"=>0, "gov"=>0, "law"=>0, "tech"=>2, "port"=>"X", "temp"=>"T" }
     assert_equal %w[As Va Ba Lt], rs.trade_codes(rock)   # Lt: tech 2 < 6
   end
+
+  def test_t5_starport_dm_and_base_tables
+    rs = Astromapper::Rules::Ruleset.load("t5")
+    # orientation table, low roll = best, clamped
+    assert_equal %w[A B C D E X], [0, 5, 7, 9, 10, 12].map { |r| rs.starport(r) }
+    assert_equal "X", rs.starport(99)
+    # tech DMs: port A(+6) size0(+2) atmo0(+1) hydro0(0) pop0(0) gov0(+1) = 10
+    assert_equal 10, rs.tech_dm("port"=>"A", "size"=>0, "atmo"=>0, "hydro"=>0, "pop"=>0, "gov"=>0)
+    # base thresholds (nil = port can't host that base)
+    assert_equal 6,   rs.base_threshold("naval", "A")
+    assert_equal 6,   rs.base_threshold("scout", "C")
+    assert_nil        rs.base_threshold("naval", "C")
+    assert_nil        rs.base_threshold("way",   "D")
+  end
 end
