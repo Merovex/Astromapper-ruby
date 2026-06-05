@@ -27,6 +27,36 @@ bases:
   depot: { A: 3, B: 3 }
   way:   { A: 4, B: 4, C: 4 }
 
+# UWP step formulas (StSAHPGL) — Traveller 5 WorldGen. The driver walks each step
+# in order; `roll` is evaluated by Expr with the prior digits in scope. `zero_when`
+# short-circuits to 0 (no roll); `reroll` re-rolls when its condition holds; `adjust`
+# applies delta/set in order; `clamp` bounds [min,max]. The population ceiling, the
+# genre strip, and the habitability caps stay in code (they depend on genre/star).
+uwp:
+  size:
+    roll: "2d6-2"                       # 0 = planetoid belt
+    reroll: { when: "size==10", with: "9+1d6" }
+  atmo:
+    zero_when: "size==0"                # a sizeless world has no atmosphere
+    roll: "flux+size"
+    clamp: [0, 15]
+  hydro:
+    roll: "flux+atmo"
+    adjust:
+      - { when: "atmo<2 or atmo>9", delta: -4 }   # dry when thin or dense
+      - { when: "size<2", set: 0 }                # tiny worlds hold no water
+    clamp: [0, 10]
+  pop:
+    roll: "2d6-2"
+    reroll: { when: "pop==10", with: "9+1d6" }
+    # ceiling (F), the firm-genre strip, and habitability caps are applied in code
+  gov:
+    roll: "flux+pop"
+    clamp: [0, 15]                       # ceiling F
+  law:
+    roll: "flux+gov"
+    clamp: [0, 18]                       # ceiling J
+
 # Trade Classifications — Traveller 5 WorldGen TCS table (page 434).
 trade_codes:
   # Planetary

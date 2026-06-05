@@ -60,4 +60,19 @@ class ExprTest < Minitest::Test
     assert_nil        rs.base_threshold("naval", "C")
     assert_nil        rs.base_threshold("way",   "D")
   end
+
+  def test_t5_uwp_step_driver
+    rs = Astromapper::Rules::Ruleset.load("t5")
+    # zero_when: a sizeless world has no atmosphere (and rolls no die for it)
+    assert_equal 0, rs.uwp_step("atmo", { "size" => 0 })
+    # adjust set:0 — a tiny world is forced dry regardless of the flux roll
+    100.times { assert_equal 0, rs.uwp_step("hydro", { "size" => 1, "atmo" => 8 }) }
+    # clamps: hydro<=A(10), gov<=F(15), law<=J(18) even with maxed inputs
+    srand(20260605)
+    300.times do
+      assert_includes (0..10), rs.uwp_step("hydro", { "size" => 9, "atmo" => 7 })
+      assert_includes (0..15), rs.uwp_step("gov",   { "pop" => 15 })
+      assert_includes (0..18), rs.uwp_step("law",   { "gov" => 15 })
+    end
+  end
 end
