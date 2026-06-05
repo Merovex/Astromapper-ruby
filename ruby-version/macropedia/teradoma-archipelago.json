@@ -7965,9 +7965,9 @@
       "column": 8,
       "row": 23,
       "star": {
-        "star_type": "F",
+        "star_type": "M",
         "star_size": 5,
-        "spectral": "F2",
+        "spectral": "M0",
         "bode_constant": 0.2,
         "type_dm": 0,
         "size_dm": 0,
@@ -8001,18 +8001,18 @@
           {
             "type": "world",
             "data": {
-              "atmosphere": 7,
+              "atmosphere": 4,
               "au": 2.4,
               "distant": false,
               "government": 8,
-              "hydrographics": 10,
+              "hydrographics": 0,
               "law_level": 8,
               "orbit_number": 3,
               "orbit_type": "W",
-              "population": 6,
-              "size": 10,
-              "starport": "D",
-              "tech_level": 6,
+              "population": 10,
+              "size": 5,
+              "starport": "A",
+              "tech_level": 8,
               "zone": 0,
               "moons": [
                 {
@@ -8132,6 +8132,16 @@
                 }
               ]
             }
+          },
+          {
+            "type": "companion",
+            "data": {
+              "orbit_number": 8,
+              "au": 19.2,
+              "orbit_type": "S",
+              "star_classification": "DB",
+              "distant": false
+            }
           }
         ],
         "world": {
@@ -8140,37 +8150,40 @@
           "orbit_type": "W",
           "zone": 0,
           "distant": false,
-          "starport": "D",
-          "size": 10,
-          "atmosphere": 7,
-          "hydrographics": 10,
-          "population": 6,
+          "starport": "A",
+          "size": 5,
+          "atmosphere": 4,
+          "hydrographics": 0,
+          "population": 10,
           "government": 8,
           "law_level": 8,
-          "tech_level": 6,
+          "tech_level": 8,
           "temperature": "C",
           "trade_codes": [
-            "Oc",
-            "Ni",
+            "De",
+            "He",
+            "Hi",
+            "In",
+            "Po",
             "Co"
           ],
           "bases": ".SG..",
           "travel_code": "..",
-          "ix": -3,
+          "ix": 2,
           "ex": {
-            "res": 9,
-            "lab": 5,
-            "inf": 4,
+            "res": 12,
+            "lab": 9,
+            "inf": 11,
             "eff": 1
           },
           "cx": {
             "homo": 4,
-            "acc": 3,
+            "acc": 12,
             "str": 3,
             "sym": 6
           },
-          "ru": 180,
-          "native": "Colony",
+          "ru": 1188,
+          "native": "Settled",
           "factions": [
             "F"
           ]
@@ -9451,16 +9464,16 @@
           {
             "type": "world",
             "data": {
-              "atmosphere": 6,
+              "atmosphere": 0,
               "au": 1.6,
               "distant": false,
-              "government": 10,
-              "hydrographics": 10,
-              "law_level": 10,
+              "government": 1,
+              "hydrographics": 0,
+              "law_level": 1,
               "orbit_number": 2,
               "orbit_type": "W",
-              "population": 10,
-              "size": 7,
+              "population": 2,
+              "size": 3,
               "starport": "C",
               "tech_level": 10,
               "zone": 0,
@@ -9565,35 +9578,35 @@
           "zone": 0,
           "distant": false,
           "starport": "C",
-          "size": 7,
-          "atmosphere": 6,
-          "hydrographics": 10,
-          "population": 10,
-          "government": 10,
-          "law_level": 10,
+          "size": 3,
+          "atmosphere": 0,
+          "hydrographics": 0,
+          "population": 2,
+          "government": 1,
+          "law_level": 1,
           "tech_level": 10,
           "temperature": "T",
           "trade_codes": [
-            "Wa",
-            "Hi"
+            "Va",
+            "Lo"
           ],
           "bases": "..G..",
           "travel_code": "AZ",
-          "ix": 2,
+          "ix": 0,
           "ex": {
-            "res": 12,
-            "lab": 9,
-            "inf": 10,
-            "eff": 4
+            "res": 13,
+            "lab": 1,
+            "inf": 2,
+            "eff": 1
           },
           "cx": {
             "homo": 10,
-            "acc": 12,
+            "acc": 2,
             "str": 5,
             "sym": 14
           },
-          "ru": 4320,
-          "native": "Settled",
+          "ru": 26,
+          "native": "Colony",
           "factions": [
             "M",
             "N"
@@ -13287,7 +13300,7 @@
           {
             "type": "world",
             "data": {
-              "atmosphere": 1,
+              "atmosphere": 3,
               "au": 0.2,
               "distant": false,
               "government": 5,
@@ -13295,7 +13308,7 @@
               "law_level": 5,
               "orbit_number": 0,
               "orbit_type": "W",
-              "population": 5,
+              "population": 4,
               "size": 10,
               "starport": "C",
               "tech_level": 9,
@@ -13451,7 +13464,7 @@
           "size": 10,
           "atmosphere": 3,
           "hydrographics": 8,
-          "population": 5,
+          "population": 4,
           "government": 5,
           "law_level": 5,
           "tech_level": 9,
@@ -13466,18 +13479,18 @@
           "travel_code": "..",
           "ix": -1,
           "ex": {
-            "res": 5,
-            "lab": 4,
-            "inf": 1,
-            "eff": 0
+            "res": 9,
+            "lab": 3,
+            "inf": 6,
+            "eff": -3
           },
           "cx": {
             "homo": 6,
-            "acc": 4,
+            "acc": 3,
             "str": 3,
             "sym": 5
           },
-          "ru": 20,
+          "ru": -486,
           "native": "Colony"
         }
       }
@@ -15782,9 +15795,9 @@
       "column": 14,
       "row": 24,
       "star": {
-        "star_type": "M",
+        "star_type": "F",
         "star_size": 5,
-        "spectral": "M6",
+        "spectral": "F2",
         "bode_constant": 0.2,
         "type_dm": 0,
         "size_dm": 0,
@@ -15798,14 +15811,14 @@
               "au": 0.2,
               "distant": false,
               "government": 3,
-              "hydrographics": 10,
-              "law_level": 3,
+              "hydrographics": 5,
+              "law_level": 0,
               "orbit_number": 0,
               "orbit_type": "W",
-              "population": 1,
-              "size": 9,
-              "starport": "E",
-              "tech_level": 4,
+              "population": 6,
+              "size": 6,
+              "starport": "B",
+              "tech_level": 9,
               "zone": 0,
               "moons": [
                 {
@@ -15884,7 +15897,8 @@
             "data": {
               "au": 51.2,
               "orbit_number": 8,
-              "orbit_type": "S"
+              "orbit_type": "S",
+              "star_classification": "DB"
             }
           }
         ],
@@ -15894,36 +15908,37 @@
           "orbit_type": "W",
           "zone": 0,
           "distant": false,
-          "starport": "E",
-          "size": 9,
+          "starport": "B",
+          "size": 6,
           "atmosphere": 6,
-          "hydrographics": 10,
-          "population": 1,
+          "hydrographics": 5,
+          "population": 6,
           "government": 3,
-          "law_level": 3,
-          "tech_level": 4,
+          "law_level": 0,
+          "tech_level": 9,
           "temperature": "T",
           "trade_codes": [
-            "Wa",
-            "Lo",
-            "Lt"
+            "Ga",
+            "Ni",
+            "Ag",
+            "Ri"
           ],
           "bases": ".....",
           "travel_code": "..",
-          "ix": -3,
+          "ix": 2,
           "ex": {
-            "res": 8,
-            "lab": 0,
-            "inf": 0,
-            "eff": -4
+            "res": 6,
+            "lab": 5,
+            "inf": 4,
+            "eff": 1
           },
           "cx": {
             "homo": 2,
-            "acc": 1,
+            "acc": 8,
             "str": 6,
             "sym": 6
           },
-          "ru": -32,
+          "ru": 120,
           "native": "Colony",
           "factions": [
             "N",
@@ -19837,7 +19852,7 @@
               "law_level": 4,
               "orbit_number": 3,
               "orbit_type": "W",
-              "population": 9,
+              "population": 6,
               "size": 7,
               "starport": "B",
               "tech_level": 9,
@@ -20003,7 +20018,7 @@
           "size": 7,
           "atmosphere": 4,
           "hydrographics": 8,
-          "population": 9,
+          "population": 6,
           "government": 4,
           "law_level": 4,
           "tech_level": 9,
@@ -20012,27 +20027,27 @@
             "N"
           ],
           "trade_codes": [
-            "Hi",
-            "In",
+            "Ni",
+            "Ag",
             "Ho"
           ],
           "bases": "N.GC.",
           "travel_code": "..",
-          "ix": 3,
+          "ix": 1,
           "ex": {
-            "res": 17,
-            "lab": 8,
-            "inf": 14,
-            "eff": 0
+            "res": 10,
+            "lab": 5,
+            "inf": 6,
+            "eff": 1
           },
           "cx": {
             "homo": 11,
-            "acc": 12,
+            "acc": 7,
             "str": 2,
             "sym": 9
           },
-          "ru": 1904,
-          "native": "Settled"
+          "ru": 300,
+          "native": "Colony"
         }
       }
     },
@@ -21200,12 +21215,12 @@
               "atmosphere": 4,
               "au": 0.2,
               "distant": false,
-              "government": 8,
-              "hydrographics": 2,
+              "government": 5,
+              "hydrographics": 4,
               "law_level": 8,
               "orbit_number": 0,
               "orbit_type": "W",
-              "population": 8,
+              "population": 6,
               "size": 2,
               "starport": "B",
               "tech_level": 10,
@@ -21394,8 +21409,8 @@
           "size": 2,
           "atmosphere": 4,
           "hydrographics": 4,
-          "population": 8,
-          "government": 8,
+          "population": 6,
+          "government": 5,
           "law_level": 8,
           "tech_level": 10,
           "temperature": "T",
@@ -21403,27 +21418,26 @@
             "P"
           ],
           "trade_codes": [
-            "Ph",
-            "Pa",
-            "Pi"
+            "Ni",
+            "Ag"
           ],
           "bases": "..G..",
           "travel_code": "..",
           "ix": 2,
           "ex": {
-            "res": 7,
-            "lab": 7,
-            "inf": 9,
-            "eff": -2
+            "res": 13,
+            "lab": 5,
+            "inf": 2,
+            "eff": 1
           },
           "cx": {
             "homo": 3,
-            "acc": 10,
+            "acc": 8,
             "str": 5,
             "sym": 9
           },
-          "ru": -882,
-          "native": "Settled"
+          "ru": 130,
+          "native": "Colony"
         }
       }
     },
@@ -38380,7 +38394,7 @@
             "res": 6,
             "lab": 6,
             "inf": 9,
-            "eff": -2
+            "eff": 2
           },
           "cx": {
             "homo": 7,
@@ -38388,7 +38402,7 @@
             "str": 4,
             "sym": 7
           },
-          "ru": -648,
+          "ru": 648,
           "native": "Settled"
         }
       }

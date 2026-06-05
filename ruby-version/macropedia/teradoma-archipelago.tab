@@ -23,7 +23,7 @@ Converted Sector (archipelago)	B	1002	Hamshiltristia	E679789-7		Pi	A	700	Na	M0 V
 Converted Sector (archipelago)	B	1402	Tiercel	BA4A111-B	NS	Oc Lo		400	Na	F5 V	{ 2 }	(500+1)	[138C]		1	5
 Converted Sector (archipelago)	C	2202	Hablu	A75779A-8	C	Ga Ag	A	701	Na	M4 V	{ 1 }	(B67+3)	[6869]		1	1386
 Converted Sector (archipelago)	A	0703	Golter	C95A122-7	P	Wa Lo		801	Na	F5 V	{ -2 }	(A00-3)	[1157]		1	-30
-Converted Sector (archipelago)	B	0903	Trogio	C76AAAA-A		Wa Hi	A	211	Na	F0 V	{ 2 }	(C9A+4)	[AC5E]		1	4320
+Converted Sector (archipelago)	B	0903	Trogio	C300211-A		Va Lo		211	Na	F0 V	{ 0 }	(D12+1)	[A25E]		1	26
 Converted Sector (archipelago)	C	2403	Sargon	E491666-8		He Ni		211	Na	G2 V	{ -3 }	(756+5)	[6324]		1	1050
 Converted Sector (archipelago)	D	2703	Flobee Mission	C959555-A		Ni		331	Na	M2 V	{ 0 }	(B43+3)	[759C]		1	396
 Converted Sector (archipelago)	A	0504	Borthal	E82A669-6		Wa Ni	A	111	Na	M4 V	{ -3 }	(651-2)	[5381]		1	-60
@@ -118,7 +118,7 @@ Converted Sector (archipelago)	H	2718	Casagan	A666335-B	C	Ga Lo Co Tu		302	Na	F5
 Converted Sector (archipelago)	H	3218	Aldebaran	D82A9BE-9	S	Wa Hi In	A	112	Na	M6 II	{ 1 }	(A87-2)	[DA78]		1	-1120
 Converted Sector (archipelago)	E	0219	Miranda	A676666-8	NS	Ni Ag		900	Na	M4 V	{ 1 }	(854+0)	[572C]		1	160
 Converted Sector (archipelago)	E	0419	Asagarth	CA2A666-7		Oc Ni		231	Na	F2 III	{ -2 }	(851-3)	[9468]		1	-120
-Converted Sector (archipelago)	F	1219	Guna	CA38555-9	C	Ni		802	Na	M6 V	{ -1 }	(541+0)	[6435]		1	20
+Converted Sector (archipelago)	F	1219	Guna	CA38455-9	C	Ni		802	Na	M6 V	{ -1 }	(936-3)	[6335]		1	-486
 Converted Sector (archipelago)	F	1619	Xaryio	D457477-6	S	Ni Pa	A	221	Na	M0 V	{ -3 }	(836+1)	[3159]		1	144
 Converted Sector (archipelago)	G	1719	Vanaheim	C959888-8	S	Ph		500	Na	M6 V	{ -1 }	(774+1)	[A72A]		1	196
 Converted Sector (archipelago)	G	2019	Smyrno	C280448-A	S	De Ni		700	Na	F2 V	{ 0 }	(635-2)	[643A]		1	-180
@@ -134,7 +134,7 @@ Converted Sector (archipelago)	I	0121	Big Ben	B8389CC-A	C	Hi	A	501	Na	M4 V	{ 3 }
 Converted Sector (archipelago)	I	0321	Tintamarre	EA4A666-6		Oc Ni		403	Na	A5 V	{ -3 }	(655+2)	[5326]		1	300
 Converted Sector (archipelago)	J	1021	Keicha	C646845-8	P	Ph Pa Pi		412	Na	F2 II	{ -1 }	(972-2)	[A717]		1	-252
 Converted Sector (archipelago)	J	1421	Kingdom	D676578-6		Ni Ag	A	201	Na	M2 V	{ -2 }	(945-5)	[7396]		1	-900
-Converted Sector (archipelago)	K	1921	Sabanio	B244888-A		Ph Pa Pi		102	Na	A5 V	{ 2 }	(779-2)	[3A59]		1	-882
+Converted Sector (archipelago)	K	1921	Sabanio	B244658-A		Ni Ag		102	Na	A5 V	{ 2 }	(D52+1)	[3859]		1	130
 Converted Sector (archipelago)	K	2421	Decapod	C565556-7	SP	Ni Ag Pr		101	Na	M6 V	{ -1 }	(646-2)	[8489]		1	-288
 Converted Sector (archipelago)	L	2521	Dis	B311558-B		Ic Ni		113	Na	M0 V	{ 1 }	(C41-2)	[764C]		1	-96
 Converted Sector (archipelago)	L	2921	Kaesov	BB88666-9	NC	Ni Ag Ri		512	Na	M6 V	{ 2 }	(C52-4)	[885A]		1	-480
@@ -144,7 +144,7 @@ Converted Sector (archipelago)	J	1122	Naqsa	D575555-5		Ni Ag Lt		820	Na	M4 V	{ -
 Converted Sector (archipelago)	J	1622	Ellysio	C739689-7	C	Ni	A	511	Na	G2 V	{ -2 }	(956-2)	[2483]		1	-540
 Converted Sector (archipelago)	L	2922	G'iri	B272899-8	C	Ph Pi	A	703	Na	M6 V	{ 0 }	(D78-4)	[788B]		1	-2912
 Converted Sector (archipelago)	L	3222	Paquin	C92958B-9		Ni	A	602	Na	M4 V	{ -1 }	(B44-2)	[645B]		1	-352
-Converted Sector (archipelago)	I	0823	Corvallisio	DA7A688-6	S	Oc Ni Co		922	Na	F2 V	{ -3 }	(954+1)	[4336]		1	180
+Converted Sector (archipelago)	I	0823	Corvallisio	A540A88-8	S	De He Hi In Po Co		922	Na	M0 V DB	{ 2 }	(C9B+1)	[4C36]		1	1188
 Converted Sector (archipelago)	J	0923	Naimio	D95979D-7		Co	A	700	Na	A2 V	{ -2 }	(464-3)	[7536]		1	-288
 Converted Sector (archipelago)	J	1023	Pendrakeentio	E977899-8		Ph Pa Pi Ho Tr	A	413	Na	M6 V	{ -2 }	(E74-3)	[D695]		1	-1176
 Converted Sector (archipelago)	J	1523	Flamme	C494333-8	S	Lo Co		923	Na	M4 V	{ -2 }	(G20-2)	[6198]		1	-64
@@ -154,8 +154,8 @@ Converted Sector (archipelago)	I	0124	K	D85A333-5	S	Wa Lo Lt		111	Na	M0 V	{ -3 }
 Converted Sector (archipelago)	I	0524	Ochvenio	D130668-6	S	De Ni Na Po		414	Na	F0 V	{ -3 }	(756-2)	[8345]		1	-420
 Converted Sector (archipelago)	J	1224	Kajleerio	B86899A-B	C	Hi Pr	A	310	Na	K5 V	{ 3 }	(388+3)	[7C49]		1	576
 Converted Sector (archipelago)	J	1324	Hadriu	A838779-B			A	600	Na	M6 V	{ 2 }	(769+1)	[496B]		1	378
-Converted Sector (archipelago)	J	1424	Korundio	E96A133-4		Wa Lo Lt		100	Na	M6 V	{ -3 }	(800-4)	[2166]		1	-32
-Converted Sector (archipelago)	K	1724	Temasek	B748944-9	NC	Hi In Ho		105	Na	F0 III	{ 3 }	(H8E+0)	[BC29]		1	1904
+Converted Sector (archipelago)	J	1424	Korundio	B665630-9		Ga Ni Ag Ri	A	100	Na	F2 V DB	{ 2 }	(654+1)	[2866]		1	120
+Converted Sector (archipelago)	K	1724	Temasek	B748644-9	NC	Ni Ag Ho		105	Na	F0 III	{ 1 }	(A56+1)	[B729]		1	300
 Converted Sector (archipelago)	K	1924	Goat	C658455-A		Ni Pa		411	Na	M6 V	{ 0 }	(A34-1)	[547E]		1	-120
 Converted Sector (archipelago)	J	1325	Tesheuquio	B629666-A	NS	Ni		423	Na	M4 V	{ 2 }	(B55+1)	[882C]		1	275
 Converted Sector (archipelago)	I	0726	Krinanio	C626446-9		Ni		610	Na	M6 V	{ -1 }	(636+2)	[6318]		1	216
@@ -242,5 +242,5 @@ Converted Sector (archipelago)	M	0440	Ament Cour	AA7A9DD-B		Oc Hi In	A	610	Na	K0
 Converted Sector (archipelago)	M	0740	Caliban	C222888-8	S	Ph Na Pi Po		200	Na	M4 V	{ -1 }	(573+3)	[9787]		1	315
 Converted Sector (archipelago)	N	1340	Stombos	C95A122-7	S	Wa Lo		601	Na	F2 V	{ -2 }	(700-3)	[1157]		1	-21
 Converted Sector (archipelago)	N	1540	Ardamador	C76AAAA-A	SC	Wa Hi	A	311	Na	F0 V	{ 2 }	(E96-1)	[CC37]		1	-756
-Converted Sector (archipelago)	O	2140	Copa	C755737-9	C	Ga Ag		600	Na	M4 V DB	{ 1 }	(669-2)	[7847]		1	-648
+Converted Sector (archipelago)	O	2140	Copa	C755737-9	C	Ga Ag		600	Na	M4 V DB	{ 1 }	(669+2)	[7847]		1	648
 Converted Sector (archipelago)	P	3040	Hurria	E491666-8		He Ni		511	Na	G0 V	{ -3 }	(B51-1)	[639B]		1	-55

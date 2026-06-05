@@ -1356,12 +1356,11 @@
       </g>
     <text x='424' y='163'>F5</text>
 
-<!-- Volume: 0903 C76AAAA-A T G AZ //  //  // F0 V // Trogio -->
+<!-- Volume: 0903 C300211-A T G .. //  //  // F0 V // Trogio -->
     <circle class='planet' cx='520' cy='173' r='5' />
     <text class='spaceport' x='520' y='193'>C</text>
-    <text x='520' y='203'>C76AAAA-A</text>
+    <text x='520' y='203'>C300211-A</text>
     <text x='520' y='154'>Trogio</text>
-    <path class='zone' d='M 510 158 a 20 20 0 1 0 20 0' />
       <g class='gas-giant'><!-- Has Gas Giant -->
         <ellipse cx='542' cy='186' rx='6' ry='0.9' />
         <circle  cx='542' cy='186' r='2' />
@@ -2359,10 +2358,10 @@
       </g>
     <text x='244' y='1306'>F2</text>
 
-<!-- Volume: 1219 CA38555-9 T G .. //  //  // M6 V // Guna -->
+<!-- Volume: 1219 CA38455-9 T G .. //  //  // M6 V // Guna -->
     <circle class='planet' cx='700' cy='1316' r='5' />
     <text class='spaceport' x='700' y='1336'>C</text>
-    <text x='700' y='1347'>CA38555-9</text>
+    <text x='700' y='1347'>CA38455-9</text>
     <text x='700' y='1297'>Guna</text>
       <g class='gas-giant'><!-- Has Gas Giant -->
         <ellipse cx='722' cy='1329' rx='6' ry='0.9' />
@@ -2535,10 +2534,10 @@
       </g>
     <text x='844' y='1444'>M2</text>
 
-<!-- Volume: 1921 B244888-A T G .. //  //  // A5 V // Sabanio -->
+<!-- Volume: 1921 B244658-A T G .. //  //  // A5 V // Sabanio -->
     <circle class='planet' cx='1120' cy='1420' r='5' />
     <text class='spaceport' x='1120' y='1440'>B</text>
-    <text x='1120' y='1451'>B244888-A</text>
+    <text x='1120' y='1451'>B244658-A</text>
     <text x='1120' y='1401'>Sabanio</text>
       <g class='gas-giant'><!-- Has Gas Giant -->
         <ellipse cx='1142' cy='1433' rx='6' ry='0.9' />
@@ -2647,17 +2646,17 @@
       </g>
     <text x='1924' y='1514'>M4</text>
 
-<!-- Volume: 0823 DA7A688-6 T SG .. //  //  // F2 V // Corvallisio -->
+<!-- Volume: 0823 A540A88-8 T SG .. //  //  // M0 V DB // Corvallisio -->
     <circle class='planet' cx='460' cy='1593' r='5' />
-    <text class='spaceport' x='460' y='1613'>D</text>
-    <text x='460' y='1624'>DA7A688-6</text>
+    <text class='spaceport' x='460' y='1613'>A</text>
+    <text x='460' y='1624'>A540A88-8</text>
     <text x='460' y='1574'>Corvallisio</text>
     <!-- S --><text class='symbol S' x='437' y='1610'>⚜</text>
       <g class='gas-giant'><!-- Has Gas Giant -->
         <ellipse cx='482' cy='1606' rx='6' ry='0.9' />
         <circle  cx='482' cy='1606' r='2' />
       </g>
-    <text x='484' y='1583'>F2</text>
+    <text x='484' y='1583'>M0</text>
 
 <!-- Volume: 0923 D95979D-7 T . AZ //  //  // A2 V // Naimio -->
     <circle class='planet' cx='520' cy='1558' r='5' />
@@ -2751,17 +2750,18 @@
     <path class='zone' d='M 750 1613 a 20 20 0 1 0 20 0' />
     <text x='784' y='1618'>M6</text>
 
-<!-- Volume: 1424 E96A133-4 T . .. //  //  // M6 V // Korundio -->
+<!-- Volume: 1424 B665630-9 T . AZ //  //  // F2 V DB // Korundio -->
     <circle class='planet' cx='820' cy='1662' r='5' />
-    <text class='spaceport' x='820' y='1682'>E</text>
-    <text x='820' y='1693'>E96A133-4</text>
+    <text class='spaceport' x='820' y='1682'>B</text>
+    <text x='820' y='1693'>B665630-9</text>
     <text x='820' y='1643'>Korundio</text>
-    <text x='844' y='1652'>M6</text>
+    <path class='zone' d='M 810 1648 a 20 20 0 1 0 20 0' />
+    <text x='844' y='1652'>F2</text>
 
-<!-- Volume: 1724 B748944-9 T NG .. //  //  // F0 III // Temasek -->
+<!-- Volume: 1724 B748644-9 T NG .. //  //  // F0 III // Temasek -->
     <circle class='planet' cx='1000' cy='1628' r='5' />
     <text class='spaceport' x='1000' y='1648'>B</text>
-    <text x='1000' y='1658'>B748944-9</text>
+    <text x='1000' y='1658'>B748644-9</text>
     <text x='1000' y='1609'>Temasek</text>
     <!-- N --><text class='symbol N' x='977' y='1622'>⚓</text>
       <g class='gas-giant'><!-- Has Gas Giant -->

@@ -57,10 +57,12 @@ Edit `_astromapper.yml` to control generation:
 * **sophonts** — `human` (default; worlds are Settled/Colony) or `varied` (native alien sophonts).
 * **seed** — a Crawford code (`XXXXX-XXXXX`) or any string for reproducible maps. Leave blank for random (the seed used is printed). Override with `astromapper build --seed CODE`.
 * **always_inhabited** — `true` (default) guarantees a mainworld per system.
+* **prune_isolated** — `true` (default) drops systems with no neighbour within jump-4 (lone stars no route can reach), so the map has no disconnected dots.
+* **islands** — `true` (default) outlines clusters of nearby systems on the SVG along the hex grid. Tune with `island_jump` (cluster reach in jumps, default 2), `island_min` (minimum systems per island, default 2), and `island_opacity` (default 0.85).
 
 Worlds follow **Traveller 5** WorldGen (UWP, the Ix/Ex/Cx extensions, climate, trade codes); star systems use Classic Traveller + GURPS Space orbital mechanics. See `docs/generation-pipeline.md` for the full algorithm.
 
-Commands: `astromapper new <name>`, `build [--seed CODE]`, `svg`, `about <hex>`, `version`.
+Commands: `astromapper new <name>`, `build [--seed CODE]`, `svg`, `about <hex>`, `version`. Each `build` writes both the ASCII `.sector` and a T5 Second Survey `.tab` (below).
 
 ASCII Output
 ------------
@@ -96,13 +98,47 @@ astromapper generate
 SVG Output
 ----------
 
-Traveller Astromapper converts the ASCII output as described above to create an SVG file describing the key aspects of a volume. This includes the Star type, Starport, Name and the presence of bases (Navy, Scout, etc.) and Gas Giants.
+Traveller Astromapper converts the ASCII output as described above to create an SVG file describing the key aspects of a volume. This includes the Star type, Starport, Name and the presence of bases (Navy, Scout, etc.) and Gas Giants. Clusters of nearby systems are outlined as **islands** along the hex grid (see the `islands` config keys above).
 
-To convert that ASCII into an SVG image, execut the following:
+To convert that ASCII into an SVG image, execute the following:
 
 ```
-astrographer svg
+astromapper svg
 ```
+
+T5 Second Survey (Tab) Output
+-----------------------------
+
+Every `astromapper build` also writes a **T5 Second Survey** tab-delimited file
+(`output/<name>.tab`) — the TravellerMap interchange standard, robust to parse and
+interoperable with TravellerMap and other Traveller tools. A `#`-commented legend
+heads the file; the columns are:
+
+```
+Sector  SS  Hex  Name  UWP  Bases  Remarks  Zone  PBG  Allegiance  Stars  {Ix}  (Ex)  [Cx]  Nobility  W  RU
+```
+
+Tools
+-----
+
+`tools/` holds standalone scripts (run with plain `ruby` against the lib) for format
+bridging and post-processing — handy when importing a foreign "Converted Sector" JSON
+or overlaying canon data:
+
+| Script | Purpose |
+|--------|---------|
+| `json2tab.rb in.json [out.tab]` | Converted-Sector JSON → T5 Second Survey tab |
+| `json2sector.rb in.json [out.sector.txt]` | JSON → expanded columnar sector (every orbit + moons) |
+| `json2svg.rb in.json [out.svg]` | JSON → SVG, via the production renderer |
+| `sector2svg.rb in.tab [out.svg]` | T5SS tab (or columnar `.sector.txt`) → SVG |
+| `enrich.rb in.json [out.json]` | layer the Ruby T5 features (Ix/Ex/Cx/RU, moons, trade codes) onto a lean JSON **without** re-rolling the base values |
+| `canon.rb rename\|tab\|highlight <file>` | overlay canon system names (`.sector` / `.tab`) and tint canon hexes (`.svg`) |
+| `island-borders.rb in.svg` | draw island borders onto an existing SVG (also woven into the generator) |
+| `island-conflicts.rb in.tab` | diagnose island-border overlaps / touches |
+
+The island-border geometry is shared (`lib/astromapper/islands.rb`), so the generator,
+`island-borders.rb`, and `sector2svg.rb` all produce identical, conflict-free borders
+(each hex belongs to exactly one island via nearest-cluster assignment).
 
 License
 =======
@@ -114,6 +150,13 @@ Traveller Fair Use Policy, the Steve Jackson Games / GURPS notice, and credits.
 
 Changelog
 =========
+
+Version 2.1 (2026)
+------------------
+* **T5 Second Survey tab export** — every build emits a TravellerMap-compatible `.tab` (`Sector SS Hex Name UWP Bases Remarks Zone PBG Allegiance Stars {Ix} (Ex) [Cx] Nobility W RU`).
+* **Island borders** — clusters of nearby systems are outlined on the SVG along the hex grid; tunable, and conflict-free (each hex belongs to one island). Shared geometry in `lib/astromapper/islands.rb`.
+* **prune_isolated** drops lone systems no route can reach.
+* **`tools/`** — format-bridge and post-processing scripts (`json2tab`, `json2sector`, `json2svg`, `sector2svg`, `enrich`, `canon`, `island-borders`, `island-conflicts`).
 
 Version 2.0 (2026)
 ------------------

@@ -340,10 +340,10 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  5.    . // .......-. //  4.8 au
   --  6.    . // .......-. //  9.6 au
 
-0903     C76AAAA-A T    G     Wa Hi       M N          F0V           ..WGB         Trogio  { +2 } (C9A+4) [AC5E] RU:4320  Settled
+0903     C300211-A T    G     Va Lo       M N          F0V           ..WGB         Trogio  { +0 } (D12+1) [A25E] RU:26  Colony
   --  1.    . // .......-. //  0.4 au
   --  2.    . // .......-. //  0.8 au
-  --  3. *  W // C76AAAA-A //  1.6 au
+  --  3. *  W // C300211-A //  1.6 au
      -- Moon 1: Size 4 Atmo 0 Hydro 0
      -- Moon 2: Size 5 Atmo 0 Hydro 3
   --  4.    G // 000000-0 //  3.2 au
@@ -1098,8 +1098,8 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 1: Size 4 Atmo 0 Hydro 1
      -- Moon 2: Size 2 Atmo 0 Hydro 0
 
-1219     CA38555-9 F    GC    Ni          N            M6V           WG..G..S      Guna  { -1 } (541+0) [6435] RU:20  Colony
-  --  1. *  W // CA18555-9 //  0.2 au
+1219     CA38455-9 F    GC    Ni          N            M6V           WG..G..S      Guna  { -1 } (936-3) [6335] RU:-486  Colony
+  --  1. *  W // CA38455-9 //  0.2 au
      -- Moon 1: Size 4 Atmo 0 Hydro 0
      -- Moon 2: Size 9 Atmo 0 Hydro 0
      -- Moon 3: Size 5 Atmo 0 Hydro 0
@@ -1817,19 +1817,19 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 4: Size 7 Atmo 4 Hydro 0
   --  6.    S // 000000-0 //  9.6 au
 
-0823     DA7A688-6 C    SG    Oc Ni Co    F            F2V           ..BWBG.G      Corvallisio  { -3 } (954+1) [4336] RU:180  Colony
+0823     A540A88-8 C    SG    De He Hi In Po Co F            M0V/DB        ..BWBG.GS     Corvallisio  { +2 } (C9B+1) [4C36] RU:1188  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    B // 000000-0 //  1.2 au
-  --  4. *  W // DA7A688-6 //  2.4 au
+  --  4. *  W // A540A88-8 //  2.4 au
      -- Moon 1: Size 6 Atmo 0 Hydro 3
      -- Moon 2: Size 8 Atmo 0 Hydro 3
      -- Moon 3: Size 4 Atmo 0 Hydro 2
   --  5.    B // 000000-0 //  4.8 au
-  --  6.    G // 000000-0 //  9.6 au
+  --  6. -  G // 000000-0 //  9.6 au
      -- Moon 1: Size 3 Atmo 2 Hydro 1
-  --  7.    . // .......-. // 19.2 au
-  --  8.    G // 000000-0 // 38.4 au
+  --  7. -  . // .......-. // 19.2 au
+  --  8. -  G // 000000-0 // 38.4 au
      -- Moon 1: Size 1 Atmo 1 Hydro 3
      -- Moon 2: Size 3 Atmo 0 Hydro 6
      -- Moon 3: Size 8 Atmo 5 Hydro 4
@@ -1837,6 +1837,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 5: Size 5 Atmo 1 Hydro 0
      -- Moon 6: Size 6 Atmo 4 Hydro 4
      -- Moon 7: Size 0 Atmo 0 Hydro 0
+  --  9. -  S // 000000-0 // 19.2 au
 
 0124     D85A333-5 T    SG    Wa Lo Lt    N O M        M0V           WBG.S         K  { -3 } (C20+1) [5163] RU:24  Colony
   --  1. *  W // D85A333-5 //  0.2 au
@@ -2116,8 +2117,8 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // 000000-0 // 25.6 au
 
-1424     E96A133-4 T    .     Wa Lo Lt    N O          M6V           W.......S     Korundio  { -3 } (800-4) [2166] RU:-32  Colony
-  --  1. *  W // E96A133-4 //  0.2 au
+1424     B665630-9 T    .     Ga Ni Ag Ri N O          F2V/DB        W.......S     Korundio  { +2 } (654+1) [2866] RU:120  Colony
+  --  1. *  W // B665630-9 //  0.2 au
      -- Moon 1: Size 3 Atmo 0 Hydro 0
      -- Moon 2: Size 3 Atmo 0 Hydro 0
   --  2.    . // .......-. //  0.4 au
@@ -2125,9 +2126,9 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
   --  6.    . // .......-. //  6.4 au
-  --  7. -  . // .......-. // 12.8 au
-  --  8. -  . // .......-. // 25.6 au
-  --  9. -  S // 000000-0 // 51.2 au
+  --  7.    . // .......-. // 12.8 au
+  --  8.    . // .......-. // 25.6 au
+  --  9.    S // 000000-0 // 51.2 au
 
 1325     B629666-A F    NSG   Ni          F N          M4V           WBGBGG        Tesheuquio  { +2 } (B55+1) [882C] RU:275  Colony
   --  1. *  W // B629666-A //  0.2 au
@@ -2261,8 +2262,8 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
 
 
 # Subsector K
-1921     B244888-A T    G     Ph Pa Pi    P            A5V           WG.G.....S    Sabanio  { +2 } (779-2) [3A59] RU:-882  Settled
-  --  1. *  W // B242888-A //  0.2 au
+1921     B244658-A T    G     Ni Ag       P            A5V           WG.G.....S    Sabanio  { +2 } (D52+1) [3859] RU:130  Colony
+  --  1. *  W // B244658-A //  0.2 au
      -- Moon 1: Size 1 Atmo 0 Hydro 1
      -- Moon 2: Size 0 Atmo 0 Hydro 0
   --  2.    G // 000000-0 //  0.4 au
@@ -2310,7 +2311,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  9. -  . // .......-. // 89.6 au
   -- 10. -  S // 000000-0 // 179.2 au
 
-1724     B748944-9 H    NGC   Hi In Ho    N            F0III         .G.WGGGG      Temasek  { +3 } (H8E+0) [BC29] RU:1904  Settled
+1724     B748644-9 H    NGC   Ni Ag Ho    N            F0III         .G.WGGGG      Temasek  { +1 } (A56+1) [B729] RU:300  Colony
   --  1.    . // .......-. //  0.5 au
   --  2.    G // 000000-0 //  0.9 au
      -- Moon 1: Size 0 Atmo 0 Hydro 0
@@ -2322,7 +2323,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
      -- Moon 7: Size 3 Atmo 0 Hydro 0
      -- Moon 8: Size 4 Atmo 3 Hydro 0
   --  3.    . // .......-. //  1.7 au
-  --  4. *  W // B748944-9 //  3.3 au
+  --  4. *  W // B748644-9 //  3.3 au
      -- Moon 1: Size 1 Atmo 0 Hydro 0
      -- Moon 2: Size 3 Atmo 0 Hydro 0
      -- Moon 3: Size 1 Atmo 0 Hydro 0
@@ -3322,7 +3323,7 @@ Location UWP       Temp Bases TC          Factions     Stars         Orbits     
   --  8.    . // .......-. // 44.8 au
   --  9. -  S // 000000-0 // 89.6 au
 
-2140     C755737-9 T    C     Ga Ag       F            M4V/DB        ...W..S       Copa  { +1 } (669-2) [7847] RU:-648  Settled
+2140     C755737-9 T    C     Ga Ag       F            M4V/DB        ...W..S       Copa  { +1 } (669+2) [7847] RU:648  Settled
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
