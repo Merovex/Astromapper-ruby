@@ -13,6 +13,11 @@ module Astromapper
 
       attr_reader :name, :data
 
+      # Human-facing name (the YAML `name:` field), falling back to the file slug.
+      def title
+        @data['name'] || @name
+      end
+
       def self.search_dirs(root = nil)
         dirs = [BUILTIN_DIR]
         dirs.unshift(File.join(root, 'rules')) if root

@@ -22,6 +22,13 @@ seed:
 # Genre
 genre: normal
 
+# Ruleset: the data-driven generation rules, loaded from rules/<name>.yml.
+#   t5       (default) - Traveller 5 WorldGen: full UWP + Ix/Ex/Cx extensions
+#   cepheus            - Cepheus Engine: classic UWP, no extensions
+#   Drop your own rules/<name>.yml in the project (it may `extends:` another)
+#   to customise trade codes, UWP formulas, starport/base/tech tables, etc.
+ruleset: t5
+
 # Prune isolated systems: drop any system with no neighbour within jump-4
 # (a lone star no route can reach), so the map has no disconnected dots.
 #   true  (default) - remove isolated systems during generation
