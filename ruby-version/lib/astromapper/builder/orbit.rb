@@ -175,17 +175,13 @@ module Astromapper
         super
         @kid       = 'R'
         
-        # Size / Atmosphere / Hydrographics — Traveller 5 WorldGen (StSAHPGL-T).
-        # Size = 2D-2 (0 = planetoid belt); a roll of 10 rerolls 1D+9 toward F.
-        @size = toss()
-        @size = 9 + 1.d6 if @size == 10
-        # Atmosphere = Flux + Size, clamp 0-F; a sizeless world has none.
-        @atmo = @size.zero? ? 0 : (flux + @size).whole.max(15)
-        # Hydrographics = Flux + Atmosphere, max A; dry when tiny or thin/dense.
-        @h20  = flux + @atmo
-        @h20 -= 4 if (@atmo < 2 or @atmo > 9)
-        @h20  = 0 if @size < 2
-        @h20  = @h20.whole.max(10)
+        # Size / Atmosphere / Hydrographics — ruleset UWP steps (StSAHPGL-T). The roll
+        # formulas live in rules/<name>.yml; the driver evaluates them in order.
+        rs  = Astromapper.ruleset
+        ctx = {}
+        @size = rs.uwp_step('size',  ctx); ctx['size']  = @size
+        @atmo = rs.uwp_step('atmo',  ctx); ctx['atmo']  = @atmo
+        @h20  = rs.uwp_step('hydro', ctx)
 
         # Climate — Traveller 5, from the world's position in the Habitable Zone.
         @temp = climate
@@ -233,12 +229,14 @@ module Astromapper
       def initialize(star,orbit_number)
         super
         
+        rs = Astromapper.ruleset
         @port_roll = toss(2,0)
-        
+
         @kid = 'W'
-        # Population = 2D-2; a roll of 10 rerolls 9+1D toward F. T5 WorldGen.
-        @popx = toss()
-        @popx = 9 + 1.d6 if @popx == 10
+        # Population — ruleset roll (2D-2, reroll on 10). The ceiling, the firm-genre
+        # strip, and the habitability caps stay here: they depend on genre and star.
+        ctx = { 'size' => @size, 'atmo' => @atmo, 'hydro' => @h20 }
+        @popx = rs.uwp_step('pop', ctx)
         if ('firm' == config['genre'].downcase)
           @popx -= 1 if (@size < 3 or @size > 9)
           @popx += [-1, -1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, -1, -1, -1, -1][@atmo]
@@ -252,10 +250,11 @@ module Astromapper
         # to hold a shielding atmosphere/magnetosphere (~0.4 g, above Mars), but not so much
         # it crushes its inhabitants (~1.5 g). Outside that, only domed/hardy colonies live.
         @popx = @popx.max(6) unless (0.4..1.5).cover?(gravity)
+        ctx['pop'] = @popx
 
-        # Government = Flux + Pop (ceiling F); Law = Flux + Gov (ceiling J). T5 WorldGen.
-        @govm = (flux + @popx).whole.max(15)
-        @law  = (flux + @govm).whole.max(18)
+        # Government = Flux + Pop (ceiling F); Law = Flux + Gov (ceiling J) — ruleset rolls.
+        @govm = rs.uwp_step('gov', ctx); ctx['gov'] = @govm
+        @law  = rs.uwp_step('law', ctx)
 
         # Identify Factions. MgT p. 173
         fax_r = 1.d3.max(3)

@@ -63,6 +63,35 @@ module Astromapper
       def base_threshold(kind, port)
         (@data.dig('bases', kind) || {})[port]
       end
+
+      # Evaluate one UWP step (size, atmo, hydro, pop, gov, law) against `ctx` — a Hash
+      # of the digits computed so far. Returns the digit; the caller stores it back into
+      # ctx before the next step. Handles zero_when / roll / reroll / adjust / clamp.
+      def uwp_step(name, ctx)
+        spec = (@data['uwp'] || {})[name]
+        raise "ruleset #{@name.inspect} has no UWP step #{name.inspect}" unless spec
+        return 0 if spec['zero_when'] && expr("uwp/#{name}/zero", spec['zero_when']).call(ctx)
+        val = expr("uwp/#{name}/roll", spec['roll']).call(ctx)
+        if (rr = spec['reroll']) && expr("uwp/#{name}/rr?", rr['when']).call(ctx.merge(name => val))
+          val = expr("uwp/#{name}/rr=", rr['with']).call(ctx.merge(name => val))
+        end
+        (spec['adjust'] || []).each_with_index do |a, i|
+          next unless expr("uwp/#{name}/adj#{i}", a['when']).call(ctx.merge(name => val))
+          val = a.key?('set') ? a['set'].to_i : val + a['delta'].to_i
+        end
+        if (cl = spec['clamp'])
+          val = cl.first if val < cl.first
+          val = cl.last  if val > cl.last
+        end
+        val
+      end
+
+      private
+
+      # Compile-and-cache an Expr by a stable key, so each formula is parsed once.
+      def expr(key, src)
+        (@compiled ||= {})[key] ||= Expr.compile(src)
+      end
     end
   end
 end
