@@ -64,6 +64,16 @@ module Astromapper
         (@data.dig('bases', kind) || {})[port]
       end
 
+      # Name of the code module wired to an algorithmic slot (extensions/climate/native).
+      # Returns a bare name like "t5" or "none"; defaults to "t5" when unspecified. The
+      # name is constrained to a word so it can only resolve to a `<slot>_<name>` method.
+      def module_for(slot)
+        name = (@data['modules'] || {})[slot].to_s.downcase
+        name = 't5' if name.empty?
+        raise "ruleset #{@name.inspect}: bad module name #{name.inspect} for #{slot}" unless name =~ /\A\w+\z/
+        name
+      end
+
       # Evaluate one UWP step (size, atmo, hydro, pop, gov, law) against `ctx` — a Hash
       # of the digits computed so far. Returns the digit; the caller stores it back into
       # ctx before the next step. Handles zero_when / roll / reroll / adjust / clamp.

@@ -27,6 +27,15 @@ bases:
   depot: { A: 3, B: 3 }
   way:   { A: 4, B: 4, C: 4 }
 
+# Algorithmic modules — the parts too procedural for a table. Each names a code
+# module (the World defines `build_extensions_<name>` / `climate_<name>` /
+# `native_status_<name>`); `none` disables the slot. This is the "code half" of the
+# hybrid: a ruleset like Cepheus can set `extensions: none`.
+modules:
+  extensions: t5      # Ix / Ex / Cx + Resource Units (page 435)
+  climate:    t5      # Habitable-Zone variance (page 432)
+  native:     t5      # Native Intelligent Life (page 436)
+
 # UWP step formulas (StSAHPGL) — Traveller 5 WorldGen. The driver walks each step
 # in order; `roll` is evaluated by Expr with the prior digits in scope. `zero_when`
 # short-circuits to 0 (no roll); `reroll` re-rolls when its condition holds; `adjust`
