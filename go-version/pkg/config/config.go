@@ -29,7 +29,7 @@ func Defaults() Config {
 	return Config{
 		Type:          "sector",
 		Name:          "Unnamed",
-		Density:       "standard",
+		Density:       "scattered",
 		Seed:          "",
 		Ruleset:       "t5",
 		Sophonts:      "human",
@@ -48,7 +48,7 @@ func Template(name string) string {
 
 type: sector            # sector | volume
 name: "` + name + `"
-density: standard       # extra-galactic | rift | sparse | scattered | standard | dense | cluster | core
+density: scattered      # extra-galactic | rift | sparse | dunbar | scattered | dense | cluster | core
 seed:                   # blank = random (a Crawford code is printed); or a code/string
 ruleset: t5             # t5 | cepheus | a custom rules/<name>.yml in this directory
 sophonts: human         # human (Settled/Colony) | varied (alien sophonts)

@@ -8,7 +8,7 @@ import (
 
 func TestDefaults(t *testing.T) {
 	d := Defaults()
-	if d.Ruleset != "t5" || d.Density != "standard" || !d.Islands || d.IslandJump != 2 {
+	if d.Ruleset != "t5" || d.Density != "scattered" || !d.Islands || d.IslandJump != 2 {
 		t.Errorf("unexpected defaults: %+v", d)
 	}
 }
@@ -41,7 +41,7 @@ func TestLoadOverridesOnlyPresentKeys(t *testing.T) {
 		t.Errorf("present keys not applied: %+v", cfg)
 	}
 	// omitted keys keep defaults
-	if cfg.Density != "standard" || cfg.Sophonts != "human" || cfg.IslandJump != 2 {
+	if cfg.Density != "scattered" || cfg.Sophonts != "human" || cfg.IslandJump != 2 {
 		t.Errorf("omitted keys should keep defaults: %+v", cfg)
 	}
 }
@@ -59,7 +59,7 @@ func TestTemplateRoundTrips(t *testing.T) {
 	if cfg.Name != "Spinward Marches" {
 		t.Errorf("template name = %q, want \"Spinward Marches\"", cfg.Name)
 	}
-	if cfg.Ruleset != "t5" || cfg.Density != "standard" || !cfg.Islands {
+	if cfg.Ruleset != "t5" || cfg.Density != "scattered" || !cfg.Islands {
 		t.Errorf("template defaults wrong: %+v", cfg)
 	}
 }

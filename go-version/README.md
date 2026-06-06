@@ -29,7 +29,7 @@ dashes in the directory, and the sector name is written into the scaffolded
 | Flag | Default | Meaning |
 |---|---|---|
 | `--type` | `sector` | `sector` or `volume` |
-| `--density` | `standard` | `--list-densities` for the full set |
+| `--density` | `scattered` | `--list-densities` for the full set |
 | `--seed` | random | Crawford code `XXXXX-XXXXX`, or any string (folded to one) |
 | `--name` | `Unnamed` | Sector name |
 | `--ruleset` | `t5` | `t5`, `cepheus`, or a custom `rules/<name>.yml` |

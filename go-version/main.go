@@ -19,12 +19,15 @@ import (
 	"strings"
 )
 
+// densityMap matches the Ruby version's per-hex probabilities (builder/sector.rb).
+// scattered is the default. There is no inflated "standard" (50%) — it produced far
+// too many systems.
 var densityMap = map[string]float64{
 	"extra-galactic": 0.01,
 	"rift":           0.03,
 	"sparse":         0.17,
+	"dunbar":         0.23, // ~150 systems (Dunbar's Number)
 	"scattered":      0.33,
-	"standard":       0.50,
 	"dense":          0.66,
 	"cluster":        0.83,
 	"core":           0.91,
@@ -75,7 +78,7 @@ func main() {
 	var (
 		configPath = flag.String("config", "_astromapper.yml", "Path to a YAML config file (optional; flags override it)")
 		genType = flag.String("type", "sector", "Generation type: 'sector' or 'volume'")
-		density = flag.String("density", "standard", "Density for sector generation: extra-galactic, rift, sparse, scattered, standard, dense, cluster, core")
+		density = flag.String("density", "scattered", "Density for sector generation: extra-galactic, rift, sparse, dunbar, scattered, dense, cluster, core")
 		seed    = flag.String("seed", "", "Seed string for generation (if not provided, generates random seed in format XXXXX-XXXXX)")
 		name    = flag.String("name", "Unnamed", "Name for the sector (default: Unnamed)")
 		ruleset = flag.String("ruleset", "t5", "Ruleset: t5, cepheus, or a custom rules/<name>.yml")
@@ -144,8 +147,8 @@ func main() {
 		fmt.Println("  extra-galactic  (1%)  - Deep space between galaxies")
 		fmt.Println("  rift           (3%)  - Galactic voids")
 		fmt.Println("  sparse        (17%)  - Frontier regions")
-		fmt.Println("  scattered     (33%)  - Outer rim")
-		fmt.Println("  standard      (50%)  - Typical space")
+		fmt.Println("  dunbar        (23%)  - ~150 systems (Dunbar's Number)")
+		fmt.Println("  scattered     (33%)  - Outer rim (default)")
 		fmt.Println("  dense         (66%)  - Inner systems")
 		fmt.Println("  cluster       (83%)  - Stellar clusters")
 		fmt.Println("  core          (91%)  - Galactic core")
@@ -330,9 +333,9 @@ func showHelp() {
 	fmt.Println("Options:")
 	fmt.Println("  --config <path>      YAML config file (default: _astromapper.yml; flags override it)")
 	fmt.Println("  --type <type>        Generation type: 'sector' or 'volume' (default: sector)")
-	fmt.Println("  --density <density>  Density for sector generation (default: standard)")
-	fmt.Println("                       Options: extra-galactic, rift, sparse, scattered,")
-	fmt.Println("                                standard, dense, cluster, core")
+	fmt.Println("  --density <density>  Density for sector generation (default: scattered)")
+	fmt.Println("                       Options: extra-galactic, rift, sparse, dunbar,")
+	fmt.Println("                                scattered, dense, cluster, core")
 	fmt.Println("  --seed <string>      Seed string for generation")
 	fmt.Println("                       If not provided, generates random seed (format: XXXXX-XXXXX)")
 	fmt.Println("  --name <string>      Name for the sector (default: Unnamed)")
@@ -346,7 +349,7 @@ func showHelp() {
 	fmt.Println("  --help               Show this help message")
 	fmt.Println()
 	fmt.Println("Examples:")
-	fmt.Println("  astromapper                                    # Generate standard sector with random seed")
+	fmt.Println("  astromapper                                    # Generate scattered sector with random seed")
 	fmt.Println("  astromapper --seed MYSEED123                  # Generate sector with specific seed")
 	fmt.Println("  astromapper --density sparse --seed FRONTIER  # Generate sparse sector")
 	fmt.Println("  astromapper --type volume --seed ALPHA7       # Generate single star system")
