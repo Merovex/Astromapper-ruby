@@ -3,6 +3,8 @@ package svg
 import (
 	"math"
 	"sort"
+
+	"astromapper/pkg/models"
 )
 
 // Island borders — a Go port of Ruby's Astromapper::Islands. Clusters nearby system
@@ -25,33 +27,16 @@ type island struct {
 	Size   int
 }
 
-func absInt(n int) int {
-	if n < 0 {
-		return -n
-	}
-	return n
-}
-
 func islandCentre(col, row int, side, factor float64) (float64, float64) {
 	x := side + float64(col-1)*side*1.5
 	y := float64(row-1)*side*factor + side*factor/(1+float64(col%2))
 	return x, y
 }
 
-// islandJump is Traveller hex distance with even columns carrying the +1 offset, so
-// the metric matches islandCentre's column parity.
+// islandJump is the shared Traveller hex distance (even columns carry the +1 offset),
+// so island borders and isolation pruning use exactly the same metric.
 func islandJump(a, b hexCell) int {
-	ay2 := a.R * 2
-	if a.C%2 == 0 {
-		ay2++
-	}
-	by2 := b.R * 2
-	if b.C%2 == 0 {
-		by2++
-	}
-	dx := absInt(b.C - a.C)
-	dy := absInt(by2 - ay2)
-	return int(math.Round(float64(dx) + math.Max(0, float64(dy-dx)/2.0)))
+	return models.HexJump(a.C, a.R, b.C, b.R)
 }
 
 func pointLess(a, b point) bool {

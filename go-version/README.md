@@ -34,6 +34,7 @@ dashes in the directory, and the sector name is written into the scaffolded
 | `--name` | `Unnamed` | Sector name |
 | `--ruleset` | `t5` | `t5`, `cepheus`, or a custom `rules/<name>.yml` |
 | `--sophonts` | `human` | `human` (Settled/Colony) or `varied` (alien sophonts) |
+| `--prune` | `true` | Drop systems with no neighbour within jump-4 (lone, unreachable stars) |
 | `--islands` | `true` | Outline clusters of nearby systems on the SVG |
 | `--island-jump` | `2` | Systems within this many jumps form one island |
 | `--island-min` | `2` | Minimum systems per island to draw a border |
@@ -45,8 +46,8 @@ Instead of repeating flags, drop an `_astromapper.yml` in your working directory
 run `astromapper` with no flags. Precedence is **explicit flag > config file >
 built-in defaults**, so a flag always wins over the file. Point at a different file
 with `--config <path>`. See [`_astromapper.example.yml`](_astromapper.example.yml) for
-the full key list (`name`, `density`, `seed`, `ruleset`, `sophonts`, `islands`,
-`island_jump`, `island_min`, `island_opacity`).
+the full key list (`name`, `density`, `seed`, `ruleset`, `sophonts`, `prune_isolated`,
+`islands`, `island_jump`, `island_min`, `island_opacity`).
 
 ```yaml
 # _astromapper.yml

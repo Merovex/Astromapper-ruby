@@ -39,6 +39,36 @@ func (s *Sector) GetVolume(col, row int) *Volume {
 	return nil
 }
 
+// PruneIsolated removes systems with no neighbour within `threshold` jumps — lone
+// stars that no route can reach. One pass suffices: isolation is symmetric, so
+// removing isolates can't create new ones. Mirrors the Ruby prune_isolated!.
+func (s *Sector) PruneIsolated(threshold int) {
+	type cell struct{ row, col, c, r int }
+	var systems []cell
+	for row := 0; row < s.Height; row++ {
+		for col := 0; col < s.Width; col++ {
+			if v := s.Volumes[row][col]; v != nil {
+				systems = append(systems, cell{row, col, v.Column, v.Row})
+			}
+		}
+	}
+	for _, a := range systems {
+		isolated := true
+		for _, b := range systems {
+			if a.row == b.row && a.col == b.col {
+				continue
+			}
+			if HexJump(a.c, a.r, b.c, b.r) <= threshold {
+				isolated = false
+				break
+			}
+		}
+		if isolated {
+			s.Volumes[a.row][a.col] = nil
+		}
+	}
+}
+
 func (s *Sector) ToASCII() string {
 	var output strings.Builder
 	

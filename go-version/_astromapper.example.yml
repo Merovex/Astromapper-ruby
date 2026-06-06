@@ -9,6 +9,8 @@ seed:                   # blank = random (a Crawford code is printed); or a code
 ruleset: t5             # t5 | cepheus | a custom rules/<name>.yml
 sophonts: human         # human (Settled/Colony) | varied (alien sophonts)
 
+prune_isolated: true    # drop systems with no neighbour within jump-4 (lone dots)
+
 # Island borders on the SVG (clusters of nearby systems)
 islands: true
 island_jump: 2          # systems within this many jumps form one island
