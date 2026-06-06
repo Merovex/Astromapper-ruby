@@ -20,6 +20,8 @@ pub struct Sector {
     pub width: usize,
     pub height: usize,
     pub volumes: Vec<Vec<Option<Volume>>>,
+    #[serde(skip)]
+    pub ruleset_title: String, // names the active ruleset in the legends
 }
 
 impl Serialize for Sector {
@@ -64,7 +66,39 @@ impl Sector {
             width,
             height,
             volumes,
+            ruleset_title: String::new(),
         }
+    }
+
+    /// Render the sector as a tab-delimited T5 Second Survey file (TravellerMap
+    /// compatible) with a #-commented, ruleset-named legend. Mirrors Ruby/Go to_tab.
+    pub fn to_tab(&self, allegiance: &str) -> String {
+        let allegiance = if allegiance.is_empty() { "Na" } else { allegiance };
+        let cols = [
+            "Sector", "SS", "Hex", "Name", "UWP", "Bases", "Remarks", "Zone", "PBG",
+            "Allegiance", "Stars", "{Ix}", "(Ex)", "[Cx]", "Nobility", "W", "RU",
+        ];
+        let mut out = format!(
+            "# Sector: {} -- T5 Second Survey (tab-delimited). Lines beginning with # are comments.\n",
+            self.name
+        );
+        if !self.ruleset_title.is_empty() {
+            out.push_str(&format!("# Ruleset: {}\n", self.ruleset_title));
+        }
+        out.push_str(&format!("# COLUMNS: {}\n#\n", cols.join(" ")));
+        out.push_str(&cols.join("\t"));
+        out.push('\n');
+        for row in 0..self.height {
+            for col in 0..self.width {
+                if let Some(v) = &self.volumes[row][col] {
+                    if !v.is_empty() {
+                        out.push_str(&v.to_tab(&self.name, allegiance));
+                        out.push('\n');
+                    }
+                }
+            }
+        }
+        out
     }
     
     pub fn set_volume(&mut self, row: usize, col: usize, volume: Volume) {
@@ -118,6 +152,9 @@ impl Sector {
         
         // Header
         output.push_str(&format!("# Sector: {}\n", self.name));
+        if !self.ruleset_title.is_empty() {
+            output.push_str(&format!("# Ruleset: {}\n", self.ruleset_title));
+        }
         output.push_str("# 32 columns x 40 rows\n");
         output.push_str("Location UWP       Temp Bases TC          Factions     Stars         Orbits        Name\n");
         output.push_str("-------- --------- ---- ----- ----------- ------------ ------------- ------------- ----\n");
