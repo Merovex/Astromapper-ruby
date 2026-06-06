@@ -7,10 +7,11 @@ import (
 )
 
 type Sector struct {
-	Name    string      `json:"name"`
-	Volumes [][]*Volume `json:"volumes"`
-	Width   int         `json:"width"`
-	Height  int         `json:"height"`
+	Name         string      `json:"name"`
+	Volumes      [][]*Volume `json:"volumes"`
+	Width        int         `json:"width"`
+	Height       int         `json:"height"`
+	RulesetTitle string      `json:"-"` // names the active ruleset in the legends
 }
 
 func NewSector(name string, width, height int) *Sector {
@@ -69,10 +70,44 @@ func (s *Sector) PruneIsolated(threshold int) {
 	}
 }
 
+// tabColumns is the T5 Second Survey / TravellerMap column order.
+var tabColumns = []string{
+	"Sector", "SS", "Hex", "Name", "UWP", "Bases", "Remarks", "Zone", "PBG",
+	"Allegiance", "Stars", "{Ix}", "(Ex)", "[Cx]", "Nobility", "W", "RU",
+}
+
+// ToTab renders the sector as a tab-delimited T5 Second Survey file (TravellerMap
+// compatible), with a #-commented legend. Mirrors the Ruby Sector#to_tab.
+func (s *Sector) ToTab(allegiance string) string {
+	if allegiance == "" {
+		allegiance = "Na"
+	}
+	var out strings.Builder
+	out.WriteString(fmt.Sprintf("# Sector: %s -- T5 Second Survey (tab-delimited). Lines beginning with # are comments.\n", s.Name))
+	if s.RulesetTitle != "" {
+		out.WriteString(fmt.Sprintf("# Ruleset: %s\n", s.RulesetTitle))
+	}
+	out.WriteString("# COLUMNS: " + strings.Join(tabColumns, " ") + "\n")
+	out.WriteString("#\n")
+	out.WriteString(strings.Join(tabColumns, "\t") + "\n")
+
+	for row := 0; row < s.Height; row++ {
+		for col := 0; col < s.Width; col++ {
+			if v := s.Volumes[row][col]; v != nil && !v.IsEmpty() {
+				out.WriteString(v.ToTab(s.Name, allegiance) + "\n")
+			}
+		}
+	}
+	return out.String()
+}
+
 func (s *Sector) ToASCII() string {
 	var output strings.Builder
 	
 	output.WriteString(fmt.Sprintf("# Sector: %s\n", s.Name))
+	if s.RulesetTitle != "" {
+		output.WriteString(fmt.Sprintf("# Ruleset: %s\n", s.RulesetTitle))
+	}
 	output.WriteString("# 32 columns x 40 rows\n")
 	output.WriteString("Location UWP       Temp Bases TC          Factions     Stars         Orbits        Name\n")
 	output.WriteString("-------- --------- ---- ----- ----------- ------------ ------------- ------------- ----\n")

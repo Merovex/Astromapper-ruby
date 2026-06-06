@@ -22,7 +22,9 @@ cd My-Sector
 
 `astromapper new <name>` mirrors the Ruby workflow: spaces in the name become
 dashes in the directory, and the sector name is written into the scaffolded
-`_astromapper.yml`. Output (ASCII `.txt`, `.svg`, `.json`) is written to `output/`.
+`_astromapper.yml`. Output (ASCII `.txt`, `.svg`, `.json`, and a T5 Second Survey
+`.tab`) is written to `output/`. The active ruleset is named in the `.txt` and `.tab`
+legends.
 
 ### Flags
 

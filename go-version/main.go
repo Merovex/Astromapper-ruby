@@ -228,6 +228,7 @@ func main() {
 		if *prune {
 			sector.PruneIsolated(4)
 		}
+		sector.RulesetTitle = rs.Title()
 
 		// Generate ASCII content
 		asciiContent := sector.ToASCII()
@@ -258,7 +259,15 @@ func main() {
 		fmt.Printf("ASCII saved to: %s\n", asciiPath)
 		fmt.Printf("SVG saved to:   %s\n", svgPath)
 		fmt.Printf("JSON saved to:  %s\n", jsonPath)
-		
+
+		// T5 Second Survey .tab (TravellerMap), alongside the other outputs.
+		tabPath := strings.TrimSuffix(asciiPath, ".txt") + ".tab"
+		if err := os.WriteFile(tabPath, []byte(sector.ToTab("")), 0o644); err != nil {
+			fmt.Fprintf(os.Stderr, "Error writing tab file: %v\n", err)
+			os.Exit(1)
+		}
+		fmt.Printf("TAB saved to:   %s\n", tabPath)
+
 		// Count systems
 		systemCount := 0
 		for r := 0; r < sector.Height; r++ {
