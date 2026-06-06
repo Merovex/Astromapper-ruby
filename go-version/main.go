@@ -83,6 +83,7 @@ func main() {
 		name    = flag.String("name", "Unnamed", "Name for the sector (default: Unnamed)")
 		ruleset = flag.String("ruleset", "t5", "Ruleset: t5, cepheus, or a custom rules/<name>.yml")
 		sophonts = flag.String("sophonts", "human", "Native life: 'human' (Settled/Colony) or 'varied' (alien sophonts)")
+		prune    = flag.Bool("prune", true, "Drop systems with no neighbour within jump-4 (lone, unreachable stars)")
 		islands  = flag.Bool("islands", true, "Outline clusters of nearby systems on the SVG")
 		islandJump = flag.Int("island-jump", 2, "Systems within this many jumps form one island")
 		islandMin = flag.Int("island-min", 2, "Minimum systems per island to draw a border")
@@ -118,6 +119,9 @@ func main() {
 	}
 	if !set["sophonts"] {
 		*sophonts = cfg.Sophonts
+	}
+	if !set["prune"] {
+		*prune = cfg.PruneIsolated
 	}
 	if !set["islands"] {
 		*islands = cfg.Islands
@@ -216,7 +220,10 @@ func main() {
 		
 		// Generate sector
 		sector := builder.BuildSector(*name, 32, 40, densityValue, planetNames, r)
-		
+		if *prune {
+			sector.PruneIsolated(4)
+		}
+
 		// Generate ASCII content
 		asciiContent := sector.ToASCII()
 		
@@ -341,6 +348,7 @@ func showHelp() {
 	fmt.Println("  --name <string>      Name for the sector (default: Unnamed)")
 	fmt.Println("  --ruleset <name>     Ruleset: t5 (default), cepheus, or a custom rules/<name>.yml")
 	fmt.Println("  --sophonts <mode>    Native life: 'human' (default) or 'varied' (alien sophonts)")
+	fmt.Println("  --prune              Drop systems with no neighbour within jump-4 (default true)")
 	fmt.Println("  --islands            Outline clusters of nearby systems on the SVG (default true)")
 	fmt.Println("  --island-jump <n>    Systems within n jumps form one island (default 2)")
 	fmt.Println("  --island-min <n>     Minimum systems per island (default 2)")
