@@ -40,6 +40,27 @@ func Defaults() Config {
 	}
 }
 
+// Template returns a commented _astromapper.yml scaffold with the given sector name,
+// written by `astromapper new`. Values are the built-in defaults.
+func Template(name string) string {
+	return `# Astromapper (Go) project config. Run ` + "`astromapper`" + ` in this directory
+# to generate the sector. Any CLI flag overrides the value here.
+
+type: sector            # sector | volume
+name: "` + name + `"
+density: standard       # extra-galactic | rift | sparse | scattered | standard | dense | cluster | core
+seed:                   # blank = random (a Crawford code is printed); or a code/string
+ruleset: t5             # t5 | cepheus | a custom rules/<name>.yml in this directory
+sophonts: human         # human (Settled/Colony) | varied (alien sophonts)
+
+# Island borders on the SVG (clusters of nearby systems)
+islands: true
+island_jump: 2          # systems within this many jumps form one island
+island_min: 2           # minimum systems per island
+island_opacity: 0.85    # 0.0 (invisible) .. 1.0 (solid)
+`
+}
+
 // Load reads path over the defaults. yaml.Unmarshal only sets keys present in the
 // file, so omitted keys keep their default. Returns found=false (no error) when the
 // file does not exist, so a missing config is fine.
