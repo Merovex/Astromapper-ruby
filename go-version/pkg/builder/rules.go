@@ -14,11 +14,94 @@ import (
 var (
 	activeRuleset  *rules.Ruleset
 	activeSophonts string // "" or "human" = human-only; "varied" allows alien sophonts
+	activeGenre    = "normal"
 )
 
-// SetRuleset selects the active ruleset; SetSophonts the native-life mode.
+// SetRuleset selects the active ruleset; SetSophonts the native-life mode;
+// SetGenre the realism<->romance stellar slider (firm | normal | opera).
 func SetRuleset(rs *rules.Ruleset) { activeRuleset = rs }
 func SetSophonts(s string)         { activeSophonts = strings.ToLower(s) }
+func SetGenre(g string) {
+	if g = strings.ToLower(g); g != "" {
+		activeGenre = g
+	}
+}
+
+// gravityBySize is surface gravity (g) by Size, extended to T5 sizes B-F.
+var gravityBySize = []float64{0, 0.05, 0.15, 0.25, 0.35, 0.45, 0.7, 0.9, 1.0, 1.25, 1.4, 1.6, 1.9, 2.2, 2.5, 2.8}
+
+func gravityFor(size int) float64 {
+	if size >= 0 && size < len(gravityBySize) {
+		return gravityBySize[size]
+	}
+	return 0
+}
+
+func isHotStar(t models.StarType) bool {
+	return t == "O" || t == "B" || t == "A" || t == "F"
+}
+
+// applyGenreAtmoHydro adjusts Atmosphere/Hydrographics for the realism genres
+// (opera/firm), pushing small/odd worlds toward thin/dry. MgT p. 180. (Faithful to
+// the Ruby model, including its size 3-4 atmo buckets.)
+func applyGenreAtmoHydro(w *models.World) {
+	if activeGenre != "opera" && activeGenre != "firm" {
+		return
+	}
+	switch {
+	case w.Size < 3 || (w.Size < 4 && w.Atmosphere < 3):
+		w.Atmosphere = 0
+	case (w.Size == 3 || w.Size == 4) && w.Atmosphere >= 3 && w.Atmosphere <= 5:
+		w.Atmosphere = 1
+	case (w.Size == 3 || w.Size == 4) && w.Atmosphere > 5:
+		w.Atmosphere = 10
+	}
+	if w.Atmosphere < 2 {
+		w.Hydro -= 6
+	}
+	if w.Atmosphere == 2 || w.Atmosphere == 3 || w.Atmosphere == 11 || w.Atmosphere == 12 {
+		w.Hydro -= 4
+	}
+	if w.Hydro < 0 {
+		w.Hydro = 0
+	}
+}
+
+// firmPopStrip applies the firm-genre population adjustments and returns the
+// adjusted port-orientation roll (higher pop -> lower roll -> better port).
+func firmPopStrip(w *models.World, pop, portRoll int) (int, int) {
+	if activeGenre != "firm" {
+		return pop, portRoll
+	}
+	if w.Size < 3 || w.Size > 9 {
+		pop--
+	}
+	atmoDM := []int{-1, -1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, -1, -1, -1, -1}
+	if w.Atmosphere >= 0 && w.Atmosphere < len(atmoDM) {
+		pop += atmoDM[w.Atmosphere]
+	}
+	pw := pop
+	if pw < 0 {
+		pw = 0
+	}
+	portRoll = portRoll + 7 - pw
+	if portRoll < 0 {
+		portRoll = 0
+	}
+	return pop, portRoll
+}
+
+// capColonyPopulation caps population at colony size (6) for worlds that can't host
+// large native populations: short-lived hot stars, or an uncomfortable gravity band.
+func capColonyPopulation(w *models.World, pop int) int {
+	if isHotStar(w.Star.StarType) && pop > 6 {
+		pop = 6
+	}
+	if g := gravityFor(w.Size); !(g >= 0.4 && g <= 1.5) && pop > 6 {
+		pop = 6
+	}
+	return pop
+}
 
 // ruleset returns the active ruleset, lazily loading the built-in t5 if none is set.
 func ruleset() *rules.Ruleset {

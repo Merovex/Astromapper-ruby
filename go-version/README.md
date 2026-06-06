@@ -32,6 +32,7 @@ dashes in the directory, and the sector name is written into the scaffolded
 | `--density` | `scattered` | `--list-densities` for the full set |
 | `--seed` | random | Crawford code `XXXXX-XXXXX`, or any string (folded to one) |
 | `--name` | `Unnamed` | Sector name |
+| `--genre` | `normal` | Stellar realism: `firm` (M-dwarf-heavy), `normal`, `opera` (Sun-like) |
 | `--ruleset` | `t5` | `t5`, `cepheus`, or a custom `rules/<name>.yml` |
 | `--sophonts` | `human` | `human` (Settled/Colony) or `varied` (alien sophonts) |
 | `--prune` | `true` | Drop systems with no neighbour within jump-4 (lone, unreachable stars) |
@@ -46,8 +47,8 @@ Instead of repeating flags, drop an `_astromapper.yml` in your working directory
 run `astromapper` with no flags. Precedence is **explicit flag > config file >
 built-in defaults**, so a flag always wins over the file. Point at a different file
 with `--config <path>`. See [`_astromapper.example.yml`](_astromapper.example.yml) for
-the full key list (`name`, `density`, `seed`, `ruleset`, `sophonts`, `prune_isolated`,
-`islands`, `island_jump`, `island_min`, `island_opacity`).
+the full key list (`name`, `density`, `seed`, `genre`, `ruleset`, `sophonts`,
+`prune_isolated`, `islands`, `island_jump`, `island_min`, `island_opacity`).
 
 ```yaml
 # _astromapper.yml
