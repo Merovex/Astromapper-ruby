@@ -1,0 +1,54 @@
+# Cepheus Engine ruleset (OGL Traveller-compatible). It inherits the Traveller 5
+# structure (`extends: t5`) and overrides only where Cepheus/classic Traveller
+# differ. Values are transcribed from the Cepheus Engine SRD; spot-check against
+# your edition, since trade-code and base thresholds vary slightly between printings.
+#
+# A `key!:` override replaces the inherited section wholesale (rather than merging).
+name: Cepheus Engine
+extends: t5
+
+# Cepheus has no Importance/Economic/Cultural extensions. Climate and native status
+# are Astromapper engine features, kept from T5. (UWP modifiers use `flux` = 1D-1D,
+# distributionally identical to Cepheus's 2D-7 — see CLAUDE.md.)
+modules:
+  extensions: none
+
+# Classic UWP: Size and Population are a flat 2D-2 with NO reroll-on-10, so they
+# cap at A. (T5's reroll pushes them to B-F.) Dropping the inherited reroll:
+uwp:
+  size: { reroll: }
+  pop:  { reroll: }
+
+# Starport — Cepheus: HIGH roll = best. Indexed by the 2D roll (2..12):
+#   2 X · 3-4 E · 5-6 D · 7-8 C · 9-10 B · 11-12 A
+starport:
+  method: roll-high
+  table: [X, X, X, E, E, D, D, C, C, B, B, A, A]
+
+# Tech DMs — the classic table (same as T5) except a Fuel-only port gives no bonus.
+tech_dm:
+  port: { A: 6, B: 4, C: 2, D: 0, E: 0, F: 0, X: -4 }
+
+# Bases — Cepheus: present when 2D >= threshold; only Naval and Scout.
+bases!:
+  op: ">="
+  naval: { A: 8, B: 8 }
+  scout: { A: 10, B: 9, C: 8, D: 7 }
+
+# Trade Classifications — the classic 15-code set (replaces the T5 TCS table).
+trade_codes!:
+  Ag: "atmo>=4 and atmo<=9 and hydro>=4 and hydro<=8 and pop>=5 and pop<=7"
+  As: "size==0 and atmo==0 and hydro==0"
+  Ba: "pop==0 and gov==0 and law==0"
+  De: "atmo>=2 and atmo<=9 and hydro==0"
+  Fl: "atmo>=10 and atmo<=12 and hydro>=1"
+  Hi: "pop>=9"
+  Ic: "atmo<=1 and hydro>=1"
+  In: "(atmo==0 or atmo==1 or atmo==2 or atmo==4 or atmo==7 or atmo==9) and pop>=9"
+  Lo: "pop>=1 and pop<=3"
+  Na: "atmo>=0 and atmo<=3 and hydro>=0 and hydro<=3 and pop>=6"
+  Ni: "pop>=4 and pop<=6"
+  Po: "atmo>=2 and atmo<=5 and hydro>=0 and hydro<=3"
+  Ri: "atmo>=6 and atmo<=8 and pop>=6 and pop<=8 and gov>=4 and gov<=9"
+  Va: "atmo==0"
+  Wa: "hydro==10"
