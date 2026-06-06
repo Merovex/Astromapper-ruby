@@ -13,17 +13,29 @@ struct Args {
     r#type: String,
     
     /// Density for sector generation
-    #[arg(long, default_value = "standard")]
+    #[arg(long, default_value = "scattered")]
     density: String,
-    
+
     /// Seed string for generation
     #[arg(long)]
     seed: Option<String>,
-    
+
     /// Name for the sector
     #[arg(long, default_value = "Unnamed")]
     name: String,
-    
+
+    /// Ruleset: t5, cepheus, or a custom rules/<name>.yml
+    #[arg(long, default_value = "t5")]
+    ruleset: String,
+
+    /// Stellar realism: firm (M-dwarf-heavy), normal, or opera (Sun-like)
+    #[arg(long, default_value = "normal")]
+    genre: String,
+
+    /// Native life: 'human' (Settled/Colony) or 'varied' (alien sophonts)
+    #[arg(long, default_value = "human")]
+    sophonts: String,
+
     /// List available density options
     #[arg(long)]
     list_densities: bool,
@@ -37,8 +49,8 @@ fn main() -> anyhow::Result<()> {
         println!("  extra-galactic  (1%)  - Deep space between galaxies");
         println!("  rift           (3%)  - Galactic voids");
         println!("  sparse        (17%)  - Frontier regions");
-        println!("  scattered     (33%)  - Outer rim");
-        println!("  standard      (50%)  - Typical space");
+        println!("  dunbar        (23%)  - ~150 systems (Dunbar's Number)");
+        println!("  scattered     (33%)  - Outer rim (default)");
         println!("  dense         (66%)  - Inner systems");
         println!("  cluster       (83%)  - Stellar clusters");
         println!("  core          (91%)  - Galactic core");
@@ -50,8 +62,8 @@ fn main() -> anyhow::Result<()> {
         "extra-galactic" => 0.01,
         "rift" => 0.03,
         "sparse" => 0.17,
+        "dunbar" => 0.23,
         "scattered" => 0.33,
-        "standard" => 0.50,
         "dense" => 0.66,
         "cluster" => 0.83,
         "core" => 0.91,
@@ -78,6 +90,21 @@ fn main() -> anyhow::Result<()> {
         (crawford.clone(), crawford)
     };
     
+    // Load the active ruleset (project rules/<name>.yml overrides the built-in) and
+    // set the generation runtime before building.
+    use astromapper_core::rules::{runtime, Ruleset};
+    let rs = match Ruleset::load(&args.ruleset, ".") {
+        Ok(r) => r,
+        Err(e) => {
+            eprintln!("Error loading ruleset {:?}: {}", args.ruleset, e);
+            std::process::exit(1);
+        }
+    };
+    println!("Ruleset: {}  Genre: {}", rs.title(), args.genre);
+    runtime::set_ruleset(rs);
+    runtime::set_genre(&args.genre);
+    runtime::set_sophonts(&args.sophonts);
+
     // Create output directory
     fs::create_dir_all("output")?;
     

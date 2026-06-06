@@ -4,6 +4,7 @@
 
 pub mod expr;
 pub mod ruleset;
+pub mod runtime;
 
 pub use expr::{Context, Value};
 pub use ruleset::Ruleset;
