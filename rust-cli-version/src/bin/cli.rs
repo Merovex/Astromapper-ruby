@@ -40,6 +40,22 @@ struct Args {
     #[arg(long, default_value_t = true, action = clap::ArgAction::Set)]
     prune: bool,
 
+    /// Outline clusters of nearby systems on the SVG
+    #[arg(long, default_value_t = true, action = clap::ArgAction::Set)]
+    islands: bool,
+
+    /// Systems within this many jumps form one island
+    #[arg(long, default_value_t = 2)]
+    island_jump: i64,
+
+    /// Minimum systems per island to draw a border
+    #[arg(long, default_value_t = 2)]
+    island_min: usize,
+
+    /// Island border opacity, 0.0-1.0
+    #[arg(long, default_value_t = 0.85)]
+    island_opacity: f64,
+
     /// List available density options
     #[arg(long)]
     list_densities: bool,
@@ -125,8 +141,10 @@ fn main() -> anyhow::Result<()> {
             // Generate ASCII
             let ascii_content = AsciiFormatter::format_sector(&sector);
             
-            // Generate SVG
-            let svg_content = SvgGenerator::generate_sector(&sector);
+            // Generate SVG (with island borders)
+            let svg_content = SvgGenerator::new(sector.name.clone())
+                .with_islands(args.islands, args.island_jump, args.island_min, args.island_opacity)
+                .generate(&sector);
             
             // Generate JSON
             let json_content = JsonFormatter::format_sector(&sector)?;
