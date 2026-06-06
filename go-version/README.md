@@ -10,10 +10,19 @@ RNGs differ).
 
 ```bash
 go build -o astromapper .
+
+# Scaffold a project (creates the dir, _astromapper.yml, and output/):
+./astromapper new "My Sector"
+cd My-Sector
+../astromapper          # reads _astromapper.yml in this directory
+
+# …or generate in one shot with flags:
 ./astromapper --type sector --density scattered --seed MYSEED --name "My Sector"
 ```
 
-Output (ASCII `.txt`, `.svg`, `.json`) is written to `output/`.
+`astromapper new <name>` mirrors the Ruby workflow: spaces in the name become
+dashes in the directory, and the sector name is written into the scaffolded
+`_astromapper.yml`. Output (ASCII `.txt`, `.svg`, `.json`) is written to `output/`.
 
 ### Flags
 

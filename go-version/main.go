@@ -15,6 +15,7 @@ import (
 	"hash/fnv"
 	"math/big"
 	"os"
+	"path/filepath"
 	"strings"
 )
 
@@ -64,6 +65,12 @@ func stringToCrawford(input string) string {
 }
 
 func main() {
+	// Subcommand: `astromapper new <name>` scaffolds a project directory.
+	if len(os.Args) >= 2 && os.Args[1] == "new" {
+		runNew(os.Args[2:])
+		return
+	}
+
 	// Define command-line flags
 	var (
 		configPath = flag.String("config", "_astromapper.yml", "Path to a YAML config file (optional; flags override it)")
@@ -283,10 +290,42 @@ func main() {
 	}
 }
 
+// runNew scaffolds a project directory (like Ruby's `astromapper new <name>`):
+// the dir, an _astromapper.yml seeded with the name, and an output/ folder.
+func runNew(args []string) {
+	raw := strings.TrimSpace(strings.Join(args, " "))
+	if raw == "" {
+		fmt.Fprintln(os.Stderr, "Usage: astromapper new <name>")
+		os.Exit(1)
+	}
+	dir := strings.ReplaceAll(raw, " ", "-")
+	title := strings.ReplaceAll(filepath.Base(dir), "-", " ")
+
+	if _, err := os.Stat(dir); err == nil {
+		fmt.Fprintf(os.Stderr, "Error: %q already exists\n", dir)
+		os.Exit(1)
+	}
+	if err := os.MkdirAll(filepath.Join(dir, "output"), 0o755); err != nil {
+		fmt.Fprintf(os.Stderr, "Error creating %q: %v\n", dir, err)
+		os.Exit(1)
+	}
+	cfgPath := filepath.Join(dir, "_astromapper.yml")
+	if err := os.WriteFile(cfgPath, []byte(config.Template(title)), 0o644); err != nil {
+		fmt.Fprintf(os.Stderr, "Error writing %q: %v\n", cfgPath, err)
+		os.Exit(1)
+	}
+
+	fmt.Printf("Created project %q\n", dir)
+	fmt.Printf("  %s\n", cfgPath)
+	fmt.Printf("  %s\n", filepath.Join(dir, "output")+string(os.PathSeparator))
+	fmt.Printf("\nNext:  cd %s && astromapper\n", dir)
+}
+
 func showHelp() {
 	fmt.Println("Astromapper - Traveller RPG Star Map Generator")
 	fmt.Println()
-	fmt.Println("Usage: astromapper [options]")
+	fmt.Println("Usage: astromapper new <name>     Scaffold a project directory")
+	fmt.Println("       astromapper [options]      Generate (reads _astromapper.yml if present)")
 	fmt.Println()
 	fmt.Println("Options:")
 	fmt.Println("  --config <path>      YAML config file (default: _astromapper.yml; flags override it)")

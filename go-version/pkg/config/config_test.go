@@ -45,3 +45,21 @@ func TestLoadOverridesOnlyPresentKeys(t *testing.T) {
 		t.Errorf("omitted keys should keep defaults: %+v", cfg)
 	}
 }
+
+// The `astromapper new` scaffold must be valid YAML that loads with the given name.
+func TestTemplateRoundTrips(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "_astromapper.yml")
+	if err := os.WriteFile(path, []byte(Template("Spinward Marches")), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	cfg, found, err := Load(path)
+	if err != nil || !found {
+		t.Fatalf("scaffold should load: found=%v err=%v", found, err)
+	}
+	if cfg.Name != "Spinward Marches" {
+		t.Errorf("template name = %q, want \"Spinward Marches\"", cfg.Name)
+	}
+	if cfg.Ruleset != "t5" || cfg.Density != "standard" || !cfg.Islands {
+		t.Errorf("template defaults wrong: %+v", cfg)
+	}
+}
