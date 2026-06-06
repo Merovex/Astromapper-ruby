@@ -59,8 +59,12 @@ Edit `_astromapper.yml` to control generation:
 * **always_inhabited** — `true` (default) guarantees a mainworld per system.
 * **prune_isolated** — `true` (default) drops systems with no neighbour within jump-4 (lone stars no route can reach), so the map has no disconnected dots.
 * **islands** — `true` (default) outlines clusters of nearby systems on the SVG along the hex grid. Tune with `island_jump` (cluster reach in jumps, default 2), `island_min` (minimum systems per island, default 2), and `island_opacity` (default 0.85).
+* **ruleset** — the generation rules, loaded from `rules/<name>.yml` (default `t5`):
+  * `t5` — Traveller 5 WorldGen: full UWP plus the Ix/Ex/Cx extensions and Resource Units.
+  * `cepheus` — Cepheus Engine: classic UWP, no extensions, classic trade codes and bases.
+  * Drop your own `rules/<name>.yml` in the project to customise. It may `extends:` another ruleset and override only the parts that differ. The active ruleset's name appears in the `.sector` and `.tab` legends.
 
-Worlds follow **Traveller 5** WorldGen (UWP, the Ix/Ex/Cx extensions, climate, trade codes); star systems use Classic Traveller + GURPS Space orbital mechanics. See `docs/generation-pipeline.md` for the full algorithm.
+Worlds follow **Traveller 5** WorldGen by default (UWP, the Ix/Ex/Cx extensions, climate, trade codes), or **Cepheus Engine** when selected; star systems use Classic Traveller + GURPS Space orbital mechanics. See `docs/generation-pipeline.md` for the full algorithm.
 
 Commands: `astromapper new <name>`, `build [--seed CODE]`, `svg`, `about <hex>`, `version`. Each `build` writes both the ASCII `.sector` and a T5 Second Survey `.tab` (below).
 
@@ -150,6 +154,12 @@ Traveller Fair Use Policy, the Steve Jackson Games / GURPS notice, and credits.
 
 Changelog
 =========
+
+Version 2.2 (2026)
+------------------
+* **Data-driven rulesets** — the generation rules now live in `rules/<name>.yml` (selected by `ruleset:`), not in code. A sandboxed expression evaluator (`Astromapper::Rules::Expr`) drives trade-code conditions and UWP step formulas; tech/starport/base tables and the algorithmic module wiring (Ix/Ex/Cx, climate, native) are data too.
+* **Cepheus Engine ruleset** (`rules/cepheus.yml`) ships alongside T5, via `extends:` inheritance with `key!:` wholesale overrides. Author your own ruleset by dropping a YAML file in the project.
+* The T5 golden master stayed **byte-identical** through the whole extraction; Cepheus has its own reproducible fixture.
 
 Version 2.1 (2026)
 ------------------

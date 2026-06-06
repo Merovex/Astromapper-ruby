@@ -1,23 +1,48 @@
-use crate::models::{Star, StarType, StarSize};
+use crate::models::{Star, StarType, StarSize, OrbitContent};
 use crate::error::Result;
 use crate::rng;
+use crate::rules::runtime;
 use crate::builders::OrbitBuilder;
+use crate::builders::world_builder;
+
+fn flux() -> i64 {
+    (rng::roll_1d6() as i64) - (rng::roll_1d6() as i64)
+}
 
 pub struct StarBuilder;
 
 impl StarBuilder {
     pub fn build_primary() -> Result<Star> {
         let mut star = Self::generate_star(true)?;
-        
+
         // Set bode constant
         star.bode_constant = (rng::roll_2d6().unwrap_or(7) as f64) * 0.05 + 0.25;
-        
+
         // Populate orbits
         OrbitBuilder::populate_orbits(&mut star)?;
-        
+
+        // Extensions post-pass: count system gas giants/belts, then extend the
+        // mainworld (Ix/Ex/Cx + native status).
+        let mut gas_giants = 0i64;
+        let mut belts = 0i64;
+        for o in &star.orbits {
+            match o {
+                OrbitContent::GasGiant(_) => gas_giants += 1,
+                OrbitContent::Belt(_) => belts += 1,
+                _ => {}
+            }
+        }
+        for o in &mut star.orbits {
+            if let OrbitContent::World(wo) = o {
+                wo.world.gas_giant = gas_giants > 0;
+                world_builder::build_extensions(&mut wo.world, gas_giants, belts);
+                break;
+            }
+        }
+
         Ok(star)
     }
-    
+
     fn generate_star(is_primary: bool) -> Result<Star> {
         let star_type = Self::determine_star_type();
         let star_size = Self::determine_star_size(&star_type);
@@ -33,16 +58,43 @@ impl StarBuilder {
     }
     
     fn determine_star_type() -> StarType {
-        let roll = rng::roll_2d6().unwrap_or(7);
-        
-        match roll {
-            2 => StarType::A,
-            3..=4 => StarType::M,
-            5..=6 => StarType::K,
-            7..=8 => StarType::G,
-            9 => StarType::F,
-            10..=11 => StarType::M,
-            _ => StarType::M,
+        // Genre = realism<->romance stellar slider. opera (and half of normal) uses the
+        // Sun-like T5 table; firm (and the other half) the realistic M-dwarf-heavy
+        // census with rare hot stars. Mirrors the Ruby/Go implementations.
+        let genre = runtime::genre();
+        if genre == "opera" || (genre == "normal" && rng::roll_1d6() <= 3) {
+            let f = flux();
+            let mut t = if f <= -4 {
+                StarType::A
+            } else if f <= -2 {
+                StarType::F
+            } else if f <= 0 {
+                StarType::G
+            } else if f <= 2 {
+                StarType::K
+            } else {
+                StarType::M
+            };
+            if matches!(t, StarType::M) && rng::roll_1d6() <= 3 {
+                t = StarType::K;
+            }
+            t
+        } else {
+            let natural = rng::roll_2d6().unwrap_or(7) as usize;
+            if natural >= 12 {
+                let arr = [
+                    StarType::A, StarType::A, StarType::A, StarType::A, StarType::A, StarType::A,
+                    StarType::A, StarType::A, StarType::A, StarType::A, StarType::B, StarType::B,
+                    StarType::O,
+                ];
+                arr[(rng::roll_2d6().unwrap_or(7) as usize).min(12)]
+            } else {
+                let arr = [
+                    StarType::M, StarType::M, StarType::F, StarType::M, StarType::M, StarType::M,
+                    StarType::M, StarType::M, StarType::K, StarType::K, StarType::G, StarType::M,
+                ];
+                arr[natural.min(11)]
+            }
         }
     }
     

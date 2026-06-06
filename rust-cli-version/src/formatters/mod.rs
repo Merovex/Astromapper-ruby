@@ -1,4 +1,5 @@
 pub mod ascii;
+pub mod islands;
 pub mod svg;
 pub mod json;
 

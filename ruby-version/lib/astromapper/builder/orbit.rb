@@ -175,17 +175,13 @@ module Astromapper
         super
         @kid       = 'R'
         
-        # Size / Atmosphere / Hydrographics — Traveller 5 WorldGen (StSAHPGL-T).
-        # Size = 2D-2 (0 = planetoid belt); a roll of 10 rerolls 1D+9 toward F.
-        @size = toss()
-        @size = 9 + 1.d6 if @size == 10
-        # Atmosphere = Flux + Size, clamp 0-F; a sizeless world has none.
-        @atmo = @size.zero? ? 0 : (flux + @size).whole.max(15)
-        # Hydrographics = Flux + Atmosphere, max A; dry when tiny or thin/dense.
-        @h20  = flux + @atmo
-        @h20 -= 4 if (@atmo < 2 or @atmo > 9)
-        @h20  = 0 if @size < 2
-        @h20  = @h20.whole.max(10)
+        # Size / Atmosphere / Hydrographics — ruleset UWP steps (StSAHPGL-T). The roll
+        # formulas live in rules/<name>.yml; the driver evaluates them in order.
+        rs  = Astromapper.ruleset
+        ctx = {}
+        @size = rs.uwp_step('size',  ctx); ctx['size']  = @size
+        @atmo = rs.uwp_step('atmo',  ctx); ctx['atmo']  = @atmo
+        @h20  = rs.uwp_step('hydro', ctx)
 
         # Climate — Traveller 5, from the world's position in the Habitable Zone.
         @temp = climate
@@ -204,10 +200,18 @@ module Astromapper
         end
       end
 
+      # Climate slot — dispatched to the ruleset's climate module (t5 | none | …). The
+      # name can only resolve to a `climate_<name>` method, so YAML can't reach arbitrary code.
+      def climate
+        mod = Astromapper.ruleset.module_for('climate')
+        return 'T' if mod == 'none'
+        send("climate_#{mod}")
+      end
+
       # Traveller 5 climate, from the Habitable Zone Variance (a Flux roll, page 432):
       # HZ−1 = Hot, HZ = Temperate, HZ+1 = Cold; orbits 0–1 are tidally locked = Twilight.
       #   T Temperate · H Hot · C Cold · Tz Twilight · Lk Locked
-      def climate
+      def climate_t5
         return 'Tz' if @orbit_number <= 1
         #            Flux: -6 -5 -4 -3 -2 -1  0 +1 +2 +3 +4 +5 +6
         variance = [-2,-1,-1,-1, 0, 0, 0, 0, 0, 1, 1, 1, 2][flux + 6]
@@ -233,12 +237,14 @@ module Astromapper
       def initialize(star,orbit_number)
         super
         
+        rs = Astromapper.ruleset
         @port_roll = toss(2,0)
-        
+
         @kid = 'W'
-        # Population = 2D-2; a roll of 10 rerolls 9+1D toward F. T5 WorldGen.
-        @popx = toss()
-        @popx = 9 + 1.d6 if @popx == 10
+        # Population — ruleset roll (2D-2, reroll on 10). The ceiling, the firm-genre
+        # strip, and the habitability caps stay here: they depend on genre and star.
+        ctx = { 'size' => @size, 'atmo' => @atmo, 'hydro' => @h20 }
+        @popx = rs.uwp_step('pop', ctx)
         if ('firm' == config['genre'].downcase)
           @popx -= 1 if (@size < 3 or @size > 9)
           @popx += [-1, -1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, -1, -1, -1, -1][@atmo]
@@ -252,10 +258,11 @@ module Astromapper
         # to hold a shielding atmosphere/magnetosphere (~0.4 g, above Mars), but not so much
         # it crushes its inhabitants (~1.5 g). Outside that, only domed/hardy colonies live.
         @popx = @popx.max(6) unless (0.4..1.5).cover?(gravity)
+        ctx['pop'] = @popx
 
-        # Government = Flux + Pop (ceiling F); Law = Flux + Gov (ceiling J). T5 WorldGen.
-        @govm = (flux + @popx).whole.max(15)
-        @law  = (flux + @govm).whole.max(18)
+        # Government = Flux + Pop (ceiling F); Law = Flux + Gov (ceiling J) — ruleset rolls.
+        @govm = rs.uwp_step('gov', ctx); ctx['gov'] = @govm
+        @law  = rs.uwp_step('law', ctx)
 
         # Identify Factions. MgT p. 173
         fax_r = 1.d3.max(3)
@@ -264,34 +271,32 @@ module Astromapper
         rolls = [toss(2,0),toss(2,0),toss(2,0),toss(2,0),toss(2,0)]
         @factions = (@popx == 0) ? [] : fax_r.times.map { |r| %w{O O O O F F M M N N S S P}[rolls.shift] }
         
-        # Technology die modifiers — Traveller 5 (TL = 1D + mods).
-        tek_dm  = { 'A' => 6, 'B' => 4, 'C' => 2, 'D' => 0, 'E' => 0, 'F' => 1, 'X' => -4}[port] || 0
-        #            0 1 2 3 4 5 6 7 8 9 A  B  C  D  E  F
-        tek_dm += [2,2,1,1,1,0,0,0,0,0,0,0,0,0,0,0][@size]  # Siz 0,1=+2; 2,3,4=+1
-        tek_dm += [1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1][@atmo]  # Atm 0-3=+1; A-F=+1
-        tek_dm += [0,0,0,0,0,0,0,0,0,1,2][@h20]             # Hyd 9=+1; A=+2
-        tek_dm += [0,1,1,1,1,1,0,0,0,2,4,4,4,4,4,4][@popx]  # Pop 1-5=+1; 9=+2; A+=+4
-        tek_dm += [1,0,0,0,0,1,0,0,0,0,0,0,0,-2,0,0][@govm] # Gov 0,5=+1; D=-2
+        # Technology — TL = 1D + DMs. The DM tables live in the ruleset (data); the 1D
+        # roll and caps stay here so the RNG draw is unchanged.
+        tek_dm = Astromapper.ruleset.tech_dm("port" => port, "size" => @size, "atmo" => @atmo,
+                                             "hydro" => @h20, "pop" => @popx, "gov" => @govm)
         @tek = (toss(1,0) + tek_dm).whole   # T5: TL = 1D + mods (floored at 0)
         # Optional cap for those who want to limit technology, then a single UWP digit (0-F).
         @tek = @tek.max(config['tech_cap']) unless config['tech_cap'].nil?
         @tek = @tek.max(15)
         @law = @govm = @tek = 0 if @popx == 0
-        
-        # Bases — Traveller 5 (page 432). Each rolls 2D against a starport threshold.
-        # Naval/Scout are exact; Depot/Way Station are "Possible" (full Chart F-B), so the
-        # thresholds below are a conservative approximation.
-        naval = (port == 'A' && 2.d6 <= 6) || (port == 'B' && 2.d6 <= 5)
-        scout = (port == 'A' && 2.d6 <= 4) || (port == 'B' && 2.d6 <= 5) ||
-                (port == 'C' && 2.d6 <= 6) || (port == 'D' && 2.d6 <= 7)
-        depot = %w{A B}.include?(port)   && 2.d6 <= 3   # approximate
-        way   = %w{A B C}.include?(port) && 2.d6 <= 4   # approximate
+
+        # Bases — thresholds from the ruleset; each rolls 2D in order (naval, scout,
+        # depot, way) only when this port can host it, matching the original dice draw.
         @base = {
-          'Naval' => naval ? 'N' : '.',
-          'Scout' => scout ? 'S' : '.',
-          'Depot' => depot ? 'D' : '.',
-          'Way'   => way   ? 'W' : '.',
+          'Naval' => base_roll('naval') ? 'N' : '.',
+          'Scout' => base_roll('scout') ? 'S' : '.',
+          'Depot' => base_roll('depot') ? 'D' : '.',
+          'Way'   => base_roll('way')   ? 'W' : '.',
         }
+      end
+
+      # Roll 2D against this base's per-port threshold (no roll if the port can't have it).
+      # The comparison direction (T5 <=, Cepheus >=) is the ruleset's to decide.
+      def base_roll(kind)
+        th = Astromapper.ruleset.base_threshold(kind, port)
+        return false unless th
+        Astromapper.ruleset.base_meets?(2.d6, th)
       end
       def travel_code
         # Travel zones. T5 leaves these to the referee; this auto-assigns a default:
@@ -301,9 +306,18 @@ module Astromapper
         '..'
       end
 
+      # Extensions slot — dispatched to the ruleset's extensions module (t5 | none | …),
+      # then the native status (its own slot). `none` leaves Ix/Ex/Cx unset (no display).
+      def build_extensions(gas_giants = 0, belts = 0)
+        mod = Astromapper.ruleset.module_for('extensions')
+        send("build_extensions_#{mod}", gas_giants, belts) unless mod == 'none'
+        @native = native_status
+        self
+      end
+
       # Traveller 5 Extensions (Ix / Ex / Cx). Computed after the system is built,
       # since Resources depends on the system's gas-giant and planetoid-belt counts.
-      def build_extensions(gas_giants = 0, belts = 0)
+      def build_extensions_t5(gas_giants = 0, belts = 0)
         tc = trade_codes
 
         # Importance Extension (Ix) — T5 WorldGen page 435.
@@ -338,9 +352,13 @@ module Astromapper
           str:  min1.(5 + flux),
           sym:  min1.(@tek + flux),
         }
+      end
 
-        @native = native_status
-        self
+      # Native slot — dispatched to the ruleset's native module (t5 | none | …).
+      def native_status
+        mod = Astromapper.ruleset.module_for('native')
+        return '' if mod == 'none'
+        send("native_status_#{mod}")
       end
 
       # Native Intelligent Life / Native Status — T5 WorldGen page 436 (NIL).
@@ -348,7 +366,7 @@ module Astromapper
       # are simply Settled (established) or a Colony (frontier). Set `sophonts: varied` in
       # the config to allow native alien sophonts (Native = evolved here; Exotic = non-human
       # transplants on a world that couldn't grow native intelligent life).
-      def native_status
+      def native_status_t5
         if config['sophonts'].to_s.downcase == 'varied'
           if @popx >= 7
             return 'Exotic' if @atmo <= 1
@@ -388,8 +406,8 @@ module Astromapper
         (b[0] + b[1] + b[3] + b[4]).delete('.')
       end
       def port
-        # Traveller 5 orientation (page 432): low roll = best. 2-4 A, 5-6 B, 7-8 C, 9 D, 10-11 E, 12 X.
-        %w{A A A A A B B C C D E E X}[@port_roll.whole.max(12)]
+        # Starport letter from the ruleset's orientation table (data-driven).
+        Astromapper.ruleset.starport(@port_roll)
       end
 
       # --- Canon override support (narrative-wins edits applied after generation) ---
@@ -433,45 +451,14 @@ module Astromapper
       # Trade Classifications — Traveller 5 WorldGen TCS table (page 434).
       # Political and Special TCs are referee-assigned (not generated). Lk/Tz/Ho/Co
       # are climate descriptors, included here as the T5 page lists them.
+      # Data-driven: the conditions live in rules/<ruleset>.yml (default t5.yml) and
+      # are evaluated by Astromapper::Rules::Expr. Same table, same order — just no
+      # longer hardcoded — so a different ruleset (Cepheus, house rules) can swap it.
       def trade_codes
-        a, h, s, p, g, l = @atmo, @h20, @size, @popx, @govm, @law
-        code = []
-        # Planetary
-        code << 'As' if (s == 0 and a == 0 and h == 0)
-        code << 'De' if ((2..9).include?(a) and h == 0)
-        code << 'Fl' if ([10,11,12].include?(a) and (1..10).include?(h))
-        code << 'Ga' if ([6,7,8].include?(s) and [5,6,8].include?(a) and [5,6,7].include?(h))
-        code << 'He' if ([3,4,5,9,10,11,12].include?(s) and [2,4,7,9,10,11,12].include?(a) and [0,1,2].include?(h))
-        code << 'Ic' if ([0,1].include?(a) and (1..10).include?(h))
-        code << 'Oc' if ([10,11,12].include?(s) and h == 10)
-        code << 'Va' if (a == 0)
-        code << 'Wa' if ([5,6,7,8,9].include?(s) and h == 10)
-        # Population
-        code << 'Ba' if (p == 0 and g == 0 and l == 0 and %w{E X}.include?(port))
-        code << 'Lo' if ((1..3).include?(p))
-        code << 'Ni' if ((4..6).include?(p))
-        code << 'Ph' if (p == 8)
-        code << 'Hi' if (p >= 9)
-        # Economic
-        code << 'Pa' if ((4..9).include?(a) and (4..8).include?(h) and [4,8].include?(p))
-        code << 'Ag' if ((4..9).include?(a) and (4..8).include?(h) and (5..7).include?(p))
-        code << 'Na' if ((0..3).include?(a) and (0..3).include?(h) and p >= 6)
-        code << 'Pi' if ([0,1,2,4,7,9].include?(a) and [7,8].include?(p))
-        code << 'In' if ([0,1,2,4,7,9].include?(a) and p >= 9)
-        code << 'Po' if ((2..5).include?(a) and (0..3).include?(h))
-        code << 'Pr' if ([6,8].include?(a) and [5,9].include?(p))
-        code << 'Ri' if ([6,8].include?(a) and (6..8).include?(p))
-        # Technology (not on the T5 TCS page; conventional)
-        code << 'Ht' if (@tek > 12)
-        code << 'Lt' if (@tek < 6)
-        # Climate descriptors (HZ-derived)
-        code << 'Tz' if @temp == 'Tz'
-        code << 'Lk' if @temp == 'Lk'
-        code << 'Ho' if @temp == 'H'
-        code << 'Co' if @temp == 'C'
-        code << 'Tr' if (@temp == 'H' and [6,7,8,9].include?(s) and (4..9).include?(a) and (3..7).include?(h))
-        code << 'Tu' if (@temp == 'C' and [6,7,8,9].include?(s) and (4..9).include?(a) and (3..7).include?(h))
-        code
+        Astromapper.ruleset.trade_codes(
+          "size" => @size.to_i, "atmo" => @atmo.to_i, "hydro" => @h20.to_i,
+          "pop"  => @popx.to_i, "gov"  => @govm.to_i, "law"   => @law.to_i,
+          "tech" => @tek.to_i,  "port" => port,       "temp"  => @temp)
       end
     end # End World (Mainworld)
 

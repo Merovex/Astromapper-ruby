@@ -1,4 +1,6 @@
 pub mod rng;
+pub mod rules;
+pub mod config;
 pub mod models;
 pub mod builders;
 pub mod formatters;

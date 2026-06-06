@@ -9,6 +9,10 @@ pub struct SvgGenerator {
     height: f64,
     width: f64,
     name: String,
+    show_islands: bool,
+    island_jump: i64,
+    island_min: usize,
+    island_opacity: f64,
 }
 
 impl SvgGenerator {
@@ -17,7 +21,7 @@ impl SvgGenerator {
         let factor = 1.732; // sqrt(3) for hex height
         let columns = 32;  // 4 subsectors × 8 hexes wide
         let rows = 40;     // 4 subsectors × 10 hexes high
-        
+
         SvgGenerator {
             rows,
             columns,
@@ -26,17 +30,36 @@ impl SvgGenerator {
             height: (side * factor * (rows as f64 + 0.5)).ceil(),
             width: (side * (columns as f64 * 1.5 + 0.5)).ceil(),
             name,
+            show_islands: true,
+            island_jump: 2,
+            island_min: 2,
+            island_opacity: 0.85,
         }
     }
-    
+
+    pub fn with_islands(mut self, show: bool, jump: i64, min: usize, opacity: f64) -> Self {
+        self.show_islands = show;
+        self.island_jump = jump;
+        self.island_min = min;
+        self.island_opacity = opacity;
+        self
+    }
+
+    /// Convenience: generate with default island settings.
     pub fn generate_sector(sector: &Sector) -> String {
-        let gen = SvgGenerator::new(sector.name.clone());
+        SvgGenerator::new(sector.name.clone()).generate(sector)
+    }
+
+    pub fn generate(&self, sector: &Sector) -> String {
+        let gen = self;
         let mut svg = String::new();
-        
+
         svg.push_str(&gen.header());
         svg.push_str(&gen.tract_marks());
         svg.push_str(&gen.hex_grid());
-        
+        svg.push_str(&gen.islands(sector));
+        svg.push_str(&gen.routes(sector));
+
         // Draw worlds
         for row in 0..sector.height {
             for col in 0..sector.width {
@@ -47,12 +70,123 @@ impl SvgGenerator {
                 }
             }
         }
-        
+
         svg.push_str(&gen.volume_numbers());
         svg.push_str(&gen.frame());
         svg.push_str("</svg>");
-        
+
         svg
+    }
+
+    /// Outline clusters of nearby systems, reusing the shared Borders geometry.
+    fn islands(&self, sector: &Sector) -> String {
+        if !self.show_islands {
+            return String::new();
+        }
+        let mut hexes: Vec<(i64, i64)> = Vec::new();
+        for row in 0..sector.height {
+            for col in 0..sector.width {
+                if let Some(v) = &sector.volumes[row][col] {
+                    if !v.is_empty() {
+                        hexes.push(((col + 1) as i64, (row + 1) as i64));
+                    }
+                }
+            }
+        }
+        let groups = crate::formatters::islands::borders(
+            &hexes, self.side, self.factor, self.columns as i64, self.rows as i64,
+            self.island_jump, self.island_min,
+        );
+        if groups.is_empty() {
+            return String::new();
+        }
+        let mut out = String::from("<g class='islands'>\n");
+        for g in &groups {
+            let _ = write!(out, "  <g><!--island n={}-->", g.size);
+            for ring in &g.loops {
+                let pts: Vec<String> = ring.iter().map(|(x, y)| format!("{},{}", x, y)).collect();
+                let _ = write!(
+                    out,
+                    "<polygon points='{}' stroke='{}' style='opacity:{}'/>",
+                    pts.join(" "),
+                    g.colour,
+                    self.island_opacity
+                );
+            }
+            out.push_str("</g>\n");
+        }
+        out.push_str("</g><!--/islands-->\n");
+        out
+    }
+
+    /// Jump routes between systems — a port of Ruby build_routes / calc_route: per
+    /// source, keep one line per slope bucket and never the reverse of an existing route.
+    fn routes(&self, sector: &Sector) -> String {
+        let mut present: std::collections::HashSet<(i64, i64)> = std::collections::HashSet::new();
+        let mut keys: Vec<(i64, i64)> = Vec::new();
+        for row in 0..sector.height {
+            for col in 0..sector.width {
+                if let Some(v) = &sector.volumes[row][col] {
+                    if !v.is_empty() {
+                        let k = ((col + 1) as i64, (row + 1) as i64);
+                        present.insert(k);
+                        keys.push(k);
+                    }
+                }
+            }
+        }
+        keys.sort_by_key(|&(c, r)| (c, r)); // by hex string "%02d%02d" (col-major)
+
+        let mut routes: std::collections::HashMap<(i64, i64), Vec<(i64, i64)>> =
+            std::collections::HashMap::new();
+        let mut slopes: std::collections::HashMap<(i64, i64), Vec<f64>> =
+            std::collections::HashMap::new();
+        let mut out = String::from("<g class='routes'>\n");
+        for &src in &keys {
+            for tgt in each_hex_targets(src) {
+                if !present.contains(&tgt) {
+                    continue;
+                }
+                if let Some(line) = self.calc_route(src, tgt, &mut routes, &mut slopes) {
+                    out.push_str(&line);
+                    out.push('\n');
+                }
+            }
+        }
+        out.push_str("</g>\n");
+        out
+    }
+
+    fn calc_route(
+        &self,
+        src: (i64, i64),
+        tgt: (i64, i64),
+        routes: &mut std::collections::HashMap<(i64, i64), Vec<(i64, i64)>>,
+        slopes: &mut std::collections::HashMap<(i64, i64), Vec<f64>>,
+    ) -> Option<String> {
+        let d = dist_hex(src, tgt);
+        if d == 0 {
+            return None;
+        }
+        if routes.get(&src).map_or(false, |v| v.contains(&tgt)) {
+            return None; // already the reverse of an existing route
+        }
+        routes.entry(tgt).or_default().push(src);
+
+        let (sx, sy) = self.center_of(src.0 as usize, src.1 as usize);
+        let (dx, dy) = self.center_of(tgt.0 as usize, tgt.1 as usize);
+        let src_pix = (sx as i64, sy as i64);
+        let dst_pix = (dx as i64, dy as i64);
+        let m = slope_pix(src_pix, dst_pix);
+        if slopes.get(&src).map_or(false, |v| v.contains(&m)) {
+            return None; // already a route on this slope
+        }
+        slopes.entry(src).or_default().push(m);
+
+        Some(format!(
+            "<!-- {:02}{:02}:{:02}{:02} --><line class='line{}' x1='{}' y1='{}' x2='{}' y2='{}' />",
+            src.0, src.1, tgt.0, tgt.1, d, src_pix.0, src_pix.1, dst_pix.0, dst_pix.1
+        ))
     }
     
     fn center_of(&self, col: usize, row: usize) -> (f64, f64) {
@@ -317,7 +451,21 @@ impl SvgGenerator {
   .frame {{
     stroke-width: 2;
   }}
-  
+  g.islands polygon {{
+    stroke-width: 6;
+    fill: none;
+    stroke-linejoin: round;
+  }}
+  line {{
+    opacity: 0.3;
+    stroke-linecap: round;
+    stroke: #888;
+  }}
+  line.line1 {{ stroke-width: 4; }}
+  line.line2 {{ stroke-width: 3; }}
+  line.line3 {{ stroke-width: 2; stroke-dasharray: 5,5,1,5; opacity: 0.6; }}
+  line.line4 {{ stroke-width: 1.5; stroke-dasharray: 2,6; }}
+
   /* Light mode (default) */
   svg {{
     background: #FAFAFA;
@@ -416,4 +564,50 @@ impl SvgGenerator {
   </style>
 "#, self.width as i32, self.height as i32, self.name)
     }
+}
+
+/// Candidate route targets around a source, in Ruby each_hex order.
+fn each_hex_targets(src: (i64, i64)) -> Vec<(i64, i64)> {
+    let (x, y) = src;
+    let ranges = [(-4, 4), (-4, 3), (-3, 3), (-3, 2), (-2, 2)];
+    let mut out = Vec::new();
+    for index in 0..5i64 {
+        let (lo, hi) = ranges[index as usize];
+        for i in [index, -index] {
+            let x1 = x + i;
+            for j in lo..=hi {
+                out.push((x1, y + j));
+            }
+        }
+    }
+    out
+}
+
+fn dist_hex(a: (i64, i64), b: (i64, i64)) -> i64 {
+    let dx = (a.0 - b.0) as f64;
+    let dy = (a.1 - b.1) as f64;
+    (dx * dx + dy * dy).sqrt().round() as i64
+}
+
+fn floor_div(a: i64, b: i64) -> i64 {
+    let q = a / b;
+    if (a % b != 0) && ((a < 0) != (b < 0)) {
+        q - 1
+    } else {
+        q
+    }
+}
+
+/// Ruby Array#slope: floored integer slope of two pixel points, with its 0.01
+/// (vertical) and 0.1 (rightward-flat) special cases, rounded to 0.1.
+fn slope_pix(a: (i64, i64), b: (i64, i64)) -> f64 {
+    let mut answer = if b.0 - a.0 == 0 {
+        0.01
+    } else {
+        floor_div(b.1 - a.1, b.0 - a.0) as f64
+    };
+    if a.0 < b.0 && answer == 0.0 {
+        answer = 0.1;
+    }
+    (answer * 10.0).round() / 10.0
 }

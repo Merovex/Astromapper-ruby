@@ -5,7 +5,14 @@ import (
 	"astromapper/pkg/rng"
 )
 
+// BuildWorld generates a mainworld via the active ruleset (Traveller 5 by default).
+// The UWP step formulas, trade codes, starport/tech/base tables, and the
+// climate/native modules all come from rules/<name>.yml; only the orbital framing
+// (zone, AU, moons) is intrinsic to the system. Extensions (Ix/Ex/Cx) are filled in
+// later by buildExtensions, once the system's gas-giant and belt counts are known.
 func BuildWorld(star *models.Star, orbitNum int, r *rng.RNG) *models.World {
+	rs := ruleset()
+
 	world := &models.World{
 		BaseOrbit: models.BaseOrbit{
 			Star:        star,
@@ -15,61 +22,76 @@ func BuildWorld(star *models.Star, orbitNum int, r *rng.RNG) *models.World {
 			Port:        "X",
 		},
 	}
-	
+
 	biozone := star.GetBiozone()
 	world.Zone = determineZone(world.AU, biozone)
 	world.Distant = world.AU > biozone[1]*10
-	
-	world.Size = r.TwoD6() - 1
-	world.Atmosphere = generateAtmosphere(world.Size, r)
-	
-	tempDice := r.TwoD6() + getAtmoTempMod(world.Atmosphere)
-	world.Temperature = getTemperature(tempDice)
-	
-	world.Hydro = generateHydrographics(world.Size, world.Atmosphere, world.Zone == 0, world.Temperature, r)
-	
-	world.Population = r.D6()
-	if world.Size < 3 || world.Size > 9 {
-		world.Population--
+
+	// UWP spine — Size / Atmo / Hydro from the ruleset's step formulas.
+	ctx := map[string]any{}
+	world.Size, _ = rs.UWPStep("size", ctx, r)
+	ctx["size"] = world.Size
+	world.Atmosphere, _ = rs.UWPStep("atmo", ctx, r)
+	ctx["atmo"] = world.Atmosphere
+	world.Hydro, _ = rs.UWPStep("hydro", ctx, r)
+	ctx["hydro"] = world.Hydro
+
+	world.Temperature = climate(world, r)
+	ctx["temp"] = world.Temperature
+
+	// Genre realism pass may thin/dry the atmosphere and hydrographics (opera/firm).
+	applyGenreAtmoHydro(world)
+	ctx["atmo"], ctx["hydro"] = world.Atmosphere, world.Hydro
+
+	// Population — the port-orientation roll is taken now (firm genre nudges it by pop).
+	portRoll := r.TwoD6()
+	pop, _ := rs.UWPStep("pop", ctx, r)
+	pop, portRoll = firmPopStrip(world, pop, portRoll)
+	if pop < 0 {
+		pop = 0
 	}
-	world.Population += getAtmoPopMod(world.Atmosphere)
-	if world.Population < 0 {
-		world.Population = 0
+	if pop > 15 {
+		pop = 15 // population ceiling is F
 	}
-	
-	world.Government = r.TwoD6() - 7 + world.Population
-	if world.Government < 0 {
-		world.Government = 0
-	}
-	if world.Government > 15 {
-		world.Government = 15
-	}
-	
-	world.Law = r.TwoD6() - 7 + world.Government
-	if world.Law < 0 {
-		world.Law = 0
-	}
-	if world.Law > 15 {
-		world.Law = 15
-	}
-	
-	world.Port = generatePort(world.Population, r)
-	
-	world.Tech = generateTech(world, r)
-	
+	pop = capColonyPopulation(world, pop) // hot-star / gravity-band colony cap
+	world.Population = pop
+	ctx["pop"] = pop
+
+	world.Government, _ = rs.UWPStep("gov", ctx, r)
+	ctx["gov"] = world.Government
+	world.Law, _ = rs.UWPStep("law", ctx, r)
+	ctx["law"] = world.Law
+
+	world.Port = rs.Starport(portRoll)
+	ctx["port"] = world.Port
+
 	world.Factions = generateFactions(world.Population, world.Law, r)
-	
-	world.TradeCodes = generateTradeCodes(world)
-	
+
+	tech := r.D6() + rs.TechDM(ctx)
+	if tech < 0 {
+		tech = 0
+	}
+	if tech > 15 {
+		tech = 15
+	}
+	world.Tech = tech
+	if world.Population == 0 { // an uninhabited world has no law, government, or tech
+		world.Law, world.Government, world.Tech = 0, 0, 0
+	}
+	ctx["tech"], ctx["gov"], ctx["law"] = world.Tech, world.Government, world.Law
+
+	world.TradeCodes = rs.TradeCodes(ctx)
 	world.Bases = generateBases(world.Port, r)
-	
 	world.TravelCode = generateTravelCode(world.Government, world.Law)
-	
-	numMoons := r.D6() - 3
-	if numMoons > 0 {
+
+	if numMoons := r.D6() - 3; numMoons > 0 {
 		world.Moons = generateMoons(numMoons, &world.BaseOrbit, r)
 	}
-	
+
+	if world.Population > 0 { // PBG population multiplier (1-9)
+		world.PopMultiplier = 1 + r.Intn(9)
+	}
+
 	return world
 }
 
@@ -83,281 +105,49 @@ func determineZone(au float64, biozone [2]float64) int {
 	return 0
 }
 
-func generateAtmosphere(size int, r *rng.RNG) int {
-	atmo := r.D6()
-	if size < 3 {
-		return 0
-	}
-	if size >= 3 && size <= 4 && atmo >= 3 && atmo <= 5 {
-		return 1
-	}
-	if size >= 3 && size <= 4 && atmo > 5 {
-		return 10
-	}
-	return atmo
-}
-
-func getAtmoTempMod(atmo int) int {
-	mods := []int{0, 0, -2, -2, -1, -1, 0, 0, 1, 1, 2, 6, 6, 2, -1, 2}
-	if atmo < len(mods) {
-		return mods[atmo]
-	}
-	return 0
-}
-
-func getTemperature(dice int) string {
-	temps := []string{"F", "F", "F", "C", "C", "T", "T", "T", "T", "T", "H", "H", "R", "R", "R", "R", "R"}
-	if dice < 0 {
-		return "F"
-	}
-	if dice >= len(temps) {
-		return "R"
-	}
-	return temps[dice]
-}
-
-func generateHydrographics(size, atmo int, inBiozone bool, temp string, r *rng.RNG) int {
-	if size < 2 || !inBiozone {
-		return 0
-	}
-	
-	var hydro int
-	if atmo == 0 || atmo == 1 || atmo >= 10 && atmo <= 12 {
-		hydro = r.TwoD6() - 11 + size
-	} else {
-		hydro = r.TwoD6() - 7 + size
-	}
-	
-	if temp == "H" {
-		hydro -= 2
-	}
-	if temp == "R" {
-		hydro -= 6
-	}
-	
-	if hydro < 0 {
-		hydro = 0
-	}
-	if hydro > 10 {
-		hydro = 10
-	}
-	
-	return hydro
-}
-
-func getAtmoPopMod(atmo int) int {
-	mods := []int{-1, -1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, -1, -1, -1, -1}
-	if atmo < len(mods) {
-		return mods[atmo]
-	}
-	return -1
-}
-
-func generatePort(pop int, r *rng.RNG) string {
-	portRoll := r.TwoD6() - 7 + pop
-	switch {
-	case portRoll <= 2:
-		return "X"
-	case portRoll <= 4:
-		return "E"
-	case portRoll <= 6:
-		return "D"
-	case portRoll <= 8:
-		return "C"
-	case portRoll <= 10:
-		return "B"
-	default:
-		return "A"
-	}
-}
-
-func generateTech(w *models.World, r *rng.RNG) int {
-	tekDM := 0
-	
-	portMods := map[string]int{"A": 6, "B": 4, "C": 2, "D": 0, "E": 0, "X": -4}
-	if mod, ok := portMods[w.Port]; ok {
-		tekDM += mod
-	}
-	
-	sizeMods := []int{2, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-	if w.Size < len(sizeMods) {
-		tekDM += sizeMods[w.Size]
-	}
-	
-	atmoMods := []int{1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1}
-	if w.Atmosphere < len(atmoMods) {
-		tekDM += atmoMods[w.Atmosphere]
-	}
-	
-	hydroMods := []int{1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2}
-	if w.Hydro < len(hydroMods) {
-		tekDM += hydroMods[w.Hydro]
-	}
-	
-	popMods := []int{0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 2, 3, 4}
-	if w.Population < len(popMods) {
-		tekDM += popMods[w.Population]
-	}
-	
-	govMods := []int{1, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, -2, -2, 0}
-	if w.Government < len(govMods) {
-		tekDM += govMods[w.Government]
-	}
-	
-	tech := r.D6() + tekDM
-	
-	tekLimits := []int{8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 10, 5, 5, 5}
-	if w.Atmosphere < len(tekLimits) && tech > tekLimits[w.Atmosphere] {
-		tech = tekLimits[w.Atmosphere]
-	}
-	
-	if tech < 0 {
-		tech = 0
-	}
-	
-	return tech
-}
-
+// generateFactions mirrors the Ruby model: 1D3 factions (+/- by law level), each a
+// type rolled on 2D. (MgT p. 173.)
 func generateFactions(pop, law int, r *rng.RNG) []string {
 	if pop == 0 {
 		return []string{}
 	}
-	
-	numFactions := r.Roll(1, 3)
-	if numFactions < 3 {
-		numFactions = 3
+	count := r.Roll(1, 3)
+	if count > 3 {
+		count = 3
 	}
-	
 	if law == 0 || law == 7 {
-		numFactions++
+		count++
 	}
 	if law > 9 {
-		numFactions--
+		count--
 	}
-	
-	factionTypes := []string{"O", "O", "O", "O", "F", "F", "M", "M", "N", "N", "S", "S", "P"}
-	factions := make([]string, numFactions)
-	for i := 0; i < numFactions; i++ {
-		factions[i] = factionTypes[r.TwoD6()]
+	if count < 0 {
+		count = 0
 	}
-	
+	types := []string{"O", "O", "O", "O", "F", "F", "M", "M", "N", "N", "S", "S", "P"}
+	rolls := []int{r.TwoD6(), r.TwoD6(), r.TwoD6(), r.TwoD6(), r.TwoD6()}
+	factions := []string{}
+	for i := 0; i < count && i < len(rolls); i++ {
+		factions = append(factions, types[rolls[i]])
+	}
 	return factions
 }
 
-func generateTradeCodes(w *models.World) []string {
-	codes := []string{}
-	
-	if w.Atmosphere >= 4 && w.Atmosphere <= 9 && w.Hydro >= 4 && w.Hydro <= 8 && w.Population >= 5 && w.Population <= 7 {
-		codes = append(codes, "Ag")
-	}
-	
-	if w.Size == 0 && w.Atmosphere == 0 && w.Hydro == 0 {
-		codes = append(codes, "As")
-	}
-	
-	if w.Population == 0 && w.Government == 0 && w.Law == 0 {
-		codes = append(codes, "Ba")
-	}
-	
-	if w.Atmosphere >= 2 && w.Hydro == 0 {
-		codes = append(codes, "De")
-	}
-	
-	if w.Atmosphere >= 10 && w.Hydro >= 1 {
-		codes = append(codes, "Fl")
-	}
-	
-	if w.Size >= 5 && (w.Atmosphere == 4 || w.Atmosphere == 5 || w.Atmosphere == 6 || w.Atmosphere == 7 || w.Atmosphere == 8 || w.Atmosphere == 9) && w.Hydro >= 4 && w.Hydro <= 9 {
-		codes = append(codes, "Ga")
-	}
-	
-	if w.Population >= 9 {
-		codes = append(codes, "Hi")
-	}
-	
-	if w.Tech >= 12 {
-		codes = append(codes, "Ht")
-	}
-	
-	if w.Atmosphere <= 1 && w.Hydro >= 1 {
-		codes = append(codes, "Ic")
-	}
-	
-	if (w.Atmosphere == 0 || w.Atmosphere == 1 || w.Atmosphere == 2 || w.Atmosphere == 4 || w.Atmosphere == 7 || w.Atmosphere == 9) && w.Population >= 9 {
-		codes = append(codes, "In")
-	}
-	
-	if w.Population >= 1 && w.Population <= 3 {
-		codes = append(codes, "Lo")
-	}
-	
-	if w.Tech <= 5 {
-		codes = append(codes, "Lt")
-	}
-	
-	if (w.Atmosphere >= 0 && w.Atmosphere <= 3) && w.Hydro >= 0 && w.Hydro <= 3 && w.Population >= 6 {
-		codes = append(codes, "Na")
-	}
-	
-	if w.Population >= 4 && w.Population <= 6 {
-		codes = append(codes, "Ni")
-	}
-	
-	if w.Atmosphere >= 2 && w.Atmosphere <= 5 && w.Hydro >= 0 && w.Hydro <= 3 {
-		codes = append(codes, "Po")
-	}
-	
-	if (w.Atmosphere == 6 || w.Atmosphere == 8) && w.Population >= 6 && w.Population <= 8 {
-		codes = append(codes, "Ri")
-	}
-	
-	if w.Hydro == 10 {
-		codes = append(codes, "Wa")
-	}
-	
-	if w.Atmosphere == 0 {
-		codes = append(codes, "Va")
-	}
-	
-	return codes
-}
-
+// generateBases rolls each base the ruleset allows for this starport, in order
+// (naval, scout, depot, way), using the ruleset's comparison direction.
 func generateBases(port string, r *rng.RNG) string {
+	rs := ruleset()
 	bases := ""
-	
-	switch port {
-	case "A":
-		if r.TwoD6() >= 8 {
-			bases += "N"
-		}
-		if r.TwoD6() >= 10 {
-			bases += "S"
-		}
-	case "B":
-		if r.TwoD6() >= 8 {
-			bases += "N"
-		}
-		if r.TwoD6() >= 9 {
-			bases += "S"
-		}
-	case "C":
-		if r.TwoD6() >= 8 {
-			bases += "S"
-		}
-	case "D":
-		if r.TwoD6() >= 7 {
-			bases += "S"
+	for _, b := range []struct{ kind, letter string }{
+		{"naval", "N"}, {"scout", "S"}, {"depot", "D"}, {"way", "W"},
+	} {
+		if th, ok := rs.BaseThreshold(b.kind, port); ok && rs.BaseMeets(r.TwoD6(), th) {
+			bases += b.letter
 		}
 	}
-	
-	if r.TwoD6() >= 10 {
-		bases += "R"
-	}
-	
 	if bases == "" {
 		bases = "."
 	}
-	
 	return bases
 }
 
@@ -369,7 +159,7 @@ func generateTravelCode(gov, law int) string {
 }
 
 func generateMoons(num int, planet *models.BaseOrbit, r *rng.RNG) []models.Moon {
-	// Orbit tables from Ruby code
+	// Orbit tables from the Ruby code.
 	closeOrbits := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
 	ringOrbits := []int{1, 1, 1, 2, 2, 3}
 	farOrbits := make([]int, len(closeOrbits))
@@ -378,48 +168,44 @@ func generateMoons(num int, planet *models.BaseOrbit, r *rng.RNG) []models.Moon 
 		farOrbits[i] = closeOrbits[i] * 5
 		extremeOrbits[i] = closeOrbits[i] * 25
 	}
-	
+
 	moons := make([]models.Moon, num)
 	for i := 0; i < num; i++ {
 		size := r.D6() - 3
 		if size < 0 {
 			size = 0
 		}
-		
-		// Calculate orbital radius based on dice rolls (Ruby logic)
+
 		orbitRoll := r.TwoD6() + i
 		var orbitalRadius int
-		
-		if size < 1 {
-			// Ring/small moon - use ring orbits table
+
+		switch {
+		case size < 1:
 			idx := r.D6() - 1
 			if idx >= len(ringOrbits) {
 				idx = len(ringOrbits) - 1
 			}
 			orbitalRadius = ringOrbits[idx]
-		} else if orbitRoll == 12 && planet.Kid == models.OrbitGasGiant {
-			// Extreme orbit for gas giant moon
+		case orbitRoll == 12 && planet.Kid == models.OrbitGasGiant:
 			idx := r.TwoD6()
 			if idx >= len(extremeOrbits) {
 				idx = len(extremeOrbits) - 1
 			}
 			orbitalRadius = extremeOrbits[idx]
-		} else if orbitRoll < 8 {
-			// Close orbit
+		case orbitRoll < 8:
 			idx := r.TwoD6()
 			if idx >= len(closeOrbits) {
 				idx = len(closeOrbits) - 1
 			}
 			orbitalRadius = closeOrbits[idx]
-		} else {
-			// Far orbit
+		default:
 			idx := r.TwoD6()
 			if idx >= len(farOrbits) {
 				idx = len(farOrbits) - 1
 			}
 			orbitalRadius = farOrbits[idx]
 		}
-		
+
 		moons[i] = models.Moon{
 			Planet:        planet,
 			Orbit:         i,

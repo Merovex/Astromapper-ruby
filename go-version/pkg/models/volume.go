@@ -44,9 +44,81 @@ func (v *Volume) ToASCII() string {
 		v.Star.Crib(),
 		v.Star.OrbitsCrib(),
 		v.Name)
-	
+
+	if ext := w.Extensions(); ext != "" {
+		summary += "  " + ext
+	}
+	if w.Native != "" {
+		summary += "  " + w.Native
+	}
+
 	summary += v.Star.OrbitsToASCII()
 	return summary
+}
+
+// ToTab renders one T5 Second Survey row (tab-delimited). Mirrors Ruby Volume#to_tab.
+func (v *Volume) ToTab(sectorName, allegiance string) string {
+	w := v.Star.World
+	ss := string(rune('A' + ((v.Row-1)/10)*4 + ((v.Column-1)/8)))
+
+	belts, gg, worlds := 0, 0, 0
+	for _, o := range v.Star.Orbits {
+		switch o.GetKid() {
+		case OrbitBelt:
+			belts++
+		case OrbitGasGiant:
+			gg++
+		case OrbitWorld:
+			worlds++
+		}
+	}
+	if worlds < 1 {
+		worlds = 1
+	}
+	pbg := fmt.Sprintf("%d%d%d", w.PopMultiplier, cap9(belts), cap9(gg))
+
+	zone := ""
+	if w.TravelCode == "A" {
+		zone = "A"
+	} else if w.TravelCode == "R" {
+		zone = "R"
+	}
+
+	ix, ex, cx := "", "", ""
+	if w.Extended {
+		ix = fmt.Sprintf("{ %d }", w.Ix)
+		ex = fmt.Sprintf("(%s%s%s%+d)", toHex(w.Ex[0]), toHex(w.Ex[1]), toHex(w.Ex[2]), w.Ex[3])
+		cx = fmt.Sprintf("[%s%s%s%s]", toHex(w.Cx[0]), toHex(w.Cx[1]), toHex(w.Cx[2]), toHex(w.Cx[3]))
+	}
+
+	t5bases := w.Bases
+	if t5bases == "." {
+		t5bases = ""
+	}
+
+	fields := []string{
+		sectorName, ss, v.Location(), v.Name, w.GetUWP(), t5bases,
+		joinStrings(w.TradeCodes, " "), zone, pbg, allegiance,
+		v.Star.t5Stars(), ix, ex, cx, "",
+		fmt.Sprintf("%d", worlds), fmt.Sprintf("%d", w.RU),
+	}
+	return joinStrings(fields, "\t")
+}
+
+func cap9(n int) int {
+	if n > 9 {
+		return 9
+	}
+	return n
+}
+
+// t5Stars is the space-joined classifications of the primary and its companions.
+func (s *Star) t5Stars() string {
+	stars := []string{s.Classification()}
+	for _, comp := range s.Companions {
+		stars = append(stars, comp.Classification())
+	}
+	return joinStrings(stars, " ")
 }
 
 func (s *Star) Crib() string {

@@ -1,0 +1,19 @@
+# Example Astromapper (Go) config. Copy to _astromapper.yml in your working
+# directory and run `astromapper` with no flags. Any CLI flag overrides the file.
+# Keys mirror the Ruby _astromapper.yml where the Go build supports the feature.
+
+type: sector            # sector | volume
+name: "My Sector"
+density: scattered      # extra-galactic | rift | sparse | dunbar | scattered | dense | cluster | core
+seed:                   # blank = random (a Crawford code is printed); or a code/string
+genre: normal           # firm (realistic, M-dwarf-heavy) | normal | opera (Sun-like)
+ruleset: t5             # t5 | cepheus | a custom rules/<name>.yml
+sophonts: human         # human (Settled/Colony) | varied (alien sophonts)
+
+prune_isolated: true    # drop systems with no neighbour within jump-4 (lone dots)
+
+# Island borders on the SVG (clusters of nearby systems)
+islands: true
+island_jump: 2          # systems within this many jumps form one island
+island_min: 2           # minimum systems per island
+island_opacity: 0.85    # 0.0 (invisible) .. 1.0 (solid)

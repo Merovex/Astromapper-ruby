@@ -32,12 +32,44 @@ func BuildStar(volume *models.Volume, primary *models.Star, ternary int, r *rng.
 	
 	if primary == nil {
 		star.Orbit = 0
-		star.TypeDM = min(r.TwoD6()+getStarDM(volume), 12)
+		// Genre = realism<->romance stellar slider. opera (and half of normal) uses the
+		// Sun-like T5 table; firm (and the other half of normal) uses the realistic,
+		// M-dwarf-heavy census. Mirrors the Ruby Star#initialize.
+		if activeGenre == "opera" || (activeGenre == "normal" && r.D6() <= 3) {
+			f := r.FluxRoll() // Traveller 5 spectral table (page 436), Flux -> type
+			switch {
+			case f <= -4:
+				star.StarType = "A"
+			case f <= -2:
+				star.StarType = "F"
+			case f <= 0:
+				star.StarType = "G"
+			case f <= 2:
+				star.StarType = "K"
+			default:
+				star.StarType = "M"
+			}
+			if star.StarType == "M" && r.D6() <= 3 {
+				star.StarType = "K" // shift ~half the M dwarfs to K
+			}
+			star.TypeDM = map[models.StarType]int{"A": 2, "F": 4, "G": 6, "K": 8, "M": 10}[star.StarType]
+		} else {
+			natural := r.TwoD6()
+			if natural >= 12 {
+				// Hot stars (A/B/O) — rare (natural 12 only), ~1% as in the real galaxy.
+				star.TypeDM = natural
+				star.StarType = []models.StarType{"A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "B", "B", "O"}[r.TwoD6()]
+			} else {
+				dm := natural + getStarDM(volume)
+				if dm > 11 {
+					dm = 11
+				}
+				star.TypeDM = dm
+				star.StarType = []models.StarType{"M", "M", "F", "M", "M", "M", "M", "M", "K", "K", "G", "M"}[dm]
+			}
+		}
+
 		star.SizeDM = min(r.TwoD6(), 12)
-		
-		starTypes := []models.StarType{"B", "B", "A", "M", "M", "M", "M", "M", "K", "G", "F", "F", "F"}
-		star.StarType = starTypes[star.TypeDM]
-		
 		starSizes := []int{0, 1, 2, 3, 4, 5, 5, 5, 5, 5, 5, 6, 500}
 		star.StarSize = starSizes[star.SizeDM]
 	} else {
@@ -63,7 +95,7 @@ func BuildStar(volume *models.Volume, primary *models.Star, ternary int, r *rng.
 	
 	spectralSubtypes := SpectralTypes[star.StarType]
 	subtype := spectralSubtypes[r.Intn(len(spectralSubtypes))]
-	star.Spectral = string(star.StarType) + string('0'+subtype)
+	star.Spectral = string(star.StarType) + string(rune('0'+subtype))
 	
 	if star.StarSize == 500 {
 		star.StarSubtype = "B"
@@ -106,18 +138,22 @@ func BuildStar(volume *models.Volume, primary *models.Star, ternary int, r *rng.
 	}
 	
 	if star.World != nil {
-		hasGasGiant := false
+		gasGiants, belts := 0, 0
 		for _, orbit := range star.Orbits {
-			if orbit.GetKid() == models.OrbitGasGiant {
-				hasGasGiant = true
-				break
+			switch orbit.GetKid() {
+			case models.OrbitGasGiant:
+				gasGiants++
+			case models.OrbitBelt:
+				belts++
 			}
 		}
-		if hasGasGiant {
+		if gasGiants > 0 {
 			star.World.GasGiant = "G"
 		} else {
 			star.World.GasGiant = "."
 		}
+		// Extensions (Ix/Ex/Cx + RU) need the whole-system gas-giant/belt counts.
+		buildExtensions(star.World, gasGiants, belts, r)
 	}
 	
 	pruneOrbits(star)

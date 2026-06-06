@@ -1,0 +1,121 @@
+# The map's name.
+name: "test data"
+
+# The map's language.
+language: "en"
+
+# Density: How many stars in your sector
+#     Here's some examples:
+# 
+# density: "rift"
+# density: "sparse"
+# density: "dunbar"     # ~150 systems, one Dunbar's Number per sector
+density: "scattered"
+# density: "dense"
+
+# Seed for reproducible generation.
+#   Leave blank and `build` will roll a seed and SAVE it here, so every later build
+#   reproduces the same map. Clear it (back to blank) to regenerate a new map.
+#   Accepts a Crawford code (XXXXX-XXXXX) or any string; override with `build --seed CODE`.
+seed: HPFAL-VDG6Y
+
+# Genre
+genre: normal
+
+# Ruleset: the data-driven generation rules, loaded from rules/<name>.yml.
+#   t5       (default) - Traveller 5 WorldGen: full UWP + Ix/Ex/Cx extensions
+#   cepheus            - Cepheus Engine: classic UWP, no extensions
+#   Drop your own rules/<name>.yml in the project (it may `extends:` another)
+#   to customise trade codes, UWP formulas, starport/base/tech tables, etc.
+ruleset: t5
+
+# Prune isolated systems: drop any system with no neighbour within jump-4
+# (a lone star no route can reach), so the map has no disconnected dots.
+#   true  (default) - remove isolated systems during generation
+#   false           - keep every rolled system, however isolated
+prune_isolated: true
+
+# Islands: outline clusters of nearby systems on the SVG map.
+#   true  (default) - draw a border around each cluster along the hex grid
+#   false           - omit the borders
+# island_jump:    systems within this many jumps are one island (default 2)
+# island_min:     only border clusters of at least this many systems (default 2)
+# island_opacity: border opacity, 0.0 (invisible) to 1.0 (solid) (default 0.85)
+islands: true
+island_jump: 2
+island_min: 2
+island_opacity: 0.85
+
+# Guarantee a habitable mainworld in every system's biozone.
+#   true  (default) - every generated system has a World
+#   false           - the biozone may roll up a gas giant instead,
+#                     leaving some systems without a mainworld
+always_inhabited: true
+
+# Sophonts: who inhabits the worlds.
+#   human  (default) - human-only universe; worlds are Settled or Colony
+#   varied           - allow native alien sophonts (Native / Exotic populations)
+sophonts: human
+
+# Allegiance: the polity this sector belongs to (T5 leaves this to the referee).
+#   A short code applied sector-wide, e.g. Im (Imperial), Na (Non-Aligned).
+allegiance: Im
+
+giant_on: !ruby/range 0..9
+tech_cap: 11
+named: true
+
+# Your map copyright info.
+# Here's some examples:
+#
+#   Copyright 2026 by Ben Wilson.
+#   Copyright 2026 by Ben Wilson. This work is licensed under MIT License.
+#   This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
+#   This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
+#   This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+#
+copyright: "Copyright (C) 2026 Ben Wilson."
+
+# Who's publishing this map.
+publisher: "Ben Wilson"
+
+# When this map was published.
+published_at: "2026-06-05"
+
+# Some unique identification. Works great with your domain
+# like `http://yourmap.example.com`.
+uid: "3c8f2d22b04cb3b4191e2338684fcbd0"
+
+# This map authors.
+authors:
+  - "Ben Wilson"
+
+# The base URL from your source code.
+base_url: http://example.com
+
+colors:
+  base03: "#002b36"
+  base02: "#073642"
+  base01: "#586e75"
+  base00: "#657b83"
+  base0: "#839496"
+  base1: "#93a1a1"
+  base2: "#eee8d5"
+  base3: "#fdf6e3"
+  yellow: "#b58900"
+  orange: "#cb4b16"
+  red: "#dc322f"
+  magenta: "#d33682"
+  violet: "#6c71c4"
+  blue: "#268bd2"
+  cyan: "#2aa198"
+  green: "#859900"
+  white: "#FFFFFF"
+  black: "#222222"
+# 
+fonts:
+  serif: "Garamond"
+  sans:  "Tahoma"
+  mono:  "Courier"
+
+  
