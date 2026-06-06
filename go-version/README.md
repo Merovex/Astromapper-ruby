@@ -25,6 +25,14 @@ Output (ASCII `.txt`, `.svg`, `.json`) is written to `output/`.
 | `--name` | `Unnamed` | Sector name |
 | `--ruleset` | `t5` | `t5`, `cepheus`, or a custom `rules/<name>.yml` |
 | `--sophonts` | `human` | `human` (Settled/Colony) or `varied` (alien sophonts) |
+| `--islands` | `true` | Outline clusters of nearby systems on the SVG |
+| `--island-jump` | `2` | Systems within this many jumps form one island |
+| `--island-min` | `2` | Minimum systems per island to draw a border |
+| `--island-opacity` | `0.85` | Island border opacity, 0.0–1.0 |
+
+> The Go build is configured entirely by these flags — there is no `_astromapper.yml`
+> config file (that's the Ruby version). The only on-disk inputs are optional custom
+> rulesets in `rules/<name>.yml`.
 
 ## Rulesets
 
