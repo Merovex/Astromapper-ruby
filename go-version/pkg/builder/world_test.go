@@ -21,6 +21,7 @@ func genSector(t *testing.T, rulesetName, seed string, n int) string {
 	}
 	SetRuleset(rs)
 	SetSophonts("")
+	SetGenre("normal") // pin genre so the golden is deterministic regardless of test order
 	r := rng.New(seed)
 	var lines []string
 	for col := 1; col <= n; col++ {

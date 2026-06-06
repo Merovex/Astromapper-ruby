@@ -16,6 +16,7 @@ type Config struct {
 	Name          string  `yaml:"name"`
 	Density       string  `yaml:"density"`
 	Seed          string  `yaml:"seed"`
+	Genre         string  `yaml:"genre"`
 	Ruleset       string  `yaml:"ruleset"`
 	Sophonts      string  `yaml:"sophonts"`
 	PruneIsolated bool    `yaml:"prune_isolated"`
@@ -32,6 +33,7 @@ func Defaults() Config {
 		Name:          "Unnamed",
 		Density:       "scattered",
 		Seed:          "",
+		Genre:         "normal",
 		Ruleset:       "t5",
 		Sophonts:      "human",
 		PruneIsolated: true,
@@ -52,6 +54,7 @@ type: sector            # sector | volume
 name: "` + name + `"
 density: scattered      # extra-galactic | rift | sparse | dunbar | scattered | dense | cluster | core
 seed:                   # blank = random (a Crawford code is printed); or a code/string
+genre: normal           # firm (realistic, M-dwarf-heavy) | normal | opera (Sun-like)
 ruleset: t5             # t5 | cepheus | a custom rules/<name>.yml in this directory
 sophonts: human         # human (Settled/Colony) | varied (alien sophonts)
 

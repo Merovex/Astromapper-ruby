@@ -81,6 +81,7 @@ func main() {
 		density = flag.String("density", "scattered", "Density for sector generation: extra-galactic, rift, sparse, dunbar, scattered, dense, cluster, core")
 		seed    = flag.String("seed", "", "Seed string for generation (if not provided, generates random seed in format XXXXX-XXXXX)")
 		name    = flag.String("name", "Unnamed", "Name for the sector (default: Unnamed)")
+		genre   = flag.String("genre", "normal", "Stellar realism slider: firm (M-dwarf-heavy), normal, or opera (Sun-like)")
 		ruleset = flag.String("ruleset", "t5", "Ruleset: t5, cepheus, or a custom rules/<name>.yml")
 		sophonts = flag.String("sophonts", "human", "Native life: 'human' (Settled/Colony) or 'varied' (alien sophonts)")
 		prune    = flag.Bool("prune", true, "Drop systems with no neighbour within jump-4 (lone, unreachable stars)")
@@ -113,6 +114,9 @@ func main() {
 	}
 	if !set["seed"] {
 		*seed = cfg.Seed
+	}
+	if !set["genre"] {
+		*genre = cfg.Genre
 	}
 	if !set["ruleset"] {
 		*ruleset = cfg.Ruleset
@@ -206,7 +210,8 @@ func main() {
 	}
 	builder.SetRuleset(rs)
 	builder.SetSophonts(*sophonts)
-	fmt.Printf("Ruleset: %s\n", rs.Title())
+	builder.SetGenre(*genre)
+	fmt.Printf("Ruleset: %s  Genre: %s\n", rs.Title(), *genre)
 
 	// Load planet names
 	planetNames := data.GetPlanetNames()
@@ -346,6 +351,7 @@ func showHelp() {
 	fmt.Println("  --seed <string>      Seed string for generation")
 	fmt.Println("                       If not provided, generates random seed (format: XXXXX-XXXXX)")
 	fmt.Println("  --name <string>      Name for the sector (default: Unnamed)")
+	fmt.Println("  --genre <genre>      Stellar realism: firm | normal (default) | opera")
 	fmt.Println("  --ruleset <name>     Ruleset: t5 (default), cepheus, or a custom rules/<name>.yml")
 	fmt.Println("  --sophonts <mode>    Native life: 'human' (default) or 'varied' (alien sophonts)")
 	fmt.Println("  --prune              Drop systems with no neighbour within jump-4 (default true)")

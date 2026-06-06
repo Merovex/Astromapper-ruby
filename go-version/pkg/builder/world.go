@@ -39,17 +39,21 @@ func BuildWorld(star *models.Star, orbitNum int, r *rng.RNG) *models.World {
 	world.Temperature = climate(world, r)
 	ctx["temp"] = world.Temperature
 
-	// Starport (orientation roll) then the social spine.
-	world.Port = rs.Starport(r.TwoD6())
-	ctx["port"] = world.Port
+	// Genre realism pass may thin/dry the atmosphere and hydrographics (opera/firm).
+	applyGenreAtmoHydro(world)
+	ctx["atmo"], ctx["hydro"] = world.Atmosphere, world.Hydro
 
+	// Population — the port-orientation roll is taken now (firm genre nudges it by pop).
+	portRoll := r.TwoD6()
 	pop, _ := rs.UWPStep("pop", ctx, r)
+	pop, portRoll = firmPopStrip(world, pop, portRoll)
 	if pop < 0 {
 		pop = 0
 	}
 	if pop > 15 {
-		pop = 15
+		pop = 15 // population ceiling is F
 	}
+	pop = capColonyPopulation(world, pop) // hot-star / gravity-band colony cap
 	world.Population = pop
 	ctx["pop"] = pop
 
@@ -57,6 +61,9 @@ func BuildWorld(star *models.Star, orbitNum int, r *rng.RNG) *models.World {
 	ctx["gov"] = world.Government
 	world.Law, _ = rs.UWPStep("law", ctx, r)
 	ctx["law"] = world.Law
+
+	world.Port = rs.Starport(portRoll)
+	ctx["port"] = world.Port
 
 	world.Factions = generateFactions(world.Population, world.Law, r)
 
