@@ -87,6 +87,8 @@ impl OrbitBuilder {
                     *world_found = true;
                     let world = WorldBuilder::new(0, 0)
                         .with_names(names.to_vec())
+                        .with_orbit(orbit_num)
+                        .with_star_type(star.star_type)
                         .build()?;
                     OrbitContent::World(WorldOrbit { 
                         orbit_number: orbit_num, 

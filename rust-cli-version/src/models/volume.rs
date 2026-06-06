@@ -102,7 +102,19 @@ impl Volume {
             let factions_padded = format!("{:<12}", factions);
             let stars_padded = format!("{:<13}", stars_str);
             let orbits_crib_padded = format!("{:<13}", orbits_crib);
-            
+
+            // Name, then the T5 extension block and native status when present.
+            let mut name_ext = world.name.clone();
+            let ext = world.extensions();
+            if !ext.is_empty() {
+                name_ext.push_str("  ");
+                name_ext.push_str(&ext);
+            }
+            if !world.native.is_empty() {
+                name_ext.push_str("  ");
+                name_ext.push_str(&world.native);
+            }
+
             format!(
                 "{} {} {} {} {} {} {} {} {}{}",
                 coords_padded,      // Left-align in 8-character field
@@ -113,7 +125,7 @@ impl Volume {
                 factions_padded,    // Left-align in 12-character field
                 stars_padded,       // Left-align in 13-character field
                 orbits_crib_padded, // Left-align in 13-character field
-                world.name,
+                name_ext,
                 orbits_str
             )
         } else if let Some(_star) = &self.star {

@@ -1,6 +1,18 @@
 use serde::{Deserialize, Serialize};
 use std::fmt;
 
+/// Traveller extended hex (skips I and O), matching the Ruby/Go implementations.
+const EHEX: &[u8] = b"0123456789ABCDEFGHJKLMNPQRSTUVWXYZ";
+
+pub fn ehex(n: u8) -> char {
+    let i = n as usize;
+    if i < EHEX.len() {
+        EHEX[i] as char
+    } else {
+        EHEX[EHEX.len() - 1] as char
+    }
+}
+
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct World {
     pub name: String,
@@ -20,6 +32,22 @@ pub struct World {
     pub gas_giant: bool,
     pub row: usize,
     pub col: usize,
+
+    // Traveller 5 extensions (unset when the ruleset's extensions module is "none").
+    #[serde(default)]
+    pub extended: bool,
+    #[serde(default)]
+    pub ix: i64,
+    #[serde(default)]
+    pub ex: [i64; 4], // Resources, Labor, Infrastructure, Efficiency
+    #[serde(default)]
+    pub cx: [i64; 4], // Homogeneity, Acceptance, Strangeness, Symbols
+    #[serde(default)]
+    pub ru: i64,
+    #[serde(default)]
+    pub native: String,
+    #[serde(default)]
+    pub pop_multiplier: u8, // 1-9 (0 if unpopulated); the P in PBG
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
@@ -29,6 +57,8 @@ pub enum Temperature {
     Temperate,
     Hot,
     Roasting,
+    Twilight, // T5 HZ inner orbit
+    Locked,
 }
 
 impl Temperature {
@@ -39,6 +69,8 @@ impl Temperature {
             Temperature::Temperate => "T",
             Temperature::Hot => "H",
             Temperature::Roasting => "R",
+            Temperature::Twilight => "Tz",
+            Temperature::Locked => "Lk",
         }
     }
 }
@@ -51,6 +83,8 @@ pub enum Base {
     TAS,
     Imperial,
     PirateBase,
+    Depot,
+    Way,
 }
 
 impl Base {
@@ -62,6 +96,8 @@ impl Base {
             Base::TAS => "T",
             Base::Imperial => "I",
             Base::PirateBase => "P",
+            Base::Depot => "D",
+            Base::Way => "W",
         }
     }
 }
@@ -86,44 +122,68 @@ impl World {
             gas_giant: false,
             row,
             col,
+            extended: false,
+            ix: 0,
+            ex: [0; 4],
+            cx: [0; 4],
+            ru: 0,
+            native: String::new(),
+            pop_multiplier: 0,
         }
     }
-    
+
     pub fn coords(&self) -> String {
         format!("{:02}{:02}", self.col + 1, self.row + 1)
     }
-    
+
     pub fn update_uwp(&mut self) {
         self.uwp = format!(
-            "{}{:X}{:X}{:X}{:X}{:X}{:X}-{:X}",
+            "{}{}{}{}{}{}{}-{}",
             self.starport,
-            self.size,
-            self.atmosphere,
-            self.hydrographics,
-            self.population,
-            self.government,
-            self.law_level,
-            self.tech_level
+            ehex(self.size),
+            ehex(self.atmosphere),
+            ehex(self.hydrographics),
+            ehex(self.population),
+            ehex(self.government),
+            ehex(self.law_level),
+            ehex(self.tech_level)
         );
     }
-    
+
     pub fn bases_string(&self) -> String {
         if self.bases.is_empty() {
             ".".to_string()
         } else {
-            self.bases.iter()
-                .map(|b| b.to_code())
-                .collect::<Vec<_>>()
-                .join("")
+            self.bases.iter().map(|b| b.to_code()).collect::<Vec<_>>().join("")
         }
     }
-    
+
     pub fn trade_codes_string(&self) -> String {
         if self.trade_codes.is_empty() {
             ".".to_string()
         } else {
             self.trade_codes.join(" ")
         }
+    }
+
+    /// T5 extension block: { +Ix } (RLI±E) [HASS] RU:n (empty when not extended).
+    pub fn extensions(&self) -> String {
+        if !self.extended {
+            return String::new();
+        }
+        format!(
+            "{{ {:+} }} ({}{}{}{:+}) [{}{}{}{}] RU:{}",
+            self.ix,
+            ehex(self.ex[0] as u8),
+            ehex(self.ex[1] as u8),
+            ehex(self.ex[2] as u8),
+            self.ex[3],
+            ehex(self.cx[0] as u8),
+            ehex(self.cx[1] as u8),
+            ehex(self.cx[2] as u8),
+            ehex(self.cx[3] as u8),
+            self.ru
+        )
     }
 }
 
