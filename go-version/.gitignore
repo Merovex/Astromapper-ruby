@@ -1,0 +1,4 @@
+# Compiled binary — rebuild with: go build -o astromapper .
+/astromapper
+# Generated maps
+/output/
