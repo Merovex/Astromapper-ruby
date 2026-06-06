@@ -63,7 +63,7 @@ func BuildStar(volume *models.Volume, primary *models.Star, ternary int, r *rng.
 	
 	spectralSubtypes := SpectralTypes[star.StarType]
 	subtype := spectralSubtypes[r.Intn(len(spectralSubtypes))]
-	star.Spectral = string(star.StarType) + string('0'+subtype)
+	star.Spectral = string(star.StarType) + string(rune('0'+subtype))
 	
 	if star.StarSize == 500 {
 		star.StarSubtype = "B"
@@ -106,18 +106,22 @@ func BuildStar(volume *models.Volume, primary *models.Star, ternary int, r *rng.
 	}
 	
 	if star.World != nil {
-		hasGasGiant := false
+		gasGiants, belts := 0, 0
 		for _, orbit := range star.Orbits {
-			if orbit.GetKid() == models.OrbitGasGiant {
-				hasGasGiant = true
-				break
+			switch orbit.GetKid() {
+			case models.OrbitGasGiant:
+				gasGiants++
+			case models.OrbitBelt:
+				belts++
 			}
 		}
-		if hasGasGiant {
+		if gasGiants > 0 {
 			star.World.GasGiant = "G"
 		} else {
 			star.World.GasGiant = "."
 		}
+		// Extensions (Ix/Ex/Cx + RU) need the whole-system gas-giant/belt counts.
+		buildExtensions(star.World, gasGiants, belts, r)
 	}
 	
 	pruneOrbits(star)
