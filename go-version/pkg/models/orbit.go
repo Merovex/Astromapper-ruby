@@ -126,6 +126,26 @@ type World struct {
 	TradeCodes  []string `json:"trade_codes,omitempty"`
 	Bases       string   `json:"bases,omitempty"`
 	TravelCode  string   `json:"travel_code,omitempty"`
+
+	// Traveller 5 Extensions (unset when the ruleset's extensions module is "none").
+	Extended bool   `json:"extended,omitempty"`
+	Ix       int    `json:"ix,omitempty"`
+	Ex       [4]int `json:"ex,omitempty"` // Resources, Labor, Infrastructure, Efficiency
+	Cx       [4]int `json:"cx,omitempty"` // Homogeneity, Acceptance, Strangeness, Symbols
+	RU       int    `json:"ru,omitempty"`
+	Native   string `json:"native,omitempty"`
+}
+
+// Extensions renders the T5 extension block: { +Ix } (RLI±E) [HASS] RU:n.
+func (w *World) Extensions() string {
+	if !w.Extended {
+		return ""
+	}
+	return fmt.Sprintf("{ %+d } (%s%s%s%+d) [%s%s%s%s] RU:%d",
+		w.Ix,
+		toHex(w.Ex[0]), toHex(w.Ex[1]), toHex(w.Ex[2]), w.Ex[3],
+		toHex(w.Cx[0]), toHex(w.Cx[1]), toHex(w.Cx[2]), toHex(w.Cx[3]),
+		w.RU)
 }
 
 func (w *World) GetUWP() string {
@@ -149,18 +169,15 @@ func (c *Companion) GetUWP() string {
 	return fmt.Sprintf("%-9s", c.CompanionStar.Classification())
 }
 
+// eHex is Traveller's extended hex (skips I and O), matching the Ruby implementation.
+const eHex = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ"
+
 func toHex(n int) string {
 	if n < 0 {
 		return "0"
 	}
-	if n < 10 {
-		return fmt.Sprintf("%d", n)
+	if n < len(eHex) {
+		return string(eHex[n])
 	}
-	hexMap := map[int]string{
-		10: "A", 11: "B", 12: "C", 13: "D", 14: "E", 15: "F",
-	}
-	if h, ok := hexMap[n]; ok {
-		return h
-	}
-	return "F"
+	return string(eHex[len(eHex)-1])
 }

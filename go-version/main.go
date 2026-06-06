@@ -4,6 +4,7 @@ import (
 	"astromapper/pkg/builder"
 	"astromapper/pkg/data"
 	"astromapper/pkg/rng"
+	"astromapper/pkg/rules"
 	"astromapper/pkg/svg"
 	"astromapper/pkg/writer"
 	"crypto/rand"
@@ -68,6 +69,8 @@ func main() {
 		density = flag.String("density", "standard", "Density for sector generation: extra-galactic, rift, sparse, scattered, standard, dense, cluster, core")
 		seed    = flag.String("seed", "", "Seed string for generation (if not provided, generates random seed in format XXXXX-XXXXX)")
 		name    = flag.String("name", "Unnamed", "Name for the sector (default: Unnamed)")
+		ruleset = flag.String("ruleset", "t5", "Ruleset: t5, cepheus, or a custom rules/<name>.yml")
+		sophonts = flag.String("sophonts", "human", "Native life: 'human' (Settled/Colony) or 'varied' (alien sophonts)")
 		help    = flag.Bool("help", false, "Show help message")
 		listDensities = flag.Bool("list-densities", false, "List available density options")
 	)
@@ -132,6 +135,16 @@ func main() {
 
 	// Initialize RNG with seed
 	r := rng.New(seedStr)
+
+	// Load the active ruleset (project rules/<name>.yml overrides the built-in).
+	rs, err := rules.Load(*ruleset, ".")
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error loading ruleset %q: %v\n", *ruleset, err)
+		os.Exit(1)
+	}
+	builder.SetRuleset(rs)
+	builder.SetSophonts(*sophonts)
+	fmt.Printf("Ruleset: %s\n", rs.Title())
 
 	// Load planet names
 	planetNames := data.GetPlanetNames()

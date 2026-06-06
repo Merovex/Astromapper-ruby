@@ -44,7 +44,14 @@ func (v *Volume) ToASCII() string {
 		v.Star.Crib(),
 		v.Star.OrbitsCrib(),
 		v.Name)
-	
+
+	if ext := w.Extensions(); ext != "" {
+		summary += "  " + ext
+	}
+	if w.Native != "" {
+		summary += "  " + w.Native
+	}
+
 	summary += v.Star.OrbitsToASCII()
 	return summary
 }
