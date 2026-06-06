@@ -36,6 +36,10 @@ struct Args {
     #[arg(long, default_value = "human")]
     sophonts: String,
 
+    /// Drop systems with no neighbour within jump-4 (lone, unreachable stars)
+    #[arg(long, default_value_t = true, action = clap::ArgAction::Set)]
+    prune: bool,
+
     /// List available density options
     #[arg(long)]
     list_densities: bool,
@@ -113,8 +117,11 @@ fn main() -> anyhow::Result<()> {
         "sector" => {
             println!("Generating sector with {} density ({}%)...", args.density, (density * 100.0) as u32);
             
-            let sector = generate_sector(args.name, seed.clone(), density)?;
-            
+            let mut sector = generate_sector(args.name, seed.clone(), density)?;
+            if args.prune {
+                sector.prune_isolated(4);
+            }
+
             // Generate ASCII
             let ascii_content = AsciiFormatter::format_sector(&sector);
             
