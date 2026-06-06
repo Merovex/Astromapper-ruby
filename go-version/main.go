@@ -244,6 +244,8 @@ func showHelp() {
 	fmt.Println("  --seed <string>      Seed string for generation")
 	fmt.Println("                       If not provided, generates random seed (format: XXXXX-XXXXX)")
 	fmt.Println("  --name <string>      Name for the sector (default: Unnamed)")
+	fmt.Println("  --ruleset <name>     Ruleset: t5 (default), cepheus, or a custom rules/<name>.yml")
+	fmt.Println("  --sophonts <mode>    Native life: 'human' (default) or 'varied' (alien sophonts)")
 	fmt.Println("  --list-densities     List available density options with descriptions")
 	fmt.Println("  --help               Show this help message")
 	fmt.Println()
