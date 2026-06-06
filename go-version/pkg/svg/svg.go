@@ -4,6 +4,7 @@ import (
 	"astromapper/pkg/models"
 	"fmt"
 	"math"
+	"sort"
 	"strings"
 )
 
@@ -19,6 +20,12 @@ type SVGGenerator struct {
 	Volumes []*models.Volume
 	Routes  map[string][]string
 	Slopes  map[string][]float64
+
+	// Island borders (clusters of nearby systems outlined on the map).
+	ShowIslands   bool
+	IslandJump    int
+	IslandMin     int
+	IslandOpacity float64
 }
 
 func NewSVGGenerator(name string) *SVGGenerator {
@@ -39,6 +46,11 @@ func NewSVGGenerator(name string) *SVGGenerator {
 		Name:    name,
 		Routes:  make(map[string][]string),
 		Slopes:  make(map[string][]float64),
+
+		ShowIslands:   true,
+		IslandJump:    2,
+		IslandMin:     2,
+		IslandOpacity: 0.85,
 	}
 }
 
@@ -56,7 +68,8 @@ func (s *SVGGenerator) GenerateSector(sector *models.Sector) string {
 	svg.WriteString(s.header())
 	svg.WriteString(s.tractMarks())
 	svg.WriteString(s.hexGrid())
-	// svg.WriteString(s.buildRoutes()) // Routes/lines removed
+	svg.WriteString(s.islands())
+	svg.WriteString(s.buildRoutes())
 	for _, v := range s.Volumes {
 		svg.WriteString(s.world(v))
 	}
@@ -182,35 +195,159 @@ func (s *SVGGenerator) stars(cx, cy float64, star *models.Star) string {
 	return output.String()
 }
 
-func (s *SVGGenerator) buildRoutes() string {
-	var routes strings.Builder
-	routes.WriteString("<g class='routes'>\n")
+// islands outlines clusters of nearby systems, reusing the shared Borders geometry.
+func (s *SVGGenerator) islands() string {
+	if !s.ShowIslands {
+		return ""
+	}
+	hexes := make([]hexCell, 0, len(s.Volumes))
+	for _, v := range s.Volumes {
+		hexes = append(hexes, hexCell{v.Column, v.Row})
+	}
+	groups := Borders(hexes, s.Side, s.Factor, s.Columns, s.Rows, s.IslandJump, s.IslandMin)
+	if len(groups) == 0 {
+		return ""
+	}
+	var out strings.Builder
+	out.WriteString("<g class='islands'>\n")
+	for _, g := range groups {
+		out.WriteString(fmt.Sprintf("  <g><!--island n=%d-->", g.Size))
+		for _, ring := range g.Loops {
+			pts := make([]string, len(ring))
+			for i, p := range ring {
+				pts[i] = fmt.Sprintf("%d,%d", p.X, p.Y)
+			}
+			out.WriteString(fmt.Sprintf("<polygon points='%s' stroke='%s' style='opacity:%g'/>",
+				strings.Join(pts, " "), g.Colour, s.IslandOpacity))
+		}
+		out.WriteString("</g>\n")
+	}
+	out.WriteString("</g><!--/islands-->\n")
+	return out.String()
+}
 
-	for i, v1 := range s.Volumes {
-		for j := i + 1; j < len(s.Volumes); j++ {
-			v2 := s.Volumes[j]
-			dist := s.hexDistance(v1.Column, v1.Row, v2.Column, v2.Row)
-			if dist > 0 && dist <= 4 {
-				x1, y1 := s.centerOf(v1.Column, v1.Row)
-				x2, y2 := s.centerOf(v2.Column, v2.Row)
-				routes.WriteString(fmt.Sprintf("  <line class='line%d' x1='%d' y1='%d' x2='%d' y2='%d' />\n",
-					dist, int(x1), int(y1), int(x2), int(y2)))
+// buildRoutes draws jump routes between systems, a port of Ruby's build_routes /
+// calc_route: per source it considers nearby targets and keeps one line per slope
+// bucket (and never the reverse of an existing route), avoiding overlap clutter.
+func (s *SVGGenerator) buildRoutes() string {
+	s.Routes = map[string][]string{}
+	s.Slopes = map[string][]float64{}
+
+	present := map[[2]int]bool{}
+	for _, v := range s.Volumes {
+		present[[2]int{v.Column, v.Row}] = true
+	}
+	keys := make([][2]int, 0, len(s.Volumes))
+	for _, v := range s.Volumes {
+		keys = append(keys, [2]int{v.Column, v.Row})
+	}
+	sort.Slice(keys, func(i, j int) bool { return hexStr(keys[i]) < hexStr(keys[j]) })
+
+	var out strings.Builder
+	out.WriteString("<g class='routes'>\n")
+	for _, src := range keys {
+		for _, tgt := range eachHexTargets(src) {
+			if !present[tgt] {
+				continue
+			}
+			if line := s.calcRoute(src, tgt); line != "" {
+				out.WriteString(line + "\n")
 			}
 		}
 	}
-
-	routes.WriteString("</g>\n")
-	return routes.String()
+	out.WriteString("</g>\n")
+	return out.String()
 }
 
-func (s *SVGGenerator) hexDistance(c1, r1, c2, r2 int) int {
-	dx := c2 - c1
-	dy := r2 - r1
-
-	if (dx >= 0 && dy >= 0) || (dx < 0 && dy < 0) {
-		return int(math.Abs(float64(dx)) + math.Abs(float64(dy)))
+// eachHexTargets yields the candidate targets around a source, in Ruby each_hex order.
+func eachHexTargets(src [2]int) [][2]int {
+	x, y := src[0], src[1]
+	ranges := [5][2]int{{-4, 4}, {-4, 3}, {-3, 3}, {-3, 2}, {-2, 2}}
+	var out [][2]int
+	for index := 0; index < 5; index++ {
+		lo, hi := ranges[index][0], ranges[index][1]
+		for _, i := range []int{index, -index} {
+			x1 := x + i
+			for j := lo; j <= hi; j++ {
+				out = append(out, [2]int{x1, y + j})
+			}
+		}
 	}
-	return int(math.Max(math.Abs(float64(dx)), math.Abs(float64(dy))))
+	return out
+}
+
+func (s *SVGGenerator) calcRoute(src, tgt [2]int) string {
+	shex, thex := hexStr(src), hexStr(tgt)
+	sx, sy := s.centerOf(src[0], src[1])
+	dx, dy := s.centerOf(tgt[0], tgt[1])
+	srcPix := [2]int{int(sx), int(sy)}
+	dstPix := [2]int{int(dx), int(dy)}
+
+	d := distHex(src, tgt)
+	if d == 0 {
+		return ""
+	}
+	if containsStr(s.Routes[shex], thex) { // already have the reverse route
+		return ""
+	}
+	s.Routes[thex] = append(s.Routes[thex], shex)
+
+	m := slopePix(srcPix, dstPix)
+	if containsFloat(s.Slopes[shex], m) { // already a route on this slope
+		return ""
+	}
+	s.Slopes[shex] = append(s.Slopes[shex], m)
+
+	return fmt.Sprintf("<!-- %s:%s --><line class='line%d' x1='%d' y1='%d' x2='%d' y2='%d' />",
+		shex, thex, d, srcPix[0], srcPix[1], dstPix[0], dstPix[1])
+}
+
+func hexStr(h [2]int) string { return fmt.Sprintf("%02d%02d", h[0], h[1]) }
+
+func distHex(a, b [2]int) int {
+	dx, dy := float64(a[0]-b[0]), float64(a[1]-b[1])
+	return int(math.Round(math.Sqrt(dx*dx + dy*dy)))
+}
+
+// slopePix mirrors Ruby Array#slope: floored integer slope of two pixel points,
+// with its 0.01 (vertical) and 0.1 (rightward-flat) special cases, rounded to 0.1.
+func slopePix(a, b [2]int) float64 {
+	var answer float64
+	if b[0]-a[0] == 0 {
+		answer = 0.01
+	} else {
+		answer = float64(floorDiv(b[1]-a[1], b[0]-a[0]))
+	}
+	if a[0] < b[0] && answer == 0 {
+		answer = 0.1
+	}
+	return math.Round(answer*10) / 10
+}
+
+func floorDiv(a, b int) int {
+	q := a / b
+	if (a%b != 0) && ((a < 0) != (b < 0)) {
+		q--
+	}
+	return q
+}
+
+func containsStr(list []string, s string) bool {
+	for _, x := range list {
+		if x == s {
+			return true
+		}
+	}
+	return false
+}
+
+func containsFloat(list []float64, v float64) bool {
+	for _, x := range list {
+		if x == v {
+			return true
+		}
+	}
+	return false
 }
 
 func (s *SVGGenerator) tractMarks() string {
@@ -394,6 +531,11 @@ func (s *SVGGenerator) header() string {
     stroke-width: 3;
     stroke-dasharray: 3,6;
     stroke-linecap: round;
+  }
+  g.islands polygon {
+    stroke-width: 6;
+    fill: none;
+    stroke-linejoin: round;
   }
   @media (prefers-color-scheme: light) {
       svg {

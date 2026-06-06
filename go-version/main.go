@@ -71,6 +71,10 @@ func main() {
 		name    = flag.String("name", "Unnamed", "Name for the sector (default: Unnamed)")
 		ruleset = flag.String("ruleset", "t5", "Ruleset: t5, cepheus, or a custom rules/<name>.yml")
 		sophonts = flag.String("sophonts", "human", "Native life: 'human' (Settled/Colony) or 'varied' (alien sophonts)")
+		islands  = flag.Bool("islands", true, "Outline clusters of nearby systems on the SVG")
+		islandJump = flag.Int("island-jump", 2, "Systems within this many jumps form one island")
+		islandMin = flag.Int("island-min", 2, "Minimum systems per island to draw a border")
+		islandOpacity = flag.Float64("island-opacity", 0.85, "Island border opacity, 0.0-1.0")
 		help    = flag.Bool("help", false, "Show help message")
 		listDensities = flag.Bool("list-densities", false, "List available density options")
 	)
@@ -164,6 +168,10 @@ func main() {
 		
 		// Generate SVG content
 		svgGen := svg.NewSVGGenerator(*name)
+		svgGen.ShowIslands = *islands
+		svgGen.IslandJump = *islandJump
+		svgGen.IslandMin = *islandMin
+		svgGen.IslandOpacity = *islandOpacity
 		svgContent := svgGen.GenerateSector(sector)
 		
 		// Generate JSON content
@@ -246,6 +254,10 @@ func showHelp() {
 	fmt.Println("  --name <string>      Name for the sector (default: Unnamed)")
 	fmt.Println("  --ruleset <name>     Ruleset: t5 (default), cepheus, or a custom rules/<name>.yml")
 	fmt.Println("  --sophonts <mode>    Native life: 'human' (default) or 'varied' (alien sophonts)")
+	fmt.Println("  --islands            Outline clusters of nearby systems on the SVG (default true)")
+	fmt.Println("  --island-jump <n>    Systems within n jumps form one island (default 2)")
+	fmt.Println("  --island-min <n>     Minimum systems per island (default 2)")
+	fmt.Println("  --island-opacity <f> Island border opacity 0.0-1.0 (default 0.85)")
 	fmt.Println("  --list-densities     List available density options with descriptions")
 	fmt.Println("  --help               Show this help message")
 	fmt.Println()
