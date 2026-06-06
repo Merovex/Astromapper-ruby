@@ -30,9 +30,22 @@ Output (ASCII `.txt`, `.svg`, `.json`) is written to `output/`.
 | `--island-min` | `2` | Minimum systems per island to draw a border |
 | `--island-opacity` | `0.85` | Island border opacity, 0.0–1.0 |
 
-> The Go build is configured entirely by these flags — there is no `_astromapper.yml`
-> config file (that's the Ruby version). The only on-disk inputs are optional custom
-> rulesets in `rules/<name>.yml`.
+## Config file
+
+Instead of repeating flags, drop an `_astromapper.yml` in your working directory and
+run `astromapper` with no flags. Precedence is **explicit flag > config file >
+built-in defaults**, so a flag always wins over the file. Point at a different file
+with `--config <path>`. See [`_astromapper.example.yml`](_astromapper.example.yml) for
+the full key list (`name`, `density`, `seed`, `ruleset`, `sophonts`, `islands`,
+`island_jump`, `island_min`, `island_opacity`).
+
+```yaml
+# _astromapper.yml
+name: "My Sector"
+density: scattered
+ruleset: cepheus
+island_jump: 3
+```
 
 ## Rulesets
 

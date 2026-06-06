@@ -2,6 +2,7 @@ package main
 
 import (
 	"astromapper/pkg/builder"
+	"astromapper/pkg/config"
 	"astromapper/pkg/data"
 	"astromapper/pkg/rng"
 	"astromapper/pkg/rules"
@@ -65,6 +66,7 @@ func stringToCrawford(input string) string {
 func main() {
 	// Define command-line flags
 	var (
+		configPath = flag.String("config", "_astromapper.yml", "Path to a YAML config file (optional; flags override it)")
 		genType = flag.String("type", "sector", "Generation type: 'sector' or 'volume'")
 		density = flag.String("density", "standard", "Density for sector generation: extra-galactic, rift, sparse, scattered, standard, dense, cluster, core")
 		seed    = flag.String("seed", "", "Seed string for generation (if not provided, generates random seed in format XXXXX-XXXXX)")
@@ -80,6 +82,48 @@ func main() {
 	)
 
 	flag.Parse()
+
+	// Merge configuration: built-in defaults < _astromapper.yml < explicit flags.
+	cfg, found, cfgErr := config.Load(*configPath)
+	if cfgErr != nil {
+		fmt.Fprintf(os.Stderr, "Error reading config %q: %v\n", *configPath, cfgErr)
+		os.Exit(1)
+	}
+	set := map[string]bool{}
+	flag.Visit(func(f *flag.Flag) { set[f.Name] = true })
+	if !set["type"] {
+		*genType = cfg.Type
+	}
+	if !set["name"] {
+		*name = cfg.Name
+	}
+	if !set["density"] {
+		*density = cfg.Density
+	}
+	if !set["seed"] {
+		*seed = cfg.Seed
+	}
+	if !set["ruleset"] {
+		*ruleset = cfg.Ruleset
+	}
+	if !set["sophonts"] {
+		*sophonts = cfg.Sophonts
+	}
+	if !set["islands"] {
+		*islands = cfg.Islands
+	}
+	if !set["island-jump"] {
+		*islandJump = cfg.IslandJump
+	}
+	if !set["island-min"] {
+		*islandMin = cfg.IslandMin
+	}
+	if !set["island-opacity"] {
+		*islandOpacity = cfg.IslandOpacity
+	}
+	if found {
+		fmt.Printf("Config: %s\n", *configPath)
+	}
 
 	// Show help if requested
 	if *help {
@@ -245,6 +289,7 @@ func showHelp() {
 	fmt.Println("Usage: astromapper [options]")
 	fmt.Println()
 	fmt.Println("Options:")
+	fmt.Println("  --config <path>      YAML config file (default: _astromapper.yml; flags override it)")
 	fmt.Println("  --type <type>        Generation type: 'sector' or 'volume' (default: sector)")
 	fmt.Println("  --density <density>  Density for sector generation (default: standard)")
 	fmt.Println("                       Options: extra-galactic, rift, sparse, scattered,")
