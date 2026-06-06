@@ -134,6 +134,8 @@ type World struct {
 	Cx       [4]int `json:"cx,omitempty"` // Homogeneity, Acceptance, Strangeness, Symbols
 	RU       int    `json:"ru,omitempty"`
 	Native   string `json:"native,omitempty"`
+
+	PopMultiplier int `json:"pop_multiplier,omitempty"` // 1-9 (0 if unpopulated); the P in PBG
 }
 
 // Extensions renders the T5 extension block: { +Ix } (RLI±E) [HASS] RU:n.

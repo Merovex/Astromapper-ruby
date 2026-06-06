@@ -88,6 +88,10 @@ func BuildWorld(star *models.Star, orbitNum int, r *rng.RNG) *models.World {
 		world.Moons = generateMoons(numMoons, &world.BaseOrbit, r)
 	}
 
+	if world.Population > 0 { // PBG population multiplier (1-9)
+		world.PopMultiplier = 1 + r.Intn(9)
+	}
+
 	return world
 }
 
